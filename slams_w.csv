@@ -1,0 +1,233 @@
+year,slam,winner,country,slam_num
+1968,AO,Billie Jean Moffitt King,United_States,1
+1968,RG,Nancy Richey,United_States,2
+1968,Wim,Billie Jean Moffitt King,United_States,3
+1968,US,Virginia Wade,United_Kingdom,4
+1969,AO,Margaret Smith Court,Australia,5
+1969,RG,Margaret Smith Court,Australia,6
+1969,Wim,Ann Haydon Jones,United_Kingdom,7
+1969,US,Margaret Smith Court,Australia,8
+1970,AO,Margaret Smith Court,Australia,9
+1970,RG,Margaret Smith Court,Australia,10
+1970,Wim,Margaret Smith Court,Australia,11
+1970,US,Margaret Smith Court,Australia,12
+1971,AO,Margaret Smith Court,Australia,13
+1971,RG,Evonne Goolagong Cawley,Australia,14
+1971,Wim,Evonne Goolagong Cawley,Australia,15
+1971,US,Billie Jean Moffitt King,United_States,16
+1972,AO,Virginia Wade,United_Kingdom,17
+1972,RG,Billie Jean Moffitt King,United_States,18
+1972,Wim,Billie Jean Moffitt King,United_States,19
+1972,US,Billie Jean Moffitt King,United_States,20
+1973,AO,Margaret Smith Court,Australia,21
+1973,RG,Margaret Smith Court,Australia,22
+1973,Wim,Billie Jean Moffitt King,United_States,23
+1973,US,Margaret Smith Court,Australia,24
+1974,AO,Evonne Goolagong Cawley,Australia,25
+1974,RG,Chris Evert,United_States,26
+1974,Wim,Chris Evert,United_States,27
+1974,US,Billie Jean Moffitt King,United_States,28
+1975,AO,Evonne Goolagong Cawley,Australia,29
+1975,RG,Chris Evert,United_States,30
+1975,Wim,Billie Jean Moffitt King,United_States,31
+1975,US,Chris Evert,United_States,32
+1976,AO,Evonne Goolagong Cawley,Australia,33
+1976,RG,Sue Barker,United_Kingdom,34
+1976,Wim,Chris Evert,United_States,35
+1976,US,Chris Evert,United_States,36
+1977,AO,Kerry Melville Reid,Australia,37
+1977,RG,Mima Jaušovec,Socialist_Federal_Republic_of_Yugoslavia,38
+1977,Wim,Virginia Wade,United_Kingdom,39
+1977,US,Chris Evert,United_States,40
+1977,AO,Evonne Goolagong Cawley,Australia,41
+1978,AO,Chris O'Neil,Australia,42
+1978,RG,Virginia Ruzici,Romania,43
+1978,Wim,Martina Navratilova,United_States,44
+1978,US,Chris Evert,United_States,45
+1979,AO,Barbara Jordan,United_States,46
+1979,RG,Chris Evert,United_States,47
+1979,Wim,Martina Navratilova,United_States,48
+1979,US,Tracy Austin,United_States,49
+1980,AO,Hana Mandlíková,Czechoslovakia,50
+1980,RG,Chris Evert,United_States,51
+1980,Wim,Evonne Goolagong Cawley,Australia,52
+1980,US,Chris Evert,United_States,53
+1981,AO,Martina Navratilova,United_States,54
+1981,RG,Hana Mandlíková,Czechoslovakia,55
+1981,Wim,Chris Evert,United_States,56
+1981,US,Tracy Austin,United_States,57
+1982,AO,Chris Evert,United_States,58
+1982,RG,Martina Navratilova,United_States,59
+1982,Wim,Martina Navratilova,United_States,60
+1982,US,Chris Evert,United_States,61
+1983,AO,Martina Navratilova,United_States,62
+1983,RG,Chris Evert,United_States,63
+1983,Wim,Martina Navratilova,United_States,64
+1983,US,Martina Navratilova,United_States,65
+1984,AO,Chris Evert,United_States,66
+1984,RG,Martina Navratilova,United_States,67
+1984,Wim,Martina Navratilova,United_States,68
+1984,US,Martina Navratilova,United_States,69
+1985,AO,Martina Navratilova,United_States,70
+1985,RG,Chris Evert,United_States,71
+1985,Wim,Martina Navratilova,United_States,72
+1985,US,Hana Mandlíková,Czechoslovakia,73
+1986,RG,Chris Evert,United_States,74
+1986,Wim,Martina Navratilova,United_States,75
+1986,US,Martina Navratilova,United_States,76
+1987,AO,Hana Mandlíková,Czechoslovakia,77
+1987,RG,Steffi Graf,West_Germany,78
+1987,Wim,Martina Navratilova,United_States,79
+1987,US,Martina Navratilova,United_States,80
+1988,AO,Steffi Graf,West_Germany,81
+1988,RG,Steffi Graf,West_Germany,82
+1988,Wim,Steffi Graf,West_Germany,83
+1988,US,Steffi Graf,West_Germany,84
+1989,AO,Steffi Graf,West_Germany,85
+1989,RG,Arantxa Sánchez Vicario,Spain,86
+1989,Wim,Steffi Graf,West_Germany,87
+1989,US,Steffi Graf,West_Germany,88
+1990,AO,Steffi Graf,West_Germany,89
+1990,RG,Monica Seles,Socialist_Federal_Republic_of_Yugoslavia,90
+1990,Wim,Martina Navratilova,United_States,91
+1990,US,Gabriela Sabatini,Argentina,92
+1991,AO,Monica Seles,Socialist_Federal_Republic_of_Yugoslavia,93
+1991,RG,Monica Seles,Socialist_Federal_Republic_of_Yugoslavia,94
+1991,Wim,Steffi Graf,Germany,95
+1991,US,Monica Seles,Socialist_Federal_Republic_of_Yugoslavia,96
+1992,AO,Monica Seles,Socialist_Federal_Republic_of_Yugoslavia,97
+1992,RG,Monica Seles,Federal_Republic_of_Yugoslavia,98
+1992,Wim,Steffi Graf,Germany,99
+1992,US,Monica Seles,Federal_Republic_of_Yugoslavia,100
+1993,AO,Monica Seles,Federal_Republic_of_Yugoslavia,101
+1993,RG,Steffi Graf,Germany,102
+1993,Wim,Steffi Graf,Germany,103
+1993,US,Steffi Graf,Germany,104
+1994,AO,Steffi Graf,Germany,105
+1994,RG,Arantxa Sánchez Vicario,Spain,106
+1994,Wim,Conchita Martínez,Spain,107
+1994,US,Arantxa Sánchez Vicario,Spain,108
+1995,AO,Mary Pierce,France,109
+1995,RG,Steffi Graf,Germany,110
+1995,Wim,Steffi Graf,Germany,111
+1995,US,Steffi Graf,Germany,112
+1996,AO,Monica Seles,United_States,113
+1996,RG,Steffi Graf,Germany,114
+1996,Wim,Steffi Graf,Germany,115
+1996,US,Steffi Graf,Germany,116
+1997,AO,Martina Hingis,Switzerland,117
+1997,RG,Iva Majoli,Croatia,118
+1997,Wim,Martina Hingis,Switzerland,119
+1997,US,Martina Hingis,Switzerland,120
+1998,AO,Martina Hingis,Switzerland,121
+1998,RG,Arantxa Sánchez Vicario,Spain,122
+1998,Wim,Jana Novotná,Czech_Republic,123
+1998,US,Lindsay Davenport,United_States,124
+1999,AO,Martina Hingis,Switzerland,125
+1999,RG,Steffi Graf,Germany,126
+1999,Wim,Lindsay Davenport,United_States,127
+1999,US,Serena Williams,United_States,128
+2000,AO,Lindsay Davenport,United_States,129
+2000,RG,Mary Pierce,France,130
+2000,Wim,Venus Williams,United_States,131
+2000,US,Venus Williams,United_States,132
+2001,AO,Jennifer Capriati,United_States,133
+2001,RG,Jennifer Capriati,United_States,134
+2001,Wim,Venus Williams,United_States,135
+2001,US,Venus Williams,United_States,136
+2002,AO,Jennifer Capriati,United_States,137
+2002,RG,Serena Williams,United_States,138
+2002,Wim,Serena Williams,United_States,139
+2002,US,Serena Williams,United_States,140
+2003,AO,Serena Williams,United_States,141
+2003,RG,Justine Henin,Belgium,142
+2003,Wim,Serena Williams,United_States,143
+2003,US,Justine Henin,Belgium,144
+2004,AO,Justine Henin,Belgium,145
+2004,RG,Anastasia Myskina,Russia,146
+2004,Wim,Maria Sharapova,Russia,147
+2004,US,Svetlana Kuznetsova,Russia,148
+2005,AO,Serena Williams,United_States,149
+2005,RG,Justine Henin,Belgium,150
+2005,Wim,Venus Williams,United_States,151
+2005,US,Kim Clijsters,Belgium,152
+2006,AO,Amélie Mauresmo,France,153
+2006,RG,Justine Henin,Belgium,154
+2006,Wim,Amélie Mauresmo,France,155
+2006,US,Maria Sharapova,Russia,156
+2007,AO,Serena Williams,United_States,157
+2007,RG,Justine Henin,Belgium,158
+2007,Wim,Venus Williams,United_States,159
+2007,US,Justine Henin,Belgium,160
+2008,AO,Maria Sharapova,Russia,161
+2008,RG,Ana Ivanovic,Serbia,162
+2008,Wim,Venus Williams,United_States,163
+2008,US,Serena Williams,United_States,164
+2009,AO,Serena Williams,United_States,165
+2009,RG,Svetlana Kuznetsova,Russia,166
+2009,Wim,Serena Williams,United_States,167
+2009,US,Kim Clijsters,Belgium,168
+2010,AO,Serena Williams,United_States,169
+2010,RG,Francesca Schiavone,Italy,170
+2010,Wim,Serena Williams,United_States,171
+2010,US,Kim Clijsters,Belgium,172
+2011,AO,Kim Clijsters,Belgium,173
+2011,RG,Li Na,China,174
+2011,Wim,Petra Kvitová,Czech_Republic,175
+2011,US,Samantha Stosur,Australia,176
+2012,AO,Victoria Azarenka,Belarus,177
+2012,RG,Maria Sharapova,Russia,178
+2012,Wim,Serena Williams,United_States,179
+2012,US,Serena Williams,United_States,180
+2013,AO,Victoria Azarenka,Belarus,181
+2013,RG,Serena Williams,United_States,182
+2013,Wim,Marion Bartoli,France,183
+2013,US,Serena Williams,United_States,184
+2014,AO,Li Na,China,185
+2014,RG,Maria Sharapova,Russia,186
+2014,Wim,Petra Kvitová,Czech_Republic,187
+2014,US,Serena Williams,United_States,188
+2015,AO,Serena Williams,United_States,189
+2015,RG,Serena Williams,United_States,190
+2015,Wim,Serena Williams,United_States,191
+2015,US,Flavia Pennetta,Italy,192
+2016,AO,Angelique Kerber,Germany,193
+2016,RG,Garbiñe Muguruza,Spain,194
+2016,Wim,Serena Williams,United_States,195
+2016,US,Angelique Kerber,Germany,196
+2017,AO,Serena Williams,United_States,197
+2017,RG,Jeļena Ostapenko,Latvia,198
+2017,Wim,Garbiñe Muguruza,Spain,199
+2017,US,Sloane Stephens,United_States,200
+2018,AO,Caroline Wozniacki,Denmark,201
+2018,RG,Simona Halep,Romania,202
+2018,Wim,Angelique Kerber,Germany,203
+2018,US,Naomi Osaka,Japan,204
+2019,AO,Naomi Osaka,Japan,205
+2019,RG,Ashleigh Barty,Australia,206
+2019,Wim,Simona Halep,Romania,207
+2019,US,Bianca Andreescu,Canada,208
+2020,AO,Sofia Kenin,United_States,209
+2020,RG,Iga Świątek,Poland,210
+2020,US,Naomi Osaka,Japan,211
+2021,AO,Naomi Osaka,Japan,212
+2021,RG,Barbora Krejčíková,Czech_Republic,213
+2021,Wim,Ashleigh Barty,Australia,214
+2021,US,Emma Raducanu,United_Kingdom,215
+2022,AO,Ashleigh Barty,Australia,216
+2022,RG,Iga Świątek,Poland,217
+2022,Wim,Elena Rybakina,Kazakhstan,218
+2022,US,Iga Świątek,Poland,219
+2023,AO,Aryna Sabalenka,,220
+2023,RG,Iga Świątek,Poland,221
+2023,Wim,Markéta Vondroušová,Czech_Republic,222
+2023,US,Coco Gauff,United_States,223
+2024,AO,Aryna Sabalenka,,224
+2024,RG,Iga Świątek,Poland,225
+2024,Wim,Barbora Krejčíková,Czech_Republic,226
+2024,US,Aryna Sabalenka,,227
+2025,AO,Madison Keys,United_States,228
+2025,RG,Coco Gauff,United_States,229
+2025,Wim,Iga Świątek,Poland,230
+2025,US,Aryna Sabalenka,,231
+2026,AO,Elena Rybakina,Kazakhstan,232
