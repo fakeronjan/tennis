@@ -1354,6 +1354,23 @@ document.querySelectorAll('nav button').forEach(btn => {
 window.addEventListener('resize', () => {
   refreshGoat(mwState.goat);
 });
+
+// Auto-resize: when embedded in an iframe, post our scroll height to the
+// parent so the iframe can size itself with no internal scroll.
+(function() {
+  if (window.parent === window) return;
+  function postHeight() {
+    parent.postMessage({type: 'fakeronjan-resize', height: document.documentElement.scrollHeight}, '*');
+  }
+  window.addEventListener('load', postHeight);
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(postHeight).observe(document.body);
+  } else {
+    setTimeout(postHeight, 500);
+    setTimeout(postHeight, 1500);
+    setTimeout(postHeight, 3000);
+  }
+})();
 </script>
 </body>
 </html>
