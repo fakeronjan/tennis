@@ -650,7 +650,8 @@ const COHORTS = {
     {
       key: 'sampras', label: 'The Sampras chase',
       sub: 'Sampras as the bar, then Federer, Nadal, and Djokovic running it down',
-      players: ['Pete Sampras','Roger Federer','Rafael Nadal','Novak Djokovic']
+      players: ['Pete Sampras','Roger Federer','Rafael Nadal','Novak Djokovic'],
+      startFromPlayer: 'Roger Federer'
     },
     {
       key: 'nextgen', label: 'Next gen',
@@ -777,6 +778,9 @@ function buildSeries(tour, cohort) {
     } else {
       xStart = Math.max(0, Math.min(...hits) - 1);
       xEnd = Math.min(slams.length - 1, Math.max(...hits) + 1);
+      if (cohort.startFromPlayer && series[cohort.startFromPlayer] && series[cohort.startFromPlayer].length) {
+        xStart = series[cohort.startFromPlayer][0].i;
+      }
     }
   }
 
@@ -844,8 +848,10 @@ function renderChart1(svgId, legendId, legendId2, tour, cohort) {
     const pts = [];
     let lastPt = null;
     let firstI = null;
-    // Walk all i in window; the player's count is 0 until first slam, then steps up
+    // Walk all i in window; the player's count is 0 until first slam, then steps up.
+    // Seed cnt with the player's running count just before xStart so prior wins carry in.
     let cnt = 0;
+    series[p].forEach(pt => { if (pt.i < xStart) cnt = pt.count; });
     const slamIdxs = new Set(series[p].map(pt => pt.i));
     const slamCount = {};
     series[p].forEach(pt => slamCount[pt.i] = pt.count);
@@ -894,6 +900,7 @@ function renderChart2(svgId, tour, cohort) {
   let yMin = -1;
   players.forEach((p, idx) => {
     let cnt = 0;
+    series[p].forEach(pt => { if (pt.i < xStart) cnt = pt.count; });
     const slamCount = {};
     series[p].forEach(pt => slamCount[pt.i] = pt.count);
     const slamIdxs = new Set(series[p].map(pt => pt.i));
@@ -941,6 +948,7 @@ function renderChart2(svgId, tour, cohort) {
   players.forEach((p, idx) => {
     const pts = [];
     let cnt = 0;
+    series[p].forEach(pt => { if (pt.i < xStart) cnt = pt.count; });
     const slamCount = {};
     series[p].forEach(pt => slamCount[pt.i] = pt.count);
     const slamIdxs = new Set(series[p].map(pt => pt.i));
