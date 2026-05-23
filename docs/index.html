@@ -298,6 +298,13 @@
     font-variant-numeric: tabular-nums;
   }
   .cohort-pills button.active .pill-range { color: rgba(255,110,180,0.7); }
+  .player-range {
+    font-weight: 500;
+    font-size: 11px;
+    color: #888;
+    margin-left: 4px;
+    font-variant-numeric: tabular-nums;
+  }
   .player-flag {
     font-size: 13px;
     margin-right: 2px;
@@ -855,9 +862,15 @@ function renderChart1(svgId, legendId, legendId2, tour, cohort) {
     const slamIdxs = new Set(series[p].map(pt => pt.i));
     const slamCount = {};
     series[p].forEach(pt => slamCount[pt.i] = pt.count);
+    // Anchor 0-point: for players whose first slam lands inside the window, include
+    // the slam event immediately before it as a 0-point so the line visibly steps up
+    // from zero rather than starting at their first win.
+    const firstSlamI = series[p].find(pt => pt.i >= xStart)?.i ?? null;
+    const anchorI = (cnt === 0 && firstSlamI !== null && firstSlamI > xStart)
+      ? firstSlamI - 1 : null;
     for (let i = xStart; i <= xEnd; i++) {
       if (slamIdxs.has(i)) cnt = slamCount[i];
-      if (cnt === 0 && firstI === null) continue;   // skip leading zeros for clarity
+      if (cnt === 0 && firstI === null && i !== anchorI) continue;   // skip leading zeros except anchor
       if (firstI === null) firstI = i;
       pts.push(`${px(i).toFixed(1)},${py(cnt).toFixed(1)}`);
       lastPt = { x: px(i), y: py(cnt), v: cnt };
@@ -979,11 +992,13 @@ function renderTable(tbodyId, tour, cohort) {
   const totals = {};
   const bySlam = {};
   const last = {};
+  const firstYear = {};
   DATA[tour].forEach(r => {
     totals[r.w] = (totals[r.w] || 0) + 1;
     if (!bySlam[r.w]) bySlam[r.w] = { AO: 0, FO: 0, Wim: 0, US: 0 };
     bySlam[r.w][r.s] = (bySlam[r.w][r.s] || 0) + 1;
     last[r.w] = r;
+    if (firstYear[r.w] === undefined || r.y < firstYear[r.w]) firstYear[r.w] = r.y;
   });
   // All players sorted by total — index+1 is their all-time OE rank.
   const sortedAll = Object.entries(totals).sort((a, b) => b[1] - a[1]);
@@ -1007,7 +1022,11 @@ function renderTable(tbodyId, tour, cohort) {
     const lr = last[n];
     const flag = playerFlag(tour, n);
     const flagPart = flag ? `<span class="player-flag">${flag}</span> ` : '';
-    const nameHTML = playerLink(tour, n, `${flagPart}${escapeHtml(n)}`);
+    const fy = firstYear[n];
+    const ly = lr.y;
+    const rangeLabel = fy === ly ? `${fy}` : `${fy}-${ly}`;
+    const rangePart = ` <span class="player-range">(${rangeLabel})</span>`;
+    const nameHTML = playerLink(tour, n, `${flagPart}${escapeHtml(n)}${rangePart}`);
     return `<tr>
       <td class="rank-cell">${rank}</td>
       <td class="name-cell">${nameHTML}</td>
