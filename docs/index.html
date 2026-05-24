@@ -788,7 +788,11 @@ function buildSeries(tour, cohort) {
       xStart = Math.max(0, Math.min(...hits) - 1);
       xEnd = Math.min(slams.length - 1, Math.max(...hits) + 1);
       if (cohort.startFromPlayer && series[cohort.startFromPlayer] && series[cohort.startFromPlayer].length) {
-        xStart = series[cohort.startFromPlayer][0].i;
+        // One slam BEFORE the named player's first win, so chart1/chart2's
+        // anchor-0-point logic (firstSlamI - 1) lands inside the visible
+        // window. Otherwise the Big 3 lines start mid-air at Federer's W'03
+        // rather than dropping in from the prior slam.
+        xStart = Math.max(0, series[cohort.startFromPlayer][0].i - 1);
       }
     }
   }
