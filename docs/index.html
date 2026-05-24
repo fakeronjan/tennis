@@ -958,7 +958,11 @@ function renderChart2(svgId, tour, cohort) {
     xlab += `<text x="${x.toFixed(1)}" y="${H - padB + 16}" font-size="10" fill="#999" text-anchor="middle">${yr}</text>`;
   }
 
-  // Player deficit lines (skip leading zeros before first slam)
+  // Player deficit lines (skip leading zeros before first slam).
+  // Mirror chart1's anchor-0-point: for players whose first slam lands inside
+  // the window, include the slam event immediately before it as a 0-count
+  // anchor so the line visibly steps down from (firstSlamI-1, 0-leader_count)
+  // rather than starting mid-air at their first win.
   let lines = '', endLabels = '';
   players.forEach((p, idx) => {
     const pts = [];
@@ -967,11 +971,14 @@ function renderChart2(svgId, tour, cohort) {
     const slamCount = {};
     series[p].forEach(pt => slamCount[pt.i] = pt.count);
     const slamIdxs = new Set(series[p].map(pt => pt.i));
+    const firstSlamI = series[p].find(pt => pt.i >= xStart)?.i ?? null;
+    const anchorI = (cnt === 0 && firstSlamI !== null && firstSlamI > xStart)
+      ? firstSlamI - 1 : null;
     let firstI = null;
     let lastPt = null;
     for (let i = xStart; i <= xEnd; i++) {
       if (slamIdxs.has(i)) cnt = slamCount[i];
-      if (cnt === 0 && firstI === null) continue;
+      if (cnt === 0 && firstI === null && i !== anchorI) continue;
       if (firstI === null) firstI = i;
       const def = cnt - leader[i].count;
       pts.push(`${px(i).toFixed(1)},${py(def).toFixed(1)}`);
