@@ -449,46 +449,113 @@
   .fleet-nav {
     background: #0e4a5f;
     display: flex;
+    align-items: stretch;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    font-size: 12px;
-    align-items: stretch;
     white-space: nowrap;
   }
-  .fleet-nav a {
-    color: rgba(255,255,255,0.72);
-    text-decoration: none;
-    padding: 8px 12px;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    transition: color 0.15s, background 0.15s;
-    flex-shrink: 0;
+  .fleet-nav .nav-home {
     display: flex;
     align-items: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 0 14px;
+    flex-shrink: 0;
+    border-right: 1px solid rgba(255,255,255,0.18);
   }
-  .fleet-nav a:hover { color: #fff; background: rgba(255,255,255,0.08); }
-  .fleet-nav a.active { color: #ff6eb4; }
-  .fleet-nav .home { font-weight: 700; }
-  .fleet-nav .sep { width: 1px; background: rgba(255,255,255,0.18); margin: 4px 4px; flex-shrink: 0; }
+  .fleet-nav .nav-home:hover { color: #fff; background: rgba(255,255,255,0.08); }
+  .fleet-nav .nav-home.active { color: #ff6eb4; }
+  .fleet-nav .nav-group {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    padding: 0 5px 5px;
+    border-right: 1px solid rgba(255,255,255,0.18);
+  }
+  .fleet-nav .nav-group:last-child { border-right: none; }
+  .fleet-nav .nav-sport {
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 6px 8px 4px;
+  }
+  .fleet-nav .nav-leagues {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+  }
+  .fleet-nav .nav-leagues a {
+    color: rgba(255,255,255,0.72);
+    text-decoration: none;
+    padding: 3px 9px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    border-radius: 4px;
+    transition: color 0.15s, background 0.15s;
+  }
+  .fleet-nav .nav-leagues a:hover { color: #fff; background: rgba(255,255,255,0.08); }
+  .fleet-nav .nav-leagues a.active { color: #ff6eb4; }
 </style>
 </head>
 <body>
 
 
 <nav class="fleet-nav">
-  <a class="home" href="https://fakeronjan.com/sports" target="_top">📊 All Sports</a>
-  <span class="sep"></span>
-  <a class="" href="https://fakeronjan.com/nba" target="_top">🏀 NBA</a>
-  <a class="" href="https://fakeronjan.com/wnba" target="_top">🏀 WNBA</a>
-  <a class="" href="https://fakeronjan.com/nfl" target="_top">🏈 NFL</a>
-  <a class="" href="https://fakeronjan.com/ncaafb" target="_top">🏈 NCAA</a>
-  <a class="" href="https://fakeronjan.com/eurosoccer" target="_top">⚽ Euro</a>
-  <a class="" href="https://fakeronjan.com/mls" target="_top">⚽ MLS</a>
-  <a class="" href="https://fakeronjan.com/intlsoccer" target="_top">⚽ Intl</a>
-  <a class="" href="https://fakeronjan.com/mlb" target="_top">⚾ MLB</a>
-  <a class="" href="https://fakeronjan.com/nhl" target="_top">🏒 NHL</a>
-  <a class="active" href="https://fakeronjan.com/tennis" target="_top">🎾 Tennis</a>
-  <a class="" href="https://fakeronjan.com/thechallenge" target="_top">📺 Challenge</a>
+  <a class="nav-home" href="https://fakeronjan.com/sports" target="_top">📊 All Sports</a>
+  <div class="nav-group">
+    <div class="nav-sport">Basketball 🏀</div>
+    <div class="nav-leagues">
+      <a href="https://fakeronjan.com/nba" target="_top">NBA</a>
+      <a href="https://fakeronjan.com/wnba" target="_top">WNBA</a>
+      <a href="https://fakeronjan.com/intlbasketball" target="_top">Men Intl</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <div class="nav-sport">Football 🏈</div>
+    <div class="nav-leagues">
+      <a href="https://fakeronjan.com/nfl" target="_top">NFL</a>
+      <a href="https://fakeronjan.com/ncaafb" target="_top">College</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <div class="nav-sport">Soccer ⚽</div>
+    <div class="nav-leagues">
+      <a href="https://fakeronjan.com/eurosoccer" target="_top">Euro</a>
+      <a href="https://fakeronjan.com/mls" target="_top">MLS</a>
+      <a href="https://fakeronjan.com/intlsoccer" target="_top">Men Intl</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <div class="nav-sport">Baseball ⚾</div>
+    <div class="nav-leagues">
+      <a href="https://fakeronjan.com/mlb" target="_top">MLB</a>
+      <a href="https://fakeronjan.com/intlbaseball" target="_top">Men Intl</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <div class="nav-sport">Hockey 🏒</div>
+    <div class="nav-leagues">
+      <a href="https://fakeronjan.com/nhl" target="_top">NHL</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <div class="nav-sport">Tennis 🎾</div>
+    <div class="nav-leagues">
+      <a class="active" href="https://fakeronjan.com/tennis" target="_top">Slams</a>
+    </div>
+  </div>
+  <div class="nav-group">
+    <div class="nav-sport">The Challenge 📺</div>
+    <div class="nav-leagues">
+      <a href="https://fakeronjan.com/thechallenge" target="_top">Player Ratings</a>
+    </div>
+  </div>
 </nav>
 
 <header>
