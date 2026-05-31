@@ -2043,20 +2043,39 @@ async function refreshPowerRankings(tour) {
     players.forEach(p => p.rank_shown = p.rank);
   }
   const ratingHeader = surface === 'all' ? 'Rating' : `${surface.charAt(0).toUpperCase() + surface.slice(1)} Rating`;
-  const setsLabel = code === 'EOY' ? 'Sets (year)' : 'Sets (1y)';
-  const rows = players.slice(0, 50).map(p => `
+  // Time-frame header for the Record column.
+  // - EOY: just the calendar year ("2024")
+  // - Today/slam: trailing 12 months as "M/YY - M/YY"
+  const fmtMonthYY = iso => {
+    if (!iso) return '';
+    const [y, m] = iso.split('-');
+    return `${parseInt(m, 10)}/${y.slice(2)}`;
+  };
+  const recordHeader = code === 'EOY'
+    ? `Record (${year})`
+    : `Record (${fmtMonthYY(snap.window_start)} - ${fmtMonthYY(snap.window_end)})`;
+
+  const rows = players.slice(0, 50).map(p => {
+    const slamFlags = (p.slams_won || []).map(c => SLAM_FLAG[c] || '').filter(Boolean).join(' ');
+    return `
     <tr>
       <td class="col-rank">${p.rank_shown}</td>
       <td class="col-player">${escapeHtml(p.player)}</td>
-      <td class="col-rating">${p.rating_shown >= 0 ? '+' : ''}${p.rating_shown.toFixed(2)}</td>
+      <td class="col-rating">${p.rating_shown.toFixed(2)}</td>
       <td class="col-extra">${surfaceDeltaHTML(p.surfaceDeltas)}</td>
-      <td class="col-extra">${p.sets_played}</td>
-    </tr>`).join('');
+      <td class="col-extra">${(p.match_wins ?? 0)}-${(p.match_losses ?? 0)}</td>
+      <td class="col-extra">${p.titles ?? 0}</td>
+      <td class="col-extra">${slamFlags || '-'}</td>
+    </tr>`;
+  }).join('');
   wrap.innerHTML = `
     <table class="pr-table">
       <thead><tr>
         <th>#</th><th>Player</th><th>${ratingHeader}</th>
-        <th>Surface specialization</th><th>${setsLabel}</th>
+        <th>Surface specialization</th>
+        <th>${recordHeader}</th>
+        <th>Titles</th>
+        <th>Slams</th>
       </tr></thead>
       <tbody>${rows}</tbody>
     </table>`;

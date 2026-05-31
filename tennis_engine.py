@@ -793,6 +793,10 @@ def write_power_rankings_history(ratings: pd.DataFrame, matches: pd.DataFrame) -
       - "{year}_US"   — after US Open
       - "{year}_EOY"  — Dec 31 calendar-year snapshot (full year, no recency)
       - "Today"       — latest data point (only for current calendar year)
+
+    Each snapshot includes per-player rating stats (base + surface deltas) PLUS
+    window-scoped career stats: match W-L, title count, slam codes won. The
+    SPA renders these in additional columns on the Power Rankings table.
     """
     SLAM_TO_CODE = {
         "Australian Open": "AO",
@@ -810,7 +814,7 @@ def write_power_rankings_history(ratings: pd.DataFrame, matches: pd.DataFrame) -
     matches["date"] = pd.to_datetime(matches["date"])
 
     # Build (tour, snapshot_date) -> slam_code lookup from the matches data.
-    slam_code_lookup = {}  # (tour, date) -> code
+    slam_code_lookup = {}
     for code, name_set in [("AO", {"Australian Open"}),
                             ("FO", {"Roland Garros"}),
                             ("Wim", {"Wimbledon"}),
@@ -820,12 +824,61 @@ def write_power_rankings_history(ratings: pd.DataFrame, matches: pd.DataFrame) -
             for d in sub[sub["tour"] == tour]["date"].unique():
                 slam_code_lookup[(tour, pd.Timestamp(d))] = code
 
+    # Pre-index matches per (tour, player) once for fast per-snapshot stat lookup.
+    # Each entry: dict with sorted dates + parallel arrays for outcome metadata.
+    per_player = {}
+    for tour in ["ATP", "WTA"]:
+        sub = matches[matches["tour"] == tour].copy()
+        sub = sub.sort_values("date")
+        # Each row: a single match. We'll fan out per (winner, loser) so each
+        # player has their full participation log.
+        for who_col, opp_col, won in [("winner_name", "loser_name", True),
+                                       ("loser_name", "winner_name", False)]:
+            for player_name, grp in sub.groupby(who_col):
+                key = (tour, player_name)
+                if key not in per_player:
+                    per_player[key] = {"dates": [], "won": [], "round": [],
+                                       "tourney": []}
+                bucket = per_player[key]
+                bucket["dates"].extend(grp["date"].tolist())
+                bucket["won"].extend([won] * len(grp))
+                bucket["round"].extend(grp["round"].fillna("").tolist())
+                bucket["tourney"].extend(grp["tourney_name"].fillna("").tolist())
+    # Sort each player's log by date (Python's sort is stable so we sort by index)
+    for key, bucket in per_player.items():
+        order = sorted(range(len(bucket["dates"])), key=lambda i: bucket["dates"][i])
+        for col in ("dates", "won", "round", "tourney"):
+            bucket[col] = [bucket[col][i] for i in order]
+
+    def window_stats(tour, player, win_start, win_end):
+        """Return (wins, losses, titles, slams_won_list) for player in [start,end]."""
+        bucket = per_player.get((tour, player))
+        if not bucket:
+            return 0, 0, 0, []
+        wins = losses = titles = 0
+        slam_codes = []
+        for dt, won, rnd, tn in zip(bucket["dates"], bucket["won"],
+                                      bucket["round"], bucket["tourney"]):
+            if dt < win_start or dt > win_end:
+                continue
+            if won:
+                wins += 1
+                if rnd == "F":
+                    titles += 1
+                    if tn in SLAM_TO_CODE:
+                        slam_codes.append(SLAM_TO_CODE[tn])
+            else:
+                losses += 1
+        # Stable, unique slam codes in slam-calendar order (AO/FO/Wim/US)
+        order = {"AO": 1, "FO": 2, "Wim": 3, "US": 4}
+        slams = sorted(set(slam_codes), key=lambda c: order.get(c, 99))
+        return wins, losses, titles, slams
+
     for tour in ["ATP", "WTA"]:
         t = ratings[ratings["tour"] == tour].copy()
         if t.empty:
             continue
         snapshots = {}
-        # Identify the "Today" snapshot: the latest current-type snapshot for this tour.
         current_rows = t[t["snapshot_type"] == "current"]
         today_date = current_rows["snapshot_date"].max() if not current_rows.empty else None
 
@@ -836,21 +889,31 @@ def write_power_rankings_history(ratings: pd.DataFrame, matches: pd.DataFrame) -
             if row_type == "slam":
                 code = slam_code_lookup.get((tour, snap_date))
                 if not code:
-                    continue  # snapshot date doesn't map to a known slam (shouldn't happen)
+                    continue
                 key = f"{year}_{code}"
+                # 365-day trailing window for slam snapshots
+                win_start = snap_date - pd.Timedelta(days=365)
+                win_end   = snap_date
             elif row_type == "eoy":
                 code = "EOY"
                 key = f"{year}_EOY"
+                # Calendar year window for EOY snapshots
+                win_start = pd.Timestamp(year=int(year), month=1, day=1)
+                win_end   = snap_date  # the actual EOY anchor
             elif row_type == "current":
                 if today_date is None or snap_date != today_date:
                     continue
                 code = "Today"
                 key = "Today"
+                win_start = snap_date - pd.Timedelta(days=365)
+                win_end   = snap_date
             else:
                 continue
             top = group.sort_values("base", ascending=False).head(50).reset_index(drop=True)
             players = []
             for i, r in top.iterrows():
+                wins, losses, titles, slams = window_stats(
+                    tour, r["player"], win_start, win_end)
                 players.append({
                     "rank":         i + 1,
                     "player":       r["player"],
@@ -859,14 +922,20 @@ def write_power_rankings_history(ratings: pd.DataFrame, matches: pd.DataFrame) -
                     "clay_delta":   round(float(r["clay_delta"]), 3),
                     "grass_delta":  round(float(r["grass_delta"]), 3),
                     "sets_played":  int(r["sets_played"]),
+                    "match_wins":   wins,
+                    "match_losses": losses,
+                    "titles":       titles,
+                    "slams_won":    slams,
                 })
             snapshots[key] = {
-                "year":     int(year) if code != "Today" else int(year),
-                "code":     code,
-                "label":    SLAM_LABELS.get(code, code),
-                "date":     str(snap_date.date()),
-                "type":     row_type,
-                "players":  players,
+                "year":         int(year) if code != "Today" else int(year),
+                "code":         code,
+                "label":        SLAM_LABELS.get(code, code),
+                "date":         str(snap_date.date()),
+                "window_start": str(win_start.date()),
+                "window_end":   str(win_end.date()),
+                "type":         row_type,
+                "players":      players,
             }
         out = {
             "tour":         tour,
