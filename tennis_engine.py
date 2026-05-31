@@ -60,8 +60,12 @@ TIER_WEIGHTS = {
     "T3": 0.8,   # WTA T3
     "T4": 0.8,   # WTA T4
     "T5": 0.8,   # WTA T5
+    "W":  1.0,   # Generic WTA Tour event (pre-2000, before T1..T5 split). Includes
+                 # Virginia Slims Championships (1986-94) and WTA Tour Championships
+                 # (1995-99) as YEC + the regular tour weeks.
     "D":  1.0,   # Davis Cup / Fed Cup (per user 2026-05-30)
-    # Excluded: Challenger (C), Satellite (S), Futures
+    # Excluded: Challenger (C), Satellite (S), Futures, exhibition (E), country-vs-country
+    # cup variants (CC)
 }
 
 # Surfaces. Indoor and outdoor hard are combined per industry convention.
@@ -328,30 +332,55 @@ MIN_SETS_PLAYED = 30  # filter for published rankings — drops tiny-sample nois
 
 def solve_tour(obs: pd.DataFrame, snapshot_date: pd.Timestamp,
                window_days: int = 365,
+               window_start: pd.Timestamp = None,
+               recency_weighting: bool = True,
                min_sets_played: int = MIN_SETS_PLAYED) -> pd.DataFrame:
-    """Run a single WLS solve on the rolling window ending at snapshot_date.
+    """Run a single WLS solve on the window ending at snapshot_date.
 
     Returns a DataFrame: one row per player who meets min_sets_played, with columns
       [player, base, hard_delta, clay_delta, grass_delta, sets_played]
 
+    Parameters:
+      - snapshot_date: anchor date (matches up to and including this date enter).
+      - window_days: width of the trailing rolling window in days (default 365).
+        Ignored if `window_start` is given.
+      - window_start: optional absolute start of the window. When supplied (e.g.
+        Jan 1 of the calendar year for EOY snapshots), it overrides
+        `snapshot_date - window_days`. Used to anchor calendar-year EOY snapshots
+        that should not bleed into the prior year.
+      - recency_weighting: when True (default), linear decay from 1.0 at the
+        snapshot to ~0 at the window's far edge — the standard rolling-rating
+        behavior. When False, every set in the window gets equal weight (still
+        modulated by tier_weight). Used for EOY snapshots, where the snapshot
+        should represent the year as a whole, not "form heading into Tour Finals".
+      - min_sets_played: filter for published rankings.
+
     Implementation:
-      - Filter obs to window [snapshot_date - window_days, snapshot_date]
-      - Apply linear recency decay: weight ramps from ~0 at window edge to 1 at snapshot
+      - Filter obs to window [window_start, snapshot_date]
+      - Apply recency decay (optional) + tier weights
       - Build X with 4 columns per player: base + 3 surface indicators (hard/clay/grass).
         Carpet matches contribute to base only (no surface column).
       - Solve via numpy.linalg.lstsq on weighted system
-      - Enforce zero-sum on base ratings via a high-weight extra row
+      - Anchor with two zero-sum constraints (cross-player base, per-player deltas)
       - Filter output to players with at least min_sets_played sets in window
     """
     snapshot_date = pd.Timestamp(snapshot_date)
-    window_start = snapshot_date - pd.Timedelta(days=window_days)
+    if window_start is None:
+        window_start = snapshot_date - pd.Timedelta(days=window_days)
+    else:
+        window_start = pd.Timestamp(window_start)
+    window_span_days = max(1, (snapshot_date - window_start).days)
     w = obs[(obs["date"] >= window_start) & (obs["date"] <= snapshot_date)].copy()
     if w.empty:
         return pd.DataFrame()
 
-    # Linear recency decay: most-recent set weight = 1, oldest in window = ~0
-    days_back = (snapshot_date - w["date"]).dt.days.to_numpy(dtype=float)
-    recency = np.maximum(0.0, 1.0 - days_back / window_days)
+    if recency_weighting:
+        # Linear recency decay: most-recent set weight = 1, oldest in window = ~0
+        days_back = (snapshot_date - w["date"]).dt.days.to_numpy(dtype=float)
+        recency = np.maximum(0.0, 1.0 - days_back / window_span_days)
+    else:
+        # Uniform weighting: every set in the window counts equally.
+        recency = np.ones(len(w), dtype=float)
     sample_weight = w["tier_weight"].to_numpy(dtype=float) * recency
 
     # Build player index
@@ -482,52 +511,99 @@ SLAM_NAMES = {"Australian Open", "Roland Garros", "Wimbledon", "US Open", "Us Op
 
 
 def build_rolling_snapshots(obs: pd.DataFrame, matches: pd.DataFrame) -> pd.DataFrame:
-    """Solve ratings at the date of every Grand Slam + the latest date in data.
+    """Solve ratings at three kinds of anchor dates:
+
+      - slam:    end date of each Grand Slam, with the standard 365-day rolling
+                 window + recency decay (the "form heading into the slam" view).
+      - eoy:     Dec 31 of each completed calendar year (or the year's last match
+                 date if earlier), with a Jan 1 -> Dec 31 calendar-year window
+                 and NO recency decay — the "power within this year" view.
+                 Skipped for the current calendar year (in-progress).
+      - current: the latest match date in the data (per tour). Standard rolling
+                 window + recency decay. Only added if it differs from the latest
+                 slam snapshot.
 
     Sackmann stamps every match in a slam with the slam's start date, so a
     snapshot on that date naturally includes all the slam's matches in the
-    rolling window. Per user 2026-05-30: snapshot anchor = actual slam date,
-    not a fudged approximation.
+    rolling window. Per user 2026-05-30: snapshot anchor = actual slam date.
 
-    Returns long-format DataFrame: one row per (snapshot_date, tour, player).
+    Returns long-format DataFrame: one row per (snapshot_date, tour, player) with
+    a `snapshot_type` column ("slam" / "eoy" / "current").
     """
-    # Find each tour's unique slam dates from the actual match data
-    slam_matches = matches[matches["tourney_name"].isin(SLAM_NAMES)].copy()
-    slam_matches["date"] = pd.to_datetime(slam_matches["date"])
+    matches = matches.copy()
+    matches["date"] = pd.to_datetime(matches["date"])
+    matches["year"] = matches["date"].dt.year
 
-    # Set of (tour, date) tuples for slam snapshots
+    slam_matches = matches[matches["tourney_name"].isin(SLAM_NAMES)]
+
+    # Slam snapshots: one per (tour, slam-end-date).
     slam_pairs = set()
     for tour in ["ATP", "WTA"]:
         tour_slams = slam_matches[slam_matches["tour"] == tour]
         for d in sorted(tour_slams["date"].unique()):
             slam_pairs.add((tour, pd.Timestamp(d)))
 
-    # Current snapshot per tour — only add if it differs from the latest slam date
+    # Current snapshot per tour.
     current_pairs = set()
     for tour in ["ATP", "WTA"]:
         tour_latest = matches[matches["tour"] == tour]["date"].max()
         if pd.notna(tour_latest):
             current_pairs.add((tour, pd.Timestamp(tour_latest)))
 
-    all_pairs = sorted(slam_pairs | current_pairs)
-    print(f"  {len(all_pairs)} (tour, date) snapshots to solve "
-          f"({len(slam_pairs)} slam + {len(current_pairs - slam_pairs)} current-only)")
+    # EOY snapshots: per (tour, year), anchor on Dec 31 (or last match date that
+    # year if earlier). Skip the current calendar year since EOY hasn't happened.
+    eoy_pairs = set()
+    current_year = datetime.now().year
+    for tour in ["ATP", "WTA"]:
+        tour_m = matches[matches["tour"] == tour]
+        for yr in sorted(tour_m["year"].dropna().unique()):
+            yr = int(yr)
+            if yr >= current_year:
+                continue  # in-progress year, no EOY yet
+            year_matches = tour_m[tour_m["year"] == yr]
+            if year_matches.empty:
+                continue
+            last_in_year = year_matches["date"].max()
+            year_end = pd.Timestamp(year=yr, month=12, day=31)
+            anchor = min(last_in_year, year_end)
+            eoy_pairs.add((tour, pd.Timestamp(anchor), yr))
+
+    # De-dup: avoid resolving (tour, date) twice if e.g. an EOY date happens to
+    # equal a slam date (unlikely but defensive). slam takes precedence.
+    eoy_by_pair = {(t, d): yr for (t, d, yr) in eoy_pairs}
+    print(f"  {len(slam_pairs)} slam + {len(eoy_pairs)} EOY + "
+          f"{len(current_pairs - slam_pairs)} current-only snapshots queued")
 
     all_rows = []
     last_print_year = None
-    for tour, snap in all_pairs:
+
+    # Helper to solve one anchor and collect rows
+    def _add(tour, snap, snap_type, window_start=None, recency_weighting=True):
         t_obs = obs[obs["tour"] == tour]
-        r = solve_tour(t_obs, snap)
+        r = solve_tour(t_obs, snap,
+                       window_start=window_start,
+                       recency_weighting=recency_weighting)
         if r.empty:
-            continue
+            return
         r["snapshot_date"] = snap
         r["tour"] = tour
-        r["snapshot_type"] = "slam" if (tour, snap) in slam_pairs else "current"
+        r["snapshot_type"] = snap_type
         all_rows.append(r)
+
+    # Solve slam + current snapshots (rolling window, recency on)
+    for tour, snap in sorted(slam_pairs | current_pairs):
+        snap_type = "slam" if (tour, snap) in slam_pairs else "current"
+        _add(tour, snap, snap_type)
         yr = snap.year
         if yr != last_print_year:
             print(f"  ... year {yr}")
             last_print_year = yr
+
+    # Solve EOY snapshots (calendar-year window, no recency)
+    for tour, snap, yr in sorted(eoy_pairs):
+        window_start = pd.Timestamp(year=yr, month=1, day=1)
+        _add(tour, snap, "eoy", window_start=window_start, recency_weighting=False)
+
     return pd.concat(all_rows, ignore_index=True)
 
 
@@ -553,6 +629,10 @@ def generate_data() -> None:
     ratings_out["snapshot_date"] = ratings_out["snapshot_date"].dt.strftime("%Y-%m-%d")
     ratings_out.to_csv(RATINGS_CSV, index=False, compression="gzip")
     print(f"Wrote {RATINGS_CSV}: {len(ratings_out):,} rows")
+
+    # --- Power Rankings history: ALL snapshots (slam + eoy + current) per tour ---
+    # Powers the Year + Within-Year picker on the Power Rankings tab.
+    write_power_rankings_history(ratings, matches)
 
     # --- Current rankings (latest snapshot PER TOUR — ATP and WTA can differ) ---
     for tour in ["ATP", "WTA"]:
@@ -700,6 +780,102 @@ def generate_data() -> None:
     with open(DOCS_DATA / "meta.json", "w") as f:
         json.dump(meta, f, separators=(",", ":"))
     print(f"  wrote meta.json")
+
+
+def write_power_rankings_history(ratings: pd.DataFrame, matches: pd.DataFrame) -> None:
+    """Emit docs/data/power_rankings_history_{atp,wta}.json — every snapshot the
+    SPA needs for the Year + Within-Year picker on the Power Rankings tab.
+
+    Snapshot keys:
+      - "{year}_AO"   — after Australian Open
+      - "{year}_FO"   — after Roland Garros
+      - "{year}_Wim"  — after Wimbledon
+      - "{year}_US"   — after US Open
+      - "{year}_EOY"  — Dec 31 calendar-year snapshot (full year, no recency)
+      - "Today"       — latest data point (only for current calendar year)
+    """
+    SLAM_TO_CODE = {
+        "Australian Open": "AO",
+        "Roland Garros":   "FO",
+        "Wimbledon":       "Wim",
+        "US Open":         "US",
+        "Us Open":         "US",
+    }
+    SLAM_LABELS = {"AO": "After Australian Open", "FO": "After Roland Garros",
+                   "Wim": "After Wimbledon", "US": "After US Open",
+                   "EOY": "End of year (full year, no recency)",
+                   "Today": "Today (latest data)"}
+
+    matches = matches.copy()
+    matches["date"] = pd.to_datetime(matches["date"])
+
+    # Build (tour, snapshot_date) -> slam_code lookup from the matches data.
+    slam_code_lookup = {}  # (tour, date) -> code
+    for code, name_set in [("AO", {"Australian Open"}),
+                            ("FO", {"Roland Garros"}),
+                            ("Wim", {"Wimbledon"}),
+                            ("US", {"US Open", "Us Open"})]:
+        sub = matches[matches["tourney_name"].isin(name_set)]
+        for tour in ["ATP", "WTA"]:
+            for d in sub[sub["tour"] == tour]["date"].unique():
+                slam_code_lookup[(tour, pd.Timestamp(d))] = code
+
+    for tour in ["ATP", "WTA"]:
+        t = ratings[ratings["tour"] == tour].copy()
+        if t.empty:
+            continue
+        snapshots = {}
+        # Identify the "Today" snapshot: the latest current-type snapshot for this tour.
+        current_rows = t[t["snapshot_type"] == "current"]
+        today_date = current_rows["snapshot_date"].max() if not current_rows.empty else None
+
+        for snap_date, group in t.groupby("snapshot_date"):
+            snap_date = pd.Timestamp(snap_date)
+            row_type = group["snapshot_type"].iloc[0]
+            year = snap_date.year
+            if row_type == "slam":
+                code = slam_code_lookup.get((tour, snap_date))
+                if not code:
+                    continue  # snapshot date doesn't map to a known slam (shouldn't happen)
+                key = f"{year}_{code}"
+            elif row_type == "eoy":
+                code = "EOY"
+                key = f"{year}_EOY"
+            elif row_type == "current":
+                if today_date is None or snap_date != today_date:
+                    continue
+                code = "Today"
+                key = "Today"
+            else:
+                continue
+            top = group.sort_values("base", ascending=False).head(50).reset_index(drop=True)
+            players = []
+            for i, r in top.iterrows():
+                players.append({
+                    "rank":         i + 1,
+                    "player":       r["player"],
+                    "base":         round(float(r["base"]), 3),
+                    "hard_delta":   round(float(r["hard_delta"]), 3),
+                    "clay_delta":   round(float(r["clay_delta"]), 3),
+                    "grass_delta":  round(float(r["grass_delta"]), 3),
+                    "sets_played":  int(r["sets_played"]),
+                })
+            snapshots[key] = {
+                "year":     int(year) if code != "Today" else int(year),
+                "code":     code,
+                "label":    SLAM_LABELS.get(code, code),
+                "date":     str(snap_date.date()),
+                "type":     row_type,
+                "players":  players,
+            }
+        out = {
+            "tour":         tour,
+            "snapshots":    snapshots,
+        }
+        path = DOCS_DATA / f"power_rankings_history_{tour.lower()}.json"
+        with open(path, "w") as f:
+            json.dump(out, f, separators=(",", ":"))
+        print(f"  wrote {path.name} ({len(snapshots)} snapshots)")
 
 
 def write_champion_ratings(matches: pd.DataFrame, ratings: pd.DataFrame) -> None:

@@ -138,6 +138,38 @@
   }
   .goat-view-pills button.active .pill-sub { color: rgba(255,255,255,0.7); }
 
+  /* Snapshot pickers (Power Rankings tab) */
+  .snapshot-pickers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0 6px 0;
+    align-items: center;
+  }
+  .snapshot-pickers label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #555;
+  }
+  .snapshot-pickers select {
+    padding: 6px 10px;
+    font-size: 13px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+    color: #1a1a1a;
+    cursor: pointer;
+    min-width: 100px;
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: normal;
+  }
+
   /* Surface-delta visual indicators (mini bullet charts) */
   .surface-deltas {
     display: inline-flex;
@@ -729,7 +761,7 @@
   <button class="active" data-tab="power-rankings">Power Rankings</button>
   <button data-tab="players">Player Summary</button>
   <button data-tab="tournament">Champions</button>
-  <button data-tab="goat">GOAT</button>
+  <button data-tab="goat">GOAT Table</button>
   <button data-tab="slamchase">Slam Chase</button>
 </nav>
 
@@ -738,6 +770,14 @@
   <div class="mw-pills" data-tab-target="power-rankings">
     <button class="active" data-mw="m">Men's</button>
     <button data-mw="w">Women's</button>
+  </div>
+  <div class="snapshot-pickers">
+    <label>Year
+      <select id="pr-year-select"></select>
+    </label>
+    <label>Snapshot
+      <select id="pr-snap-select"></select>
+    </label>
   </div>
   <div class="surface-pills" data-tab-target="power-rankings">
     <button class="active" data-surface="all">All Surfaces</button>
@@ -1875,28 +1915,115 @@ async function fetchRatings(path) {
   }
 }
 
+// Snapshot picker state — selected (year, code) per tour.
+const prSnapState = { m: null, w: null }; // {year, code}, initialised from history JSON
+
+// Slam code order for sorting within a year
+const SNAP_CODE_ORDER = { AO: 1, FO: 2, Wim: 3, US: 4, EOY: 5, Today: 6 };
+const SNAP_CODE_SHORT = { AO: 'After AO', FO: 'After Roland Garros',
+                          Wim: 'After Wimbledon', US: 'After US Open',
+                          EOY: 'End of year', Today: 'Today' };
+
+function getHistoryForTour(tour) {
+  // Cached via fetchRatings(). Returns the parsed JSON or null.
+  return ratingsCache[`power_rankings_history_${tour === 'm' ? 'atp' : 'wta'}.json`];
+}
+
+function listYearsForTour(tour) {
+  const hist = getHistoryForTour(tour);
+  if (!hist) return [];
+  const years = new Set();
+  for (const k of Object.keys(hist.snapshots)) {
+    const yr = hist.snapshots[k].year;
+    if (yr) years.add(yr);
+  }
+  return [...years].sort((a, b) => b - a); // newest first
+}
+
+function listSnapsForYear(tour, year) {
+  const hist = getHistoryForTour(tour);
+  if (!hist) return [];
+  const out = [];
+  for (const [key, snap] of Object.entries(hist.snapshots)) {
+    if (snap.year !== year) continue;
+    out.push({ key, code: snap.code, label: snap.label, date: snap.date, type: snap.type });
+  }
+  // Sort by canonical within-year order (AO/FO/Wim/US/EOY/Today)
+  out.sort((a, b) => (SNAP_CODE_ORDER[a.code] || 99) - (SNAP_CODE_ORDER[b.code] || 99));
+  return out;
+}
+
+function populatePickers(tour) {
+  const hist = getHistoryForTour(tour);
+  const yearSel = document.getElementById('pr-year-select');
+  const snapSel = document.getElementById('pr-snap-select');
+  if (!hist) {
+    yearSel.innerHTML = '<option>—</option>';
+    snapSel.innerHTML = '<option>—</option>';
+    return;
+  }
+  // Default selection: prefer "Today" if present (current year), else latest year's EOY.
+  if (!prSnapState[tour]) {
+    if (hist.snapshots['Today']) {
+      prSnapState[tour] = { year: hist.snapshots['Today'].year, code: 'Today' };
+    } else {
+      const years = listYearsForTour(tour);
+      const latestYear = years[0];
+      const snaps = listSnapsForYear(tour, latestYear);
+      prSnapState[tour] = { year: latestYear, code: snaps[snaps.length - 1].code };
+    }
+  }
+  const { year, code } = prSnapState[tour];
+
+  // Year picker
+  const years = listYearsForTour(tour);
+  yearSel.innerHTML = years.map(y =>
+    `<option value="${y}" ${y === year ? 'selected' : ''}>${y}</option>`).join('');
+
+  // Within-year picker
+  const snaps = listSnapsForYear(tour, year);
+  snapSel.innerHTML = snaps.map(s =>
+    `<option value="${s.code}" ${s.code === code ? 'selected' : ''}>${SNAP_CODE_SHORT[s.code] || s.label}</option>`).join('');
+}
+
+function snapshotKey(tour, year, code) {
+  // "Today" is a single key not prefixed by year
+  return code === 'Today' ? 'Today' : `${year}_${code}`;
+}
+
 async function refreshPowerRankings(tour) {
   const slug = tour === 'm' ? 'atp' : 'wta';
   const wrap = document.getElementById(`pr-table-${tour}-wrap`);
-  const data = await fetchRatings(`current_rankings_${slug}.json`);
-  if (!data || !data.players) {
+  // Ensure history JSON is loaded before populating pickers
+  await fetchRatings(`power_rankings_history_${slug}.json`);
+  populatePickers(tour);
+  const { year, code } = prSnapState[tour] || {};
+  if (!year || !code) {
     wrap.innerHTML = '<p class="loading">Rankings unavailable.</p>';
     return;
   }
-  document.getElementById('power-rankings-asof').innerHTML =
-    `Current top ${data.players.length} fakeronjan WLS rating &middot; as of ${data.as_of}. ` +
-    `<span class="footnote">Surface filter shows base rating + that surface's delta (effective rating on that surface).</span>`;
+  const hist = getHistoryForTour(tour);
+  const key = snapshotKey(tour, year, code);
+  const snap = hist && hist.snapshots[key];
+  if (!snap || !snap.players) {
+    wrap.innerHTML = '<p class="loading">No data for this snapshot.</p>';
+    return;
+  }
+
+  const labelText = code === 'Today'
+    ? `Current top ${snap.players.length} fakeronjan WLS rating &middot; as of ${snap.date}`
+    : `Top ${snap.players.length} ${snap.label.toLowerCase()} ${year} &middot; snapshot date ${snap.date}`;
+  const noteFootnote = code === 'EOY'
+    ? `<span class="footnote">End-of-year snapshot uses the full calendar year (Jan&nbsp;1&nbsp;-&nbsp;Dec&nbsp;31) with tier weighting only, no recency decay.</span>`
+    : `<span class="footnote">Surface filter shows base rating + that surface's delta (effective rating on that surface).</span>`;
+  document.getElementById('power-rankings-asof').innerHTML = `${labelText}. ${noteFootnote}`;
 
   const surface = surfaceState[tour];
-  // Rating column shows base + surface_delta when a specific surface is picked.
-  const players = data.players.map(p => {
-    const sd = {
-      hard: p.hard_delta, clay: p.clay_delta, grass: p.grass_delta,
-    };
+  const players = snap.players.map(p => {
+    const sd = { hard: p.hard_delta, clay: p.clay_delta, grass: p.grass_delta };
     const rating = surface === 'all' ? p.base : p.base + (sd[surface] || 0);
     return { ...p, surfaceDeltas: sd, rating_shown: rating };
   });
-  // Re-sort if a surface is selected (since effective rating differs from base order)
   if (surface !== 'all') {
     players.sort((a, b) => b.rating_shown - a.rating_shown);
     players.forEach((p, i) => p.rank_shown = i + 1);
@@ -1904,6 +2031,7 @@ async function refreshPowerRankings(tour) {
     players.forEach(p => p.rank_shown = p.rank);
   }
   const ratingHeader = surface === 'all' ? 'Rating' : `${surface.charAt(0).toUpperCase() + surface.slice(1)} Rating`;
+  const setsLabel = code === 'EOY' ? 'Sets (year)' : 'Sets (1y)';
   const rows = players.slice(0, 50).map(p => `
     <tr>
       <td class="col-rank">${p.rank_shown}</td>
@@ -1916,11 +2044,42 @@ async function refreshPowerRankings(tour) {
     <table class="pr-table">
       <thead><tr>
         <th>#</th><th>Player</th><th>${ratingHeader}</th>
-        <th>Surface specialization</th><th>Sets (1y)</th>
+        <th>Surface specialization</th><th>${setsLabel}</th>
       </tr></thead>
       <tbody>${rows}</tbody>
     </table>`;
 }
+
+// Wire picker change handlers
+document.addEventListener('DOMContentLoaded', () => {
+  const yearSel = document.getElementById('pr-year-select');
+  const snapSel = document.getElementById('pr-snap-select');
+  if (yearSel) {
+    yearSel.addEventListener('change', () => {
+      const tour = mwState['power-rankings'];
+      const newYear = parseInt(yearSel.value, 10);
+      // When year changes, default to the year's last available snapshot
+      const snaps = listSnapsForYear(tour, newYear);
+      const fallback = snaps[snaps.length - 1];
+      prSnapState[tour] = { year: newYear, code: fallback ? fallback.code : 'EOY' };
+      refreshPowerRankings(tour);
+    });
+  }
+  if (snapSel) {
+    snapSel.addEventListener('change', () => {
+      const tour = mwState['power-rankings'];
+      const code = snapSel.value;
+      // "Today" is special: its year is the current year per data
+      let year = parseInt(yearSel.value, 10);
+      if (code === 'Today') {
+        const hist = getHistoryForTour(tour);
+        year = hist && hist.snapshots['Today'] ? hist.snapshots['Today'].year : year;
+      }
+      prSnapState[tour] = { year, code };
+      refreshPowerRankings(tour);
+    });
+  }
+});
 
 async function refreshGoatRating(tour) {
   const slug = tour === 'm' ? 'atp' : 'wta';
