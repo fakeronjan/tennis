@@ -1918,11 +1918,17 @@ async function fetchRatings(path) {
 // Snapshot picker state — selected (year, code) per tour.
 const prSnapState = { m: null, w: null }; // {year, code}, initialised from history JSON
 
-// Slam code order for sorting within a year
-const SNAP_CODE_ORDER = { AO: 1, FO: 2, Wim: 3, US: 4, EOY: 5, Today: 6 };
-const SNAP_CODE_SHORT = { AO: 'After AO', FO: 'After Roland Garros',
+// Snapshot order within a year — most-recent first per fleet convention.
+const SNAP_CODE_ORDER = { Today: 1, EOY: 2, US: 3, Wim: 4, FO: 5, AO: 6 };
+const SNAP_CODE_SHORT = { AO: 'After Australian Open', FO: 'After Roland Garros',
                           Wim: 'After Wimbledon', US: 'After US Open',
                           EOY: 'End of year', Today: 'Today' };
+
+function fmtSnapDate(iso) {
+  if (!iso) return '';
+  const [y, m, d] = iso.split('-');
+  return `${parseInt(m, 10)}/${parseInt(d, 10)}/${y}`;
+}
 
 function getHistoryForTour(tour) {
   // Cached via fetchRatings(). Returns the parsed JSON or null.
@@ -1970,7 +1976,8 @@ function populatePickers(tour) {
       const years = listYearsForTour(tour);
       const latestYear = years[0];
       const snaps = listSnapsForYear(tour, latestYear);
-      prSnapState[tour] = { year: latestYear, code: snaps[snaps.length - 1].code };
+      // With newest-first ordering, snaps[0] is the year's most-recent snapshot.
+      prSnapState[tour] = { year: latestYear, code: snaps[0].code };
     }
   }
   const { year, code } = prSnapState[tour];
@@ -1980,10 +1987,13 @@ function populatePickers(tour) {
   yearSel.innerHTML = years.map(y =>
     `<option value="${y}" ${y === year ? 'selected' : ''}>${y}</option>`).join('');
 
-  // Within-year picker
+  // Within-year picker (newest first; show date next to each option)
   const snaps = listSnapsForYear(tour, year);
-  snapSel.innerHTML = snaps.map(s =>
-    `<option value="${s.code}" ${s.code === code ? 'selected' : ''}>${SNAP_CODE_SHORT[s.code] || s.label}</option>`).join('');
+  snapSel.innerHTML = snaps.map(s => {
+    const label = SNAP_CODE_SHORT[s.code] || s.label;
+    const dateStr = fmtSnapDate(s.date);
+    return `<option value="${s.code}" ${s.code === code ? 'selected' : ''}>${label} · ${dateStr}</option>`;
+  }).join('');
 }
 
 function snapshotKey(tour, year, code) {
@@ -2010,9 +2020,11 @@ async function refreshPowerRankings(tour) {
     return;
   }
 
+  const shortLabel = SNAP_CODE_SHORT[code] || snap.label;
+  const dateStr = fmtSnapDate(snap.date);
   const labelText = code === 'Today'
-    ? `Current top ${snap.players.length} fakeronjan WLS rating &middot; as of ${snap.date}`
-    : `Top ${snap.players.length} ${snap.label.toLowerCase()} ${year} &middot; snapshot date ${snap.date}`;
+    ? `Top ${snap.players.length} &middot; Today &middot; as of ${dateStr}`
+    : `Top ${snap.players.length} &middot; ${shortLabel} ${year} &middot; snapshot date ${dateStr}`;
   const noteFootnote = code === 'EOY'
     ? `<span class="footnote">End-of-year snapshot uses the full calendar year (Jan&nbsp;1&nbsp;-&nbsp;Dec&nbsp;31) with tier weighting only, no recency decay.</span>`
     : `<span class="footnote">Surface filter shows base rating + that surface's delta (effective rating on that surface).</span>`;
@@ -2058,9 +2070,10 @@ document.addEventListener('DOMContentLoaded', () => {
     yearSel.addEventListener('change', () => {
       const tour = mwState['power-rankings'];
       const newYear = parseInt(yearSel.value, 10);
-      // When year changes, default to the year's last available snapshot
+      // When year changes, default to the year's most-recent snapshot (snaps[0]
+      // under newest-first ordering — Today for the current year, EOY otherwise).
       const snaps = listSnapsForYear(tour, newYear);
-      const fallback = snaps[snaps.length - 1];
+      const fallback = snaps[0];
       prSnapState[tour] = { year: newYear, code: fallback ? fallback.code : 'EOY' };
       refreshPowerRankings(tour);
     });
