@@ -395,6 +395,24 @@ def solve_tour(obs: pd.DataFrame, snapshot_date: pd.Timestamp,
     y[n_obs] = 0.0
     sw[n_obs] = 1e7
 
+    # Ridge regularization on SURFACE DELTAS only (NOT base). This stabilizes
+    # numerically singular snapshots where players have surface-imbalanced data
+    # (e.g. AO snapshot date when many players have only played hard in the
+    # window). Without this, lstsq finds extreme-magnitude solutions in the
+    # null space. We DON'T regularize base ratings because we want them to
+    # follow the data freely; the zero-sum constraint already anchors them.
+    ridge_lambda = 0.01
+    n_delta_rows = n_p * 4  # 4 surface deltas per player
+    X_ridge = np.zeros((n_delta_rows, n_cols), dtype=np.float32)
+    y_ridge = np.zeros(n_delta_rows, dtype=np.float32)
+    sw_ridge = np.full(n_delta_rows, ridge_lambda, dtype=np.float32)
+    for p in range(n_p):
+        for s in range(4):  # offsets 1..4 are the delta columns within each player's 5-col block
+            X_ridge[p * 4 + s, p * 5 + 1 + s] = 1.0
+    X = np.vstack([X, X_ridge])
+    y = np.concatenate([y, y_ridge])
+    sw = np.concatenate([sw, sw_ridge])
+
     # Apply weights and solve
     sqrt_w = np.sqrt(sw)
     Xw = X * sqrt_w[:, None]
@@ -437,33 +455,56 @@ DOCS_DATA = Path(__file__).parent / "docs" / "data"
 RATINGS_CSV = Path(__file__).parent / "tennis_ratings.csv.gz"
 
 
-def build_rolling_snapshots(obs: pd.DataFrame) -> pd.DataFrame:
-    """Solve ratings at end-of-November each year + the latest date in data.
+SLAM_NAMES = {"Australian Open", "Roland Garros", "Wimbledon", "US Open", "Us Open"}
+
+
+def build_rolling_snapshots(obs: pd.DataFrame, matches: pd.DataFrame) -> pd.DataFrame:
+    """Solve ratings at the date of every Grand Slam + the latest date in data.
+
+    Sackmann stamps every match in a slam with the slam's start date, so a
+    snapshot on that date naturally includes all the slam's matches in the
+    rolling window. Per user 2026-05-30: snapshot anchor = actual slam date,
+    not a fudged approximation.
 
     Returns long-format DataFrame: one row per (snapshot_date, tour, player).
     """
-    min_date = obs["date"].min()
-    max_date = obs["date"].max()
-    snap_dates = []
-    for year in range(min_date.year, max_date.year + 1):
-        eos = pd.Timestamp(f"{year}-11-30")
-        if min_date <= eos <= max_date:
-            snap_dates.append(eos)
-    # Add current snapshot (latest data)
-    if max_date not in snap_dates:
-        snap_dates.append(max_date)
+    # Find each tour's unique slam dates from the actual match data
+    slam_matches = matches[matches["tourney_name"].isin(SLAM_NAMES)].copy()
+    slam_matches["date"] = pd.to_datetime(slam_matches["date"])
+
+    # Set of (tour, date) tuples for slam snapshots
+    slam_pairs = set()
+    for tour in ["ATP", "WTA"]:
+        tour_slams = slam_matches[slam_matches["tour"] == tour]
+        for d in sorted(tour_slams["date"].unique()):
+            slam_pairs.add((tour, pd.Timestamp(d)))
+
+    # Current snapshot per tour — only add if it differs from the latest slam date
+    current_pairs = set()
+    for tour in ["ATP", "WTA"]:
+        tour_latest = matches[matches["tour"] == tour]["date"].max()
+        if pd.notna(tour_latest):
+            current_pairs.add((tour, pd.Timestamp(tour_latest)))
+
+    all_pairs = sorted(slam_pairs | current_pairs)
+    print(f"  {len(all_pairs)} (tour, date) snapshots to solve "
+          f"({len(slam_pairs)} slam + {len(current_pairs - slam_pairs)} current-only)")
 
     all_rows = []
-    for snap in snap_dates:
-        for tour in ["ATP", "WTA"]:
-            t_obs = obs[obs["tour"] == tour]
-            r = solve_tour(t_obs, snap)
-            if r.empty:
-                continue
-            r["snapshot_date"] = snap
-            r["tour"] = tour
-            all_rows.append(r)
-            print(f"  {tour} {snap.date()}: {len(r)} rated players")
+    last_print_year = None
+    for tour, snap in all_pairs:
+        t_obs = obs[obs["tour"] == tour]
+        r = solve_tour(t_obs, snap)
+        if r.empty:
+            continue
+        r["snapshot_date"] = snap
+        r["tour"] = tour
+        r["snapshot_type"] = "slam" if (tour, snap) in slam_pairs else "current"
+        all_rows.append(r)
+        yr = snap.year
+        if yr != last_print_year:
+            print(f"  ... year {yr}")
+            last_print_year = yr
     return pd.concat(all_rows, ignore_index=True)
 
 
@@ -480,8 +521,8 @@ def generate_data() -> None:
     obs = build_observations(matches)
     print(f"  {len(obs):,} set-observations")
 
-    print("\nBuilding rolling snapshots (year-end + current)...")
-    ratings = build_rolling_snapshots(obs)
+    print("\nBuilding slam-day snapshots + current...")
+    ratings = build_rolling_snapshots(obs, matches)
     print(f"\n{len(ratings):,} rating rows across {ratings['snapshot_date'].nunique()} snapshots")
 
     # Save full ratings CSV (gzipped — large)
@@ -490,11 +531,11 @@ def generate_data() -> None:
     ratings_out.to_csv(RATINGS_CSV, index=False, compression="gzip")
     print(f"Wrote {RATINGS_CSV}: {len(ratings_out):,} rows")
 
-    # --- Current rankings (latest snapshot per tour) ---
-    latest_snap = ratings["snapshot_date"].max()
-    current = ratings[ratings["snapshot_date"] == latest_snap].copy()
+    # --- Current rankings (latest snapshot PER TOUR — ATP and WTA can differ) ---
     for tour in ["ATP", "WTA"]:
-        t = current[current["tour"] == tour].sort_values("base", ascending=False).head(50).reset_index(drop=True)
+        tour_ratings = ratings[ratings["tour"] == tour]
+        latest_snap = tour_ratings["snapshot_date"].max()
+        t = tour_ratings[tour_ratings["snapshot_date"] == latest_snap].sort_values("base", ascending=False).head(50).reset_index(drop=True)
         rows = []
         for i, r in t.iterrows():
             rows.append({
@@ -516,32 +557,69 @@ def generate_data() -> None:
             }, f, separators=(",", ":"))
         print(f"  wrote {out_path.name} ({len(rows)} players)")
 
-    # --- GOAT (peak base rating per player across all snapshots) ---
+    # --- GOAT-PEAK + GOAT-ERA (slam snapshots only per user spec) ---
+    # PEAK = player's max base rating at any slam-day snapshot
+    # ERA  = sum of (per-year max positive base across that year's slams)
+    slam_only = ratings[ratings["snapshot_type"] == "slam"].copy()
+    slam_only["year"] = pd.to_datetime(slam_only["snapshot_date"]).dt.year
+
     for tour in ["ATP", "WTA"]:
-        t = ratings[ratings["tour"] == tour].copy()
-        # Find each player's peak snapshot (highest base rating)
+        t = slam_only[slam_only["tour"] == tour].copy()
+
+        # ----- PEAK -----
         peaks = t.loc[t.groupby("player")["base"].idxmax()].copy()
         peaks = peaks.sort_values("base", ascending=False).head(50).reset_index(drop=True)
-        rows = []
+        peak_rows = []
         for i, r in peaks.iterrows():
-            rows.append({
-                "rank":         i + 1,
-                "player":       r["player"],
-                "peak_snapshot": str(r["snapshot_date"].date()),
-                "base":         round(float(r["base"]), 3),
-                "hard_delta":   round(float(r["hard_delta"]), 3),
-                "clay_delta":   round(float(r["clay_delta"]), 3),
-                "grass_delta":  round(float(r["grass_delta"]), 3),
-                "carpet_delta": round(float(r["carpet_delta"]), 3),
-                "sets_played":  int(r["sets_played"]),
+            peak_rows.append({
+                "rank":          i + 1,
+                "player":        r["player"],
+                "peak_snapshot": str(pd.Timestamp(r["snapshot_date"]).date()),
+                "base":          round(float(r["base"]), 3),
+                "hard_delta":    round(float(r["hard_delta"]), 3),
+                "clay_delta":    round(float(r["clay_delta"]), 3),
+                "grass_delta":   round(float(r["grass_delta"]), 3),
+                "carpet_delta":  round(float(r["carpet_delta"]), 3),
+                "sets_played":   int(r["sets_played"]),
             })
-        out_path = DOCS_DATA / f"goat_{tour.lower()}.json"
-        with open(out_path, "w") as f:
-            json.dump({
-                "tour":     tour,
-                "players":  rows,
-            }, f, separators=(",", ":"))
-        print(f"  wrote {out_path.name} ({len(rows)} players)")
+        with open(DOCS_DATA / f"goat_peak_{tour.lower()}.json", "w") as f:
+            json.dump({"tour": tour, "view": "PEAK", "players": peak_rows},
+                      f, separators=(",", ":"))
+        print(f"  wrote goat_peak_{tour.lower()}.json ({len(peak_rows)} players)")
+
+        # ----- ERA -----
+        # Per (player, year), take MAX base across slams. Then sum positive
+        # year_max across the player's career.
+        year_max = t.groupby(["player", "year"])["base"].max().reset_index()
+        year_max["positive"] = year_max["base"].clip(lower=0)
+        era_score = year_max.groupby("player").agg(
+            era=("positive", "sum"),
+            first_year=("year", "min"),
+            last_year=("year", "max"),
+            years_active=("year", "nunique"),
+        ).reset_index()
+        # Peak rating (best year) per player — show alongside ERA
+        peak_per_player = year_max.loc[year_max.groupby("player")["base"].idxmax()][
+            ["player", "year", "base"]
+        ].rename(columns={"year": "peak_year", "base": "peak_year_rating"})
+        era_score = era_score.merge(peak_per_player, on="player")
+        era_score = era_score.sort_values("era", ascending=False).head(50).reset_index(drop=True)
+
+        era_rows = []
+        for i, r in era_score.iterrows():
+            era_rows.append({
+                "rank":             i + 1,
+                "player":           r["player"],
+                "era":              round(float(r["era"]), 3),
+                "career_span":      f"{int(r['first_year'])}-{int(r['last_year'])}",
+                "years_active":     int(r["years_active"]),
+                "peak_year":        int(r["peak_year"]),
+                "peak_year_rating": round(float(r["peak_year_rating"]), 3),
+            })
+        with open(DOCS_DATA / f"goat_era_{tour.lower()}.json", "w") as f:
+            json.dump({"tour": tour, "view": "ERA", "players": era_rows},
+                      f, separators=(",", ":"))
+        print(f"  wrote goat_era_{tour.lower()}.json ({len(era_rows)} players)")
 
     # --- Per-player history (all snapshots for each player) ---
     for tour in ["ATP", "WTA"]:

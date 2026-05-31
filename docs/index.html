@@ -111,6 +111,119 @@
   .mw-pills button:hover { background: #fafafa; }
   .mw-pills button.active { background: #1a6b8a; color: #ff6eb4; border-color: #1a6b8a; }
 
+  /* Surface filter pills (Power Rankings) */
+  .surface-pills, .goat-view-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .surface-pills button, .goat-view-pills button {
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #155a75;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 999px;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+  }
+  .surface-pills button:hover, .goat-view-pills button:hover { background: #fafafa; }
+  .surface-pills button.active, .goat-view-pills button.active {
+    background: #1a6b8a; color: #ff6eb4; border-color: #1a6b8a;
+  }
+  .goat-view-pills button .pill-sub {
+    font-weight: 400; font-size: 10px; color: #888; margin-left: 4px;
+  }
+  .goat-view-pills button.active .pill-sub { color: rgba(255,255,255,0.7); }
+
+  /* Surface-delta visual indicators (mini bullet charts) */
+  .surface-deltas {
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+    vertical-align: middle;
+  }
+  .surface-deltas .sd-cell {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    width: 28px;
+  }
+  .surface-deltas .sd-label {
+    font-size: 8.5px;
+    color: #888;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    margin-bottom: 1px;
+  }
+  .surface-deltas .sd-bar-track {
+    position: relative;
+    width: 26px;
+    height: 6px;
+    background: #f0f0f0;
+    border-radius: 2px;
+  }
+  .surface-deltas .sd-bar-center {
+    position: absolute; left: 50%; top: 0;
+    width: 1px; height: 6px; background: #ccc;
+  }
+  .surface-deltas .sd-bar-fill {
+    position: absolute;
+    height: 6px; top: 0;
+    border-radius: 2px;
+  }
+  .sd-pos { background: #1a6b8a; }
+  .sd-neg { background: #ff6eb4; }
+  .sd-zero { /* no fill — empty bar means surface not played */ }
+
+  /* Power Rankings / GOAT tables */
+  .pr-table, .goat-rating-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6px;
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  }
+  .pr-table thead th, .goat-rating-table thead th {
+    background: #1a6b8a; color: #ff6eb4;
+    text-align: center;
+    padding: 10px 12px;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .pr-table tbody td, .goat-rating-table tbody td {
+    padding: 8px 12px;
+    font-size: 13px;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
+  }
+  .pr-table tbody tr:hover, .goat-rating-table tbody tr:hover { background: #fafafa; }
+  .pr-table .col-rank, .goat-rating-table .col-rank {
+    width: 36px; text-align: center; color: #888; font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .pr-table .col-player, .goat-rating-table .col-player {
+    font-weight: 600; white-space: nowrap;
+  }
+  .pr-table .col-rating, .goat-rating-table .col-rating {
+    text-align: right;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: #1a6b8a;
+  }
+  .pr-table .col-extra, .goat-rating-table .col-extra {
+    text-align: center;
+    font-size: 12px; color: #555;
+    font-variant-numeric: tabular-nums;
+  }
+
   /* Tournament Summary grid */
   .grid-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .grid-table {
@@ -561,25 +674,74 @@
 
 <header>
   <h1>TENNIS &#x1F3BE;</h1>
-  <p class="subtitle">Grand Slam Singles &middot; Open Era</p>
-  <p class="model-note">Every Open Era singles Grand Slam since April 1968. Three views of the same data: per-player career timelines and head stats (Player Summary), year-by-year winners with running counts (Champions), and cumulative chases against the running all-time leader (GOAT Slam Chase).</p>
+  <p class="subtitle">Tennis Power Rankings &middot; Alpha</p>
+  <p class="model-note">fakeronjan WLS power rating for tennis: per-set sqrt(game-margin) regression over a 1-year rolling window with base ratings + per-surface deltas (hard/clay/grass/carpet). 1973+, ATP and WTA singles tracked separately. Coexists with the original Open Era Grand Slam views (Champions, Slam Chase) which use raw slam-results data.</p>
   <p class="updated"><span class="cadence-inline">🛠️ Updated manually</span> <span class="cadence-sep">|</span> <span id="last-updated">Data through 2026 Australian Open</span></p>
 </header>
 
 <nav>
+  <button class="active" data-tab="power-rankings">Power Rankings</button>
   <button data-tab="players">Player Summary</button>
   <button data-tab="tournament">Champions</button>
-  <button class="active" data-tab="goat">GOAT Slam Chase</button>
+  <button data-tab="goat">GOAT</button>
+  <button data-tab="slamchase">Slam Chase</button>
 </nav>
 
-<!-- ============================== GOAT SLAM CHASE ============================== -->
-<div id="goat" class="tab active">
+<!-- ============================== POWER RANKINGS ============================== -->
+<div id="power-rankings" class="tab active">
+  <div class="mw-pills" data-tab-target="power-rankings">
+    <button class="active" data-mw="m">Men's</button>
+    <button data-mw="w">Women's</button>
+  </div>
+  <div class="surface-pills" data-tab-target="power-rankings">
+    <button class="active" data-surface="all">All Surfaces</button>
+    <button data-surface="hard">Hard</button>
+    <button data-surface="clay">Clay</button>
+    <button data-surface="grass">Grass</button>
+    <button data-surface="carpet">Carpet</button>
+  </div>
+  <p class="data-note" id="power-rankings-asof">Current top 50 by fakeronjan WLS rating. <span class="footnote">Surface filter shows base rating + that surface's delta (effective rating on that surface).</span></p>
+
+  <div class="mw-section" data-tab="power-rankings" data-mw="m">
+    <div id="pr-table-m-wrap"><p class="loading">Loading ratings...</p></div>
+  </div>
+  <div class="mw-section" data-tab="power-rankings" data-mw="w" hidden>
+    <div id="pr-table-w-wrap"><p class="loading">Loading ratings...</p></div>
+  </div>
+</div>
+
+<!-- ============================== GOAT (PEAK / ERA) ============================== -->
+<div id="goat" class="tab">
   <div class="mw-pills" data-tab-target="goat">
     <button class="active" data-mw="m">Men's</button>
     <button data-mw="w">Women's</button>
   </div>
+  <div class="goat-view-pills" data-tab-target="goat">
+    <button class="active" data-view="peak">PEAK <span class="pill-sub">best single year</span></button>
+    <button data-view="era">ERA <span class="pill-sub">cumulative quality &times; longevity</span></button>
+  </div>
+  <p class="data-note" id="goat-explainer">
+    <strong>PEAK</strong>: the highest fakeronjan WLS rating a player ever hit at the end of any Grand Slam.
+    <strong>ERA</strong>: sum of each year's best slam-rating across their career &mdash; rewards sustained quality (1 rating per year per player).
+    Snapshots taken at the end of every Grand Slam (AO, FO, Wimbledon, US Open) since 1973.
+  </p>
 
   <div class="mw-section" data-tab="goat" data-mw="m">
+    <div id="goat-table-m-wrap"><p class="loading">Loading ratings...</p></div>
+  </div>
+  <div class="mw-section" data-tab="goat" data-mw="w" hidden>
+    <div id="goat-table-w-wrap"><p class="loading">Loading ratings...</p></div>
+  </div>
+</div>
+
+<!-- ============================== SLAM CHASE (legacy GOAT visual) ============================== -->
+<div id="slamchase" class="tab">
+  <div class="mw-pills" data-tab-target="slamchase">
+    <button class="active" data-mw="m">Men's</button>
+    <button data-mw="w">Women's</button>
+  </div>
+
+  <div class="mw-section" data-tab="slamchase" data-mw="m">
     <div class="cohort-pills" id="men-pills"></div>
     <div class="chart-card">
       <div class="chart-title">Cumulative slam wins</div>
@@ -608,7 +770,7 @@
     </table>
   </div>
 
-  <div class="mw-section" data-tab="goat" data-mw="w" hidden>
+  <div class="mw-section" data-tab="slamchase" data-mw="w" hidden>
     <div class="cohort-pills" id="women-pills"></div>
     <div class="chart-card">
       <div class="chart-title">Cumulative slam wins</div>
@@ -1437,7 +1599,7 @@ function populatePlayerDropdown(tour) {
 // --- M/W pill handling --------------------------------------------------------
 
 // Tracks the active tour ('m' or 'w') per top-level tab.
-const mwState = { goat: 'm', tournament: 'm', players: 'm' };
+const mwState = { slamchase: 'm', tournament: 'm', players: 'm', goat: 'm', 'power-rankings': 'm' };
 
 function applyMW(tabId, mw) {
   mwState[tabId] = mw;
@@ -1451,7 +1613,9 @@ function applyMW(tabId, mw) {
   });
   // If switching to the GOAT tab and we just made a section visible, the SVG
   // measured its width as 0 (because it was hidden). Re-render charts.
-  if (tabId === 'goat') refreshGoat(mw);
+  if (tabId === 'slamchase') refreshGoat(mw);
+  if (tabId === 'power-rankings') refreshPowerRankings(mw);
+  if (tabId === 'goat') refreshGoatRating(mw);
 }
 
 document.querySelectorAll('.mw-pills').forEach(wrap => {
@@ -1474,6 +1638,181 @@ function refreshGoat(tour) {
   renderTable(`${slug}-table`, tour, cohort);
 }
 
+// --- Power Rankings + GOAT (PEAK/ERA) — fakeronjan WLS ratings ---------------
+
+const RATINGS_BASE = './data';
+const ratingsCache = {};
+const surfaceState = { m: 'all', w: 'all' };
+let goatView = 'peak'; // 'peak' | 'era'
+
+const SURFACE_LABELS = { hard: 'HRD', clay: 'CLY', grass: 'GRS', carpet: 'CRP' };
+
+// Render the 4-surface mini-bullet-chart for a player.
+function surfaceDeltaHTML(deltas) {
+  // deltas: {hard, clay, grass, carpet} — each in approx ±1 range
+  const SCALE = 1.0; // half-width of each bar represents |delta|=1.0
+  const cells = ['hard','clay','grass','carpet'].map(s => {
+    const v = +deltas[s] || 0;
+    if (!isFinite(v) || Math.abs(v) < 1e-4) {
+      return `<span class="sd-cell">
+        <span class="sd-label">${SURFACE_LABELS[s]}</span>
+        <span class="sd-bar-track"><span class="sd-bar-center"></span></span>
+      </span>`;
+    }
+    const widthPct = Math.min(50, (Math.abs(v) / SCALE) * 50);
+    const cls = v > 0 ? 'sd-pos' : 'sd-neg';
+    const leftPct = v > 0 ? 50 : (50 - widthPct);
+    return `<span class="sd-cell" title="${SURFACE_LABELS[s]} delta: ${v >= 0 ? '+' : ''}${v.toFixed(2)}">
+      <span class="sd-label">${SURFACE_LABELS[s]}</span>
+      <span class="sd-bar-track">
+        <span class="sd-bar-center"></span>
+        <span class="sd-bar-fill ${cls}" style="left:${leftPct}%;width:${widthPct}%"></span>
+      </span>
+    </span>`;
+  }).join('');
+  return `<span class="surface-deltas">${cells}</span>`;
+}
+
+async function fetchRatings(path) {
+  if (ratingsCache[path] !== undefined) return ratingsCache[path];
+  try {
+    const res = await fetch(`${RATINGS_BASE}/${path}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    ratingsCache[path] = data;
+    return data;
+  } catch (e) {
+    ratingsCache[path] = null;
+    return null;
+  }
+}
+
+async function refreshPowerRankings(tour) {
+  const slug = tour === 'm' ? 'atp' : 'wta';
+  const wrap = document.getElementById(`pr-table-${tour}-wrap`);
+  const data = await fetchRatings(`current_rankings_${slug}.json`);
+  if (!data || !data.players) {
+    wrap.innerHTML = '<p class="loading">Rankings unavailable.</p>';
+    return;
+  }
+  document.getElementById('power-rankings-asof').innerHTML =
+    `Current top ${data.players.length} fakeronjan WLS rating &middot; as of ${data.as_of}. ` +
+    `<span class="footnote">Surface filter shows base rating + that surface's delta (effective rating on that surface).</span>`;
+
+  const surface = surfaceState[tour];
+  // Rating column shows base + surface_delta when a specific surface is picked.
+  const players = data.players.map(p => {
+    const sd = {
+      hard: p.hard_delta, clay: p.clay_delta,
+      grass: p.grass_delta, carpet: p.carpet_delta,
+    };
+    const rating = surface === 'all' ? p.base : p.base + (sd[surface] || 0);
+    return { ...p, surfaceDeltas: sd, rating_shown: rating };
+  });
+  // Re-sort if a surface is selected (since effective rating differs from base order)
+  if (surface !== 'all') {
+    players.sort((a, b) => b.rating_shown - a.rating_shown);
+    players.forEach((p, i) => p.rank_shown = i + 1);
+  } else {
+    players.forEach(p => p.rank_shown = p.rank);
+  }
+  const ratingHeader = surface === 'all' ? 'Rating' : `${surface.charAt(0).toUpperCase() + surface.slice(1)} Rating`;
+  const rows = players.slice(0, 50).map(p => `
+    <tr>
+      <td class="col-rank">${p.rank_shown}</td>
+      <td class="col-player">${escapeHtml(p.player)}</td>
+      <td class="col-rating">${p.rating_shown >= 0 ? '+' : ''}${p.rating_shown.toFixed(2)}</td>
+      <td class="col-extra">${surfaceDeltaHTML(p.surfaceDeltas)}</td>
+      <td class="col-extra">${p.sets_played}</td>
+    </tr>`).join('');
+  wrap.innerHTML = `
+    <table class="pr-table">
+      <thead><tr>
+        <th>#</th><th>Player</th><th>${ratingHeader}</th>
+        <th>Surface specialization</th><th>Sets (1y)</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+}
+
+async function refreshGoatRating(tour) {
+  const slug = tour === 'm' ? 'atp' : 'wta';
+  const wrap = document.getElementById(`goat-table-${tour}-wrap`);
+  const file = goatView === 'era' ? `goat_era_${slug}.json` : `goat_peak_${slug}.json`;
+  const data = await fetchRatings(file);
+  if (!data || !data.players) {
+    wrap.innerHTML = '<p class="loading">Ratings unavailable.</p>';
+    return;
+  }
+  let rows;
+  if (goatView === 'peak') {
+    rows = data.players.map(p => {
+      const sd = {
+        hard: p.hard_delta, clay: p.clay_delta,
+        grass: p.grass_delta, carpet: p.carpet_delta,
+      };
+      return `<tr>
+        <td class="col-rank">${p.rank}</td>
+        <td class="col-player">${escapeHtml(p.player)}</td>
+        <td class="col-rating">${p.base.toFixed(2)}</td>
+        <td class="col-extra">${p.peak_snapshot}</td>
+        <td class="col-extra">${surfaceDeltaHTML(sd)}</td>
+        <td class="col-extra">${p.sets_played}</td>
+      </tr>`;
+    }).join('');
+    wrap.innerHTML = `
+      <table class="goat-rating-table">
+        <thead><tr>
+          <th>#</th><th>Player</th><th>Peak</th>
+          <th>When</th><th>Surface specialization</th><th>Sets (1y window)</th>
+        </tr></thead>
+        <tbody>${rows}</tbody>
+      </table>`;
+  } else {
+    rows = data.players.map(p => `<tr>
+      <td class="col-rank">${p.rank}</td>
+      <td class="col-player">${escapeHtml(p.player)}</td>
+      <td class="col-rating">${p.era.toFixed(1)}</td>
+      <td class="col-extra">${p.career_span}</td>
+      <td class="col-extra">${p.years_active}</td>
+      <td class="col-extra">${p.peak_year_rating.toFixed(2)} (${p.peak_year})</td>
+    </tr>`).join('');
+    wrap.innerHTML = `
+      <table class="goat-rating-table">
+        <thead><tr>
+          <th>#</th><th>Player</th><th>ERA</th>
+          <th>Career span</th><th>Years rated</th><th>Best year</th>
+        </tr></thead>
+        <tbody>${rows}</tbody>
+      </table>`;
+  }
+}
+
+// Surface pill click handlers (Power Rankings only)
+document.querySelectorAll('.surface-pills').forEach(wrap => {
+  wrap.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      wrap.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const tour = mwState['power-rankings'];
+      surfaceState[tour] = btn.dataset.surface;
+      refreshPowerRankings(tour);
+    });
+  });
+});
+
+// GOAT view pill click handlers (PEAK / ERA)
+document.querySelectorAll('.goat-view-pills').forEach(wrap => {
+  wrap.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      wrap.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      goatView = btn.dataset.view;
+      refreshGoatRating(mwState.goat);
+    });
+  });
+});
+
 // --- Top-level tab nav --------------------------------------------------------
 
 document.querySelectorAll('nav button').forEach(btn => {
@@ -1482,7 +1821,9 @@ document.querySelectorAll('nav button').forEach(btn => {
     btn.classList.add('active');
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     document.getElementById(btn.dataset.tab).classList.add('active');
-    if (btn.dataset.tab === 'goat') refreshGoat(mwState.goat);
+    if (btn.dataset.tab === 'slamchase') refreshGoat(mwState.slamchase);
+    if (btn.dataset.tab === 'power-rankings') refreshPowerRankings(mwState['power-rankings']);
+    if (btn.dataset.tab === 'goat') refreshGoatRating(mwState.goat);
   });
 });
 
@@ -1500,8 +1841,11 @@ document.querySelectorAll('nav button').forEach(btn => {
   populatePlayerDropdown(tour);
 });
 
+// Power Rankings is the default active tab — kick off its initial render.
+refreshPowerRankings('m');
+
 window.addEventListener('resize', () => {
-  refreshGoat(mwState.goat);
+  refreshGoat(mwState.slamchase);
 });
 
 // Auto-resize: when embedded in an iframe, post our scroll height to the
