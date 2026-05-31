@@ -149,19 +149,17 @@
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    width: 28px;
+    width: 42px;
   }
   .surface-deltas .sd-label {
-    font-size: 8.5px;
+    font-size: 10px;
     color: #888;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-    text-transform: uppercase;
-    margin-bottom: 1px;
+    font-weight: 600;
+    margin-bottom: 2px;
   }
   .surface-deltas .sd-bar-track {
     position: relative;
-    width: 26px;
+    width: 38px;
     height: 6px;
     background: #f0f0f0;
     border-radius: 2px;
@@ -270,6 +268,16 @@
     font-variant-numeric: tabular-nums;
     margin-top: 1px;
   }
+  .grid-table .winner-rating {
+    color: #555;
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+    margin-top: 2px;
+  }
+  .grid-table .winner-rating .wr-base { font-weight: 600; color: #1a1a1a; }
+  .grid-table .winner-rating .wr-pos { color: #1a6b8a; font-weight: 600; }
+  .grid-table .winner-rating .wr-neg { color: #c63a83; font-weight: 600; }
+  .grid-table .winner-rating .wr-surface { color: #888; }
   .grid-table .winner-stack { display: flex; flex-direction: column; }
 
   /* Player Summary */
@@ -348,6 +356,44 @@
     color: #888;
     margin-top: 2px;
     font-variant-numeric: tabular-nums;
+  }
+
+  /* Player career-rating chart */
+  .career-chart-card {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    padding: 12px 16px;
+    margin-bottom: 14px;
+  }
+  .career-chart-card .chart-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 6px;
+  }
+  .career-chart-card .career-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 6px;
+    font-size: 11px;
+    color: #555;
+    font-variant-numeric: tabular-nums;
+  }
+  .career-chart-card .career-legend .legend-swatch {
+    display: inline-block; width: 18px; height: 3px;
+    vertical-align: middle; margin-right: 5px; border-radius: 1px;
+  }
+  .career-chart-card .career-legend .legend-swatch.dashed {
+    background: transparent;
+    border-top: 2px dashed currentColor;
+    width: 18px; height: 0;
+  }
+  .career-chart-card .chart-empty {
+    color: #aaa; font-size: 12px; text-align: center; padding: 16px;
   }
 
   /* Player timeline grid */
@@ -675,7 +721,7 @@
 <header>
   <h1>TENNIS &#x1F3BE;</h1>
   <p class="subtitle">Tennis Power Rankings &middot; Alpha</p>
-  <p class="model-note">fakeronjan WLS power rating for tennis: per-set sqrt(game-margin) regression over a 1-year rolling window with base ratings + per-surface deltas (hard/clay/grass/carpet). 1973+, ATP and WTA singles tracked separately. Coexists with the original Open Era Grand Slam views (Champions, Slam Chase) which use raw slam-results data.</p>
+  <p class="model-note">fakeronjan WLS power rating for tennis: per-set sqrt(game-margin) regression over a 1-year rolling window. Each player has a base rating (their average level across hard/clay/grass) plus three surface deltas that sum to zero. Carpet matches still feed the base rating but get no per-player delta (sample sizes are too thin in the modern era to identify reliably). 1973+, ATP and WTA singles tracked separately. Coexists with the original Open Era Grand Slam views (Champions, Slam Chase) which use raw slam-results data.</p>
   <p class="updated"><span class="cadence-inline">🛠️ Updated manually</span> <span class="cadence-sep">|</span> <span id="last-updated">Data through 2026 Australian Open</span></p>
 </header>
 
@@ -698,7 +744,6 @@
     <button data-surface="hard">Hard</button>
     <button data-surface="clay">Clay</button>
     <button data-surface="grass">Grass</button>
-    <button data-surface="carpet">Carpet</button>
   </div>
   <p class="data-note" id="power-rankings-asof">Current top 50 by fakeronjan WLS rating. <span class="footnote">Surface filter shows base rating + that surface's delta (effective rating on that surface).</span></p>
 
@@ -1339,8 +1384,18 @@ function surname(fullName) {
   return parts[parts.length - 1];
 }
 
+// Champion ratings overlay: key = `${tourLetter}_${year}_${slamCode}` (e.g. M_2008_Wim)
+let CHAMPION_RATINGS = {};
+async function loadChampionRatings() {
+  try {
+    const res = await fetch(`${RATINGS_BASE}/champion_ratings.json`);
+    if (res.ok) CHAMPION_RATINGS = await res.json();
+  } catch (e) { /* leave empty; cells just won't show rating */ }
+}
+
 function renderTournamentGrid(tour, tbodyId) {
   const slams = DATA[tour];
+  const tourLetter = tour === 'm' ? 'M' : 'W';
   // Walk forward, tracking two counters per winner: career total and per-tournament.
   const totalCount = {};
   const perTourney = {};
@@ -1365,9 +1420,23 @@ function renderTournamentGrid(tour, tbodyId) {
       const flagPart = flag ? `<span class="winner-flag">${flag}</span> ` : '';
       const counts = `(${r.inTourney} ${SLAM_FLAG[r.s]}, ${r.total} total)`;
       const nameHTML = playerLink(tour, r.w, `${flagPart}${escapeHtml(r.w)}`);
+      const ratingKey = `${tourLetter}_${r.y}_${r.s}`;
+      const rt = CHAMPION_RATINGS[ratingKey];
+      let ratingLine = '';
+      if (rt) {
+        const d = +rt.surface_delta || 0;
+        const dCls = d >= 0 ? 'wr-pos' : 'wr-neg';
+        const dStr = (d >= 0 ? '+' : '') + d.toFixed(2);
+        ratingLine = `<div class="winner-rating">`
+          + `<span class="wr-base">${rt.base.toFixed(2)}</span>`
+          + ` <span class="${dCls}">${dStr}</span>`
+          + ` <span class="wr-surface">${rt.surface}</span>`
+          + `</div>`;
+      }
       return `<div class="winner-entry">`
         + `<div class="winner-name">${nameHTML}</div>`
         + `<div class="winner-num">${counts}</div>`
+        + ratingLine
         + `</div>`;
     };
     if (winners.length === 1) return `<td>${renderOne(winners[0])}</td>`;
@@ -1581,7 +1650,126 @@ function renderPlayer(tour, player) {
       </table>
     </div>`;
 
-  document.getElementById(contentId).innerHTML = header + grid;
+  const careerChartId = `career-chart-${tour}`;
+  const careerChartLegendId = `career-chart-legend-${tour}`;
+  const careerChartCard = `
+    <div class="career-chart-card">
+      <div class="chart-title">fakeronjan WLS rating &middot; career trajectory</div>
+      <svg class="chart" id="${careerChartId}" style="width:100%; height:240px;"></svg>
+      <div class="career-legend" id="${careerChartLegendId}"></div>
+    </div>`;
+
+  document.getElementById(contentId).innerHTML = header + careerChartCard + grid;
+  renderCareerChart(tour, player, careerChartId, careerChartLegendId);
+}
+
+const CAREER_PALETTE = {
+  base: '#1a1a1a',
+  hard: '#d97706',
+  clay: '#b91c1c',
+  grass: '#15803d',
+};
+const CAREER_LABELS = { base: 'Base', hard: 'Hard', clay: 'Clay', grass: 'Grass' };
+
+async function renderCareerChart(tour, player, svgId, legendId) {
+  const svg = document.getElementById(svgId);
+  const legend = document.getElementById(legendId);
+  if (!svg) return;
+  const slug = player.replace(/[^A-Za-z0-9_]/g, '_').replace(/^_+|_+$/g, '');
+  const tourSlug = tour === 'm' ? 'atp' : 'wta';
+  let data = null;
+  try {
+    const res = await fetch(`${RATINGS_BASE}/players/${tourSlug}_${slug}.json`);
+    if (res.ok) data = await res.json();
+  } catch (e) {}
+  if (!data || !data.history || data.history.length === 0) {
+    svg.outerHTML = `<div class="chart-empty">No rating history available for this player (slam wins predate the rating window).</div>`;
+    legend.innerHTML = '';
+    return;
+  }
+  const hist = data.history.map(h => ({
+    t: new Date(h.date).getTime(),
+    base: +h.base,
+    hard: +h.base + (+h.hard_delta || 0),
+    clay: +h.base + (+h.clay_delta || 0),
+    grass: +h.base + (+h.grass_delta || 0),
+  }));
+
+  const W = svg.parentElement.clientWidth - 32;
+  const H = 240;
+  const padL = 36, padR = 12, padT = 10, padB = 26;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+
+  const tMin = hist[0].t, tMax = hist[hist.length - 1].t;
+  const tSpan = Math.max(1, tMax - tMin);
+  // Decide which surfaces to plot: include if any |delta| in history > 0.05
+  const surfacesIncluded = ['hard','clay','grass'].filter(s => {
+    const deltaCol = s + '_delta';
+    return data.history.some(h => Math.abs(+h[deltaCol] || 0) > 0.05);
+  });
+  const seriesKeys = ['base', ...surfacesIncluded];
+
+  let yMin = Infinity, yMax = -Infinity;
+  hist.forEach(h => seriesKeys.forEach(k => {
+    if (h[k] < yMin) yMin = h[k];
+    if (h[k] > yMax) yMax = h[k];
+  }));
+  // Pad y range slightly
+  const yPad = Math.max(0.1, (yMax - yMin) * 0.08);
+  yMin = Math.floor((yMin - yPad) * 10) / 10;
+  yMax = Math.ceil((yMax + yPad) * 10) / 10;
+  if (yMax - yMin < 0.5) yMax = yMin + 0.5;
+
+  const px = t => padL + (t - tMin) / tSpan * (W - padL - padR);
+  const py = v => padT + (1 - (v - yMin) / (yMax - yMin)) * (H - padT - padB);
+
+  // Y gridlines — 4-5 nice intervals
+  const yTickStep = (() => {
+    const span = yMax - yMin;
+    const cand = [0.25, 0.5, 1.0, 2.0];
+    for (const c of cand) if (span / c <= 6) return c;
+    return Math.ceil(span / 5);
+  })();
+  let grid = '', ylab = '';
+  for (let v = Math.ceil(yMin / yTickStep) * yTickStep; v <= yMax + 1e-9; v += yTickStep) {
+    const y = py(v);
+    grid += `<line x1="${padL}" y1="${y.toFixed(1)}" x2="${W - padR}" y2="${y.toFixed(1)}" stroke="#eee" stroke-width="1"/>`;
+    ylab += `<text x="${padL - 4}" y="${(y + 3).toFixed(1)}" font-size="10" fill="#999" text-anchor="end">${v.toFixed(yTickStep < 1 ? 1 : 0)}</text>`;
+  }
+  // Zero line emphasis if it falls in range
+  if (yMin < 0 && yMax > 0) {
+    const y0 = py(0);
+    grid += `<line x1="${padL}" y1="${y0.toFixed(1)}" x2="${W - padR}" y2="${y0.toFixed(1)}" stroke="#ccc" stroke-width="1" stroke-dasharray="3,3"/>`;
+  }
+
+  // X-axis year ticks
+  const firstYr = new Date(tMin).getUTCFullYear();
+  const lastYr  = new Date(tMax).getUTCFullYear();
+  const yrSpan = Math.max(1, lastYr - firstYr);
+  const yrStep = yrSpan <= 6 ? 1 : (yrSpan <= 12 ? 2 : (yrSpan <= 25 ? 5 : 10));
+  let xtick = '', xlab = '';
+  for (let yr = Math.ceil(firstYr / yrStep) * yrStep; yr <= lastYr; yr += yrStep) {
+    const tYr = Date.UTC(yr, 0, 1);
+    if (tYr < tMin || tYr > tMax) continue;
+    const x = px(tYr);
+    xtick += `<line x1="${x.toFixed(1)}" y1="${H - padB}" x2="${x.toFixed(1)}" y2="${H - padB + 4}" stroke="#bbb" stroke-width="1"/>`;
+    xlab += `<text x="${x.toFixed(1)}" y="${H - padB + 16}" font-size="10" fill="#999" text-anchor="middle">${yr}</text>`;
+  }
+
+  // Lines
+  let lines = '';
+  let legendHTML = '';
+  seriesKeys.forEach(k => {
+    const pts = hist.map(h => `${px(h.t).toFixed(1)},${py(h[k]).toFixed(1)}`).join(' ');
+    const col = CAREER_PALETTE[k];
+    const sw = k === 'base' ? 2.2 : 1.5;
+    const op = k === 'base' ? 1.0 : 0.85;
+    lines += `<polyline points="${pts}" fill="none" stroke="${col}" stroke-width="${sw}" stroke-linejoin="round" opacity="${op}"/>`;
+    legendHTML += `<span style="color:${col}"><span class="legend-swatch" style="background:${col}"></span>${CAREER_LABELS[k]}</span>`;
+  });
+
+  svg.innerHTML = grid + ylab + xtick + xlab + lines;
+  legend.innerHTML = legendHTML;
 }
 
 function populatePlayerDropdown(tour) {
@@ -1645,13 +1833,13 @@ const ratingsCache = {};
 const surfaceState = { m: 'all', w: 'all' };
 let goatView = 'peak'; // 'peak' | 'era'
 
-const SURFACE_LABELS = { hard: 'HRD', clay: 'CLY', grass: 'GRS', carpet: 'CRP' };
+const SURFACE_LABELS = { hard: 'Hard', clay: 'Clay', grass: 'Grass' };
 
-// Render the 4-surface mini-bullet-chart for a player.
+// Render the surface-specialization mini-bullet-chart for a player (hard/clay/grass; carpet omitted).
 function surfaceDeltaHTML(deltas) {
-  // deltas: {hard, clay, grass, carpet} — each in approx ±1 range
+  // deltas: {hard, clay, grass} — each in approx ±1 range
   const SCALE = 1.0; // half-width of each bar represents |delta|=1.0
-  const cells = ['hard','clay','grass','carpet'].map(s => {
+  const cells = ['hard','clay','grass'].map(s => {
     const v = +deltas[s] || 0;
     if (!isFinite(v) || Math.abs(v) < 1e-4) {
       return `<span class="sd-cell">
@@ -1703,8 +1891,7 @@ async function refreshPowerRankings(tour) {
   // Rating column shows base + surface_delta when a specific surface is picked.
   const players = data.players.map(p => {
     const sd = {
-      hard: p.hard_delta, clay: p.clay_delta,
-      grass: p.grass_delta, carpet: p.carpet_delta,
+      hard: p.hard_delta, clay: p.clay_delta, grass: p.grass_delta,
     };
     const rating = surface === 'all' ? p.base : p.base + (sd[surface] || 0);
     return { ...p, surfaceDeltas: sd, rating_shown: rating };
@@ -1748,8 +1935,7 @@ async function refreshGoatRating(tour) {
   if (goatView === 'peak') {
     rows = data.players.map(p => {
       const sd = {
-        hard: p.hard_delta, clay: p.clay_delta,
-        grass: p.grass_delta, carpet: p.carpet_delta,
+        hard: p.hard_delta, clay: p.clay_delta, grass: p.grass_delta,
       };
       return `<tr>
         <td class="col-rank">${p.rank}</td>
@@ -1829,20 +2015,22 @@ document.querySelectorAll('nav button').forEach(btn => {
 
 // --- Initial render -----------------------------------------------------------
 
-['m','w'].forEach(tour => {
-  renderPills(tour);
-  const cohort = COHORTS[tour][0];
-  const slug = tour === 'm' ? 'men' : 'women';
-  document.getElementById(`${slug}-chart1-sub`).textContent = cohort.sub;
-  renderChart1(`${slug}-chart1`, `${slug}-legend1`, `${slug}-legend2`, tour, cohort);
-  renderChart2(`${slug}-chart2`, tour, cohort);
-  renderTable(`${slug}-table`, tour, cohort);
-  renderTournamentGrid(tour, `tournament-table-${tour}`);
-  populatePlayerDropdown(tour);
-});
-
-// Power Rankings is the default active tab — kick off its initial render.
-refreshPowerRankings('m');
+(async function bootstrap() {
+  await loadChampionRatings();
+  ['m','w'].forEach(tour => {
+    renderPills(tour);
+    const cohort = COHORTS[tour][0];
+    const slug = tour === 'm' ? 'men' : 'women';
+    document.getElementById(`${slug}-chart1-sub`).textContent = cohort.sub;
+    renderChart1(`${slug}-chart1`, `${slug}-legend1`, `${slug}-legend2`, tour, cohort);
+    renderChart2(`${slug}-chart2`, tour, cohort);
+    renderTable(`${slug}-table`, tour, cohort);
+    renderTournamentGrid(tour, `tournament-table-${tour}`);
+    populatePlayerDropdown(tour);
+  });
+  // Power Rankings is the default active tab — kick off its initial render.
+  refreshPowerRankings('m');
+})();
 
 window.addEventListener('resize', () => {
   refreshGoat(mwState.slamchase);

@@ -312,13 +312,16 @@ def build_observations(matches: pd.DataFrame) -> pd.DataFrame:
 # ============================================================
 # STEP 4 — WLS SOLVE (PER TOUR, SINGLE SNAPSHOT)
 # ============================================================
-# Each set is one observation. Each player gets 4 unknowns: a base rating + 3
-# surface deltas (sum to zero per player as a soft constraint via a tiny ridge,
-# plus per-tour zero-sum constraint on the base rating).
-#
-# We solve men's and women's tours independently — they don't co-mingle.
+# Each set is one observation. Each player gets 4 unknowns: a base rating +
+# 3 surface deltas (hard/clay/grass). Carpet matches still feed the base
+# rating but DO NOT get their own per-player delta — the modern tour has
+# essentially zero carpet, so per-player carpet deltas over-fit on tiny
+# samples and produced phantom +1.4 carpet bumps for players who'd played
+# 2 carpet matches in a year. By absorbing carpet into base, we keep all
+# the 1980s/90s match data without the noise.
 
-SURFACE_LIST = ["Hard", "Clay", "Grass", "Carpet"]
+SURFACE_LIST = ["Hard", "Clay", "Grass"]  # surfaces that get per-player deltas
+PARAMS_PER_PLAYER = 1 + len(SURFACE_LIST)  # base + N deltas
 
 
 MIN_SETS_PLAYED = 30  # filter for published rankings — drops tiny-sample noise
@@ -329,12 +332,13 @@ def solve_tour(obs: pd.DataFrame, snapshot_date: pd.Timestamp,
     """Run a single WLS solve on the rolling window ending at snapshot_date.
 
     Returns a DataFrame: one row per player who meets min_sets_played, with columns
-      [player, base, hard_delta, clay_delta, grass_delta, carpet_delta, sets_played]
+      [player, base, hard_delta, clay_delta, grass_delta, sets_played]
 
     Implementation:
       - Filter obs to window [snapshot_date - window_days, snapshot_date]
       - Apply linear recency decay: weight ramps from ~0 at window edge to 1 at snapshot
-      - Build X with 5 columns per player: base + 4 surface indicators
+      - Build X with 4 columns per player: base + 3 surface indicators (hard/clay/grass).
+        Carpet matches contribute to base only (no surface column).
       - Solve via numpy.linalg.lstsq on weighted system
       - Enforce zero-sum on base ratings via a high-weight extra row
       - Filter output to players with at least min_sets_played sets in window
@@ -358,17 +362,18 @@ def solve_tour(obs: pd.DataFrame, snapshot_date: pd.Timestamp,
     if n_p < 4 or n_obs < 50:
         return pd.DataFrame()
 
-    # Column layout: 5 columns per player
-    #   [base, hard, clay, grass, carpet]
-    # Order matches SURFACE_LIST for the deltas.
+    # Column layout: PARAMS_PER_PLAYER columns per player
+    #   [base, hard_delta, clay_delta, grass_delta]
+    # Carpet matches: contribute only to base (no surface column).
     SURF_COL = {s: i + 1 for i, s in enumerate(SURFACE_LIST)}  # +1 because base=0
-    n_cols = n_p * 5
+    PPP = PARAMS_PER_PLAYER
+    N_DELTAS = len(SURFACE_LIST)
+    n_cols = n_p * PPP
 
     # Build X sparsely-ish (still dense numpy — for our 1-year window scale it fits)
-    # Each row: +1 on winner.base, -1 on loser.base, +1 on winner.<surface>, -1 on loser.<surface>
-    X = np.zeros((n_obs + 1, n_cols), dtype=np.float32)
-    y = np.zeros(n_obs + 1, dtype=np.float32)
-    sw = np.zeros(n_obs + 1, dtype=np.float32)
+    X = np.zeros((n_obs, n_cols), dtype=np.float32)
+    y = np.zeros(n_obs, dtype=np.float32)
+    sw = np.zeros(n_obs, dtype=np.float32)
 
     winners = w["winner"].to_numpy()
     losers = w["loser"].to_numpy()
@@ -378,22 +383,42 @@ def solve_tour(obs: pd.DataFrame, snapshot_date: pd.Timestamp,
     for i in range(n_obs):
         wi = pidx[winners[i]]
         li = pidx[losers[i]]
-        # Base rating diff
-        X[i, wi * 5] = 1.0
-        X[i, li * 5] = -1.0
-        # Surface delta diff
-        s_col = SURF_COL[surfaces[i]]
-        X[i, wi * 5 + s_col] = 1.0
-        X[i, li * 5 + s_col] = -1.0
+        # Base rating diff (always)
+        X[i, wi * PPP] = 1.0
+        X[i, li * PPP] = -1.0
+        # Surface delta diff (only for hard/clay/grass; carpet goes to base only)
+        s_col = SURF_COL.get(surfaces[i])
+        if s_col is not None:
+            X[i, wi * PPP + s_col] = 1.0
+            X[i, li * PPP + s_col] = -1.0
         y[i] = y_obs[i]
         sw[i] = sample_weight[i]
 
-    # Zero-sum constraint on BASE ratings only (very high weight)
-    # This anchors the regression — sum of base ratings = 0.
+    # Two anchoring constraints (very high weight, treated as hard constraints):
+    #   1. Cross-player zero-sum on BASE — sum of all bases = 0 (anchors the
+    #      overall rating scale).
+    #   2. Per-player zero-sum on MODELED DELTAS — for each player,
+    #      hard_delta + clay_delta + grass_delta = 0. This forces `base` to
+    #      mean "average rating across the 3 modeled surfaces" rather than
+    #      drifting with carpet performance. Without this constraint, players
+    #      with carpet exposure see their base inflated by carpet matches
+    #      (which only enter the model via base diff), producing GOAT-PEAK
+    #      rankings dominated by carpet specialists.
+    constraint_rows = 1 + n_p  # one cross-player + one-per-player
+    X_con = np.zeros((constraint_rows, n_cols), dtype=np.float32)
+    y_con = np.zeros(constraint_rows, dtype=np.float32)
+    sw_con = np.full(constraint_rows, 1e7, dtype=np.float32)
+    # Row 0: sum of bases = 0
     for p in range(n_p):
-        X[n_obs, p * 5] = 1.0
-    y[n_obs] = 0.0
-    sw[n_obs] = 1e7
+        X_con[0, p * PPP] = 1.0
+    # Rows 1..n_p: per-player sum of modeled deltas = 0
+    for p in range(n_p):
+        for s in range(N_DELTAS):
+            X_con[1 + p, p * PPP + 1 + s] = 1.0
+    # Stash X/y/sw (we'll append ridge below and then the constraint rows on top)
+    X = np.vstack([X, X_con])
+    y = np.concatenate([y, y_con])
+    sw = np.concatenate([sw, sw_con])
 
     # Ridge regularization on SURFACE DELTAS only (NOT base). This stabilizes
     # numerically singular snapshots where players have surface-imbalanced data
@@ -402,13 +427,13 @@ def solve_tour(obs: pd.DataFrame, snapshot_date: pd.Timestamp,
     # null space. We DON'T regularize base ratings because we want them to
     # follow the data freely; the zero-sum constraint already anchors them.
     ridge_lambda = 0.01
-    n_delta_rows = n_p * 4  # 4 surface deltas per player
+    n_delta_rows = n_p * N_DELTAS
     X_ridge = np.zeros((n_delta_rows, n_cols), dtype=np.float32)
     y_ridge = np.zeros(n_delta_rows, dtype=np.float32)
     sw_ridge = np.full(n_delta_rows, ridge_lambda, dtype=np.float32)
     for p in range(n_p):
-        for s in range(4):  # offsets 1..4 are the delta columns within each player's 5-col block
-            X_ridge[p * 4 + s, p * 5 + 1 + s] = 1.0
+        for s in range(N_DELTAS):
+            X_ridge[p * N_DELTAS + s, p * PPP + 1 + s] = 1.0
     X = np.vstack([X, X_ridge])
     y = np.concatenate([y, y_ridge])
     sw = np.concatenate([sw, sw_ridge])
@@ -419,8 +444,7 @@ def solve_tour(obs: pd.DataFrame, snapshot_date: pd.Timestamp,
     yw = y * sqrt_w
     r, *_ = np.linalg.lstsq(Xw, yw, rcond=None)
 
-    # Reshape into (n_p, 5)
-    R = r.reshape(n_p, 5)
+    R = r.reshape(n_p, PPP)
 
     # Games played per player (in window)
     pg = pd.concat([
@@ -435,7 +459,6 @@ def solve_tour(obs: pd.DataFrame, snapshot_date: pd.Timestamp,
         "hard_delta":   R[:, 1],
         "clay_delta":   R[:, 2],
         "grass_delta":  R[:, 3],
-        "carpet_delta": R[:, 4],
         "sets_played":  [games_played.get(p, 0) for p in players],
     })
     # Filter to players with enough data in window
@@ -545,7 +568,6 @@ def generate_data() -> None:
                 "hard_delta":   round(float(r["hard_delta"]), 3),
                 "clay_delta":   round(float(r["clay_delta"]), 3),
                 "grass_delta":  round(float(r["grass_delta"]), 3),
-                "carpet_delta": round(float(r["carpet_delta"]), 3),
                 "sets_played":  int(r["sets_played"]),
             })
         out_path = DOCS_DATA / f"current_rankings_{tour.lower()}.json"
@@ -579,7 +601,6 @@ def generate_data() -> None:
                 "hard_delta":    round(float(r["hard_delta"]), 3),
                 "clay_delta":    round(float(r["clay_delta"]), 3),
                 "grass_delta":   round(float(r["grass_delta"]), 3),
-                "carpet_delta":  round(float(r["carpet_delta"]), 3),
                 "sets_played":   int(r["sets_played"]),
             })
         with open(DOCS_DATA / f"goat_peak_{tour.lower()}.json", "w") as f:
@@ -633,8 +654,7 @@ def generate_data() -> None:
                     "hard_delta":   round(float(r["hard_delta"]), 3),
                     "clay_delta":   round(float(r["clay_delta"]), 3),
                     "grass_delta":  round(float(r["grass_delta"]), 3),
-                    "carpet_delta": round(float(r["carpet_delta"]), 3),
-                    "sets_played":  int(r["sets_played"]),
+                        "sets_played":  int(r["sets_played"]),
                 }
                 for _, r in sub.iterrows()
             ]
@@ -665,6 +685,11 @@ def generate_data() -> None:
             json.dump(index, f, separators=(",", ":"))
         print(f"  wrote {out_path.name} ({len(index)} players)")
 
+    # --- Champion ratings overlay (powers Champions tab inline rating) ---
+    # Keyed by `{tourLetter}_{year}_{spaCode}` -> {player, base, surface_delta, surface, effective}
+    # spaCode mapping: AO=Australian Open, FO=Roland Garros, Wim=Wimbledon, US=US Open
+    write_champion_ratings(matches, ratings)
+
     # --- Meta (date range, etc.) ---
     meta = {
         "first_match_date": str(matches["date"].min().date()),
@@ -675,6 +700,70 @@ def generate_data() -> None:
     with open(DOCS_DATA / "meta.json", "w") as f:
         json.dump(meta, f, separators=(",", ":"))
     print(f"  wrote meta.json")
+
+
+def write_champion_ratings(matches: pd.DataFrame, ratings: pd.DataFrame) -> None:
+    """Emit docs/data/champion_ratings.json — used by the Champions tab to show
+    each Grand Slam winner's base + surface-delta at the time they won."""
+    SLAM_NAME    = {"AO": "Australian Open", "FO": "Roland Garros", "Wim": "Wimbledon", "US": "US Open"}
+    SLAM_SURFACE = {"AO": "hard", "FO": "clay", "Wim": "grass", "US": "hard"}
+    CSV_CODE_MAP = {"RG": "FO"}  # slams_*.csv uses RG; SPA bundle uses FO
+
+    slams_m_csv = Path(__file__).parent / "slams_m.csv"
+    slams_w_csv = Path(__file__).parent / "slams_w.csv"
+    if not slams_m_csv.exists() or not slams_w_csv.exists():
+        print("  skipping champion_ratings.json (slams_m.csv / slams_w.csv not found)")
+        return
+
+    # Build (year, code, tour) -> slam date lookup from matches
+    slam_dates = {}
+    for code, name in SLAM_NAME.items():
+        names = [name] + (["Us Open"] if code == "US" else [])
+        for tour in ["ATP", "WTA"]:
+            rows = matches[(matches["tourney_name"].isin(names)) & (matches["tour"] == tour)]
+            for d in rows["date"].unique():
+                slam_dates[(pd.Timestamp(d).year, code, tour)] = pd.Timestamp(d)
+
+    out = {}
+    for tour_letter, tour_full, csv_path in [("M", "ATP", slams_m_csv), ("W", "WTA", slams_w_csv)]:
+        slams = pd.read_csv(csv_path)
+        for _, row in slams.iterrows():
+            yr = int(row["year"])
+            raw_code = row["slam"]
+            winner = str(row["winner"])
+            code = CSV_CODE_MAP.get(raw_code, raw_code)
+            snap = slam_dates.get((yr, code, tour_full))
+            if snap is None:
+                continue
+            match = ratings[
+                (ratings["tour"] == tour_full)
+                & (ratings["snapshot_date"] == snap)
+                & (ratings["player"] == winner)
+            ]
+            if match.empty:
+                # Loose fallback: last-name contains (handles unicode/diacritic variants)
+                last = winner.split()[-1]
+                match = ratings[
+                    (ratings["tour"] == tour_full)
+                    & (ratings["snapshot_date"] == snap)
+                    & (ratings["player"].str.contains(last, regex=False, na=False))
+                ]
+            if match.empty:
+                continue
+            r = match.iloc[0]
+            surface = SLAM_SURFACE[code]
+            delta = float(r[f"{surface}_delta"])
+            base = float(r["base"])
+            out[f"{tour_letter}_{yr}_{code}"] = {
+                "player":        r["player"],
+                "base":          round(base, 3),
+                "surface_delta": round(delta, 3),
+                "surface":       surface,
+                "effective":     round(base + delta, 3),
+            }
+    with open(DOCS_DATA / "champion_ratings.json", "w") as f:
+        json.dump(out, f, separators=(",", ":"))
+    print(f"  wrote champion_ratings.json ({len(out)} entries)")
 
 
 def _slug(name: str) -> str:
