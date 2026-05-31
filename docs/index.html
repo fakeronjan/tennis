@@ -753,8 +753,8 @@
 <header>
   <h1>TENNIS &#x1F3BE;</h1>
   <p class="subtitle">Tennis Power Rankings &middot; Alpha</p>
-  <p class="model-note">fakeronjan WLS power rating for tennis: per-set sqrt(game-margin) regression over a 1-year rolling window. Each player has a base rating (their average level across hard/clay/grass) plus three surface deltas that sum to zero. Carpet matches still feed the base rating but get no per-player delta (sample sizes are too thin in the modern era to identify reliably). 1973+, ATP and WTA singles tracked separately. Coexists with the original Open Era Grand Slam views (Champions, Slam Chase) which use raw slam-results data.</p>
-  <p class="updated"><span class="cadence-inline">🛠️ Updated manually</span> <span class="cadence-sep">|</span> <span id="last-updated">Data through 2026 Australian Open</span></p>
+  <p class="model-note">Head-to-head WLS ratings from every ATP and WTA singles set played. Considers opponent strength, set margin, tournament tier, and recency. Each player gets a base rating plus per-surface deltas (hard / clay / grass) showing specialization. ~2.5 = current top 10; ~3.5+ = era-defining peak; ~5 = generational (Graf 1988 = 5.04).</p>
+  <p class="updated"><span class="cadence-inline">🛠️ Updated manually</span> <span class="cadence-sep">|</span> <span id="last-updated">Loading...</span> <span class="cadence-sep">|</span> <span id="last-refreshed">Loading...</span></p>
 </header>
 
 <nav>
@@ -2174,7 +2174,32 @@ document.querySelectorAll('nav button').forEach(btn => {
 
 // --- Initial render -----------------------------------------------------------
 
+async function loadMeta() {
+  try {
+    const res = await fetch(`${RATINGS_BASE}/meta.json`);
+    if (!res.ok) return;
+    const meta = await res.json();
+    const fmtDate = s => {
+      if (!s) return '';
+      const [y, m, d] = s.split('-');
+      return `${parseInt(m, 10)}/${parseInt(d, 10)}/${y}`;
+    };
+    const lu = document.getElementById('last-updated');
+    if (lu && meta.first_match_date && meta.last_match_date) {
+      lu.textContent = `Ratings include matches from ${fmtDate(meta.first_match_date)} to ${fmtDate(meta.last_match_date)}`;
+    }
+    const lr = document.getElementById('last-refreshed');
+    if (lr && meta.generated_at) {
+      const refreshed = new Date(meta.generated_at);
+      lr.textContent = `Last refreshed: ${refreshed.toLocaleString(undefined,
+        {year:'numeric', month:'numeric', day:'numeric',
+         hour:'numeric', minute:'2-digit', timeZoneName:'short'})}`;
+    }
+  } catch (e) { /* leave Loading... visible if fetch fails */ }
+}
+
 (async function bootstrap() {
+  loadMeta();
   await loadChampionRatings();
   ['m','w'].forEach(tour => {
     renderPills(tour);
