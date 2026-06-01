@@ -754,16 +754,21 @@ def generate_data() -> None:
     # Shared per-player match log for window/career stat lookups.
     per_player = build_player_match_index(matches)
 
-    # Filter low-confidence EOY snapshots. A (player, year) qualifies for GOAT
-    # consideration if EITHER:
-    #   (a) sets_played >= EOY_MIN_SETS (full-season sample), OR
-    #   (b) the player won at least one Grand Slam singles title that year.
-    # Rule (a) filters phantom small-sample peaks (e.g. Yen Hsun Lu 2005 at
-    # 45 sets / 6-8 record, Graf 1997 at 41 sets after her knee injury).
-    # Rule (b) is an escape hatch for shortened slam-winning seasons (Serena
-    # Williams 2010, 67 sets but 2 slams).
-    EOY_MIN_SETS = 80
-    slam_year_winners = set()  # (tour, year, player)
+    # Two separate eligibility rules — PEAK and ERA answer different questions
+    # so they get different filters.
+    #
+    #   PEAK: "What was this player's best single season?"
+    #         Needs a confident signal — small-sample years (injury, debut,
+    #         partial schedule) can't be a player's bona fide peak. HARD set
+    #         minimum, no escape hatch.
+    #   ERA:  "How much above-average tennis did this player play across
+    #         their career?" A slam-winning year, even if shortened, is a
+    #         meaningful contribution — keep the slam-winner escape hatch
+    #         so it doesn't get stripped from career totals.
+    PEAK_MIN_SETS = 125  # hard minimum for PEAK eligibility (no escape)
+    ERA_MIN_SETS  = 80   # ERA minimum, OR slam-winner that year
+
+    slam_year_winners = set()
     matches_dated = matches.copy()
     matches_dated["date"] = pd.to_datetime(matches_dated["date"])
     matches_dated["year"] = matches_dated["date"].dt.year
@@ -774,30 +779,63 @@ def generate_data() -> None:
     for _, r in slam_finals.iterrows():
         slam_year_winners.add((r["tour"], int(r["year"]), r["winner_name"]))
 
-    def qualifies(row):
-        if row["sets_played"] >= EOY_MIN_SETS:
+    def peak_qualifies(row):
+        return row["sets_played"] >= PEAK_MIN_SETS
+
+    def era_qualifies(row):
+        if row["sets_played"] >= ERA_MIN_SETS:
             return True
         return (row["tour"], int(row["year"]), row["player"]) in slam_year_winners
 
-    before = len(eoy_only)
-    eoy_only = eoy_only[eoy_only.apply(qualifies, axis=1)].copy()
-    print(f"  EOY filter: {before:,} -> {len(eoy_only):,} player-years (kept >={EOY_MIN_SETS} sets OR slam-winning year)")
+    eoy_peak = eoy_only[eoy_only.apply(peak_qualifies, axis=1)].copy()
+    eoy_era  = eoy_only[eoy_only.apply(era_qualifies, axis=1)].copy()
+    print(f"  PEAK filter: {len(eoy_only):,} -> {len(eoy_peak):,} player-years (>= {PEAK_MIN_SETS} sets)")
+    print(f"  ERA  filter: {len(eoy_only):,} -> {len(eoy_era):,} player-years (>= {ERA_MIN_SETS} sets OR slam-winning year)")
+
+    # Per-year anchor: rating of the 10th-ranked player that year. Adjusting
+    # by this anchor turns each year's PEAK rating into "wins above the year's
+    # marginal top-10 player" — strips out field-depth and tournament-coverage
+    # variance across years, and surfaces the truly elite peaks. Side effect
+    # for ERA: a year only contributes to a player's career ERA if they
+    # cleared the year's top-10 bar. ERA becomes a "years of elite tennis"
+    # quality-weighted measure.
+    ANCHOR_RANK = 10
+    anchor_per_year = {}
+    for (tour, yr), grp in eoy_only.groupby(["tour", "year"]):
+        sorted_g = grp.sort_values("base", ascending=False).reset_index(drop=True)
+        if len(sorted_g) >= ANCHOR_RANK:
+            anchor_per_year[(tour, int(yr))] = float(sorted_g.iloc[ANCHOR_RANK - 1]["base"])
+        else:
+            # If a year has fewer EOY-published players than the anchor rank
+            # (very early WTA), use the last player as the anchor.
+            anchor_per_year[(tour, int(yr))] = float(sorted_g.iloc[-1]["base"])
+
+    def _adjust(df):
+        df["anchor_50"] = df.apply(
+            lambda r: anchor_per_year.get((r["tour"], int(r["year"])), 0.0), axis=1)
+        df["adj_base"] = df["base"] - df["anchor_50"]
+        return df
+    eoy_peak = _adjust(eoy_peak)
+    eoy_era  = _adjust(eoy_era)
 
     for tour in ["ATP", "WTA"]:
-        t = eoy_only[eoy_only["tour"] == tour].copy()
-        if t.empty:
+        t_peak = eoy_peak[eoy_peak["tour"] == tour].copy()
+        t_era  = eoy_era[eoy_era["tour"] == tour].copy()
+        if t_peak.empty and t_era.empty:
             continue
 
-        # Year-end #1 count per player (by our EOY rating, not official rankings).
-        no1_per_year = t.loc[t.groupby("year")["base"].idxmax()]
+        # Year-end #1 count per player — uses the looser ERA filter so the
+        # tally credits dominant-but-thin years (e.g. Hingis 1997 first WTA YE#1).
+        no1_per_year = t_era.loc[t_era.groupby("year")["base"].idxmax()]
         no1_counts = no1_per_year.groupby("player").size().to_dict()
 
         # ----- PEAK -----
-        peaks = t.loc[t.groupby("player")["base"].idxmax()].copy()
-        peaks = peaks.sort_values("base", ascending=False).head(50).reset_index(drop=True)
+        # Rank by adj_base (rating above year's #50 player) to make cross-year
+        # comparison meaningful. Display the adjusted value as the headline rating.
+        peaks = t_peak.loc[t_peak.groupby("player")["adj_base"].idxmax()].copy()
+        peaks = peaks.sort_values("adj_base", ascending=False).head(50).reset_index(drop=True)
         peak_rows = []
         for i, r in peaks.iterrows():
-            # Stats from the player's peak EOY year (calendar-year window).
             year = int(r["year"])
             yr_start = pd.Timestamp(year=year, month=1, day=1)
             yr_end   = pd.Timestamp(year=year, month=12, day=31)
@@ -807,7 +845,9 @@ def generate_data() -> None:
                 "rank":          i + 1,
                 "player":        r["player"],
                 "peak_year":     year,
-                "base":          round(float(r["base"]), 3),
+                "base":          round(float(r["adj_base"]), 3),   # adjusted headline value
+                "raw_base":      round(float(r["base"]), 3),
+                "anchor_50":     round(float(r["anchor_50"]), 3),
                 "hard_delta":    round(float(r["hard_delta"]), 3),
                 "clay_delta":    round(float(r["clay_delta"]), 3),
                 "grass_delta":   round(float(r["grass_delta"]), 3),
@@ -823,9 +863,11 @@ def generate_data() -> None:
         print(f"  wrote goat_peak_{tour.lower()}.json ({len(peak_rows)} players)")
 
         # ----- ERA -----
-        # Sum of positive EOY ratings across each player's career.
-        t["positive"] = t["base"].clip(lower=0)
-        era_score = t.groupby("player").agg(
+        # Sum of positive ADJUSTED EOY ratings across each player's career.
+        # Adjusted = base - year's #50-player base. Negative adjusted years
+        # (player below the year's marginal tour participant) contribute 0.
+        t_era["positive"] = t_era["adj_base"].clip(lower=0)
+        era_score = t_era.groupby("player").agg(
             era=("positive", "sum"),
             first_year=("year", "min"),
             last_year=("year", "max"),

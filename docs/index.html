@@ -2194,7 +2194,8 @@ async function refreshGoatRating(tour) {
     wrap.innerHTML = `
       <table class="goat-rating-table">
         <thead><tr>
-          <th>#</th><th>Player</th><th>Peak</th>
+          <th>#</th><th>Player</th>
+          <th title="Player's peak end-of-year rating minus that year's #10 player base — 'rating above the marginal top-10 player'. Strips out year-to-year field-depth variance.">Peak</th>
           <th>Year</th><th>Surface specialization</th>
           <th>Record</th><th>Titles</th><th>Slams</th>
           <th title="Times the player finished a season ranked #1 by EOY rating">YE #1</th>
@@ -2215,7 +2216,8 @@ async function refreshGoatRating(tour) {
     wrap.innerHTML = `
       <table class="goat-rating-table">
         <thead><tr>
-          <th>#</th><th>Player</th><th>ERA</th>
+          <th>#</th><th>Player</th>
+          <th title="Career sum of positive (EOY rating - that year's #10 player base). Only above-top-10 seasons contribute. Quality-weighted 'years of elite tennis'.">ERA</th>
           <th>Span</th>
           <th title="Career Grand Slam singles titles">Slams</th>
           <th title="Career singles titles (all tour-level events)">Titles</th>
