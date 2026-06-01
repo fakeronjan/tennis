@@ -1559,11 +1559,11 @@ function eligiblePlayers(tour) {
   const counts = {};
   DATA[tour].forEach(r => { counts[r.w] = (counts[r.w] || 0) + 1; });
   return Object.entries(counts)
-    .filter(([_, c]) => c >= 3)
+    .filter(([_, c]) => c >= 1)
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 }
 
-// Quick eligibility lookup (3+ OE slams = has a Player Summary profile)
+// Quick eligibility lookup (1+ OE slam = has a Player Summary profile)
 const ELIGIBLE_SET = {
   m: new Set(eligiblePlayers('m').map(([n]) => n)),
   w: new Set(eligiblePlayers('w').map(([n]) => n)),
