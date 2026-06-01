@@ -138,6 +138,8 @@
   }
   .goat-view-pills button.active .pill-sub { color: rgba(255,255,255,0.7); }
 
+  .muted { color: #999; font-size: 11px; }
+
   /* Disrupted-snapshot tags (fleet-wide pattern: cancelled/labor/covid) */
   .short-season-tag {
     display: inline-block;
@@ -2175,16 +2177,17 @@ async function refreshGoatRating(tour) {
   let rows;
   if (goatView === 'peak') {
     rows = data.players.map(p => {
-      const sd = {
-        hard: p.hard_delta, clay: p.clay_delta, grass: p.grass_delta,
-      };
+      const sd = { hard: p.hard_delta, clay: p.clay_delta, grass: p.grass_delta };
+      const slamFlags = (p.slams_won || []).map(c => SLAM_FLAG[c] || '').filter(Boolean).join(' ');
       return `<tr>
         <td class="col-rank">${p.rank}</td>
         <td class="col-player">${escapeHtml(p.player)}</td>
         <td class="col-rating">${p.base.toFixed(2)}</td>
         <td class="col-extra">${p.peak_year}</td>
         <td class="col-extra">${surfaceDeltaHTML(sd)}</td>
-        <td class="col-extra">${p.sets_played}</td>
+        <td class="col-extra">${(p.match_wins ?? 0)}-${(p.match_losses ?? 0)}</td>
+        <td class="col-extra">${p.titles ?? 0}</td>
+        <td class="col-extra">${slamFlags || '-'}</td>
         <td class="col-extra">${p.year_end_no1 || '-'}</td>
       </tr>`;
     }).join('');
@@ -2193,7 +2196,7 @@ async function refreshGoatRating(tour) {
         <thead><tr>
           <th>#</th><th>Player</th><th>Peak</th>
           <th>Year</th><th>Surface specialization</th>
-          <th>Sets (year)</th>
+          <th>Record</th><th>Titles</th><th>Slams</th>
           <th title="Times the player finished a season ranked #1 by EOY rating">YE #1</th>
         </tr></thead>
         <tbody>${rows}</tbody>
@@ -2203,16 +2206,20 @@ async function refreshGoatRating(tour) {
       <td class="col-rank">${p.rank}</td>
       <td class="col-player">${escapeHtml(p.player)}</td>
       <td class="col-rating">${p.era.toFixed(1)}</td>
-      <td class="col-extra">${p.career_span}</td>
-      <td class="col-extra">${p.years_active}</td>
-      <td class="col-extra">${p.peak_year_rating.toFixed(2)} (${p.peak_year})</td>
+      <td class="col-extra">${p.first_year}-${p.last_year} <span class="muted">(${p.years_active}y)</span></td>
+      <td class="col-extra">${p.career_slams ?? 0}</td>
+      <td class="col-extra">${p.career_titles ?? 0}</td>
+      <td class="col-extra">${(p.career_wins ?? 0).toLocaleString()}-${(p.career_losses ?? 0).toLocaleString()}</td>
       <td class="col-extra">${p.year_end_no1 || '-'}</td>
     </tr>`).join('');
     wrap.innerHTML = `
       <table class="goat-rating-table">
         <thead><tr>
           <th>#</th><th>Player</th><th>ERA</th>
-          <th>Career span</th><th>Years rated</th><th>Best year</th>
+          <th>Span</th>
+          <th title="Career Grand Slam singles titles">Slams</th>
+          <th title="Career singles titles (all tour-level events)">Titles</th>
+          <th title="Career match record (wins-losses)">Record</th>
           <th title="Times the player finished a season ranked #1 by EOY rating">YE #1</th>
         </tr></thead>
         <tbody>${rows}</tbody>

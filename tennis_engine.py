@@ -508,6 +508,86 @@ RATINGS_CSV = Path(__file__).parent / "tennis_ratings.csv.gz"
 
 
 SLAM_NAMES = {"Australian Open", "Roland Garros", "Wimbledon", "US Open", "Us Open"}
+SLAM_TO_CODE = {
+    "Australian Open": "AO",
+    "Roland Garros":   "FO",
+    "Wimbledon":       "Wim",
+    "US Open":         "US",
+    "Us Open":         "US",
+}
+SLAM_DISPLAY_ORDER = {"AO": 1, "FO": 2, "Wim": 3, "US": 4}
+
+
+def build_player_match_index(matches: pd.DataFrame) -> dict:
+    """Pre-index every match by (tour, player_name) for fast window lookups.
+
+    Each (tour, player) -> dict with parallel lists sorted by date:
+      dates, won (bool), round, tourney
+    Used by window_stats / career_stats helpers below.
+    """
+    out = {}
+    matches = matches.copy()
+    matches["date"] = pd.to_datetime(matches["date"])
+    for tour in ["ATP", "WTA"]:
+        sub = matches[matches["tour"] == tour].sort_values("date")
+        for who_col, won in [("winner_name", True), ("loser_name", False)]:
+            for player_name, grp in sub.groupby(who_col):
+                key = (tour, player_name)
+                if key not in out:
+                    out[key] = {"dates": [], "won": [], "round": [], "tourney": []}
+                b = out[key]
+                b["dates"].extend(grp["date"].tolist())
+                b["won"].extend([won] * len(grp))
+                b["round"].extend(grp["round"].fillna("").tolist())
+                b["tourney"].extend(grp["tourney_name"].fillna("").tolist())
+    for key, b in out.items():
+        order = sorted(range(len(b["dates"])), key=lambda i: b["dates"][i])
+        for col in ("dates", "won", "round", "tourney"):
+            b[col] = [b[col][i] for i in order]
+    return out
+
+
+def window_stats(per_player: dict, tour: str, player: str,
+                 win_start: pd.Timestamp, win_end: pd.Timestamp):
+    """Return (wins, losses, titles, slams_won_codes) for player in [win_start, win_end]."""
+    bucket = per_player.get((tour, player))
+    if not bucket:
+        return 0, 0, 0, []
+    wins = losses = titles = 0
+    slam_codes = []
+    for dt, won, rnd, tn in zip(bucket["dates"], bucket["won"],
+                                  bucket["round"], bucket["tourney"]):
+        if dt < win_start or dt > win_end:
+            continue
+        if won:
+            wins += 1
+            if rnd == "F":
+                titles += 1
+                if tn in SLAM_TO_CODE:
+                    slam_codes.append(SLAM_TO_CODE[tn])
+        else:
+            losses += 1
+    slams = sorted(set(slam_codes), key=lambda c: SLAM_DISPLAY_ORDER.get(c, 99))
+    return wins, losses, titles, slams
+
+
+def career_stats(per_player: dict, tour: str, player: str):
+    """Return (career_wins, career_losses, career_titles, career_slams_count)
+    across the player's entire match log — no window filtering."""
+    bucket = per_player.get((tour, player))
+    if not bucket:
+        return 0, 0, 0, 0
+    wins = losses = titles = slams = 0
+    for won, rnd, tn in zip(bucket["won"], bucket["round"], bucket["tourney"]):
+        if won:
+            wins += 1
+            if rnd == "F":
+                titles += 1
+                if tn in SLAM_TO_CODE:
+                    slams += 1
+        else:
+            losses += 1
+    return wins, losses, titles, slams
 
 
 def build_rolling_snapshots(obs: pd.DataFrame, matches: pd.DataFrame) -> pd.DataFrame:
@@ -661,25 +741,25 @@ def generate_data() -> None:
 
     # --- GOAT-PEAK + GOAT-ERA (EOY snapshots only) ---
     # Both views use the EOY (end-of-year) snapshot — calendar-year window,
-    # tier weighting only, no recency decay. This gives each player one
-    # full-season rating per year, calibrated against the rest of that
-    # year's field rather than form-at-a-moment.
-    #   PEAK = player's max EOY base rating across their career.
+    # tier weighting only, no recency decay. One full-season-calibrated
+    # rating per (player, year).
+    #   PEAK = player's max EOY base rating across career. Surfaces the
+    #          peak-year body of work (W-L, titles, slams that year).
     #   ERA  = sum of (player's positive EOY base ratings) across career.
-    #          Each year clipped at 0 so mediocre years don't subtract
-    #          from career body of work.
-    #   year_end_no1 = count of EOY snapshots where the player was ranked
-    #                  first on their tour.
+    #          Surfaces career totals (slams, titles, year-end #1 finishes).
+    #          Negative years clipped at 0 — body of work above tour average.
     eoy_only = ratings[ratings["snapshot_type"] == "eoy"].copy()
     eoy_only["year"] = pd.to_datetime(eoy_only["snapshot_date"]).dt.year
+
+    # Shared per-player match log for window/career stat lookups.
+    per_player = build_player_match_index(matches)
 
     for tour in ["ATP", "WTA"]:
         t = eoy_only[eoy_only["tour"] == tour].copy()
         if t.empty:
             continue
 
-        # Year-end #1 count per player. For each EOY snapshot, the player
-        # with the highest base rating gets +1.
+        # Year-end #1 count per player (by our EOY rating, not official rankings).
         no1_per_year = t.loc[t.groupby("year")["base"].idxmax()]
         no1_counts = no1_per_year.groupby("player").size().to_dict()
 
@@ -688,15 +768,24 @@ def generate_data() -> None:
         peaks = peaks.sort_values("base", ascending=False).head(50).reset_index(drop=True)
         peak_rows = []
         for i, r in peaks.iterrows():
+            # Stats from the player's peak EOY year (calendar-year window).
+            year = int(r["year"])
+            yr_start = pd.Timestamp(year=year, month=1, day=1)
+            yr_end   = pd.Timestamp(year=year, month=12, day=31)
+            wins, losses, titles, slams = window_stats(
+                per_player, tour, r["player"], yr_start, yr_end)
             peak_rows.append({
                 "rank":          i + 1,
                 "player":        r["player"],
-                "peak_year":     int(r["year"]),
+                "peak_year":     year,
                 "base":          round(float(r["base"]), 3),
                 "hard_delta":    round(float(r["hard_delta"]), 3),
                 "clay_delta":    round(float(r["clay_delta"]), 3),
                 "grass_delta":   round(float(r["grass_delta"]), 3),
-                "sets_played":   int(r["sets_played"]),
+                "match_wins":    wins,
+                "match_losses":  losses,
+                "titles":        titles,
+                "slams_won":     slams,
                 "year_end_no1":  int(no1_counts.get(r["player"], 0)),
             })
         with open(DOCS_DATA / f"goat_peak_{tour.lower()}.json", "w") as f:
@@ -713,22 +802,24 @@ def generate_data() -> None:
             last_year=("year", "max"),
             years_active=("year", "nunique"),
         ).reset_index()
-        peak_per_player = t.loc[t.groupby("player")["base"].idxmax()][
-            ["player", "year", "base"]
-        ].rename(columns={"year": "peak_year", "base": "peak_year_rating"})
-        era_score = era_score.merge(peak_per_player, on="player")
         era_score = era_score.sort_values("era", ascending=False).head(50).reset_index(drop=True)
 
         era_rows = []
         for i, r in era_score.iterrows():
+            # Career totals across the player's entire match log (no window).
+            c_wins, c_losses, c_titles, c_slams = career_stats(
+                per_player, tour, r["player"])
             era_rows.append({
                 "rank":             i + 1,
                 "player":           r["player"],
                 "era":              round(float(r["era"]), 3),
-                "career_span":      f"{int(r['first_year'])}-{int(r['last_year'])}",
+                "first_year":       int(r["first_year"]),
+                "last_year":        int(r["last_year"]),
                 "years_active":     int(r["years_active"]),
-                "peak_year":        int(r["peak_year"]),
-                "peak_year_rating": round(float(r["peak_year_rating"]), 3),
+                "career_wins":      c_wins,
+                "career_losses":    c_losses,
+                "career_titles":    c_titles,
+                "career_slams":     c_slams,
                 "year_end_no1":     int(no1_counts.get(r["player"], 0)),
             })
         with open(DOCS_DATA / f"goat_era_{tour.lower()}.json", "w") as f:
@@ -812,13 +903,6 @@ def write_power_rankings_history(ratings: pd.DataFrame, matches: pd.DataFrame) -
     window-scoped career stats: match W-L, title count, slam codes won. The
     SPA renders these in additional columns on the Power Rankings table.
     """
-    SLAM_TO_CODE = {
-        "Australian Open": "AO",
-        "Roland Garros":   "FO",
-        "Wimbledon":       "Wim",
-        "US Open":         "US",
-        "Us Open":         "US",
-    }
     SLAM_LABELS = {"AO": "After Australian Open", "FO": "After Roland Garros",
                    "Wim": "After Wimbledon", "US": "After US Open",
                    "EOY": "End of year (full year, no recency)",
@@ -858,55 +942,7 @@ def write_power_rankings_history(ratings: pd.DataFrame, matches: pd.DataFrame) -
             for d in sub[sub["tour"] == tour]["date"].unique():
                 slam_code_lookup[(tour, pd.Timestamp(d))] = code
 
-    # Pre-index matches per (tour, player) once for fast per-snapshot stat lookup.
-    # Each entry: dict with sorted dates + parallel arrays for outcome metadata.
-    per_player = {}
-    for tour in ["ATP", "WTA"]:
-        sub = matches[matches["tour"] == tour].copy()
-        sub = sub.sort_values("date")
-        # Each row: a single match. We'll fan out per (winner, loser) so each
-        # player has their full participation log.
-        for who_col, opp_col, won in [("winner_name", "loser_name", True),
-                                       ("loser_name", "winner_name", False)]:
-            for player_name, grp in sub.groupby(who_col):
-                key = (tour, player_name)
-                if key not in per_player:
-                    per_player[key] = {"dates": [], "won": [], "round": [],
-                                       "tourney": []}
-                bucket = per_player[key]
-                bucket["dates"].extend(grp["date"].tolist())
-                bucket["won"].extend([won] * len(grp))
-                bucket["round"].extend(grp["round"].fillna("").tolist())
-                bucket["tourney"].extend(grp["tourney_name"].fillna("").tolist())
-    # Sort each player's log by date (Python's sort is stable so we sort by index)
-    for key, bucket in per_player.items():
-        order = sorted(range(len(bucket["dates"])), key=lambda i: bucket["dates"][i])
-        for col in ("dates", "won", "round", "tourney"):
-            bucket[col] = [bucket[col][i] for i in order]
-
-    def window_stats(tour, player, win_start, win_end):
-        """Return (wins, losses, titles, slams_won_list) for player in [start,end]."""
-        bucket = per_player.get((tour, player))
-        if not bucket:
-            return 0, 0, 0, []
-        wins = losses = titles = 0
-        slam_codes = []
-        for dt, won, rnd, tn in zip(bucket["dates"], bucket["won"],
-                                      bucket["round"], bucket["tourney"]):
-            if dt < win_start or dt > win_end:
-                continue
-            if won:
-                wins += 1
-                if rnd == "F":
-                    titles += 1
-                    if tn in SLAM_TO_CODE:
-                        slam_codes.append(SLAM_TO_CODE[tn])
-            else:
-                losses += 1
-        # Stable, unique slam codes in slam-calendar order (AO/FO/Wim/US)
-        order = {"AO": 1, "FO": 2, "Wim": 3, "US": 4}
-        slams = sorted(set(slam_codes), key=lambda c: order.get(c, 99))
-        return wins, losses, titles, slams
+    per_player = build_player_match_index(matches)
 
     for tour in ["ATP", "WTA"]:
         t = ratings[ratings["tour"] == tour].copy()
@@ -947,7 +983,7 @@ def write_power_rankings_history(ratings: pd.DataFrame, matches: pd.DataFrame) -
             players = []
             for i, r in top.iterrows():
                 wins, losses, titles, slams = window_stats(
-                    tour, r["player"], win_start, win_end)
+                    per_player, tour, r["player"], win_start, win_end)
                 players.append({
                     "rank":         i + 1,
                     "player":       r["player"],
