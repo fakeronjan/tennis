@@ -41,8 +41,9 @@ def rebundle():
 
 
 def main():
-    run("scrape.py")          # champions list -> slams_m.csv, slams_w.csv, slams.json
-    run("scrape_players.py")  # per-player timelines (picks up any new 3+ slam winners automatically)
+    run("scrape.py")                  # champions list -> slams_m.csv, slams_w.csv, slams.json
+    run("build_player_timelines.py")  # per-player timelines from Sackmann match data
+                                       # (every 1+ slam winner auto-included; no Wikipedia scrape).
     rebundle()
     print("\nDONE. Next: git add -A && git commit -m 'data: refresh through <slam name> YYYY' && git push")
 
