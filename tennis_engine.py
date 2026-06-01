@@ -899,27 +899,53 @@ def generate_data() -> None:
         print(f"  wrote goat_era_{tour.lower()}.json ({len(era_rows)} players)")
 
     # --- Per-player history (all snapshots for each player) ---
+    # Pre-compute rank per (tour, snapshot_date, player) — within the published
+    # top 50 only; non-top-50 players get rank=null so the SPA can render a
+    # hyphen consistent with the Power Rankings tab.
+    rank_lookup = {}  # (tour, date, player) -> rank (1..50) or None
+    for (tour_x, snap_dt), grp in ratings.groupby(["tour", "snapshot_date"]):
+        sorted_grp = grp.sort_values("base", ascending=False).reset_index(drop=True)
+        for i, row in sorted_grp.iterrows():
+            r = i + 1
+            rank_lookup[(tour_x, pd.Timestamp(snap_dt), row["player"])] = r if r <= 50 else None
+
     for tour in ["ATP", "WTA"]:
         t = ratings[ratings["tour"] == tour]
         for player, sub in t.groupby("player"):
             sub = sub.sort_values("snapshot_date")
-            history = [
-                {
-                    "date":         str(r["snapshot_date"].date()),
+            history = []
+            years_in_history = set()
+            for _, r in sub.iterrows():
+                snap = pd.Timestamp(r["snapshot_date"])
+                rank = rank_lookup.get((tour, snap, player))
+                history.append({
+                    "date":         str(snap.date()),
                     "base":         round(float(r["base"]), 3),
                     "hard_delta":   round(float(r["hard_delta"]), 3),
                     "clay_delta":   round(float(r["clay_delta"]), 3),
                     "grass_delta":  round(float(r["grass_delta"]), 3),
-                        "sets_played":  int(r["sets_played"]),
+                    "sets_played":  int(r["sets_played"]),
+                    "rank":         rank,
+                    "snapshot_type": r["snapshot_type"],
+                })
+                years_in_history.add(snap.year)
+            # Per-year aggregate stats (record, titles, slams won) — used by
+            # the Player Summary slam-grid Record/Titles/EOY columns.
+            year_stats = {}
+            for yr in sorted(years_in_history):
+                ys = pd.Timestamp(year=int(yr), month=1, day=1)
+                ye = pd.Timestamp(year=int(yr), month=12, day=31)
+                w, l, ti, sl = window_stats(per_player, tour, player, ys, ye)
+                year_stats[str(int(yr))] = {
+                    "wins":   w, "losses": l, "titles": ti, "slams_won": sl,
                 }
-                for _, r in sub.iterrows()
-            ]
             slug = _slug(player)
             with open(DOCS_DATA / "players" / f"{tour.lower()}_{slug}.json", "w") as f:
                 json.dump({
-                    "player":   player,
-                    "tour":     tour,
-                    "history":  history,
+                    "player":     player,
+                    "tour":       tour,
+                    "history":    history,
+                    "year_stats": year_stats,
                 }, f, separators=(",", ":"))
         print(f"  wrote per-player files for {tour}: {t['player'].nunique()} players")
 

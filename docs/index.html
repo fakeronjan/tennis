@@ -139,6 +139,22 @@
   .goat-view-pills button.active .pill-sub { color: rgba(255,255,255,0.7); }
 
   .muted { color: #999; font-size: 11px; }
+  .player-rating-line {
+    font-size: 11px;
+    color: #555;
+    margin-top: 3px;
+    font-variant-numeric: tabular-nums;
+  }
+  .player-rating-line .muted { color: #888; }
+  .num-cell {
+    text-align: right;
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+    color: #1a1a1a;
+    padding: 8px 12px;
+    white-space: nowrap;
+  }
+  .stat-sub-inline { color: #888; font-size: 14px; font-weight: 500; }
 
   /* Disrupted-snapshot tags (fleet-wide pattern: cancelled/labor/covid) */
   .short-season-tag {
@@ -1602,7 +1618,7 @@ function finishClass(code) {
   return 'finish-out';
 }
 
-function renderPlayer(tour, player) {
+async function renderPlayer(tour, player) {
   const contentId = `player-content-${tour}`;
   if (!player) {
     document.getElementById(contentId).innerHTML = `<p class="empty">Select a player above.</p>`;
@@ -1632,8 +1648,7 @@ function renderPlayer(tour, player) {
     });
   });
 
-  // Build a wins lookup keyed by `${year}:${slam}` -> { perT, total } at the time of that win.
-  // Walk full DATA[tour] in order, tracking each player's running counts, capture this player's wins.
+  // Wins lookup at the time of each win (for the slam-count badge)
   const winLookup = {};
   {
     const tCount = {}, pCount = {};
@@ -1646,6 +1661,44 @@ function renderPlayer(tour, player) {
       }
     });
   }
+
+  // Load rating data: per-player history + GOAT PEAK + GOAT ERA + power_rankings_history
+  // (the last for the year+slam -> date mapping).
+  const slug = player.replace(/[^A-Za-z0-9_]/g, '_').replace(/^_+|_+$/g, '');
+  const tourSlug = tour === 'm' ? 'atp' : 'wta';
+  const [phist, peakData, eraData, prHist] = await Promise.all([
+    fetchRatings(`players/${tourSlug}_${slug}.json`),
+    fetchRatings(`goat_peak_${tourSlug}.json`),
+    fetchRatings(`goat_era_${tourSlug}.json`),
+    fetchRatings(`power_rankings_history_${tourSlug}.json`),
+  ]);
+
+  // Build (year, slam_code) -> ISO date map from power_rankings_history
+  const slamDateByYC = {};
+  if (prHist && prHist.snapshots) {
+    for (const [key, snap] of Object.entries(prHist.snapshots)) {
+      if (key === 'Today') continue;
+      slamDateByYC[key] = snap.date;
+    }
+  }
+  // Player history: index by date for fast lookup
+  const historyByDate = {};
+  if (phist && phist.history) phist.history.forEach(h => { historyByDate[h.date] = h; });
+  const yearStats = (phist && phist.year_stats) || {};
+
+  // Peak / ERA stats for this player from the GOAT lists
+  const peakEntry = peakData && peakData.players
+    ? peakData.players.find(p => p.player === player)
+    : null;
+  const eraEntry  = eraData && eraData.players
+    ? eraData.players.find(p => p.player === player)
+    : null;
+  const peakStr = peakEntry
+    ? `${peakEntry.base.toFixed(2)} <span class="stat-sub-inline">@${peakEntry.peak_year}</span>`
+    : '-';
+  const peakRankStr = peakEntry ? `#${peakEntry.rank} all-time` : '';
+  const eraStr  = eraEntry  ? eraEntry.era.toFixed(1) : '-';
+  const eraRankStr = eraEntry ? `#${eraEntry.rank} all-time` : '';
 
   const flag = playerFlag(tour, player);
   const tileSlam = (s) => `
@@ -1668,13 +1721,21 @@ function renderPlayer(tour, player) {
           <div class="stat-value">${won}-${lost}</div>
           <div class="stat-sub">${won + lost} finals reached</div>
         </div>
+        <div class="stat-tile">
+          <div class="stat-label">Peak Rating</div>
+          <div class="stat-value">${peakStr}</div>
+          <div class="stat-sub">${peakRankStr || '&nbsp;'}</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-label">ERA Score</div>
+          <div class="stat-value">${eraStr}</div>
+          <div class="stat-sub">${eraRankStr || '&nbsp;'}</div>
+        </div>
         ${SLAM_ORDER.map(tileSlam).join('')}
       </div>
     </div>`;
 
   // Year x slam grid (newer years first).
-  // Trim leading and trailing rows where the player was absent from all 4 majors;
-  // keep all-A gap years that fall inside the active career window.
   const allYears = new Set();
   SLAM_ORDER.forEach(s => Object.keys(tl[s] || {}).forEach(y => allYears.add(+y)));
   const allYearsSorted = [...allYears].sort((a, b) => a - b);
@@ -1688,26 +1749,61 @@ function renderPlayer(tour, player) {
     ? []
     : allYearsSorted.filter(y => y >= firstActive && y <= lastActive).reverse();
 
+  // Helper: rating/rank line for a snapshot. Returns hyphen if player wasn't
+  // in the top 50 that snapshot (rank=null) or no snapshot exists.
+  const ratingLine = (year, slamCode) => {
+    const date = slamDateByYC[`${year}_${slamCode}`];
+    if (!date) return '-';
+    const h = historyByDate[date];
+    if (!h || h.rank == null) return '-';
+    return `${h.base.toFixed(2)} <span class="muted">#${h.rank}</span>`;
+  };
+
   const renderCell = (y, s) => {
     const code = (tl[s] || {})[String(y)] || '';
     const cls = finishClass(code);
+    const rating = ratingLine(y, s);
     if (code === 'W') {
       const info = winLookup[`${y}:${s}`];
       const counts = info ? `(${info.perT} ${SLAM_FLAG[s]}, ${info.total} total)` : '';
       return `<td class="${cls}">`
         + `<div class="finish-line">W &#x1F947;</div>`
         + (counts ? `<div class="winner-num">${counts}</div>` : '')
+        + `<div class="player-rating-line">${rating}</div>`
         + `</td>`;
     }
     if (code === 'F') {
-      return `<td class="${cls}"><div class="finish-line">F &#x1F948;</div></td>`;
+      return `<td class="${cls}">`
+        + `<div class="finish-line">F &#x1F948;</div>`
+        + `<div class="player-rating-line">${rating}</div>`
+        + `</td>`;
     }
-    return `<td class="${cls}">${code ? escapeHtml(code) : '-'}</td>`;
+    return `<td class="${cls}">`
+      + (code ? `<div class="finish-line">${escapeHtml(code)}</div>` : `<div class="finish-line">-</div>`)
+      + `<div class="player-rating-line">${rating}</div>`
+      + `</td>`;
+  };
+
+  const yearStatsLine = (y) => {
+    const ys = yearStats[String(y)];
+    if (!ys) return { record: '-', titles: '-' };
+    return { record: `${ys.wins}-${ys.losses}`, titles: ys.titles };
+  };
+  const eoyLine = (y) => {
+    const date = slamDateByYC[`${y}_EOY`];
+    if (!date) return '-';
+    const h = historyByDate[date];
+    if (!h || h.rank == null) return '-';
+    return `${h.base.toFixed(2)} <span class="muted">#${h.rank}</span>`;
   };
 
   const rows = years.map(y => {
     const cells = SLAM_ORDER.map(s => renderCell(y, s)).join('');
-    return `<tr><td class="year-cell">${y}</td>${cells}</tr>`;
+    const ys = yearStatsLine(y);
+    return `<tr><td class="year-cell">${y}</td>${cells}`
+      + `<td class="num-cell">${ys.record}</td>`
+      + `<td class="num-cell">${ys.titles}</td>`
+      + `<td class="num-cell">${eoyLine(y)}</td></tr>`;
   }).join('');
 
   const grid = `
@@ -1719,6 +1815,9 @@ function renderPlayer(tour, player) {
           <th>${SLAM_FLAG.FO} French Open</th>
           <th>${SLAM_FLAG.Wim} Wimbledon</th>
           <th>${SLAM_FLAG.US} US Open</th>
+          <th title="Year W-L record (all match outcomes in our dataset)">Record</th>
+          <th title="Tournament titles won that calendar year">Titles</th>
+          <th title="End-of-year rating + tour rank (Dec 31 calendar-year snapshot)">EOY</th>
         </tr></thead>
         <tbody>${rows}</tbody>
       </table>
