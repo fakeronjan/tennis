@@ -659,14 +659,29 @@ def generate_data() -> None:
             }, f, separators=(",", ":"))
         print(f"  wrote {out_path.name} ({len(rows)} players)")
 
-    # --- GOAT-PEAK + GOAT-ERA (slam snapshots only per user spec) ---
-    # PEAK = player's max base rating at any slam-day snapshot
-    # ERA  = sum of (per-year max positive base across that year's slams)
-    slam_only = ratings[ratings["snapshot_type"] == "slam"].copy()
-    slam_only["year"] = pd.to_datetime(slam_only["snapshot_date"]).dt.year
+    # --- GOAT-PEAK + GOAT-ERA (EOY snapshots only) ---
+    # Both views use the EOY (end-of-year) snapshot — calendar-year window,
+    # tier weighting only, no recency decay. This gives each player one
+    # full-season rating per year, calibrated against the rest of that
+    # year's field rather than form-at-a-moment.
+    #   PEAK = player's max EOY base rating across their career.
+    #   ERA  = sum of (player's positive EOY base ratings) across career.
+    #          Each year clipped at 0 so mediocre years don't subtract
+    #          from career body of work.
+    #   year_end_no1 = count of EOY snapshots where the player was ranked
+    #                  first on their tour.
+    eoy_only = ratings[ratings["snapshot_type"] == "eoy"].copy()
+    eoy_only["year"] = pd.to_datetime(eoy_only["snapshot_date"]).dt.year
 
     for tour in ["ATP", "WTA"]:
-        t = slam_only[slam_only["tour"] == tour].copy()
+        t = eoy_only[eoy_only["tour"] == tour].copy()
+        if t.empty:
+            continue
+
+        # Year-end #1 count per player. For each EOY snapshot, the player
+        # with the highest base rating gets +1.
+        no1_per_year = t.loc[t.groupby("year")["base"].idxmax()]
+        no1_counts = no1_per_year.groupby("player").size().to_dict()
 
         # ----- PEAK -----
         peaks = t.loc[t.groupby("player")["base"].idxmax()].copy()
@@ -676,12 +691,13 @@ def generate_data() -> None:
             peak_rows.append({
                 "rank":          i + 1,
                 "player":        r["player"],
-                "peak_snapshot": str(pd.Timestamp(r["snapshot_date"]).date()),
+                "peak_year":     int(r["year"]),
                 "base":          round(float(r["base"]), 3),
                 "hard_delta":    round(float(r["hard_delta"]), 3),
                 "clay_delta":    round(float(r["clay_delta"]), 3),
                 "grass_delta":   round(float(r["grass_delta"]), 3),
                 "sets_played":   int(r["sets_played"]),
+                "year_end_no1":  int(no1_counts.get(r["player"], 0)),
             })
         with open(DOCS_DATA / f"goat_peak_{tour.lower()}.json", "w") as f:
             json.dump({"tour": tour, "view": "PEAK", "players": peak_rows},
@@ -689,18 +705,15 @@ def generate_data() -> None:
         print(f"  wrote goat_peak_{tour.lower()}.json ({len(peak_rows)} players)")
 
         # ----- ERA -----
-        # Per (player, year), take MAX base across slams. Then sum positive
-        # year_max across the player's career.
-        year_max = t.groupby(["player", "year"])["base"].max().reset_index()
-        year_max["positive"] = year_max["base"].clip(lower=0)
-        era_score = year_max.groupby("player").agg(
+        # Sum of positive EOY ratings across each player's career.
+        t["positive"] = t["base"].clip(lower=0)
+        era_score = t.groupby("player").agg(
             era=("positive", "sum"),
             first_year=("year", "min"),
             last_year=("year", "max"),
             years_active=("year", "nunique"),
         ).reset_index()
-        # Peak rating (best year) per player — show alongside ERA
-        peak_per_player = year_max.loc[year_max.groupby("player")["base"].idxmax()][
+        peak_per_player = t.loc[t.groupby("player")["base"].idxmax()][
             ["player", "year", "base"]
         ].rename(columns={"year": "peak_year", "base": "peak_year_rating"})
         era_score = era_score.merge(peak_per_player, on="player")
@@ -716,6 +729,7 @@ def generate_data() -> None:
                 "years_active":     int(r["years_active"]),
                 "peak_year":        int(r["peak_year"]),
                 "peak_year_rating": round(float(r["peak_year_rating"]), 3),
+                "year_end_no1":     int(no1_counts.get(r["player"], 0)),
             })
         with open(DOCS_DATA / f"goat_era_{tour.lower()}.json", "w") as f:
             json.dump({"tour": tour, "view": "ERA", "players": era_rows},

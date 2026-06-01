@@ -739,7 +739,7 @@
   <div class="nav-group">
     <div class="nav-sport">Tennis 🎾</div>
     <div class="nav-leagues">
-      <a class="active" href="https://fakeronjan.com/tennis" target="_top">Slams</a>
+      <a class="active" href="https://fakeronjan.com/tennis" target="_top">Player Ratings</a>
     </div>
   </div>
   <div class="nav-group">
@@ -2132,16 +2132,19 @@ async function refreshGoatRating(tour) {
         <td class="col-rank">${p.rank}</td>
         <td class="col-player">${escapeHtml(p.player)}</td>
         <td class="col-rating">${p.base.toFixed(2)}</td>
-        <td class="col-extra">${p.peak_snapshot}</td>
+        <td class="col-extra">${p.peak_year}</td>
         <td class="col-extra">${surfaceDeltaHTML(sd)}</td>
         <td class="col-extra">${p.sets_played}</td>
+        <td class="col-extra">${p.year_end_no1 || '-'}</td>
       </tr>`;
     }).join('');
     wrap.innerHTML = `
       <table class="goat-rating-table">
         <thead><tr>
           <th>#</th><th>Player</th><th>Peak</th>
-          <th>When</th><th>Surface specialization</th><th>Sets (1y window)</th>
+          <th>Year</th><th>Surface specialization</th>
+          <th>Sets (year)</th>
+          <th title="Times the player finished a season ranked #1 by EOY rating">YE #1</th>
         </tr></thead>
         <tbody>${rows}</tbody>
       </table>`;
@@ -2153,12 +2156,14 @@ async function refreshGoatRating(tour) {
       <td class="col-extra">${p.career_span}</td>
       <td class="col-extra">${p.years_active}</td>
       <td class="col-extra">${p.peak_year_rating.toFixed(2)} (${p.peak_year})</td>
+      <td class="col-extra">${p.year_end_no1 || '-'}</td>
     </tr>`).join('');
     wrap.innerHTML = `
       <table class="goat-rating-table">
         <thead><tr>
           <th>#</th><th>Player</th><th>ERA</th>
           <th>Career span</th><th>Years rated</th><th>Best year</th>
+          <th title="Times the player finished a season ranked #1 by EOY rating">YE #1</th>
         </tr></thead>
         <tbody>${rows}</tbody>
       </table>`;
