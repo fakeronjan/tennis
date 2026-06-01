@@ -404,15 +404,16 @@
   }
   .stats-row {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-wrap: nowrap;
+    gap: 8px;
+    overflow-x: auto;
   }
   .stat-tile {
     background: #f8f8f6;
     border-radius: 4px;
-    padding: 12px 14px;
-    flex: 1 1 130px;
-    min-width: 0;
+    padding: 10px 11px;
+    flex: 1 1 0;
+    min-width: 90px;
   }
   .stat-tile.headline { background: #1a6b8a; color: #fff; }
   .stat-tile.headline .stat-label { color: rgba(255,255,255,0.7); }
@@ -980,7 +981,7 @@
     <button class="active" data-mw="m">Men's</button>
     <button data-mw="w">Women's</button>
   </div>
-  <p class="data-note">Players with 3+ Open Era slam titles qualify for a profile. Grid shows finish at each major (W = won, F = lost final, SF = semifinal, QF = quarter, 1R-4R = round of N, A = absent, Q1/Q2 = lost in qualifying, NH = not held).</p>
+  <p class="data-note">Players with 1+ Open Era slam title qualify for a profile. Grid shows finish at each major (W = won, F = lost final, SF = semifinal, QF = quarter, 1R-4R = round of N, A = absent, Q1/Q2 = lost in qualifying, NH = not held).</p>
 
   <div class="mw-section" data-tab="players" data-mw="m">
     <div class="controls">
@@ -1693,10 +1694,10 @@ async function renderPlayer(tour, player) {
   const eraEntry  = eraData && eraData.players
     ? eraData.players.find(p => p.player === player)
     : null;
-  const peakStr = peakEntry
-    ? `${peakEntry.base.toFixed(2)} <span class="stat-sub-inline">@${peakEntry.peak_year}</span>`
-    : '-';
-  const peakRankStr = peakEntry ? `#${peakEntry.rank} all-time` : '';
+  const peakStr = peakEntry ? peakEntry.base.toFixed(2) : '-';
+  const peakRankStr = peakEntry
+    ? `${peakEntry.peak_year} &middot; #${peakEntry.rank} all-time`
+    : '';
   const eraStr  = eraEntry  ? eraEntry.era.toFixed(1) : '-';
   const eraRankStr = eraEntry ? `#${eraEntry.rank} all-time` : '';
 
@@ -1882,16 +1883,10 @@ async function renderCareerChart(tour, player, svgId, legendId) {
   });
   const seriesKeys = ['base', ...surfacesIncluded];
 
-  let yMin = Infinity, yMax = -Infinity;
-  hist.forEach(h => seriesKeys.forEach(k => {
-    if (h[k] < yMin) yMin = h[k];
-    if (h[k] > yMax) yMax = h[k];
-  }));
-  // Pad y range slightly
-  const yPad = Math.max(0.1, (yMax - yMin) * 0.08);
-  yMin = Math.floor((yMin - yPad) * 10) / 10;
-  yMax = Math.ceil((yMax + yPad) * 10) / 10;
-  if (yMax - yMin < 0.5) yMax = yMin + 0.5;
+  // Fixed Y range across all players + both tours so charts are visually
+  // comparable. Covers WTA peaks (Graf 1988 ~5.0, Tracy Austin 1980 ~4.6)
+  // down through journeymen negatives.
+  const yMin = -1, yMax = 5;
 
   const px = t => padL + (t - tMin) / tSpan * (W - padL - padR);
   const py = v => padT + (1 - (v - yMin) / (yMax - yMin)) * (H - padT - padB);
