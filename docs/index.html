@@ -138,6 +138,37 @@
   }
   .goat-view-pills button.active .pill-sub { color: rgba(255,255,255,0.7); }
 
+  /* Disrupted-snapshot tags (fleet-wide pattern: cancelled/labor/covid) */
+  .short-season-tag {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    margin-left: 4px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+  .short-season-tag.tag-cancelled { background: #fde0e0; color: #c62828; border-color: #f5b3b3; }
+  .short-season-tag.tag-labor     { background: #fef3e0; color: #b56500; border-color: #f5d6a3; }
+  .short-season-tag.tag-covid     { background: #fef9c3; color: #92750e; border-color: #fde68a; }
+  .disrupted-note {
+    background: #fafafa;
+    border-left: 3px solid #c8c8c8;
+    padding: 8px 12px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    color: #555;
+    border-radius: 3px;
+  }
+  .disrupted-note ul { margin: 4px 0 0 18px; padding: 0; list-style: disc; }
+  .disrupted-note li { margin-bottom: 3px; line-height: 1.45; }
+  .disrupted-note li:last-child { margin-bottom: 0; }
+  .disrupted-note .short-season-tag { margin-left: 0; margin-right: 4px; }
+
   /* Snapshot pickers (Power Rankings tab) */
   .snapshot-pickers {
     display: flex;
@@ -786,6 +817,7 @@
     <button data-surface="grass">Grass</button>
   </div>
   <p class="data-note" id="power-rankings-asof">Current top 50 by fakeronjan WLS rating. <span class="footnote">Surface filter shows base rating + that surface's delta (effective rating on that surface).</span></p>
+  <div class="disrupted-note" id="power-rankings-disrupted-note" style="display:none"></div>
 
   <div class="mw-section" data-tab="power-rankings" data-mw="m">
     <div id="pr-table-m-wrap"><p class="loading">Loading ratings...</p></div>
@@ -2022,13 +2054,31 @@ async function refreshPowerRankings(tour) {
 
   const shortLabel = SNAP_CODE_SHORT[code] || snap.label;
   const dateStr = fmtSnapDate(snap.date);
+  // Disrupted tag (fleet-wide pattern) — append inline next to the snapshot label.
+  const disrupted = snap.disrupted;
+  const tagInline = disrupted
+    ? ` <span class="short-season-tag tag-${disrupted.category}" title="${escapeHtml(disrupted.note)}">${disrupted.tag.toUpperCase()}</span>`
+    : '';
   const labelText = code === 'Today'
     ? `Top ${snap.players.length} &middot; Today &middot; as of ${dateStr}`
-    : `Top ${snap.players.length} &middot; ${shortLabel} ${year} &middot; snapshot date ${dateStr}`;
+    : `Top ${snap.players.length} &middot; ${shortLabel} ${year}${tagInline} &middot; snapshot date ${dateStr}`;
   const noteFootnote = code === 'EOY'
     ? `<span class="footnote">End-of-year snapshot uses the full calendar year (Jan&nbsp;1&nbsp;-&nbsp;Dec&nbsp;31) with tier weighting only, no recency decay.</span>`
     : `<span class="footnote">Surface filter shows base rating + that surface's delta (effective rating on that surface).</span>`;
   document.getElementById('power-rankings-asof').innerHTML = `${labelText}. ${noteFootnote}`;
+  // Disrupted-snapshot footnote box — fleet-wide pattern (DUNCAN style).
+  const disruptedNote = document.getElementById('power-rankings-disrupted-note');
+  if (disruptedNote) {
+    if (disrupted) {
+      disruptedNote.innerHTML = `<strong>Disrupted snapshot:</strong><ul>`
+        + `<li><span class="short-season-tag tag-${disrupted.category}">${disrupted.tag.toUpperCase()}</span>${escapeHtml(disrupted.note)}</li>`
+        + `</ul>`;
+      disruptedNote.style.display = 'block';
+    } else {
+      disruptedNote.innerHTML = '';
+      disruptedNote.style.display = 'none';
+    }
+  }
 
   const surface = surfaceState[tour];
   const players = snap.players.map(p => {

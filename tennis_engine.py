@@ -824,6 +824,26 @@ def write_power_rankings_history(ratings: pd.DataFrame, matches: pd.DataFrame) -
                    "EOY": "End of year (full year, no recency)",
                    "Today": "Today (latest data)"}
 
+    # COVID-disrupted snapshots: rolling windows that cross the Mar-Aug 2020 tour
+    # shutdown or that contain irregular slam-calendar configurations. Format
+    # matches the fleet-wide disrupted-season pattern (tag, category, note).
+    # Only the "covid" category applies here — tennis had no work stoppage or
+    # cancelled-season equivalents to the labor / cancelled tags used elsewhere.
+    DISRUPTED_SNAPSHOTS = {
+        "2020_FO":  {"tag": "covid", "category": "covid",
+                     "note": "Roland Garros 2020 rescheduled to Sept-Oct (normally late May/early June) after the Mar-Aug COVID tour shutdown."},
+        "2020_US":  {"tag": "covid", "category": "covid",
+                     "note": "US Open 2020 played in the NYC bubble with a thin field — Federer, Nadal, and several other top players sat out; Djokovic was defaulted."},
+        "2021_AO":  {"tag": "covid", "category": "covid",
+                     "note": "Australian Open 2021 delayed to February. The 365-day rolling window reaches into the Mar-Aug 2020 tour shutdown."},
+        "2021_FO":  {"tag": "covid", "category": "covid",
+                     "note": "365-day rolling window contains TWO Roland Garros editions (Sept 2020 + Jun 2021) and no Wimbledon (2020 cancelled)."},
+        "2021_Wim": {"tag": "covid", "category": "covid",
+                     "note": "First Wimbledon since 2019 (2020 cancelled). Window reaches into a year without a played Wimbledon."},
+        "2021_US":  {"tag": "covid", "category": "covid",
+                     "note": "365-day rolling window still contains TWO Roland Garros editions (Sept 2020 + Jun 2021)."},
+    }
+
     matches = matches.copy()
     matches["date"] = pd.to_datetime(matches["date"])
 
@@ -941,7 +961,7 @@ def write_power_rankings_history(ratings: pd.DataFrame, matches: pd.DataFrame) -
                     "titles":       titles,
                     "slams_won":    slams,
                 })
-            snapshots[key] = {
+            snap_entry = {
                 "year":         int(year) if code != "Today" else int(year),
                 "code":         code,
                 "label":        SLAM_LABELS.get(code, code),
@@ -951,6 +971,10 @@ def write_power_rankings_history(ratings: pd.DataFrame, matches: pd.DataFrame) -
                 "type":         row_type,
                 "players":      players,
             }
+            disrupted = DISRUPTED_SNAPSHOTS.get(key)
+            if disrupted:
+                snap_entry["disrupted"] = disrupted
+            snapshots[key] = snap_entry
         out = {
             "tour":         tour,
             "snapshots":    snapshots,
