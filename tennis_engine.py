@@ -754,6 +754,35 @@ def generate_data() -> None:
     # Shared per-player match log for window/career stat lookups.
     per_player = build_player_match_index(matches)
 
+    # Filter low-confidence EOY snapshots. A (player, year) qualifies for GOAT
+    # consideration if EITHER:
+    #   (a) sets_played >= EOY_MIN_SETS (full-season sample), OR
+    #   (b) the player won at least one Grand Slam singles title that year.
+    # Rule (a) filters phantom small-sample peaks (e.g. Yen Hsun Lu 2005 at
+    # 45 sets / 6-8 record, Graf 1997 at 41 sets after her knee injury).
+    # Rule (b) is an escape hatch for shortened slam-winning seasons (Serena
+    # Williams 2010, 67 sets but 2 slams).
+    EOY_MIN_SETS = 80
+    slam_year_winners = set()  # (tour, year, player)
+    matches_dated = matches.copy()
+    matches_dated["date"] = pd.to_datetime(matches_dated["date"])
+    matches_dated["year"] = matches_dated["date"].dt.year
+    slam_finals = matches_dated[
+        (matches_dated["tourney_name"].isin(SLAM_NAMES))
+        & (matches_dated["round"] == "F")
+    ]
+    for _, r in slam_finals.iterrows():
+        slam_year_winners.add((r["tour"], int(r["year"]), r["winner_name"]))
+
+    def qualifies(row):
+        if row["sets_played"] >= EOY_MIN_SETS:
+            return True
+        return (row["tour"], int(row["year"]), row["player"]) in slam_year_winners
+
+    before = len(eoy_only)
+    eoy_only = eoy_only[eoy_only.apply(qualifies, axis=1)].copy()
+    print(f"  EOY filter: {before:,} -> {len(eoy_only):,} player-years (kept >={EOY_MIN_SETS} sets OR slam-winning year)")
+
     for tour in ["ATP", "WTA"]:
         t = eoy_only[eoy_only["tour"] == tour].copy()
         if t.empty:
