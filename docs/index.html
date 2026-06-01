@@ -2208,10 +2208,11 @@ async function refreshPowerRankings(tour) {
 
   const rows = players.slice(0, 50).map(p => {
     const slamFlags = (p.slams_won || []).map(c => SLAM_FLAG[c] || '').filter(Boolean).join(' ');
+    const nameHTML = playerLink(tour, p.player, escapeHtml(p.player));
     return `
     <tr>
       <td class="col-rank">${p.rank_shown}</td>
-      <td class="col-player">${escapeHtml(p.player)}</td>
+      <td class="col-player">${nameHTML}</td>
       <td class="col-rating">${p.rating_shown.toFixed(2)}</td>
       <td class="col-extra">${surfaceDeltaHTML(p.surfaceDeltas)}</td>
       <td class="col-extra">${(p.match_wins ?? 0)}-${(p.match_losses ?? 0)}</td>
@@ -2278,9 +2279,10 @@ async function refreshGoatRating(tour) {
     rows = data.players.map(p => {
       const sd = { hard: p.hard_delta, clay: p.clay_delta, grass: p.grass_delta };
       const slamFlags = (p.slams_won || []).map(c => SLAM_FLAG[c] || '').filter(Boolean).join(' ');
+      const nameHTML = playerLink(tour, p.player, escapeHtml(p.player));
       return `<tr>
         <td class="col-rank">${p.rank}</td>
-        <td class="col-player">${escapeHtml(p.player)}</td>
+        <td class="col-player">${nameHTML}</td>
         <td class="col-rating">${p.base.toFixed(2)}</td>
         <td class="col-extra">${p.peak_year}</td>
         <td class="col-extra">${surfaceDeltaHTML(sd)}</td>
@@ -2302,16 +2304,19 @@ async function refreshGoatRating(tour) {
         <tbody>${rows}</tbody>
       </table>`;
   } else {
-    rows = data.players.map(p => `<tr>
+    rows = data.players.map(p => {
+      const nameHTML = playerLink(tour, p.player, escapeHtml(p.player));
+      return `<tr>
       <td class="col-rank">${p.rank}</td>
-      <td class="col-player">${escapeHtml(p.player)}</td>
+      <td class="col-player">${nameHTML}</td>
       <td class="col-rating">${p.era.toFixed(1)}</td>
       <td class="col-extra">${p.first_year}-${p.last_year} <span class="muted">(${p.years_active}y)</span></td>
       <td class="col-extra">${p.career_slams ?? 0}</td>
       <td class="col-extra">${p.career_titles ?? 0}</td>
       <td class="col-extra">${(p.career_wins ?? 0).toLocaleString()}-${(p.career_losses ?? 0).toLocaleString()}</td>
       <td class="col-extra">${p.year_end_no1 || '-'}</td>
-    </tr>`).join('');
+    </tr>`;
+    }).join('');
     wrap.innerHTML = `
       <table class="goat-rating-table">
         <thead><tr>
