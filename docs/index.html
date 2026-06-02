@@ -1575,20 +1575,41 @@ const ELIGIBLE_SET = {
   w: new Set(eligiblePlayers('w').map(([n]) => n)),
 };
 
+// Diacritic-aware name resolution. The BUNDLE uses Wikipedia spellings (e.g.
+// "Björn Borg", "Hana Mandlíková"); GOAT / Power Rankings JSONs use Sackmann
+// spellings which strip diacritics ("Bjorn Borg", "Hana Mandlikova").
+// When a cross-page link fires with the Sackmann name, we have to resolve it
+// back to the Wikipedia-canonical name before doing TIMELINES / DATA lookups.
+const _stripDiacritics = s => (s || '').normalize('NFKD').replace(/[̀-ͯ]/g, '');
+const CANONICAL_NAME = { m: {}, w: {} };
+['m', 'w'].forEach(tour => {
+  ELIGIBLE_SET[tour].forEach(canonical => {
+    CANONICAL_NAME[tour][canonical] = canonical;
+    CANONICAL_NAME[tour][_stripDiacritics(canonical)] = canonical;
+  });
+});
+function resolvePlayerName(tour, name) {
+  return CANONICAL_NAME[tour][name] || CANONICAL_NAME[tour][_stripDiacritics(name)] || name;
+}
+
 function isLinkablePlayer(tour, name) {
-  return ELIGIBLE_SET[tour].has(name);
+  return ELIGIBLE_SET[tour].has(resolvePlayerName(tour, name));
 }
 
 // Wrap a player-name display in a clickable span that deep-links to the
 // Player Summary tab with the right tour + player pre-selected.
 function playerLink(tour, name, displayHTML) {
   if (!isLinkablePlayer(tour, name)) return displayHTML;
-  const safe = escapeHtml(name);
+  // Encode the canonical (Wikipedia-spelling) name in the data attribute so
+  // the click handler resolves to the right TIMELINES / DATA entry.
+  const canonical = resolvePlayerName(tour, name);
+  const safe = escapeHtml(canonical);
   return `<span class="linked" data-jump-tour="${tour}" data-jump-player="${safe}">${displayHTML}</span>`;
 }
 
 function jumpToPlayer(tour, name) {
   // Activate the Player Summary tab
+  name = resolvePlayerName(tour, name);
   document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
   const navBtn = document.querySelector('nav button[data-tab="players"]');
   if (navBtn) navBtn.classList.add('active');
@@ -1630,6 +1651,9 @@ async function renderPlayer(tour, player) {
     document.getElementById(contentId).innerHTML = `<p class="empty">Select a player above.</p>`;
     return;
   }
+  // Resolve diacritic-stripped names (Sackmann) back to canonical Wikipedia
+  // spelling so TIMELINES / DATA / per-player JSON lookups all hit.
+  player = resolvePlayerName(tour, player);
   const tl = TIMELINES[player];
   const totalSlams = DATA[tour].filter(r => r.w === player).length;
   const perSlam = { AO: 0, FO: 0, Wim: 0, US: 0 };
@@ -1670,7 +1694,8 @@ async function renderPlayer(tour, player) {
 
   // Load rating data: per-player history + GOAT PEAK + GOAT ERA + power_rankings_history
   // (the last for the year+slam -> date mapping).
-  const slug = player.replace(/[^A-Za-z0-9_]/g, '_').replace(/^_+|_+$/g, '');
+  // Per-player JSON filenames use Sackmann's slug (diacritics stripped).
+  const slug = _stripDiacritics(player).replace(/[^A-Za-z0-9_]/g, '_').replace(/^_+|_+$/g, '');
   const tourSlug = tour === 'm' ? 'atp' : 'wta';
   const [phist, peakData, eraData, prHist] = await Promise.all([
     fetchRatings(`players/${tourSlug}_${slug}.json`),
@@ -1854,7 +1879,8 @@ async function renderCareerChart(tour, player, svgId, legendId) {
   const svg = document.getElementById(svgId);
   const legend = document.getElementById(legendId);
   if (!svg) return;
-  const slug = player.replace(/[^A-Za-z0-9_]/g, '_').replace(/^_+|_+$/g, '');
+  // Per-player JSON filenames use Sackmann's slug (diacritics stripped).
+  const slug = _stripDiacritics(player).replace(/[^A-Za-z0-9_]/g, '_').replace(/^_+|_+$/g, '');
   const tourSlug = tour === 'm' ? 'atp' : 'wta';
   let data = null;
   try {
