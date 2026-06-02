@@ -715,19 +715,22 @@ def generate_data() -> None:
     write_power_rankings_history(ratings, matches)
 
     # --- Current rankings (latest snapshot PER TOUR — ATP and WTA can differ) ---
-    # Eligibility gates differ by snapshot type:
-    #   - Rolling 1-year (current / slam-day): 80 sets min — most active tour
-    #     players land 80-130 sets in a rolling year, so 125 would leave the
-    #     top 50 table thinly populated.
-    #   - Calendar-year EOY (PEAK / ERA / "End of year" view): 125 sets min —
-    #     full-season sample required to qualify as someone's career peak.
-    ROLLING_MIN_SETS = 80
-    EOY_MIN_SETS     = 125
+    # Eligibility gates differ by snapshot type AND by tour. WTA matches max
+    # at best-of-3, ATP slams at best-of-5, so women naturally play fewer
+    # sets per match — and ~78% the sets per year vs ATP top-30 medians
+    # (WTA ~121, ATP ~156). Tour-specific thresholds keep gate strictness
+    # constant relative to a full season's natural sample.
+    GATES = {
+        # tour -> (rolling 1y minimum, EOY/GOAT minimum)
+        "ATP": (80, 125),
+        "WTA": (64, 100),
+    }
     for tour in ["ATP", "WTA"]:
+        rolling_min, _ = GATES[tour]
         tour_ratings = ratings[ratings["tour"] == tour]
         latest_snap = tour_ratings["snapshot_date"].max()
         latest = tour_ratings[tour_ratings["snapshot_date"] == latest_snap]
-        latest = latest[latest["sets_played"] >= ROLLING_MIN_SETS]
+        latest = latest[latest["sets_played"] >= rolling_min]
         t = latest.sort_values("base", ascending=False).head(50).reset_index(drop=True)
         rows = []
         for i, r in t.iterrows():
@@ -764,19 +767,20 @@ def generate_data() -> None:
     # Shared per-player match log for window/career stat lookups.
     per_player = build_player_match_index(matches)
 
-    # 125-set gate for the calendar-year-based GOAT views (PEAK / All Seasons /
-    # ERA). Shortened slam-winning years (Serena 2010 67 sets / 2 slams;
-    # BJK 1974 54 sets / 1 slam) are excluded — at the GOAT level we
-    # prioritise sample-size confidence over hardware. Rolling-snapshot views
-    # (current, slam-day) use a lower 80-set gate handled elsewhere.
-    EOY_MIN_SETS = 125
+    # Tour-specific EOY-set gate for the calendar-year GOAT views (PEAK /
+    # All Seasons / ERA). WTA matches max at best-of-3 vs ATP slams' best-
+    # of-5, so women naturally play ~78% the sets per year of ATP top-30
+    # equivalents (WTA median 121, ATP median 156). Same threshold for both
+    # tours would punish Serena and other WTA legends who scheduled
+    # selectively but still beat the field.
+    EOY_GATES = {"ATP": 125, "WTA": 100}
 
     def qualifies(row):
-        return row["sets_played"] >= EOY_MIN_SETS
+        return row["sets_played"] >= EOY_GATES.get(row["tour"], 125)
 
     eoy_peak = eoy_only[eoy_only.apply(qualifies, axis=1)].copy()
     eoy_era  = eoy_peak
-    print(f"  GOAT eligibility filter (>= {EOY_MIN_SETS} sets): "
+    print(f"  GOAT eligibility filter (ATP >={EOY_GATES['ATP']}, WTA >={EOY_GATES['WTA']}): "
           f"{len(eoy_only):,} -> {len(eoy_peak):,} player-years")
 
     # Per-year anchor: rating of the 10th-ranked player that year. Adjusting
@@ -921,14 +925,18 @@ def generate_data() -> None:
 
     # --- Per-player history (all snapshots for each player) ---
     # Pre-compute rank per (tour, snapshot_date, player) — within the
-    # type-appropriate qualifying top 50:
-    #   - EOY snapshots:    >= 125 sets (matches GOAT PEAK / ERA gate)
-    #   - Rolling / current: >= 80  sets (matches Power Rankings gate)
+    # tour- and type-appropriate qualifying top 50:
+    #   ATP EOY: >=125  ATP rolling: >=80
+    #   WTA EOY: >=100  WTA rolling: >=64
     # Players outside that top 50 get rank=null so the SPA renders a hyphen.
+    GATE_LOOKUP = {  # (tour, is_eoy) -> min_sets
+        ("ATP", True):  125, ("ATP", False): 80,
+        ("WTA", True):  100, ("WTA", False): 64,
+    }
     rank_lookup = {}  # (tour, date, player) -> rank (1..50) or None
     for (tour_x, snap_dt), grp in ratings.groupby(["tour", "snapshot_date"]):
         snap_type = grp["snapshot_type"].iloc[0]
-        min_sets = 125 if snap_type == "eoy" else 80
+        min_sets = GATE_LOOKUP[(tour_x, snap_type == "eoy")]
         qualifying = grp[grp["sets_played"] >= min_sets]
         sorted_grp = qualifying.sort_values("base", ascending=False).reset_index(drop=True)
         for i, row in sorted_grp.iterrows():
@@ -1103,10 +1111,11 @@ def write_power_rankings_history(ratings: pd.DataFrame, matches: pd.DataFrame) -
                 win_end   = snap_date
             else:
                 continue
-            # Snapshot-type-aware gate:
-            #   - EOY:    125 sets (matches GOAT eligibility)
-            #   - Rolling: 80 sets (matches current Power Rankings + slam-day)
-            min_sets = 125 if row_type == "eoy" else 80
+            # Snapshot-type AND tour-aware gate (matches the rank_lookup above
+            # and the per-tour calibration in current_rankings + GOAT).
+            gate = {("ATP", True): 125, ("ATP", False): 80,
+                    ("WTA", True): 100, ("WTA", False): 64}
+            min_sets = gate[(tour, row_type == "eoy")]
             qualifying = group[group["sets_played"] >= min_sets]
             top = qualifying.sort_values("base", ascending=False).head(50).reset_index(drop=True)
             players = []
