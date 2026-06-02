@@ -1581,11 +1581,31 @@ const ELIGIBLE_SET = {
 // When a cross-page link fires with the Sackmann name, we have to resolve it
 // back to the Wikipedia-canonical name before doing TIMELINES / DATA lookups.
 const _stripDiacritics = s => (s || '').normalize('NFKD').replace(/[̀-ͯ]/g, '');
+
+// Wikipedia keeps maiden / married name compounds for a handful of players
+// (e.g. "Billie Jean Moffitt King") that Sackmann shortens to the tour name
+// ("Billie Jean King"). Diacritic stripping alone doesn't bridge that —
+// hand-map the known cases so the per-player JSON lookup hits.
+const WIKI_TO_SACKMANN = {
+  'Ann Haydon Jones':         'Ann Jones',
+  'Billie Jean Moffitt King': 'Billie Jean King',
+  'Evonne Goolagong Cawley':  'Evonne Goolagong',
+  'Kerry Melville Reid':      'Kerry Reid',
+  'Li Na':                    'Na Li',
+  'Margaret Smith Court':     'Margaret Court',
+};
+function sackmannName(wikiName) {
+  return WIKI_TO_SACKMANN[wikiName] || _stripDiacritics(wikiName);
+}
+
 const CANONICAL_NAME = { m: {}, w: {} };
 ['m', 'w'].forEach(tour => {
   ELIGIBLE_SET[tour].forEach(canonical => {
     CANONICAL_NAME[tour][canonical] = canonical;
     CANONICAL_NAME[tour][_stripDiacritics(canonical)] = canonical;
+    // Also accept the Sackmann shortened form as an inbound key
+    const sn = WIKI_TO_SACKMANN[canonical];
+    if (sn) CANONICAL_NAME[tour][sn] = canonical;
   });
 });
 function resolvePlayerName(tour, name) {
@@ -1694,8 +1714,9 @@ async function renderPlayer(tour, player) {
 
   // Load rating data: per-player history + GOAT PEAK + GOAT ERA + power_rankings_history
   // (the last for the year+slam -> date mapping).
-  // Per-player JSON filenames use Sackmann's slug (diacritics stripped).
-  const slug = _stripDiacritics(player).replace(/[^A-Za-z0-9_]/g, '_').replace(/^_+|_+$/g, '');
+  // Per-player JSON filenames use Sackmann's slug — that's the Sackmann
+  // shortened name (where it differs from Wikipedia), then diacritic-stripped.
+  const slug = sackmannName(player).replace(/[^A-Za-z0-9_]/g, '_').replace(/^_+|_+$/g, '');
   const tourSlug = tour === 'm' ? 'atp' : 'wta';
   const [phist, peakData, eraData, prHist] = await Promise.all([
     fetchRatings(`players/${tourSlug}_${slug}.json`),
@@ -1879,8 +1900,9 @@ async function renderCareerChart(tour, player, svgId, legendId) {
   const svg = document.getElementById(svgId);
   const legend = document.getElementById(legendId);
   if (!svg) return;
-  // Per-player JSON filenames use Sackmann's slug (diacritics stripped).
-  const slug = _stripDiacritics(player).replace(/[^A-Za-z0-9_]/g, '_').replace(/^_+|_+$/g, '');
+  // Per-player JSON filenames use Sackmann's slug — that's the Sackmann
+  // shortened name (where it differs from Wikipedia), then diacritic-stripped.
+  const slug = sackmannName(player).replace(/[^A-Za-z0-9_]/g, '_').replace(/^_+|_+$/g, '');
   const tourSlug = tour === 'm' ? 'atp' : 'wta';
   let data = null;
   try {
