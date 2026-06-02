@@ -715,10 +715,20 @@ def generate_data() -> None:
     write_power_rankings_history(ratings, matches)
 
     # --- Current rankings (latest snapshot PER TOUR — ATP and WTA can differ) ---
+    # Eligibility gates differ by snapshot type:
+    #   - Rolling 1-year (current / slam-day): 80 sets min — most active tour
+    #     players land 80-130 sets in a rolling year, so 125 would leave the
+    #     top 50 table thinly populated.
+    #   - Calendar-year EOY (PEAK / ERA / "End of year" view): 125 sets min —
+    #     full-season sample required to qualify as someone's career peak.
+    ROLLING_MIN_SETS = 80
+    EOY_MIN_SETS     = 125
     for tour in ["ATP", "WTA"]:
         tour_ratings = ratings[ratings["tour"] == tour]
         latest_snap = tour_ratings["snapshot_date"].max()
-        t = tour_ratings[tour_ratings["snapshot_date"] == latest_snap].sort_values("base", ascending=False).head(50).reset_index(drop=True)
+        latest = tour_ratings[tour_ratings["snapshot_date"] == latest_snap]
+        latest = latest[latest["sets_played"] >= ROLLING_MIN_SETS]
+        t = latest.sort_values("base", ascending=False).head(50).reset_index(drop=True)
         rows = []
         for i, r in t.iterrows():
             rows.append({
@@ -754,43 +764,20 @@ def generate_data() -> None:
     # Shared per-player match log for window/career stat lookups.
     per_player = build_player_match_index(matches)
 
-    # Two separate eligibility rules — PEAK and ERA answer different questions
-    # so they get different filters.
-    #
-    #   PEAK: "What was this player's best single season?"
-    #         Needs a confident signal — small-sample years (injury, debut,
-    #         partial schedule) can't be a player's bona fide peak. HARD set
-    #         minimum, no escape hatch.
-    #   ERA:  "How much above-average tennis did this player play across
-    #         their career?" A slam-winning year, even if shortened, is a
-    #         meaningful contribution — keep the slam-winner escape hatch
-    #         so it doesn't get stripped from career totals.
-    PEAK_MIN_SETS = 125  # hard minimum for PEAK eligibility (no escape)
-    ERA_MIN_SETS  = 80   # ERA minimum, OR slam-winner that year
+    # 125-set gate for the calendar-year-based GOAT views (PEAK / All Seasons /
+    # ERA). Shortened slam-winning years (Serena 2010 67 sets / 2 slams;
+    # BJK 1974 54 sets / 1 slam) are excluded — at the GOAT level we
+    # prioritise sample-size confidence over hardware. Rolling-snapshot views
+    # (current, slam-day) use a lower 80-set gate handled elsewhere.
+    EOY_MIN_SETS = 125
 
-    slam_year_winners = set()
-    matches_dated = matches.copy()
-    matches_dated["date"] = pd.to_datetime(matches_dated["date"])
-    matches_dated["year"] = matches_dated["date"].dt.year
-    slam_finals = matches_dated[
-        (matches_dated["tourney_name"].isin(SLAM_NAMES))
-        & (matches_dated["round"] == "F")
-    ]
-    for _, r in slam_finals.iterrows():
-        slam_year_winners.add((r["tour"], int(r["year"]), r["winner_name"]))
+    def qualifies(row):
+        return row["sets_played"] >= EOY_MIN_SETS
 
-    def peak_qualifies(row):
-        return row["sets_played"] >= PEAK_MIN_SETS
-
-    def era_qualifies(row):
-        if row["sets_played"] >= ERA_MIN_SETS:
-            return True
-        return (row["tour"], int(row["year"]), row["player"]) in slam_year_winners
-
-    eoy_peak = eoy_only[eoy_only.apply(peak_qualifies, axis=1)].copy()
-    eoy_era  = eoy_only[eoy_only.apply(era_qualifies, axis=1)].copy()
-    print(f"  PEAK filter: {len(eoy_only):,} -> {len(eoy_peak):,} player-years (>= {PEAK_MIN_SETS} sets)")
-    print(f"  ERA  filter: {len(eoy_only):,} -> {len(eoy_era):,} player-years (>= {ERA_MIN_SETS} sets OR slam-winning year)")
+    eoy_peak = eoy_only[eoy_only.apply(qualifies, axis=1)].copy()
+    eoy_era  = eoy_peak
+    print(f"  GOAT eligibility filter (>= {EOY_MIN_SETS} sets): "
+          f"{len(eoy_only):,} -> {len(eoy_peak):,} player-years")
 
     # Per-year anchor: rating of the 10th-ranked player that year. Adjusting
     # by this anchor turns each year's PEAK rating into "wins above the year's
@@ -862,6 +849,40 @@ def generate_data() -> None:
                       f, separators=(",", ":"))
         print(f"  wrote goat_peak_{tour.lower()}.json ({len(peak_rows)} players)")
 
+        # ----- PEAK (All seasons) -----
+        # Top 50 (player, year) combinations by adjusted base. Same player
+        # can appear multiple times if they had multiple elite seasons —
+        # complements the "Best per player" view by surfacing the era-
+        # dominant stretches (e.g. Federer 2005/06/07 or Nadal 2008/10/13).
+        all_seasons = t_peak.sort_values("adj_base", ascending=False).head(50).reset_index(drop=True)
+        all_rows = []
+        for i, r in all_seasons.iterrows():
+            year = int(r["year"])
+            yr_start = pd.Timestamp(year=year, month=1, day=1)
+            yr_end   = pd.Timestamp(year=year, month=12, day=31)
+            wins, losses, titles, slams = window_stats(
+                per_player, tour, r["player"], yr_start, yr_end)
+            all_rows.append({
+                "rank":          i + 1,
+                "player":        r["player"],
+                "peak_year":     year,
+                "base":          round(float(r["adj_base"]), 3),
+                "raw_base":      round(float(r["base"]), 3),
+                "anchor_50":     round(float(r["anchor_50"]), 3),
+                "hard_delta":    round(float(r["hard_delta"]), 3),
+                "clay_delta":    round(float(r["clay_delta"]), 3),
+                "grass_delta":   round(float(r["grass_delta"]), 3),
+                "match_wins":    wins,
+                "match_losses":  losses,
+                "titles":        titles,
+                "slams_won":     slams,
+                "year_end_no1":  int(no1_counts.get(r["player"], 0)),
+            })
+        with open(DOCS_DATA / f"goat_peak_seasons_{tour.lower()}.json", "w") as f:
+            json.dump({"tour": tour, "view": "PEAK_SEASONS", "players": all_rows},
+                      f, separators=(",", ":"))
+        print(f"  wrote goat_peak_seasons_{tour.lower()}.json ({len(all_rows)} player-seasons)")
+
         # ----- ERA -----
         # Sum of positive ADJUSTED EOY ratings across each player's career.
         # Adjusted = base - year's #50-player base. Negative adjusted years
@@ -899,15 +920,21 @@ def generate_data() -> None:
         print(f"  wrote goat_era_{tour.lower()}.json ({len(era_rows)} players)")
 
     # --- Per-player history (all snapshots for each player) ---
-    # Pre-compute rank per (tour, snapshot_date, player) — within the published
-    # top 50 only; non-top-50 players get rank=null so the SPA can render a
-    # hyphen consistent with the Power Rankings tab.
+    # Pre-compute rank per (tour, snapshot_date, player) — within the
+    # type-appropriate qualifying top 50:
+    #   - EOY snapshots:    >= 125 sets (matches GOAT PEAK / ERA gate)
+    #   - Rolling / current: >= 80  sets (matches Power Rankings gate)
+    # Players outside that top 50 get rank=null so the SPA renders a hyphen.
     rank_lookup = {}  # (tour, date, player) -> rank (1..50) or None
     for (tour_x, snap_dt), grp in ratings.groupby(["tour", "snapshot_date"]):
-        sorted_grp = grp.sort_values("base", ascending=False).reset_index(drop=True)
+        snap_type = grp["snapshot_type"].iloc[0]
+        min_sets = 125 if snap_type == "eoy" else 80
+        qualifying = grp[grp["sets_played"] >= min_sets]
+        sorted_grp = qualifying.sort_values("base", ascending=False).reset_index(drop=True)
         for i, row in sorted_grp.iterrows():
             r = i + 1
-            rank_lookup[(tour_x, pd.Timestamp(snap_dt), row["player"])] = r if r <= 50 else None
+            if r <= 50:
+                rank_lookup[(tour_x, pd.Timestamp(snap_dt), row["player"])] = r
 
     for tour in ["ATP", "WTA"]:
         t = ratings[ratings["tour"] == tour]
@@ -1076,7 +1103,12 @@ def write_power_rankings_history(ratings: pd.DataFrame, matches: pd.DataFrame) -
                 win_end   = snap_date
             else:
                 continue
-            top = group.sort_values("base", ascending=False).head(50).reset_index(drop=True)
+            # Snapshot-type-aware gate:
+            #   - EOY:    125 sets (matches GOAT eligibility)
+            #   - Rolling: 80 sets (matches current Power Rankings + slam-day)
+            min_sets = 125 if row_type == "eoy" else 80
+            qualifying = group[group["sets_played"] >= min_sets]
+            top = qualifying.sort_values("base", ascending=False).head(50).reset_index(drop=True)
             players = []
             for i, r in top.iterrows():
                 wins, losses, titles, slams = window_stats(

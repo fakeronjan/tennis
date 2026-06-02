@@ -856,10 +856,15 @@
     <button class="active" data-view="peak">PEAK <span class="pill-sub">best single year</span></button>
     <button data-view="era">ERA <span class="pill-sub">cumulative quality &times; longevity</span></button>
   </div>
+  <div class="goat-view-pills" id="peak-subview-pills">
+    <button class="active" data-peak-sub="best">Best per player</button>
+    <button data-peak-sub="all">All seasons</button>
+  </div>
   <p class="data-note" id="goat-explainer">
-    <strong>PEAK</strong>: the highest fakeronjan WLS rating a player ever hit at the end of any Grand Slam.
-    <strong>ERA</strong>: sum of each year's best slam-rating across their career &mdash; rewards sustained quality (1 rating per year per player).
-    Snapshots taken at the end of every Grand Slam (AO, FO, Wimbledon, US Open) since 1973.
+    <strong>PEAK &middot; Best per player</strong>: each player's single best end-of-year season, ranked above the year's #10 player.
+    <strong>PEAK &middot; All seasons</strong>: top 50 (player, year) combinations &mdash; same player can appear multiple times.
+    <strong>ERA</strong>: career sum of positive adjusted EOY ratings (years below the year's #10 don't count).
+    All three require &ge;125 sets played in the season to qualify.
   </p>
 
   <div class="mw-section" data-tab="goat" data-mw="m">
@@ -2000,6 +2005,7 @@ const RATINGS_BASE = './data';
 const ratingsCache = {};
 const surfaceState = { m: 'all', w: 'all' };
 let goatView = 'peak'; // 'peak' | 'era'
+let peakSubView = 'best'; // 'best' (one per player) | 'all' (top 50 player-seasons)
 
 const SURFACE_LABELS = { hard: 'Hard', clay: 'Clay', grass: 'Grass' };
 
@@ -2263,7 +2269,10 @@ document.addEventListener('DOMContentLoaded', () => {
 async function refreshGoatRating(tour) {
   const slug = tour === 'm' ? 'atp' : 'wta';
   const wrap = document.getElementById(`goat-table-${tour}-wrap`);
-  const file = goatView === 'era' ? `goat_era_${slug}.json` : `goat_peak_${slug}.json`;
+  let file;
+  if (goatView === 'era') file = `goat_era_${slug}.json`;
+  else if (peakSubView === 'all') file = `goat_peak_seasons_${slug}.json`;
+  else file = `goat_peak_${slug}.json`;
   const data = await fetchRatings(file);
   if (!data || !data.players) {
     wrap.innerHTML = '<p class="loading">Ratings unavailable.</p>';
@@ -2341,17 +2350,24 @@ document.querySelectorAll('.surface-pills').forEach(wrap => {
   });
 });
 
-// GOAT view pill click handlers (PEAK / ERA)
+// GOAT view pill click handlers (PEAK / ERA + PEAK sub-view best/all)
+function updatePeakSubViewVisibility() {
+  const sub = document.getElementById('peak-subview-pills');
+  if (sub) sub.style.display = goatView === 'peak' ? 'flex' : 'none';
+}
 document.querySelectorAll('.goat-view-pills').forEach(wrap => {
   wrap.querySelectorAll('button').forEach(btn => {
     btn.addEventListener('click', () => {
       wrap.querySelectorAll('button').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      goatView = btn.dataset.view;
+      if (btn.dataset.view) goatView = btn.dataset.view;
+      if (btn.dataset.peakSub) peakSubView = btn.dataset.peakSub;
+      updatePeakSubViewVisibility();
       refreshGoatRating(mwState.goat);
     });
   });
 });
+updatePeakSubViewVisibility(); // initial render
 
 // --- Top-level tab nav --------------------------------------------------------
 
