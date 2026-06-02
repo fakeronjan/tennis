@@ -205,7 +205,8 @@ def build_unified(out_path: Path = ALL_MATCHES_CSV) -> pd.DataFrame:
     keep = [
         "date", "tour", "tier", "tier_weight", "surface", "best_of", "round",
         "tourney_name", "tourney_id",
-        "winner_id", "winner_name", "loser_id", "loser_name",
+        "winner_id", "winner_name", "winner_ioc",
+        "loser_id", "loser_name", "loser_ioc",
         "score",
     ]
     df = df[keep].sort_values("date").reset_index(drop=True)
@@ -518,6 +519,87 @@ SLAM_TO_CODE = {
 SLAM_DISPLAY_ORDER = {"AO": 1, "FO": 2, "Wim": 3, "US": 4}
 
 
+# IOC (3-letter Olympic) country code -> ISO-2 -> emoji flag. Covers every
+# country that's ever produced an Open Era top-100 tennis player + historical
+# entities (Czechoslovakia, USSR, FRG/GDR, Yugoslavia, etc.).
+_IOC_TO_ISO2 = {
+    "ARG": "AR", "ARM": "AM", "AUS": "AU", "AUT": "AT", "AZE": "AZ",
+    "BAH": "BS", "BAR": "BB", "BEL": "BE", "BIH": "BA", "BLR": "BY",
+    "BOL": "BO", "BRA": "BR", "BUL": "BG", "CAN": "CA", "CHI": "CL",
+    "CHN": "CN", "COL": "CO", "CRC": "CR", "CRO": "HR", "CUB": "CU",
+    "CYP": "CY", "CZE": "CZ", "DEN": "DK", "DOM": "DO", "ECU": "EC",
+    "EGY": "EG", "ESA": "SV", "ESP": "ES", "EST": "EE", "FIN": "FI",
+    "FRA": "FR", "FRG": "DE", "GBR": "GB", "GEO": "GE", "GER": "DE",
+    "GDR": "DE", "GHA": "GH", "GRE": "GR", "GUA": "GT", "HAI": "HT",
+    "HKG": "HK", "HON": "HN", "HUN": "HU", "INA": "ID", "IND": "IN",
+    "IRI": "IR", "IRL": "IE", "ISL": "IS", "ISR": "IL", "ITA": "IT",
+    "IVB": "VG", "JAM": "JM", "JPN": "JP", "KAZ": "KZ", "KEN": "KE",
+    "KOR": "KR", "KSA": "SA", "KUW": "KW", "LAT": "LV", "LBN": "LB",
+    "LIE": "LI", "LTU": "LT", "LUX": "LU", "MAR": "MA", "MAS": "MY",
+    "MDA": "MD", "MEX": "MX", "MGL": "MN", "MKD": "MK", "MLT": "MT",
+    "MNE": "ME", "MON": "MC", "NCA": "NI", "NED": "NL", "NGR": "NG",
+    "NOR": "NO", "NZL": "NZ", "PAK": "PK", "PAN": "PA", "PAR": "PY",
+    "PER": "PE", "PHI": "PH", "POL": "PL", "POR": "PT", "PUR": "PR",
+    "QAT": "QA", "ROU": "RO", "ROM": "RO", "RSA": "ZA", "RTF": "RU",
+    "RUS": "RU", "SCG": "RS", "SIN": "SG", "SLO": "SI", "SMR": "SM",
+    "SRB": "RS", "SUI": "CH", "SUR": "SR", "SVK": "SK", "SWE": "SE",
+    "TCH": "CZ", "THA": "TH", "TJK": "TJ", "TKM": "TM", "TPE": "TW",
+    "TUN": "TN", "TUR": "TR", "UAE": "AE", "UKR": "UA", "URS": "RU",
+    "URU": "UY", "USA": "US", "UZB": "UZ", "VEN": "VE", "VIE": "VN",
+    "YUG": "RS", "ZIM": "ZW",
+    # Lower-frequency IOC codes seen in our data
+    "AHO": "NL", "ALG": "DZ", "ANG": "AO", "ANT": "AG", "BAN": "BD",
+    "BEN": "BJ", "BER": "BM", "BHU": "BT", "BIZ": "BZ", "BOT": "BW",
+    "BRU": "BN", "BUR": "BF", "CAY": "KY", "CGO": "CG", "CIV": "CI",
+    "CMR": "CM", "ETH": "ET", "FIJ": "FJ", "GAM": "GM", "GUY": "GY",
+    "HAW": "US", "ISV": "VI", "JOR": "JO", "KOS": "XK", "KSA": "SA",
+    "KGZ": "KG", "LAO": "LA", "LCA": "LC", "LES": "LS", "LIB": "LB",
+    "LBA": "LY", "MAD": "MG", "MAW": "MW", "MOZ": "MZ", "MRI": "MU",
+    "MTN": "MR", "NAM": "NA", "NEP": "NP", "NGA": "NE", "NMI": "MP",
+    "OMA": "OM", "PLE": "PS", "PNG": "PG", "PYF": "PF", "RWA": "RW",
+    "SAM": "WS", "SEN": "SN", "SEY": "SC", "SGP": "SG", "SKN": "KN",
+    "SLE": "SL", "SOL": "SB", "SOM": "SO", "SRI": "LK", "SUD": "SD",
+    "SWZ": "SZ", "SYR": "SY", "TAN": "TZ", "TGA": "TO", "TOG": "TG",
+    "TTO": "TT", "UGA": "UG", "VAN": "VU", "VIN": "VC", "YEM": "YE",
+    "ZAM": "ZM",
+}
+
+
+def _iso2_to_flag(iso2):
+    """Convert ISO-2 country code to regional-indicator emoji flag."""
+    if not iso2 or len(iso2) != 2:
+        return ""
+    base = 0x1F1E6 - ord("A")
+    return chr(base + ord(iso2[0])) + chr(base + ord(iso2[1]))
+
+
+def country_flag(ioc):
+    """Map a Sackmann IOC country code to a regional-indicator emoji flag.
+    Returns empty string for unknown codes — the SPA renders that as no flag."""
+    iso2 = _IOC_TO_ISO2.get(ioc)
+    return _iso2_to_flag(iso2) if iso2 else ""
+
+
+def build_player_countries(matches: pd.DataFrame) -> dict:
+    """Per (tour, player) -> {ioc, flag} from the player's MOST RECENT match.
+    Recent-over-bulk so defection cases (e.g. Navratilova TCH -> USA) reflect
+    the player's late-career nationality rather than the bulk of their early
+    appearances."""
+    df = matches.copy()
+    df["date"] = pd.to_datetime(df["date"])
+    parts = []
+    for who, ioc in [("winner_name", "winner_ioc"), ("loser_name", "loser_ioc")]:
+        sub = df[df[ioc].notna()][["tour", who, ioc, "date"]].rename(
+            columns={who: "player", ioc: "ioc"})
+        parts.append(sub)
+    combined = pd.concat(parts, ignore_index=True)
+    combined = combined.sort_values("date").drop_duplicates(["tour", "player"], keep="last")
+    return {
+        (r["tour"], r["player"]): {"ioc": r["ioc"], "flag": country_flag(r["ioc"])}
+        for _, r in combined.iterrows()
+    }
+
+
 def build_player_match_index(matches: pd.DataFrame) -> dict:
     """Pre-index every match by (tour, player_name) for fast window lookups.
 
@@ -696,6 +778,9 @@ def generate_data() -> None:
     matches = pd.read_csv(ALL_MATCHES_CSV)
     matches["date"] = pd.to_datetime(matches["date"])
 
+    # Per-player country (most recent nationality from match data).
+    player_country = build_player_countries(matches)
+
     print("Building observations...")
     obs = build_observations(matches)
     print(f"  {len(obs):,} set-observations")
@@ -734,9 +819,12 @@ def generate_data() -> None:
         t = latest.sort_values("base", ascending=False).head(50).reset_index(drop=True)
         rows = []
         for i, r in t.iterrows():
+            cinfo = player_country.get((tour, r["player"]), {})
             rows.append({
                 "rank":         i + 1,
                 "player":       r["player"],
+                "country":      cinfo.get("flag", ""),
+                "country_ioc":  cinfo.get("ioc", ""),
                 "base":         round(float(r["base"]), 3),
                 "hard_delta":   round(float(r["hard_delta"]), 3),
                 "clay_delta":   round(float(r["clay_delta"]), 3),
@@ -832,9 +920,12 @@ def generate_data() -> None:
             yr_end   = pd.Timestamp(year=year, month=12, day=31)
             wins, losses, titles, slams = window_stats(
                 per_player, tour, r["player"], yr_start, yr_end)
+            cinfo = player_country.get((tour, r["player"]), {})
             peak_rows.append({
                 "rank":          i + 1,
                 "player":        r["player"],
+                "country":       cinfo.get("flag", ""),
+                "country_ioc":   cinfo.get("ioc", ""),
                 "peak_year":     year,
                 "base":          round(float(r["adj_base"]), 3),   # adjusted headline value
                 "raw_base":      round(float(r["base"]), 3),
@@ -866,9 +957,12 @@ def generate_data() -> None:
             yr_end   = pd.Timestamp(year=year, month=12, day=31)
             wins, losses, titles, slams = window_stats(
                 per_player, tour, r["player"], yr_start, yr_end)
+            cinfo = player_country.get((tour, r["player"]), {})
             all_rows.append({
                 "rank":          i + 1,
                 "player":        r["player"],
+                "country":       cinfo.get("flag", ""),
+                "country_ioc":   cinfo.get("ioc", ""),
                 "peak_year":     year,
                 "base":          round(float(r["adj_base"]), 3),
                 "raw_base":      round(float(r["base"]), 3),
@@ -905,9 +999,12 @@ def generate_data() -> None:
             # Career totals across the player's entire match log (no window).
             c_wins, c_losses, c_titles, c_slams = career_stats(
                 per_player, tour, r["player"])
+            cinfo = player_country.get((tour, r["player"]), {})
             era_rows.append({
                 "rank":             i + 1,
                 "player":           r["player"],
+                "country":          cinfo.get("flag", ""),
+                "country_ioc":      cinfo.get("ioc", ""),
                 "era":              round(float(r["era"]), 3),
                 "first_year":       int(r["first_year"]),
                 "last_year":        int(r["last_year"]),
@@ -975,12 +1072,15 @@ def generate_data() -> None:
                     "wins":   w, "losses": l, "titles": ti, "slams_won": sl,
                 }
             slug = _slug(player)
+            cinfo = player_country.get((tour, player), {})
             with open(DOCS_DATA / "players" / f"{tour.lower()}_{slug}.json", "w") as f:
                 json.dump({
-                    "player":     player,
-                    "tour":       tour,
-                    "history":    history,
-                    "year_stats": year_stats,
+                    "player":      player,
+                    "tour":        tour,
+                    "country":     cinfo.get("flag", ""),
+                    "country_ioc": cinfo.get("ioc", ""),
+                    "history":     history,
+                    "year_stats":  year_stats,
                 }, f, separators=(",", ":"))
         print(f"  wrote per-player files for {tour}: {t['player'].nunique()} players")
 
@@ -990,11 +1090,14 @@ def generate_data() -> None:
         index = []
         for player, sub in t.groupby("player"):
             peak = sub["base"].max()
+            cinfo = player_country.get((tour, player), {})
             index.append({
-                "name":     player,
-                "tour":     tour,
-                "slug":     _slug(player),
-                "peak":     round(float(peak), 3),
+                "name":         player,
+                "tour":         tour,
+                "slug":         _slug(player),
+                "country":      cinfo.get("flag", ""),
+                "country_ioc":  cinfo.get("ioc", ""),
+                "peak":         round(float(peak), 3),
             })
         index.sort(key=lambda r: r["name"])
         out_path = DOCS_DATA / f"players_index_{tour.lower()}.json"
@@ -1075,6 +1178,7 @@ def write_power_rankings_history(ratings: pd.DataFrame, matches: pd.DataFrame) -
                 slam_code_lookup[(tour, pd.Timestamp(d))] = code
 
     per_player = build_player_match_index(matches)
+    player_country = build_player_countries(matches)
 
     for tour in ["ATP", "WTA"]:
         t = ratings[ratings["tour"] == tour].copy()
@@ -1122,9 +1226,12 @@ def write_power_rankings_history(ratings: pd.DataFrame, matches: pd.DataFrame) -
             for i, r in top.iterrows():
                 wins, losses, titles, slams = window_stats(
                     per_player, tour, r["player"], win_start, win_end)
+                cinfo = player_country.get((tour, r["player"]), {})
                 players.append({
                     "rank":         i + 1,
                     "player":       r["player"],
+                    "country":      cinfo.get("flag", ""),
+                    "country_ioc":  cinfo.get("ioc", ""),
                     "base":         round(float(r["base"]), 3),
                     "hard_delta":   round(float(r["hard_delta"]), 3),
                     "clay_delta":   round(float(r["clay_delta"]), 3),

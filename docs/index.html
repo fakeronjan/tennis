@@ -1083,9 +1083,35 @@ function flagEmoji(iso) {
   return String.fromCodePoint(A + iso.charCodeAt(0) - 65, A + iso.charCodeAt(1) - 65);
 }
 
+// Engine-derived per-player country (loaded async from players_index_{atp,wta}.json).
+// Keyed by canonical Wikipedia spelling AND Sackmann form; covers every rated
+// player, not just BUNDLE.PLAYERS scrape entries.
+const ENGINE_COUNTRY = { m: {}, w: {} };
+
 function playerFlag(tour, name) {
+  // Engine data first (broader coverage + Sackmann/Wikipedia name aliasing)
+  const fromEngine = ENGINE_COUNTRY[tour] && ENGINE_COUNTRY[tour][name];
+  if (fromEngine) return fromEngine;
+  // Fallback to legacy BUNDLE.PLAYERS scrape (ISO-2 -> emoji)
   const iso = PLAYERS[tour] && PLAYERS[tour][name];
   return iso ? flagEmoji(iso) : '';
+}
+
+async function loadEngineCountries() {
+  for (const [tour, slug] of [['m', 'atp'], ['w', 'wta']]) {
+    try {
+      const res = await fetch(`${RATINGS_BASE}/players_index_${slug}.json`);
+      if (!res.ok) continue;
+      const arr = await res.json();
+      arr.forEach(p => {
+        if (!p.country) return;
+        // Index by canonical name AND its diacritic-stripped form so lookups
+        // from either Wikipedia / Sackmann naming convention hit.
+        ENGINE_COUNTRY[tour][p.name] = p.country;
+        ENGINE_COUNTRY[tour][_stripDiacritics(p.name)] = p.country;
+      });
+    } catch (e) { /* leave empty, falls back to BUNDLE.PLAYERS */ }
+  }
 }
 
 // Color palette for chaser lines. Designed to harmonize with fleet teal/pink.
@@ -2257,7 +2283,8 @@ async function refreshPowerRankings(tour) {
 
   const rows = players.slice(0, 50).map(p => {
     const slamFlags = (p.slams_won || []).map(c => SLAM_FLAG[c] || '').filter(Boolean).join(' ');
-    const nameHTML = playerLink(tour, p.player, escapeHtml(p.player));
+    const flagPart = p.country ? `${p.country} ` : '';
+    const nameHTML = playerLink(tour, p.player, `${flagPart}${escapeHtml(p.player)}`);
     return `
     <tr>
       <td class="col-rank">${p.rank_shown}</td>
@@ -2331,7 +2358,8 @@ async function refreshGoatRating(tour) {
     rows = data.players.map(p => {
       const sd = { hard: p.hard_delta, clay: p.clay_delta, grass: p.grass_delta };
       const slamFlags = (p.slams_won || []).map(c => SLAM_FLAG[c] || '').filter(Boolean).join(' ');
-      const nameHTML = playerLink(tour, p.player, escapeHtml(p.player));
+      const flagPart = p.country ? `${p.country} ` : '';
+      const nameHTML = playerLink(tour, p.player, `${flagPart}${escapeHtml(p.player)}`);
       return `<tr>
         <td class="col-rank">${p.rank}</td>
         <td class="col-player">${nameHTML}</td>
@@ -2357,7 +2385,8 @@ async function refreshGoatRating(tour) {
       </table>`;
   } else {
     rows = data.players.map(p => {
-      const nameHTML = playerLink(tour, p.player, escapeHtml(p.player));
+      const flagPart = p.country ? `${p.country} ` : '';
+      const nameHTML = playerLink(tour, p.player, `${flagPart}${escapeHtml(p.player)}`);
       return `<tr>
       <td class="col-rank">${p.rank}</td>
       <td class="col-player">${nameHTML}</td>
@@ -2459,7 +2488,7 @@ async function loadMeta() {
 
 (async function bootstrap() {
   loadMeta();
-  await loadChampionRatings();
+  await Promise.all([loadChampionRatings(), loadEngineCountries()]);
   ['m','w'].forEach(tour => {
     renderPills(tour);
     const cohort = COHORTS[tour][0];
