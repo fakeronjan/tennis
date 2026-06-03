@@ -139,6 +139,20 @@
   .goat-view-pills button.active .pill-sub { color: rgba(255,255,255,0.7); }
 
   .muted { color: #999; font-size: 11px; }
+  .title-asterisk {
+    color: #c8770e;
+    font-weight: 700;
+    margin-left: 1px;
+    cursor: help;
+  }
+  .data-note.footnote {
+    font-size: 11px;
+    color: #777;
+    margin-top: 12px;
+    line-height: 1.5;
+  }
+  .data-note.footnote .title-asterisk { margin-right: 4px; }
+  .data-note.footnote a { color: #1a6b8a; }
   .player-rating-line {
     font-size: 11px;
     color: #555;
@@ -2384,20 +2398,41 @@ async function refreshGoatRating(tour) {
         <tbody>${rows}</tbody>
       </table>`;
   } else {
+    // Players whose career-title count in our data falls more than 5 short of
+    // their official total — flagged with an asterisk on the Titles cell so
+    // the discrepancy isn't taken at face value. All five are well-documented
+    // Sackmann-coverage gaps for pre-2000 WTA / pre-1990 ATP smaller events.
+    const TITLE_ASTERISK = new Set([
+      'Jimmy Connors',
+      'Chris Evert',
+      'Evonne Goolagong',
+      'Billie Jean King',
+      'Rosie Casals',
+    ]);
     rows = data.players.map(p => {
       const flagPart = p.country ? `${p.country} ` : '';
       const nameHTML = playerLink(tour, p.player, `${flagPart}${escapeHtml(p.player)}`);
+      const titleAsterisk = TITLE_ASTERISK.has(p.player)
+        ? '<span class="title-asterisk" title="Sackmann match-data coverage gap; official career title count is materially higher than what our data captures.">*</span>'
+        : '';
       return `<tr>
       <td class="col-rank">${p.rank}</td>
       <td class="col-player">${nameHTML}</td>
       <td class="col-rating">${p.era.toFixed(1)}</td>
       <td class="col-extra">${p.first_year}-${p.last_year} <span class="muted">(${p.years_active}y)</span></td>
       <td class="col-extra">${p.career_slams ?? 0}</td>
-      <td class="col-extra">${p.career_titles ?? 0}</td>
+      <td class="col-extra">${p.career_titles ?? 0}${titleAsterisk}</td>
       <td class="col-extra">${(p.career_wins ?? 0).toLocaleString()}-${(p.career_losses ?? 0).toLocaleString()}</td>
       <td class="col-extra">${p.year_end_no1 || '-'}</td>
     </tr>`;
     }).join('');
+    const footnote = `<p class="data-note footnote">
+      <span class="title-asterisk">*</span> Career titles are derived from Jeff Sackmann's
+      <a href="https://github.com/JeffSackmann" target="_blank" rel="noopener">ATP / WTA match data</a>
+      (1973+ singles main draws). Pre-1990 ATP and pre-2000 WTA have known coverage gaps for smaller events
+      (Virginia Slims series, Avon Futures, early Grand Prix / WCT); these career totals may undercount the
+      player's official total by 5+ titles. Pre-1973 wins are not included.
+    </p>`;
     wrap.innerHTML = `
       <table class="goat-rating-table">
         <thead><tr>
@@ -2405,12 +2440,12 @@ async function refreshGoatRating(tour) {
           <th title="Career sum of positive (EOY rating - that year's #10 player base). Only above-top-10 seasons contribute. Quality-weighted 'years of elite tennis'.">ERA</th>
           <th>Span</th>
           <th title="Career Grand Slam singles titles">Slams</th>
-          <th title="Career singles titles (all tour-level events)">Titles</th>
+          <th title="Career singles titles (all tour-level events). * = known coverage gap; see footnote.">Titles</th>
           <th title="Career match record (wins-losses)">Record</th>
           <th title="Times the player finished a season ranked #1 by EOY rating">YE #1</th>
         </tr></thead>
         <tbody>${rows}</tbody>
-      </table>`;
+      </table>${footnote}`;
   }
 }
 
