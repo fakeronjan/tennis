@@ -1,0 +1,93 @@
+name: Update TENNIS Ratings
+
+on:
+  schedule:
+    - cron: '33 17 * * *'   # 17:33 UTC daily — after the US-sport block ends at 17:13 (SAKIC).
+                            # Source is Jeff Sackmann's tennis_atp / tennis_wta GitHub repos
+                            # (no rate limit). Sackmann updates a few hours after each day's
+                            # matches finish, so this slot catches the prior 24 hours.
+  workflow_dispatch:        # allow manual trigger from GitHub UI
+
+permissions:
+  contents: write           # needed for git push
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Decide full-rebuild mode
+        id: mode
+        # Once a year on Dec 31 (UTC) we re-canvass every snapshot in case any
+        # of Sackmann's historical files received a retroactive fix during the
+        # year. Every other day runs incrementally (30-day rolling window of
+        # re-solves; older snapshots are reused from the cached CSV).
+        run: |
+          if [ "$(date -u +%m-%d)" = "12-31" ]; then
+            echo "flag=--full" >> "$GITHUB_OUTPUT"
+            echo "label=full rebuild (annual)" >> "$GITHUB_OUTPUT"
+          else
+            echo "flag=" >> "$GITHUB_OUTPUT"
+            echo "label=incremental" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Download fresh Sackmann data
+        run: python3 tennis_engine.py download
+
+      - name: Build unified all_matches.csv
+        run: python3 tennis_engine.py build
+
+      - name: Generate ratings + JSON snapshots (${{ steps.mode.outputs.label }})
+        run: python3 tennis_engine.py generate ${{ steps.mode.outputs.flag }}
+
+      - name: Refresh player_timelines.json
+        run: python3 build_player_timelines.py
+
+      - name: Re-embed BUNDLE into docs/index.html
+        # Picks up any new slam-winner timelines emitted by the previous step.
+        run: |
+          python3 -c "
+          import json, re
+          from pathlib import Path
+          bundle = json.load(open('slams.json'))
+          timelines = json.load(open('player_timelines.json'))
+          bundle['timelines'] = timelines
+          json.dump(bundle, open('slams.json','w'), ensure_ascii=False)
+          html_path = Path('docs/index.html')
+          html = html_path.read_text()
+          new_line = 'const BUNDLE = ' + json.dumps(bundle, ensure_ascii=False) + ';'
+          html2, n = re.subn(r'const BUNDLE = \{.*?\};\n', new_line + '\n', html, count=1, flags=re.DOTALL)
+          assert n == 1, 'BUNDLE line not found'
+          html_path.write_text(html2)
+          "
+
+      - name: Commit and push updated data
+        run: |
+          git config user.name  "TENNIS Bot"
+          git config user.email "tennis-bot@users.noreply.github.com"
+          git add tennis_ratings.csv.gz player_timelines.json slams.json docs/data/ docs/index.html
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update ratings $(date -u '+%Y-%m-%d')"
+            # Race-safe push: if another commit landed during this run, rebase
+            # the data update on top and retry. Avoids losing a day's data
+            # update when a code push lands mid-cron-run.
+            for i in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              echo "Push attempt $i failed; retrying in 5s..."
+              sleep 5
+            done
+          fi

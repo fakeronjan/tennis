@@ -672,7 +672,12 @@ def career_stats(per_player: dict, tour: str, player: str):
     return wins, losses, titles, slams
 
 
-def build_rolling_snapshots(obs: pd.DataFrame, matches: pd.DataFrame) -> pd.DataFrame:
+INCREMENTAL_STALENESS_DAYS = 30
+
+
+def build_rolling_snapshots(obs: pd.DataFrame, matches: pd.DataFrame,
+                            full_rebuild: bool = False,
+                            cached_ratings: pd.DataFrame = None) -> pd.DataFrame:
     """Solve ratings at three kinds of anchor dates:
 
       - slam:    end date of each Grand Slam, with the standard 365-day rolling
@@ -684,6 +689,15 @@ def build_rolling_snapshots(obs: pd.DataFrame, matches: pd.DataFrame) -> pd.Data
       - current: the latest match date in the data (per tour). Standard rolling
                  window + recency decay. Only added if it differs from the latest
                  slam snapshot.
+
+    Incremental mode (default for `generate`, overridden by --full):
+      - If `cached_ratings` is provided and `full_rebuild` is False, snapshots
+        whose date is older than INCREMENTAL_STALENESS_DAYS (30 days) AND that
+        already exist in the cache are skipped and reused. Only the recent tail
+        + brand-new (tour, date) anchors are solved.
+      - Slam-end-date snapshots persist naturally in cache once solved.
+      - The annual Dec 31 cron run uses --full to re-canvass everything against
+        any retroactive Sackmann corrections.
 
     Sackmann stamps every match in a slam with the slam's start date, so a
     snapshot on that date naturally includes all the slam's matches in the
@@ -733,13 +747,49 @@ def build_rolling_snapshots(obs: pd.DataFrame, matches: pd.DataFrame) -> pd.Data
     # De-dup: avoid resolving (tour, date) twice if e.g. an EOY date happens to
     # equal a slam date (unlikely but defensive). slam takes precedence.
     eoy_by_pair = {(t, d): yr for (t, d, yr) in eoy_pairs}
+
+    # Incremental mode: determine which snapshots can be reused from cache.
+    # A snapshot is "cacheable" when its date is older than the staleness
+    # window AND a copy already exists in cached_ratings for that (tour, date).
+    cached_pairs = set()
+    cached_rows_to_carry = None
+    if not full_rebuild and cached_ratings is not None and not cached_ratings.empty:
+        cached_ratings = cached_ratings.copy()
+        cached_ratings["snapshot_date"] = pd.to_datetime(cached_ratings["snapshot_date"])
+        staleness_cutoff = pd.Timestamp(datetime.now().date()) - pd.Timedelta(days=INCREMENTAL_STALENESS_DAYS)
+        # Build the set of (tour, date) pairs already in cache
+        cache_index = cached_ratings[["tour", "snapshot_date"]].drop_duplicates()
+        for _, r in cache_index.iterrows():
+            cached_pairs.add((r["tour"], pd.Timestamp(r["snapshot_date"])))
+        # Snapshots we want to solve THIS run = the full queue
+        wanted = set()
+        for t, d in sorted(slam_pairs | current_pairs):
+            wanted.add((t, d))
+        for t, d, _yr in sorted(eoy_pairs):
+            wanted.add((t, d))
+        # Carry-over: in-cache pairs that are stale enough AND we still want them
+        carry = [(t, d) for (t, d) in cached_pairs
+                 if d < staleness_cutoff and (t, d) in wanted]
+        cached_rows_to_carry = cached_ratings[
+            cached_ratings.apply(
+                lambda r: (r["tour"], pd.Timestamp(r["snapshot_date"])) in set(carry),
+                axis=1,
+            )
+        ].copy()
+        # Drop pairs we're carrying from the solve queue
+        carry_set = set(carry)
+        slam_pairs = {p for p in slam_pairs if p not in carry_set}
+        current_pairs = {p for p in current_pairs if p not in carry_set}
+        eoy_pairs = {(t, d, yr) for (t, d, yr) in eoy_pairs if (t, d) not in carry_set}
+        print(f"  Incremental: reusing {len(carry_set)} cached snapshots "
+              f"(stale > {INCREMENTAL_STALENESS_DAYS} days)")
+
     print(f"  {len(slam_pairs)} slam + {len(eoy_pairs)} EOY + "
-          f"{len(current_pairs - slam_pairs)} current-only snapshots queued")
+          f"{len(current_pairs - slam_pairs)} current-only snapshots to solve")
 
     all_rows = []
     last_print_year = None
 
-    # Helper to solve one anchor and collect rows
     def _add(tour, snap, snap_type, window_start=None, recency_weighting=True):
         t_obs = obs[obs["tour"] == tour]
         r = solve_tour(t_obs, snap,
@@ -752,7 +802,6 @@ def build_rolling_snapshots(obs: pd.DataFrame, matches: pd.DataFrame) -> pd.Data
         r["snapshot_type"] = snap_type
         all_rows.append(r)
 
-    # Solve slam + current snapshots (rolling window, recency on)
     for tour, snap in sorted(slam_pairs | current_pairs):
         snap_type = "slam" if (tour, snap) in slam_pairs else "current"
         _add(tour, snap, snap_type)
@@ -761,17 +810,22 @@ def build_rolling_snapshots(obs: pd.DataFrame, matches: pd.DataFrame) -> pd.Data
             print(f"  ... year {yr}")
             last_print_year = yr
 
-    # Solve EOY snapshots (calendar-year window, no recency)
     for tour, snap, yr in sorted(eoy_pairs):
         window_start = pd.Timestamp(year=yr, month=1, day=1)
         _add(tour, snap, "eoy", window_start=window_start, recency_weighting=False)
 
-    return pd.concat(all_rows, ignore_index=True)
+    fresh = pd.concat(all_rows, ignore_index=True) if all_rows else pd.DataFrame()
+    if cached_rows_to_carry is not None and not cached_rows_to_carry.empty:
+        return pd.concat([cached_rows_to_carry, fresh], ignore_index=True)
+    return fresh
 
 
-def generate_data() -> None:
+def generate_data(full_rebuild: bool = False) -> None:
     """Read all_matches.csv, build observations, run rolling snapshots, write
-    everything to docs/data/ following fleet conventions."""
+    everything to docs/data/ following fleet conventions.
+
+    Incremental by default (re-solves only the last 30 days of snapshots, reuses
+    cached older ones). Pass `full_rebuild=True` to force a full re-solve."""
     DOCS_DATA.mkdir(parents=True, exist_ok=True)
     (DOCS_DATA / "players").mkdir(parents=True, exist_ok=True)
 
@@ -786,7 +840,15 @@ def generate_data() -> None:
     print(f"  {len(obs):,} set-observations")
 
     print("\nBuilding slam-day snapshots + current...")
-    ratings = build_rolling_snapshots(obs, matches)
+    # Load cached ratings (if any) — drives the incremental skip logic in
+    # build_rolling_snapshots. Ignored under full_rebuild.
+    cached_ratings = None
+    if not full_rebuild and RATINGS_CSV.exists():
+        cached_ratings = pd.read_csv(RATINGS_CSV)
+        print(f"\nLoaded {len(cached_ratings):,} cached rating rows for incremental skip.")
+    ratings = build_rolling_snapshots(obs, matches,
+                                       full_rebuild=full_rebuild,
+                                       cached_ratings=cached_ratings)
     print(f"\n{len(ratings):,} rating rows across {ratings['snapshot_date'].nunique()} snapshots")
 
     # Save full ratings CSV (gzipped — large)
@@ -1340,6 +1402,15 @@ def _slug(name: str) -> str:
 
 if __name__ == "__main__":
     args = set(sys.argv[1:])
+    # --full forces a complete re-solve (every (tour, snapshot_date) pair).
+    # Without it, generate runs INCREMENTALLY: snapshots older than
+    # INCREMENTAL_STALENESS_DAYS (30) that already exist in the cached
+    # tennis_ratings.csv.gz are reused, and only the recent tail + brand-new
+    # anchors get re-solved. Used by the daily cron; the annual Dec 31 run
+    # passes --full to re-canvass everything against retroactive Sackmann
+    # corrections.
+    full_rebuild = "--full" in args
+    args.discard("--full")
     if not args or "download" in args:
         print("=== Downloading Sackmann data ===")
         download_sackmann()
@@ -1360,5 +1431,6 @@ if __name__ == "__main__":
             print(ratings.head(15)[["player", "base", "hard_delta", "clay_delta",
                                     "grass_delta", "sets_played"]].to_string(index=False))
     if "generate" in args or "all" in args:
-        print("\n=== Generating JSON snapshots for SPA ===")
-        generate_data()
+        print(f"\n=== Generating JSON snapshots for SPA "
+              f"({'full rebuild' if full_rebuild else 'incremental'}) ===")
+        generate_data(full_rebuild=full_rebuild)
