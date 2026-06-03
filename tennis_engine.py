@@ -672,7 +672,7 @@ def career_stats(per_player: dict, tour: str, player: str):
     return wins, losses, titles, slams
 
 
-INCREMENTAL_STALENESS_DAYS = 30
+INCREMENTAL_STALENESS_DAYS = 60
 
 
 def build_rolling_snapshots(obs: pd.DataFrame, matches: pd.DataFrame,
@@ -692,7 +692,7 @@ def build_rolling_snapshots(obs: pd.DataFrame, matches: pd.DataFrame,
 
     Incremental mode (default for `generate`, overridden by --full):
       - If `cached_ratings` is provided and `full_rebuild` is False, snapshots
-        whose date is older than INCREMENTAL_STALENESS_DAYS (30 days) AND that
+        whose date is older than INCREMENTAL_STALENESS_DAYS (60 days) AND that
         already exist in the cache are skipped and reused. Only the recent tail
         + brand-new (tour, date) anchors are solved.
       - Slam-end-date snapshots persist naturally in cache once solved.
@@ -824,7 +824,7 @@ def generate_data(full_rebuild: bool = False) -> None:
     """Read all_matches.csv, build observations, run rolling snapshots, write
     everything to docs/data/ following fleet conventions.
 
-    Incremental by default (re-solves only the last 30 days of snapshots, reuses
+    Incremental by default (re-solves only the last 60 days of snapshots, reuses
     cached older ones). Pass `full_rebuild=True` to force a full re-solve."""
     DOCS_DATA.mkdir(parents=True, exist_ok=True)
     (DOCS_DATA / "players").mkdir(parents=True, exist_ok=True)
