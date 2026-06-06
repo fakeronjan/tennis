@@ -270,7 +270,7 @@
   }
   .sd-pos { background: #1a6b8a; }
   .sd-neg { background: #ff6eb4; }
-  .sd-zero { /* no fill — empty bar means surface not played */ }
+  .sd-zero { /* no fill - empty bar means surface not played */ }
 
   /* Power Rankings / GOAT tables */
   .pr-table, .goat-rating-table {
@@ -565,7 +565,7 @@
     margin-right: 2px;
   }
 
-  /* Deep-link to Player Summary tab — fleet pattern */
+  /* Deep-link to Player Summary tab - fleet pattern */
   .linked {
     cursor: pointer;
     color: #1a6b8a;
@@ -700,7 +700,7 @@
     .grid-table .winner-num { font-size: 10px; }
   }
 
-  /* Fleet nav strip — links to sister sites in the fakeronjan sports ratings family */
+  /* Fleet nav strip - links to sister sites in the fakeronjan sports ratings family */
   .fleet-nav {
     background: #0e4a5f;
     display: flex;
@@ -1042,7 +1042,7 @@ const COHORTS = {
     },
     {
       key: '90s', label: 'Sampras / Agassi',
-      sub: 'The defining 90s rivalry — Sampras rising from 1990, Edberg, Becker, Courier as peers',
+      sub: 'The defining 90s rivalry - Sampras rising from 1990, Edberg, Becker, Courier as peers',
       players: ['Pete Sampras','Andre Agassi','Stefan Edberg','Boris Becker','Jim Courier']
     },
     {
@@ -1261,7 +1261,7 @@ function renderChart1(svgId, legendId, legendId2, tour, cohort) {
     xlab += `<text x="${x.toFixed(1)}" y="${H - padB + 16}" font-size="10" fill="#999" text-anchor="middle">${yr}</text>`;
   }
 
-  // Build leader-line points (step function — leader doesn't change between slams)
+  // Build leader-line points (step function - leader doesn't change between slams)
   const leaderPts = [];
   for (let i = xStart; i <= xEnd; i++) {
     leaderPts.push(`${px(i).toFixed(1)},${py(leader[i].count).toFixed(1)}`);
@@ -1428,7 +1428,7 @@ function renderTable(tbodyId, tour, cohort) {
     last[r.w] = r;
     if (firstYear[r.w] === undefined || r.y < firstYear[r.w]) firstYear[r.w] = r.y;
   });
-  // All players sorted by total — index+1 is their all-time OE rank.
+  // All players sorted by total - index+1 is their all-time OE rank.
   const sortedAll = Object.entries(totals).sort((a, b) => b[1] - a[1]);
   let rows;
   if (!cohort || cohort.filter === 'top') {
@@ -1628,7 +1628,7 @@ const _stripDiacritics = s => (s || '').normalize('NFKD').replace(/[̀-ͯ]/g, ''
 
 // Wikipedia keeps maiden / married name compounds for a handful of players
 // (e.g. "Billie Jean Moffitt King") that Sackmann shortens to the tour name
-// ("Billie Jean King"). Diacritic stripping alone doesn't bridge that —
+// ("Billie Jean King"). Diacritic stripping alone doesn't bridge that -
 // hand-map the known cases so the per-player JSON lookup hits.
 const WIKI_TO_SACKMANN = {
   'Ann Haydon Jones':         'Ann Jones',
@@ -1758,7 +1758,7 @@ async function renderPlayer(tour, player) {
 
   // Load rating data: per-player history + GOAT PEAK + GOAT ERA + power_rankings_history
   // (the last for the year+slam -> date mapping).
-  // Per-player JSON filenames use Sackmann's slug — that's the Sackmann
+  // Per-player JSON filenames use Sackmann's slug - that's the Sackmann
   // shortened name (where it differs from Wikipedia), then diacritic-stripped.
   const slug = sackmannName(player).replace(/[^A-Za-z0-9_]/g, '_').replace(/^_+|_+$/g, '');
   const tourSlug = tour === 'm' ? 'atp' : 'wta';
@@ -1944,7 +1944,7 @@ async function renderCareerChart(tour, player, svgId, legendId) {
   const svg = document.getElementById(svgId);
   const legend = document.getElementById(legendId);
   if (!svg) return;
-  // Per-player JSON filenames use Sackmann's slug — that's the Sackmann
+  // Per-player JSON filenames use Sackmann's slug - that's the Sackmann
   // shortened name (where it differs from Wikipedia), then diacritic-stripped.
   const slug = sackmannName(player).replace(/[^A-Za-z0-9_]/g, '_').replace(/^_+|_+$/g, '');
   const tourSlug = tour === 'm' ? 'atp' : 'wta';
@@ -1988,7 +1988,7 @@ async function renderCareerChart(tour, player, svgId, legendId) {
   const px = t => padL + (t - tMin) / tSpan * (W - padL - padR);
   const py = v => padT + (1 - (v - yMin) / (yMax - yMin)) * (H - padT - padB);
 
-  // Y gridlines — 4-5 nice intervals
+  // Y gridlines - 4-5 nice intervals
   const yTickStep = (() => {
     const span = yMax - yMin;
     const cand = [0.25, 0.5, 1.0, 2.0];
@@ -2091,7 +2091,7 @@ function refreshGoat(tour) {
   renderTable(`${slug}-table`, tour, cohort);
 }
 
-// --- Power Rankings + GOAT (PEAK/ERA) — fakeronjan WLS ratings ---------------
+// --- Power Rankings + GOAT (PEAK/ERA) - fakeronjan WLS ratings ---------------
 
 const RATINGS_BASE = './data';
 const ratingsCache = {};
@@ -2103,7 +2103,7 @@ const SURFACE_LABELS = { hard: 'Hard', clay: 'Clay', grass: 'Grass' };
 
 // Render the surface-specialization mini-bullet-chart for a player (hard/clay/grass; carpet omitted).
 function surfaceDeltaHTML(deltas) {
-  // deltas: {hard, clay, grass} — each in approx ±1 range
+  // deltas: {hard, clay, grass} - each in approx ±1 range
   const SCALE = 1.0; // half-width of each bar represents |delta|=1.0
   const cells = ['hard','clay','grass'].map(s => {
     const v = +deltas[s] || 0;
@@ -2141,10 +2141,10 @@ async function fetchRatings(path) {
   }
 }
 
-// Snapshot picker state — selected (year, code) per tour.
+// Snapshot picker state - selected (year, code) per tour.
 const prSnapState = { m: null, w: null }; // {year, code}, initialised from history JSON
 
-// Snapshot order within a year — most-recent first per fleet convention.
+// Snapshot order within a year - most-recent first per fleet convention.
 const SNAP_CODE_ORDER = { Today: 1, EOY: 2, US: 3, Wim: 4, FO: 5, AO: 6 };
 const SNAP_CODE_SHORT = { AO: 'After Australian Open', FO: 'After Roland Garros',
                           Wim: 'After Wimbledon', US: 'After US Open',
@@ -2190,8 +2190,8 @@ function populatePickers(tour) {
   const yearSel = document.getElementById('pr-year-select');
   const snapSel = document.getElementById('pr-snap-select');
   if (!hist) {
-    yearSel.innerHTML = '<option>—</option>';
-    snapSel.innerHTML = '<option>—</option>';
+    yearSel.innerHTML = '<option>-</option>';
+    snapSel.innerHTML = '<option>-</option>';
     return;
   }
   // Default selection: prefer "Today" if present (current year), else latest year's EOY.
@@ -2248,7 +2248,7 @@ async function refreshPowerRankings(tour) {
 
   const shortLabel = SNAP_CODE_SHORT[code] || snap.label;
   const dateStr = fmtSnapDate(snap.date);
-  // Disrupted tag (fleet-wide pattern) — append inline next to the snapshot label.
+  // Disrupted tag (fleet-wide pattern) - append inline next to the snapshot label.
   const disrupted = snap.disrupted;
   const tagInline = disrupted
     ? ` <span class="short-season-tag tag-${disrupted.category}" title="${escapeHtml(disrupted.note)}">${disrupted.tag.toUpperCase()}</span>`
@@ -2260,7 +2260,7 @@ async function refreshPowerRankings(tour) {
     ? `<span class="footnote">End-of-year snapshot uses the full calendar year (Jan&nbsp;1&nbsp;-&nbsp;Dec&nbsp;31) with tier weighting only, no recency decay.</span>`
     : `<span class="footnote">Surface filter shows base rating + that surface's delta (effective rating on that surface).</span>`;
   document.getElementById('power-rankings-asof').innerHTML = `${labelText}. ${noteFootnote}`;
-  // Disrupted-snapshot footnote box — fleet-wide pattern (DUNCAN style).
+  // Disrupted-snapshot footnote box - fleet-wide pattern (DUNCAN style).
   const disruptedNote = document.getElementById('power-rankings-disrupted-note');
   if (disruptedNote) {
     if (disrupted) {
@@ -2336,7 +2336,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const tour = mwState['power-rankings'];
       const newYear = parseInt(yearSel.value, 10);
       // When year changes, default to the year's most-recent snapshot (snaps[0]
-      // under newest-first ordering — Today for the current year, EOY otherwise).
+      // under newest-first ordering - Today for the current year, EOY otherwise).
       const snaps = listSnapsForYear(tour, newYear);
       const fallback = snaps[0];
       prSnapState[tour] = { year: newYear, code: fallback ? fallback.code : 'EOY' };
@@ -2394,7 +2394,7 @@ async function refreshGoatRating(tour) {
       <table class="goat-rating-table">
         <thead><tr>
           <th>#</th><th>Player</th>
-          <th title="Player's peak end-of-year rating minus that year's #10 player base — 'rating above the marginal top-10 player'. Strips out year-to-year field-depth variance.">Peak</th>
+          <th title="Player's peak end-of-year rating minus that year's #10 player base - 'rating above the marginal top-10 player'. Strips out year-to-year field-depth variance.">Peak</th>
           <th>Year</th><th>Surface specialization</th>
           <th>Record</th><th>Titles</th><th>Slams</th>
           <th title="Times the player finished a season ranked #1 by EOY rating">YE #1</th>
@@ -2403,7 +2403,7 @@ async function refreshGoatRating(tour) {
       </table>`;
   } else {
     // Players whose career-title count in our data falls more than 5 short of
-    // their official total — flagged with an asterisk on the Titles cell so
+    // their official total - flagged with an asterisk on the Titles cell so
     // the discrepancy isn't taken at face value. All five are well-documented
     // Sackmann-coverage gaps for pre-2000 WTA / pre-1990 ATP smaller events.
     const TITLE_ASTERISK = new Set([
@@ -2539,7 +2539,7 @@ async function loadMeta() {
     renderTournamentGrid(tour, `tournament-table-${tour}`);
     populatePlayerDropdown(tour);
   });
-  // Power Rankings is the default active tab — kick off its initial render.
+  // Power Rankings is the default active tab - kick off its initial render.
   refreshPowerRankings('m');
 })();
 

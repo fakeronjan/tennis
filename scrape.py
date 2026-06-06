@@ -86,7 +86,7 @@ def parse(html):
         raw_rows.append(tr.find_all(["td"], recursive=False))
 
     n = len(raw_rows)
-    # Each grid cell: (td, text, origin_row) — origin_row is where rowspan starts.
+    # Each grid cell: (td, text, origin_row) - origin_row is where rowspan starts.
     grid = [[None] * 5 for _ in range(n)]
     for i, tds in enumerate(raw_rows):
         col = 0
@@ -122,7 +122,7 @@ def parse(html):
                 winners.append((None, None))
                 continue
             td, text, origin = cell
-            # Skip cells inherited via rowspan from an earlier row — that slam has
+            # Skip cells inherited via rowspan from an earlier row - that slam has
             # already been emitted in its origin row.
             if origin != i:
                 winners.append((None, None))

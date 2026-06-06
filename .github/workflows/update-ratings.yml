@@ -2,7 +2,7 @@ name: Update TENNIS Ratings
 
 on:
   schedule:
-    - cron: '33 17 * * *'   # 17:33 UTC daily — after the US-sport block ends at 17:13 (SAKIC).
+    - cron: '33 17 * * *'   # 17:33 UTC daily - after the US-sport block ends at 17:13 (SAKIC).
                             # Source is Jeff Sackmann's tennis_atp / tennis_wta GitHub repos
                             # (no rate limit). Sackmann updates a few hours after each day's
                             # matches finish, so this slot catches the prior 24 hours.

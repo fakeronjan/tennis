@@ -1,6 +1,6 @@
 """Build player_timelines.json from Sackmann match data.
 
-Replaces the older Wikipedia-scraped scrape_players.py — this approach
+Replaces the older Wikipedia-scraped scrape_players.py - this approach
 is faster, never rate-limits, has no name-mismatch issues across years,
 and works for every 1+ slam winner in slams.json automatically.
 
@@ -26,7 +26,7 @@ import pandas as pd
 ROOT = Path(__file__).parent
 
 # Wikipedia uses full birth-and-married names for some players; Sackmann uses
-# the player's tour name. Manual map covers the edge cases — diacritic
+# the player's tour name. Manual map covers the edge cases - diacritic
 # differences are handled by normalisation.
 NAME_MAP = {
     "Ann Haydon Jones":         "Ann Jones",
@@ -35,7 +35,7 @@ NAME_MAP = {
     "Kerry Melville Reid":      "Kerry Reid",
     "Li Na":                    "Na Li",
     "Margaret Smith Court":     "Margaret Court",
-    # Chris O'Neil (1978 AO winner) is absent from Sackmann's data — no timeline.
+    # Chris O'Neil (1978 AO winner) is absent from Sackmann's data - no timeline.
 }
 
 SLAM_NAME_TO_CODE = {
@@ -61,9 +61,9 @@ def main():
     matches_path = ROOT / "all_matches.csv"
     slams_path   = ROOT / "slams.json"
     if not matches_path.exists():
-        raise SystemExit(f"missing {matches_path} — run tennis_engine.py build first")
+        raise SystemExit(f"missing {matches_path} - run tennis_engine.py build first")
     if not slams_path.exists():
-        raise SystemExit(f"missing {slams_path} — run scrape.py first")
+        raise SystemExit(f"missing {slams_path} - run scrape.py first")
 
     m = pd.read_csv(matches_path)
     m["date"] = pd.to_datetime(m["date"])

@@ -1,12 +1,12 @@
 """
-tennis_engine.py — fakeronjan WLS rating engine for tennis (singles, ATP + WTA, 1973+).
+tennis_engine.py - fakeronjan WLS rating engine for tennis (singles, ATP + WTA, 1973+).
 
 Pipeline:
-  1. download_sackmann()   — fetch & cache Jeff Sackmann's tennis_atp + tennis_wta CSVs
-  2. build_unified()       — parse + normalize into all_matches.csv (one row per match)
-  3. build_observations()  — one row per SET, response = signed sqrt(game margin)
-  4. solve_ratings()       — WLS solve: base rating + 4 surface deltas, per tour separately
-  5. write_outputs()       — ratings CSVs + JSON snapshots for the SPA
+  1. download_sackmann()   - fetch & cache Jeff Sackmann's tennis_atp + tennis_wta CSVs
+  2. build_unified()       - parse + normalize into all_matches.csv (one row per match)
+  3. build_observations()  - one row per SET, response = signed sqrt(game margin)
+  4. solve_ratings()       - WLS solve: base rating + 4 surface deltas, per tour separately
+  5. write_outputs()       - ratings CSVs + JSON snapshots for the SPA
 
 Data source: Jeff Sackmann (CC-BY-NC-SA 4.0). Attribution required.
   https://github.com/JeffSackmann/tennis_atp
@@ -34,7 +34,7 @@ MIN_YEAR = 1973   # Open Era data is patchy 1968-72; Sackmann coverage solidifie
 DATA_DIR = Path(__file__).parent / "data" / "sackmann"
 ALL_MATCHES_CSV = Path(__file__).parent / "all_matches.csv"
 
-# Tournament tier weights — mirrors MESSI's continental boost / ZIDANE's UCL boost.
+# Tournament tier weights - mirrors MESSI's continental boost / ZIDANE's UCL boost.
 # Sackmann's tourney_level codes:
 #   G  = Grand Slam
 #   M  = ATP Masters 1000 / WTA Premier Mandatory + Premier 5 (lumping the "1000s")
@@ -54,7 +54,7 @@ TIER_WEIGHTS = {
     "P":  1.5,   # WTA older Premier (1000-ish)
     "PM": 1.5,   # WTA Premier Mandatory
     "T1": 1.5,   # WTA T1 (1000-tier)
-    "A":  1.0,   # ATP 500/250 (we don't separate further — Sackmann doesn't always)
+    "A":  1.0,   # ATP 500/250 (we don't separate further - Sackmann doesn't always)
     "I":  0.8,   # WTA International (250-tier)
     "T2": 1.0,   # WTA T2
     "T3": 0.8,   # WTA T3
@@ -74,7 +74,7 @@ SURFACES = {"Hard", "Clay", "Grass", "Carpet"}
 
 
 # ============================================================
-# STEP 1 — DOWNLOAD SACKMANN
+# STEP 1 - DOWNLOAD SACKMANN
 # ============================================================
 
 USER_AGENT = "Mozilla/5.0 (compatible; fakeronjan tennis ratings bot)"
@@ -125,7 +125,7 @@ def download_sackmann(min_year: int = MIN_YEAR, refresh_latest: int = 2) -> None
 
 
 # ============================================================
-# STEP 2 — BUILD UNIFIED all_matches.csv
+# STEP 2 - BUILD UNIFIED all_matches.csv
 # ============================================================
 
 def _parse_date(raw) -> pd.Timestamp:
@@ -167,7 +167,7 @@ def build_unified(out_path: Path = ALL_MATCHES_CSV) -> pd.DataFrame:
     """
     if not DATA_DIR.exists():
         raise FileNotFoundError(
-            f"{DATA_DIR} not found — run download_sackmann() first."
+            f"{DATA_DIR} not found - run download_sackmann() first."
         )
 
     frames = []
@@ -224,7 +224,7 @@ def build_unified(out_path: Path = ALL_MATCHES_CSV) -> pd.DataFrame:
 
 
 # ============================================================
-# STEP 3 — PARSE SCORES + BUILD SET-LEVEL OBSERVATIONS
+# STEP 3 - PARSE SCORES + BUILD SET-LEVEL OBSERVATIONS
 # ============================================================
 
 import re
@@ -276,7 +276,7 @@ def build_observations(matches: pd.DataFrame) -> pd.DataFrame:
             continue
         for set_num, (winner_games, loser_games) in enumerate(sets, start=1):
             margin = winner_games - loser_games
-            # Skip nonsense (e.g. both 0 — already filtered, defensive)
+            # Skip nonsense (e.g. both 0 - already filtered, defensive)
             if margin <= 0:
                 # Score string has set written from match-winner POV first,
                 # so winner_games >= loser_games. If reversed (rare bad parse),
@@ -315,11 +315,11 @@ def build_observations(matches: pd.DataFrame) -> pd.DataFrame:
 
 
 # ============================================================
-# STEP 4 — WLS SOLVE (PER TOUR, SINGLE SNAPSHOT)
+# STEP 4 - WLS SOLVE (PER TOUR, SINGLE SNAPSHOT)
 # ============================================================
 # Each set is one observation. Each player gets 4 unknowns: a base rating +
 # 3 surface deltas (hard/clay/grass). Carpet matches still feed the base
-# rating but DO NOT get their own per-player delta — the modern tour has
+# rating but DO NOT get their own per-player delta - the modern tour has
 # essentially zero carpet, so per-player carpet deltas over-fit on tiny
 # samples and produced phantom +1.4 carpet bumps for players who'd played
 # 2 carpet matches in a year. By absorbing carpet into base, we keep all
@@ -329,7 +329,7 @@ SURFACE_LIST = ["Hard", "Clay", "Grass"]  # surfaces that get per-player deltas
 PARAMS_PER_PLAYER = 1 + len(SURFACE_LIST)  # base + N deltas
 
 
-MIN_SETS_PLAYED = 30  # filter for published rankings — drops tiny-sample noise
+MIN_SETS_PLAYED = 30  # filter for published rankings - drops tiny-sample noise
 
 def solve_tour(obs: pd.DataFrame, snapshot_date: pd.Timestamp,
                window_days: int = 365,
@@ -350,7 +350,7 @@ def solve_tour(obs: pd.DataFrame, snapshot_date: pd.Timestamp,
         `snapshot_date - window_days`. Used to anchor calendar-year EOY snapshots
         that should not bleed into the prior year.
       - recency_weighting: when True (default), linear decay from 1.0 at the
-        snapshot to ~0 at the window's far edge — the standard rolling-rating
+        snapshot to ~0 at the window's far edge - the standard rolling-rating
         behavior. When False, every set in the window gets equal weight (still
         modulated by tier_weight). Used for EOY snapshots, where the snapshot
         should represent the year as a whole, not "form heading into Tour Finals".
@@ -400,7 +400,7 @@ def solve_tour(obs: pd.DataFrame, snapshot_date: pd.Timestamp,
     N_DELTAS = len(SURFACE_LIST)
     n_cols = n_p * PPP
 
-    # Build X sparsely-ish (still dense numpy — for our 1-year window scale it fits)
+    # Build X sparsely-ish (still dense numpy - for our 1-year window scale it fits)
     X = np.zeros((n_obs, n_cols), dtype=np.float32)
     y = np.zeros(n_obs, dtype=np.float32)
     sw = np.zeros(n_obs, dtype=np.float32)
@@ -425,9 +425,9 @@ def solve_tour(obs: pd.DataFrame, snapshot_date: pd.Timestamp,
         sw[i] = sample_weight[i]
 
     # Two anchoring constraints (very high weight, treated as hard constraints):
-    #   1. Cross-player zero-sum on BASE — sum of all bases = 0 (anchors the
+    #   1. Cross-player zero-sum on BASE - sum of all bases = 0 (anchors the
     #      overall rating scale).
-    #   2. Per-player zero-sum on MODELED DELTAS — for each player,
+    #   2. Per-player zero-sum on MODELED DELTAS - for each player,
     #      hard_delta + clay_delta + grass_delta = 0. This forces `base` to
     #      mean "average rating across the 3 modeled surfaces" rather than
     #      drifting with carpet performance. Without this constraint, players
@@ -497,7 +497,7 @@ def solve_tour(obs: pd.DataFrame, snapshot_date: pd.Timestamp,
 
 
 # ============================================================
-# STEP 5 — ROLLING SNAPSHOTS + JSON OUTPUTS
+# STEP 5 - ROLLING SNAPSHOTS + JSON OUTPUTS
 # ============================================================
 # Snapshot cadence: end-of-November each year (after ATP/WTA Finals usually) +
 # current state. ~52 snapshots × 2 tours = ~100 solves, ~5-10 minutes total.
@@ -575,7 +575,7 @@ def _iso2_to_flag(iso2):
 
 def country_flag(ioc):
     """Map a Sackmann IOC country code to a regional-indicator emoji flag.
-    Returns empty string for unknown codes — the SPA renders that as no flag."""
+    Returns empty string for unknown codes - the SPA renders that as no flag."""
     iso2 = _IOC_TO_ISO2.get(ioc)
     return _iso2_to_flag(iso2) if iso2 else ""
 
@@ -655,7 +655,7 @@ def window_stats(per_player: dict, tour: str, player: str,
 
 def career_stats(per_player: dict, tour: str, player: str):
     """Return (career_wins, career_losses, career_titles, career_slams_count)
-    across the player's entire match log — no window filtering."""
+    across the player's entire match log - no window filtering."""
     bucket = per_player.get((tour, player))
     if not bucket:
         return 0, 0, 0, 0
@@ -684,7 +684,7 @@ def build_rolling_snapshots(obs: pd.DataFrame, matches: pd.DataFrame,
                  window + recency decay (the "form heading into the slam" view).
       - eoy:     Dec 31 of each completed calendar year (or the year's last match
                  date if earlier), with a Jan 1 -> Dec 31 calendar-year window
-                 and NO recency decay — the "power within this year" view.
+                 and NO recency decay - the "power within this year" view.
                  Skipped for the current calendar year (in-progress).
       - current: the latest match date in the data (per tour). Standard rolling
                  window + recency decay. Only added if it differs from the latest
@@ -840,7 +840,7 @@ def generate_data(full_rebuild: bool = False) -> None:
     print(f"  {len(obs):,} set-observations")
 
     print("\nBuilding slam-day snapshots + current...")
-    # Load cached ratings (if any) — drives the incremental skip logic in
+    # Load cached ratings (if any) - drives the incremental skip logic in
     # build_rolling_snapshots. Ignored under full_rebuild.
     cached_ratings = None
     if not full_rebuild and RATINGS_CSV.exists():
@@ -851,7 +851,7 @@ def generate_data(full_rebuild: bool = False) -> None:
                                        cached_ratings=cached_ratings)
     print(f"\n{len(ratings):,} rating rows across {ratings['snapshot_date'].nunique()} snapshots")
 
-    # Save full ratings CSV (gzipped — large)
+    # Save full ratings CSV (gzipped - large)
     ratings_out = ratings.copy()
     ratings_out["snapshot_date"] = ratings_out["snapshot_date"].dt.strftime("%Y-%m-%d")
     ratings_out.to_csv(RATINGS_CSV, index=False, compression="gzip")
@@ -861,10 +861,10 @@ def generate_data(full_rebuild: bool = False) -> None:
     # Powers the Year + Within-Year picker on the Power Rankings tab.
     write_power_rankings_history(ratings, matches)
 
-    # --- Current rankings (latest snapshot PER TOUR — ATP and WTA can differ) ---
+    # --- Current rankings (latest snapshot PER TOUR - ATP and WTA can differ) ---
     # Eligibility gates differ by snapshot type AND by tour. WTA matches max
     # at best-of-3, ATP slams at best-of-5, so women naturally play fewer
-    # sets per match — and ~78% the sets per year vs ATP top-30 medians
+    # sets per match - and ~78% the sets per year vs ATP top-30 medians
     # (WTA ~121, ATP ~156). Tour-specific thresholds keep gate strictness
     # constant relative to a full season's natural sample.
     GATES = {
@@ -903,14 +903,14 @@ def generate_data(full_rebuild: bool = False) -> None:
         print(f"  wrote {out_path.name} ({len(rows)} players)")
 
     # --- GOAT-PEAK + GOAT-ERA (EOY snapshots only) ---
-    # Both views use the EOY (end-of-year) snapshot — calendar-year window,
+    # Both views use the EOY (end-of-year) snapshot - calendar-year window,
     # tier weighting only, no recency decay. One full-season-calibrated
     # rating per (player, year).
     #   PEAK = player's max EOY base rating across career. Surfaces the
     #          peak-year body of work (W-L, titles, slams that year).
     #   ERA  = sum of (player's positive EOY base ratings) across career.
     #          Surfaces career totals (slams, titles, year-end #1 finishes).
-    #          Negative years clipped at 0 — body of work above tour average.
+    #          Negative years clipped at 0 - body of work above tour average.
     eoy_only = ratings[ratings["snapshot_type"] == "eoy"].copy()
     eoy_only["year"] = pd.to_datetime(eoy_only["snapshot_date"]).dt.year
 
@@ -935,7 +935,7 @@ def generate_data(full_rebuild: bool = False) -> None:
 
     # Per-year anchor: rating of the 10th-ranked player that year. Adjusting
     # by this anchor turns each year's PEAK rating into "wins above the year's
-    # marginal top-10 player" — strips out field-depth and tournament-coverage
+    # marginal top-10 player" - strips out field-depth and tournament-coverage
     # variance across years, and surfaces the truly elite peaks. Side effect
     # for ERA: a year only contributes to a player's career ERA if they
     # cleared the year's top-10 bar. ERA becomes a "years of elite tennis"
@@ -965,7 +965,7 @@ def generate_data(full_rebuild: bool = False) -> None:
         if t_peak.empty and t_era.empty:
             continue
 
-        # Year-end #1 count per player — uses the looser ERA filter so the
+        # Year-end #1 count per player - uses the looser ERA filter so the
         # tally credits dominant-but-thin years (e.g. Hingis 1997 first WTA YE#1).
         no1_per_year = t_era.loc[t_era.groupby("year")["base"].idxmax()]
         no1_counts = no1_per_year.groupby("player").size().to_dict()
@@ -1008,7 +1008,7 @@ def generate_data(full_rebuild: bool = False) -> None:
 
         # ----- PEAK (All seasons) -----
         # Top 50 (player, year) combinations by adjusted base. Same player
-        # can appear multiple times if they had multiple elite seasons —
+        # can appear multiple times if they had multiple elite seasons -
         # complements the "Best per player" view by surfacing the era-
         # dominant stretches (e.g. Federer 2005/06/07 or Nadal 2008/10/13).
         all_seasons = t_peak.sort_values("adj_base", ascending=False).head(50).reset_index(drop=True)
@@ -1083,7 +1083,7 @@ def generate_data(full_rebuild: bool = False) -> None:
         print(f"  wrote goat_era_{tour.lower()}.json ({len(era_rows)} players)")
 
     # --- Per-player history (all snapshots for each player) ---
-    # Pre-compute rank per (tour, snapshot_date, player) — within the
+    # Pre-compute rank per (tour, snapshot_date, player) - within the
     # tour- and type-appropriate qualifying top 50:
     #   ATP EOY: >=125  ATP rolling: >=80
     #   WTA EOY: >=100  WTA rolling: >=64
@@ -1123,7 +1123,7 @@ def generate_data(full_rebuild: bool = False) -> None:
                     "snapshot_type": r["snapshot_type"],
                 })
                 years_in_history.add(snap.year)
-            # Per-year aggregate stats (record, titles, slams won) — used by
+            # Per-year aggregate stats (record, titles, slams won) - used by
             # the Player Summary slam-grid Record/Titles/EOY columns.
             year_stats = {}
             for yr in sorted(years_in_history):
@@ -1185,16 +1185,16 @@ def generate_data(full_rebuild: bool = False) -> None:
 
 
 def write_power_rankings_history(ratings: pd.DataFrame, matches: pd.DataFrame) -> None:
-    """Emit docs/data/power_rankings_history_{atp,wta}.json — every snapshot the
+    """Emit docs/data/power_rankings_history_{atp,wta}.json - every snapshot the
     SPA needs for the Year + Within-Year picker on the Power Rankings tab.
 
     Snapshot keys:
-      - "{year}_AO"   — after Australian Open
-      - "{year}_FO"   — after Roland Garros
-      - "{year}_Wim"  — after Wimbledon
-      - "{year}_US"   — after US Open
-      - "{year}_EOY"  — Dec 31 calendar-year snapshot (full year, no recency)
-      - "Today"       — latest data point (only for current calendar year)
+      - "{year}_AO"   - after Australian Open
+      - "{year}_FO"   - after Roland Garros
+      - "{year}_Wim"  - after Wimbledon
+      - "{year}_US"   - after US Open
+      - "{year}_EOY"  - Dec 31 calendar-year snapshot (full year, no recency)
+      - "Today"       - latest data point (only for current calendar year)
 
     Each snapshot includes per-player rating stats (base + surface deltas) PLUS
     window-scoped career stats: match W-L, title count, slam codes won. The
@@ -1208,13 +1208,13 @@ def write_power_rankings_history(ratings: pd.DataFrame, matches: pd.DataFrame) -
     # COVID-disrupted snapshots: rolling windows that cross the Mar-Aug 2020 tour
     # shutdown or that contain irregular slam-calendar configurations. Format
     # matches the fleet-wide disrupted-season pattern (tag, category, note).
-    # Only the "covid" category applies here — tennis had no work stoppage or
+    # Only the "covid" category applies here - tennis had no work stoppage or
     # cancelled-season equivalents to the labor / cancelled tags used elsewhere.
     DISRUPTED_SNAPSHOTS = {
         "2020_FO":  {"tag": "covid", "category": "covid",
                      "note": "Roland Garros 2020 rescheduled to Sept-Oct (normally late May/early June) after the Mar-Aug COVID tour shutdown."},
         "2020_US":  {"tag": "covid", "category": "covid",
-                     "note": "US Open 2020 played in the NYC bubble with a thin field — Federer, Nadal, and several other top players sat out; Djokovic was defaulted."},
+                     "note": "US Open 2020 played in the NYC bubble with a thin field - Federer, Nadal, and several other top players sat out; Djokovic was defaulted."},
         "2021_AO":  {"tag": "covid", "category": "covid",
                      "note": "Australian Open 2021 delayed to February. The 365-day rolling window reaches into the Mar-Aug 2020 tour shutdown."},
         "2021_FO":  {"tag": "covid", "category": "covid",
@@ -1329,7 +1329,7 @@ def write_power_rankings_history(ratings: pd.DataFrame, matches: pd.DataFrame) -
 
 
 def write_champion_ratings(matches: pd.DataFrame, ratings: pd.DataFrame) -> None:
-    """Emit docs/data/champion_ratings.json — used by the Champions tab to show
+    """Emit docs/data/champion_ratings.json - used by the Champions tab to show
     each Grand Slam winner's base + surface-delta at the time they won."""
     SLAM_NAME    = {"AO": "Australian Open", "FO": "Roland Garros", "Wim": "Wimbledon", "US": "US Open"}
     SLAM_SURFACE = {"AO": "hard", "FO": "clay", "Wim": "grass", "US": "hard"}

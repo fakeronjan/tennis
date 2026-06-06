@@ -160,7 +160,7 @@ def normalize_finish(v):
     if not v:
         return None
     s = v.strip()
-    if s in ("", "—", "-", "–"):
+    if s in ("", "-", "-", "–"):
         return None
     # Common patterns
     s = re.sub(r"\s+", "", s)
@@ -336,7 +336,7 @@ def main():
     apply_manual_overrides(timelines)
     with open("player_timelines.json", "w") as f:
         json.dump(timelines, f, ensure_ascii=False)
-    print(f"\nwrote player_timelines.json — {sum(1 for v in timelines.values() if v)} OK / {sum(1 for v in timelines.values() if not v)} failed")
+    print(f"\nwrote player_timelines.json - {sum(1 for v in timelines.values() if v)} OK / {sum(1 for v in timelines.values() if not v)} failed")
 
 
 if __name__ == "__main__":
