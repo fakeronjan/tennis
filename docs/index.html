@@ -2149,6 +2149,10 @@ const SNAP_CODE_ORDER = { Today: 1, EOY: 2, US: 3, Wim: 4, FO: 5, AO: 6 };
 const SNAP_CODE_SHORT = { AO: 'After Australian Open', FO: 'After Roland Garros',
                           Wim: 'After Wimbledon', US: 'After US Open',
                           EOY: 'End of year', Today: 'Today' };
+// Slam snapshots are anchored on the tournament's START date (the data source
+// stamps every match in a slam with its start date), so they read "started" - a
+// late-May Roland Garros snapshot shouldn't look like it ended in late May.
+const SLAM_CODES = new Set(['AO', 'FO', 'Wim', 'US']);
 
 function fmtSnapDate(iso) {
   if (!iso) return '';
@@ -2218,7 +2222,8 @@ function populatePickers(tour) {
   snapSel.innerHTML = snaps.map(s => {
     const label = SNAP_CODE_SHORT[s.code] || s.label;
     const dateStr = fmtSnapDate(s.date);
-    return `<option value="${s.code}" ${s.code === code ? 'selected' : ''}>${label} · ${dateStr}</option>`;
+    const datePart = SLAM_CODES.has(s.code) ? `(started ${dateStr})` : `· ${dateStr}`;
+    return `<option value="${s.code}" ${s.code === code ? 'selected' : ''}>${label} ${datePart}</option>`;
   }).join('');
 }
 
@@ -2253,9 +2258,10 @@ async function refreshPowerRankings(tour) {
   const tagInline = disrupted
     ? ` <span class="short-season-tag tag-${disrupted.category}" title="${escapeHtml(disrupted.note)}">${disrupted.tag.toUpperCase()}</span>`
     : '';
+  const datePhrase = SLAM_CODES.has(code) ? 'started' : 'snapshot date';
   const labelText = code === 'Today'
     ? `Top ${snap.players.length} &middot; Today &middot; as of ${dateStr}`
-    : `Top ${snap.players.length} &middot; ${shortLabel} ${year}${tagInline} &middot; snapshot date ${dateStr}`;
+    : `Top ${snap.players.length} &middot; ${shortLabel} ${year}${tagInline} &middot; ${datePhrase} ${dateStr}`;
   const noteFootnote = code === 'EOY'
     ? `<span class="footnote">End-of-year snapshot uses the full calendar year (Jan&nbsp;1&nbsp;-&nbsp;Dec&nbsp;31) with tier weighting only, no recency decay.</span>`
     : `<span class="footnote">Surface filter shows base rating + that surface's delta (effective rating on that surface).</span>`;
