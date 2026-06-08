@@ -502,6 +502,7 @@ def solve_tour(obs: pd.DataFrame, snapshot_date: pd.Timestamp,
 # Snapshot cadence: end-of-November each year (after ATP/WTA Finals usually) +
 # current state. ~52 snapshots × 2 tours = ~100 solves, ~5-10 minutes total.
 
+import csv
 import json
 
 DOCS_DATA = Path(__file__).parent / "docs" / "data"
@@ -1167,9 +1168,12 @@ def generate_data(full_rebuild: bool = False) -> None:
             json.dump(index, f, separators=(",", ":"))
         print(f"  wrote {out_path.name} ({len(index)} players)")
 
-    # --- Champion ratings overlay (powers Champions tab inline rating) ---
-    # Keyed by `{tourLetter}_{year}_{spaCode}` -> {player, base, surface_delta, surface, effective}
-    # spaCode mapping: AO=Australian Open, FO=Roland Garros, Wim=Wimbledon, US=US Open
+    # --- Champions: append any newly-completed slam from match data, then overlay ---
+    # update_slam_champions extends the curated slams_{m,w}.csv + slams.json with new
+    # finals (keeps the Champions tab self-updating without a Wikipedia scrape).
+    # write_champion_ratings then reads the (now-current) CSVs to build the rating
+    # overlay keyed by `{tourLetter}_{year}_{spaCode}`.
+    update_slam_champions(matches)
     write_champion_ratings(matches, ratings)
 
     # --- Meta (date range, etc.) ---
@@ -1326,6 +1330,95 @@ def write_power_rankings_history(ratings: pd.DataFrame, matches: pd.DataFrame) -
         with open(path, "w") as f:
             json.dump(out, f, separators=(",", ":"))
         print(f"  wrote {path.name} ({len(snapshots)} snapshots)")
+
+
+# IOC (3-letter, Sackmann winner_ioc) -> ISO2, for the slams.json player-flag map
+# that the SPA Champions grid renders via flagEmoji(). Covers every nation that has
+# produced an Open Era Grand Slam singles champion plus likely near-future ones.
+# update_slam_champions raises on any code missing here, so a new champion's blank
+# flag fails the run loudly rather than shipping silently.
+IOC_TO_ISO2 = {
+    "USA": "US", "ESP": "ES", "SUI": "CH", "SRB": "RS", "GER": "DE", "FRG": "DE",
+    "GDR": "DE", "SWE": "SE", "AUS": "AU", "GBR": "GB", "RUS": "RU", "ITA": "IT",
+    "ARG": "AR", "BRA": "BR", "ROU": "RO", "AUT": "AT", "CRO": "HR", "RSA": "ZA",
+    "FRA": "FR", "ECU": "EC", "NED": "NL", "CZE": "CZ", "TCH": "CZ", "BEL": "BE",
+    "JPN": "JP", "POL": "PL", "CHN": "CN", "BLR": "BY", "KAZ": "KZ", "LAT": "LV",
+    "DEN": "DK", "CAN": "CA", "YUG": "RS", "URS": "RU", "MEX": "MX", "BUL": "BG",
+    "NOR": "NO", "GRE": "GR", "SVK": "SK", "TUN": "TN", "POR": "PT",
+}
+
+
+def update_slam_champions(matches: pd.DataFrame) -> None:
+    """Append newly-completed Grand Slam champions found in the match data to the
+    curated slams_{m,w}.csv lists, then rebundle slams.json.
+
+    The historical champion list (slams_{m,w}.csv) is curated and authoritative:
+    Sackmann's match data is missing every 1968-1972 final and mis-aligns pre-1987
+    Australian Open years (the AO was played in December then, and Sackmann's
+    tournament-date stamping disagrees with the calendar-year convention the site
+    uses). So we never re-derive history - we only APPEND slams that completed after
+    the curated list was last extended, taking each champion from that slam's Final
+    ('F' round) winner. That keeps the Champions tab self-updating from match data
+    with no Wikipedia scrape in the daily cron. CSV slam codes are AO/RG/Wim/US;
+    slams.json uses FO for RG (matching the existing bundle)."""
+    root = Path(__file__).parent
+    name_to_csv_code = {"Australian Open": "AO", "Roland Garros": "RG",
+                        "Wimbledon": "Wim", "US Open": "US", "Us Open": "US"}
+    slam_order = {"AO": 0, "RG": 1, "Wim": 2, "US": 3}
+
+    m = matches.copy()
+    m["date"] = pd.to_datetime(m["date"])
+    m["year"] = m["date"].dt.year
+    finals = m[m["round"] == "F"].copy()
+    finals["csv_code"] = finals["tourney_name"].map(name_to_csv_code)
+    finals = finals[finals["csv_code"].notna()]
+
+    added = {"m": [], "w": []}
+    for tour_letter, tour in (("m", "ATP"), ("w", "WTA")):
+        csv_path = root / f"slams_{tour_letter}.csv"
+        if not csv_path.exists():
+            print(f"  skipping slam-champion update (slams_{tour_letter}.csv not found)")
+            return
+        s = pd.read_csv(csv_path)
+        existing = set(zip(s["year"].astype(int), s["slam"]))
+        next_num = int(s["slam_num"].max()) + 1 if len(s) else 1
+        new_rows = []
+        for _, r in finals[finals["tour"] == tour].iterrows():
+            key = (int(r["year"]), r["csv_code"])
+            if key not in existing:
+                new_rows.append((key[0], key[1], r["winner_name"], r["winner_ioc"]))
+        # One Final per (year, code); sort chronologically before appending.
+        new_rows = sorted(set(new_rows), key=lambda x: (x[0], slam_order.get(x[1], 9)))
+        if not new_rows:
+            print(f"  slams_{tour_letter}.csv: no new champions")
+            continue
+        with open(csv_path, "a", newline="") as f:
+            wr = csv.writer(f)
+            for yr, code, name, _ioc in new_rows:
+                wr.writerow([yr, code, name, "", next_num])  # country col unused by overlay
+                next_num += 1
+        added[tour_letter] = new_rows
+        print(f"  slams_{tour_letter}.csv: +{len(new_rows)} (" +
+              ", ".join(f"{y} {c} {n}" for y, c, n, _ in new_rows) + ")")
+
+    if not added["m"] and not added["w"]:
+        return
+    bundle_path = root / "slams.json"
+    bundle = json.load(open(bundle_path))
+    csv_to_spa = {"RG": "FO"}
+    for tour_letter in ("m", "w"):
+        for yr, code, name, ioc in added[tour_letter]:
+            bundle["data"][tour_letter].append(
+                {"y": yr, "s": csv_to_spa.get(code, code), "w": name})
+            if name not in bundle["players"][tour_letter]:
+                iso = IOC_TO_ISO2.get(ioc)
+                if not iso:
+                    raise SystemExit(
+                        f"update_slam_champions: no ISO2 for IOC {ioc!r} (champion "
+                        f"{name}); add it to IOC_TO_ISO2")
+                bundle["players"][tour_letter][name] = iso
+    json.dump(bundle, open(bundle_path, "w"), ensure_ascii=False)
+    print(f"  rebundled slams.json (+{len(added['m']) + len(added['w'])} champions)")
 
 
 def write_champion_ratings(matches: pd.DataFrame, ratings: pd.DataFrame) -> None:
