@@ -2296,14 +2296,18 @@ async function refreshPowerRankings(tour) {
   // Time-frame header for the Record column.
   // - EOY: just the calendar year ("2024")
   // - Today/slam: trailing 12 months as "M/YY - M/YY"
-  const fmtMonthYY = iso => {
+  // Slams are anchored on the tournament START date but run ~2 weeks; nudge slam
+  // window months +14d so they read the finish month (Roland Garros -> June).
+  const fmtMonthYY = (iso, shift) => {
     if (!iso) return '';
-    const [y, m] = iso.split('-');
-    return `${parseInt(m, 10)}/${y.slice(2)}`;
+    const d = new Date(`${iso}T00:00:00Z`);
+    if (shift) d.setUTCDate(d.getUTCDate() + 14);
+    return `${d.getUTCMonth() + 1}/${String(d.getUTCFullYear()).slice(2)}`;
   };
+  const winShift = SLAM_CODES.has(code);
   const recordHeader = code === 'EOY'
     ? `Record (${year})`
-    : `Record (${fmtMonthYY(snap.window_start)} - ${fmtMonthYY(snap.window_end)})`;
+    : `Record (${fmtMonthYY(snap.window_start, winShift)} - ${fmtMonthYY(snap.window_end, winShift)})`;
 
   const rows = players.slice(0, 50).map(p => {
     const slamFlags = (p.slams_won || []).map(c => SLAM_FLAG[c] || '').filter(Boolean).join(' ');
