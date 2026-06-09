@@ -1177,11 +1177,18 @@ def generate_data(full_rebuild: bool = False) -> None:
     write_champion_ratings(matches, ratings)
 
     # --- Meta (date range, etc.) ---
+    # Whether the latest match date is a Grand Slam start: the SPA/portal nudge the
+    # coverage end-date +2 weeks only for slams (which run ~2 weeks past their stamped
+    # start), so a between-slams 1-week event doesn't get a spurious month bump.
+    last_date = matches["date"].max()
+    last_is_slam = bool(((matches["date"] == last_date) &
+                         (matches["tourney_name"].isin(SLAM_NAMES))).any())
     meta = {
-        "first_match_date": str(matches["date"].min().date()),
-        "last_match_date":  str(matches["date"].max().date()),
-        "snapshots":        sorted(set(pd.Timestamp(d).strftime("%Y-%m-%d") for d in ratings["snapshot_date"].unique())),
-        "generated_at":     datetime.utcnow().isoformat(),
+        "first_match_date":   str(matches["date"].min().date()),
+        "last_match_date":    str(last_date.date()),
+        "last_match_is_slam": last_is_slam,
+        "snapshots":          sorted(set(pd.Timestamp(d).strftime("%Y-%m-%d") for d in ratings["snapshot_date"].unique())),
+        "generated_at":       datetime.utcnow().isoformat(),
     }
     with open(DOCS_DATA / "meta.json", "w") as f:
         json.dump(meta, f, separators=(",", ":"))

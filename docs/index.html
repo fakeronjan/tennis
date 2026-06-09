@@ -2520,7 +2520,7 @@ async function loadMeta() {
     const meta = await res.json();
     const lu = document.getElementById('last-updated');
     if (lu && meta.first_match_date && meta.last_match_date) {
-      lu.textContent = `Ratings include matches from ${fmtMY(meta.first_match_date)} to ${fmtMY(meta.last_match_date, 14)}`;
+      lu.textContent = `Ratings include matches from ${fmtMY(meta.first_match_date)} to ${fmtMY(meta.last_match_date, meta.last_match_is_slam ? 14 : 0)}`;
     }
     const lr = document.getElementById('last-refreshed');
     if (lr && meta.generated_at) {
