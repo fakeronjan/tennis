@@ -2154,10 +2154,20 @@ const SNAP_CODE_SHORT = { AO: 'After Australian Open', FO: 'After Roland Garros'
 // late-May Roland Garros snapshot shouldn't look like it ended in late May.
 const SLAM_CODES = new Set(['AO', 'FO', 'Wim', 'US']);
 
-function fmtSnapDate(iso) {
+// Tennis data is only tournament-granular (every match carries the event's start
+// date), so we surface month/year, never a day. `shift` adds days to approximate a
+// slam's finish (it runs ~2 weeks past the stamped start).
+function fmtMY(iso, shift) {
   if (!iso) return '';
-  const [y, m, d] = iso.split('-');
-  return `${parseInt(m, 10)}/${parseInt(d, 10)}/${y}`;
+  const d = new Date(`${iso}T00:00:00Z`);
+  if (shift) d.setUTCDate(d.getUTCDate() + shift);
+  return `${d.getUTCMonth() + 1}/${d.getUTCFullYear()}`;
+}
+// A tournament's ~2-week span as a month range ("5/2026-6/2026"), collapsed to one
+// month when it doesn't cross a month boundary.
+function fmtSpan(iso) {
+  const a = fmtMY(iso, 0), b = fmtMY(iso, 14);
+  return a === b ? a : `${a}-${b}`;
 }
 
 function getHistoryForTour(tour) {
@@ -2221,8 +2231,7 @@ function populatePickers(tour) {
   const snaps = listSnapsForYear(tour, year);
   snapSel.innerHTML = snaps.map(s => {
     const label = SNAP_CODE_SHORT[s.code] || s.label;
-    const dateStr = fmtSnapDate(s.date);
-    const datePart = SLAM_CODES.has(s.code) ? `(started ${dateStr})` : `· ${dateStr}`;
+    const datePart = SLAM_CODES.has(s.code) ? `(${fmtSpan(s.date)})` : `· ${fmtMY(s.date)}`;
     return `<option value="${s.code}" ${s.code === code ? 'selected' : ''}>${label} ${datePart}</option>`;
   }).join('');
 }
@@ -2252,16 +2261,15 @@ async function refreshPowerRankings(tour) {
   }
 
   const shortLabel = SNAP_CODE_SHORT[code] || snap.label;
-  const dateStr = fmtSnapDate(snap.date);
   // Disrupted tag (fleet-wide pattern) - append inline next to the snapshot label.
   const disrupted = snap.disrupted;
   const tagInline = disrupted
     ? ` <span class="short-season-tag tag-${disrupted.category}" title="${escapeHtml(disrupted.note)}">${disrupted.tag.toUpperCase()}</span>`
     : '';
-  const datePhrase = SLAM_CODES.has(code) ? 'started ' : '';
-  const labelText = code === 'Today'
-    ? `Top ${snap.players.length} &middot; Today &middot; as of ${dateStr}`
-    : `Top ${snap.players.length} &middot; ${shortLabel} ${year}${tagInline} &middot; ${datePhrase}${dateStr}`;
+  const labelText =
+      code === 'Today' ? `Top ${snap.players.length} &middot; Today &middot; as of ${fmtMY(snap.date)}`
+    : code === 'EOY'   ? `Top ${snap.players.length} &middot; ${shortLabel} ${year}${tagInline}`
+    :                    `Top ${snap.players.length} &middot; ${shortLabel} ${year}${tagInline} &middot; ${fmtSpan(snap.date)}`;
   const noteFootnote = code === 'EOY'
     ? `<span class="footnote">End-of-year ratings use the full calendar year (Jan&nbsp;1&nbsp;-&nbsp;Dec&nbsp;31) with tier weighting only, no recency decay.</span>`
     : `<span class="footnote">Surface filter shows base rating + that surface's delta (effective rating on that surface).</span>`;
@@ -2296,18 +2304,12 @@ async function refreshPowerRankings(tour) {
   // Time-frame header for the Record column.
   // - EOY: just the calendar year ("2024")
   // - Today/slam: trailing 12 months as "M/YY - M/YY"
-  // Slams are anchored on the tournament START date but run ~2 weeks; nudge slam
-  // window months +14d so they read the finish month (Roland Garros -> June).
-  const fmtMonthYY = (iso, shift) => {
-    if (!iso) return '';
-    const d = new Date(`${iso}T00:00:00Z`);
-    if (shift) d.setUTCDate(d.getUTCDate() + 14);
-    return `${d.getUTCMonth() + 1}/${String(d.getUTCFullYear()).slice(2)}`;
-  };
-  const winShift = SLAM_CODES.has(code);
+  // Slams are anchored on the tournament START date but run ~2 weeks; +14d so the
+  // window months read through the finish (Roland Garros -> June).
+  const winShift = SLAM_CODES.has(code) ? 14 : 0;
   const recordHeader = code === 'EOY'
     ? `Record (${year})`
-    : `Record (${fmtMonthYY(snap.window_start, winShift)} - ${fmtMonthYY(snap.window_end, winShift)})`;
+    : `Record (${fmtMY(snap.window_start, winShift)} - ${fmtMY(snap.window_end, winShift)})`;
 
   const rows = players.slice(0, 50).map(p => {
     const slamFlags = (p.slams_won || []).map(c => SLAM_FLAG[c] || '').filter(Boolean).join(' ');
@@ -2516,14 +2518,9 @@ async function loadMeta() {
     const res = await fetch(`${RATINGS_BASE}/meta.json`);
     if (!res.ok) return;
     const meta = await res.json();
-    const fmtDate = s => {
-      if (!s) return '';
-      const [y, m, d] = s.split('-');
-      return `${parseInt(m, 10)}/${parseInt(d, 10)}/${y}`;
-    };
     const lu = document.getElementById('last-updated');
     if (lu && meta.first_match_date && meta.last_match_date) {
-      lu.textContent = `Ratings include matches from ${fmtDate(meta.first_match_date)} to ${fmtDate(meta.last_match_date)}`;
+      lu.textContent = `Ratings include matches from ${fmtMY(meta.first_match_date)} to ${fmtMY(meta.last_match_date, 14)}`;
     }
     const lr = document.getElementById('last-refreshed');
     if (lr && meta.generated_at) {
