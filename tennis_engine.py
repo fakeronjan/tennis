@@ -687,6 +687,26 @@ def window_stats(per_player: dict, tour: str, player: str,
     return wins, losses, titles, slams
 
 
+def latest_slam_winners(per_player: dict, tour: str,
+                        win_start: pd.Timestamp, win_end: pd.Timestamp) -> dict:
+    """{slam_code -> player} who won the MOST RECENT edition of each slam within
+    the window. A 365-day trailing window can straddle two editions of the same
+    slam (e.g. last year's + this year's French Open), so this lets the card show
+    only the current holder of each slam, never two winners of one slam."""
+    best = {}  # code -> (date, player)
+    for (t, player), bucket in per_player.items():
+        if t != tour:
+            continue
+        for dt, won, rnd, tn in zip(bucket["dates"], bucket["won"],
+                                      bucket["round"], bucket["tourney"]):
+            if not won or rnd != "F" or dt < win_start or dt > win_end:
+                continue
+            code = SLAM_TO_CODE.get(tn)
+            if code and (code not in best or dt > best[code][0]):
+                best[code] = (dt, player)
+    return {code: pv[1] for code, pv in best.items()}
+
+
 def career_stats(per_player: dict, tour: str, player: str):
     """Return (career_wins, career_losses, career_titles, career_slams_count)
     across the player's entire match log - no window filtering."""
@@ -1328,10 +1348,14 @@ def write_power_rankings_history(ratings: pd.DataFrame, matches: pd.DataFrame) -
             min_sets = gate[(tour, row_type == "eoy")]
             qualifying = group[group["sets_played"] >= min_sets]
             top = qualifying.sort_values("base", ascending=False).head(50).reset_index(drop=True)
+            # Within this snapshot's trailing window, the current holder of each
+            # slam - so slams_won shows only the most recent winner per slam.
+            reigning = latest_slam_winners(per_player, tour, win_start, win_end)
             players = []
             for i, r in top.iterrows():
                 wins, losses, titles, slams = window_stats(
                     per_player, tour, r["player"], win_start, win_end)
+                slams = [c for c in slams if reigning.get(c) == r["player"]]
                 cinfo = player_country.get((tour, r["player"]), {})
                 players.append({
                     "rank":         i + 1,
