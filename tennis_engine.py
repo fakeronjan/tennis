@@ -86,11 +86,28 @@ def _http_get(url: str, timeout: int = 30) -> bytes:
         return resp.read()
 
 
+def _resolve_branch(repo: str, probe_file: str) -> "str | None":
+    """Return whichever default branch the repo currently serves ('master' or
+    'main'), or None if neither is reachable. GitHub doesn't redirect raw URLs
+    when a repo renames its default branch, so we probe instead of assuming."""
+    for br in ("master", "main"):
+        url = f"https://raw.githubusercontent.com/{repo}/{br}/{probe_file}"
+        try:
+            _http_get(url, timeout=20)   # GET (HEAD is sometimes refused); small probe file
+            return br
+        except Exception:
+            continue
+    return None
+
+
 def download_sackmann(min_year: int = MIN_YEAR, refresh_latest: int = 2) -> None:
     """Download (and cache) Jeff Sackmann's per-year ATP + WTA singles match CSVs.
 
     Idempotent: skips files already on disk except for the latest `refresh_latest`
     years (always re-fetched to absorb new matches mid-season).
+
+    Auto-detects the upstream default branch (master vs main) so a rename doesn't
+    silently break the build. Raises if nothing could be fetched.
 
     Layout written:
       data/sackmann/atp_matches_<YEAR>.csv
@@ -99,11 +116,18 @@ def download_sackmann(min_year: int = MIN_YEAR, refresh_latest: int = 2) -> None
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     this_year = datetime.now().year
     refresh_from = this_year - refresh_latest + 1
+    written = 0
 
-    for tour, base in [
-        ("atp", "https://raw.githubusercontent.com/JeffSackmann/tennis_atp/master"),
-        ("wta", "https://raw.githubusercontent.com/JeffSackmann/tennis_wta/master"),
+    for tour, repo in [
+        ("atp", "JeffSackmann/tennis_atp"),
+        ("wta", "JeffSackmann/tennis_wta"),
     ]:
+        branch = _resolve_branch(repo, f"{tour}_matches_{min_year}.csv")
+        if branch is None:
+            print(f"  ! {repo}: unreachable on master AND main - skipping")
+            continue
+        print(f"  {repo}: using '{branch}' branch")
+        base = f"https://raw.githubusercontent.com/{repo}/{branch}"
         for year in range(min_year, this_year + 1):
             fname = f"{tour}_matches_{year}.csv"
             path = DATA_DIR / fname
@@ -114,6 +138,7 @@ def download_sackmann(min_year: int = MIN_YEAR, refresh_latest: int = 2) -> None
                 print(f"  fetching {tour.upper()} {year}...", end=" ", flush=True)
                 data = _http_get(url)
                 path.write_bytes(data)
+                written += 1
                 print(f"{len(data):,} bytes")
             except HTTPError as e:
                 if e.code == 404:
@@ -122,6 +147,14 @@ def download_sackmann(min_year: int = MIN_YEAR, refresh_latest: int = 2) -> None
                     print(f"HTTP {e.code}")
             except Exception as e:
                 print(f"FAILED ({e})")
+
+    cached = len(list(DATA_DIR.glob("*.csv")))
+    if written == 0 and cached == 0:
+        raise RuntimeError(
+            "download_sackmann fetched 0 files and no cache exists - Sackmann's "
+            "tennis_atp / tennis_wta repos look unreachable or moved (checked both "
+            "the master and main branches)."
+        )
 
 
 # ============================================================
