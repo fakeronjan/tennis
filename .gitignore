@@ -2,8 +2,12 @@
 __pycache__/
 *.pyc
 
-# Sackmann raw cache (regenerable via `python tennis_engine.py download`)
-data/sackmann/
+# Sackmann raw cache. NOTE: formerly gitignored as "regenerable via download",
+# but JeffSackmann's tennis_atp / tennis_wta repos were removed from GitHub
+# (2026-06, only tennis_MatchChartingProject remains public). The cache is now
+# the source of record, so it is committed. The engine falls back to it when the
+# upstream download returns nothing.
+# data/sackmann/
 
-# Unified all_matches.csv (regenerable from cache; ~30MB)
+# Unified all_matches.csv (regenerable from the committed cache; ~37MB)
 all_matches.csv
