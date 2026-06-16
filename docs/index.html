@@ -45,6 +45,17 @@
     color: rgba(255,255,255,0.6);
     margin-top: 6px;
   }
+  header p.data-credit {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 6px;
+    max-width: 960px;
+    line-height: 1.5;
+  }
+  header p.data-credit a {
+    color: rgba(255,255,255,0.82);
+    text-decoration: underline;
+  }
 
   nav {
     background: #155a75;
@@ -819,6 +830,7 @@
   <p class="subtitle">Tennis Power Rankings &middot; Beta</p>
   <p class="model-note">Head-to-head WLS ratings from every ATP and WTA singles set played. Considers opponent strength, set margin, tournament tier, and recency. Each player gets a base rating plus per-surface deltas (hard / clay / grass) showing specialization. ~2.5 = current top 10; ~3.5+ = era-defining peak; ~5 = generational (Graf 1988 = 5.04).</p>
   <p class="updated"><span class="cadence-inline">🎾 Updated after Slams / EOY</span> <span class="cadence-sep">|</span> <span id="last-updated">Loading...</span> <span class="cadence-sep">|</span> <span id="last-refreshed">Loading...</span></p>
+  <p class="data-credit">Data: Jeff Sackmann's ATP &amp; WTA match datasets (<a href="https://www.tennisabstract.com" target="_blank" rel="noopener">Tennis Abstract</a>), licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>. Ratings are derived from this data.</p>
 </header>
 
 <nav>
@@ -2444,7 +2456,7 @@ async function refreshGoatRating(tour) {
     }).join('');
     const footnote = `<p class="data-note footnote">
       <span class="title-asterisk">*</span> Career titles are derived from Jeff Sackmann's
-      <a href="https://github.com/JeffSackmann" target="_blank" rel="noopener">ATP / WTA match data</a>
+      <a href="https://www.tennisabstract.com" target="_blank" rel="noopener">ATP / WTA match data</a>
       (1973+ singles main draws). Pre-1990 ATP and pre-2000 WTA have known coverage gaps for smaller events
       (Virginia Slims series, Avon Futures, early Grand Prix / WCT); these career totals may undercount the
       player's official total by 5+ titles. Pre-1973 wins are not included.
