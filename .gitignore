@@ -11,3 +11,6 @@ __pycache__/
 
 # Unified all_matches.csv (regenerable from the committed cache; ~37MB)
 all_matches.csv
+
+# Engine-migration backup snapshots (never commit)
+*-bak
