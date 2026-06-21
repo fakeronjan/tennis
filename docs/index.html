@@ -171,6 +171,23 @@
     font-variant-numeric: tabular-nums;
   }
   .player-rating-line .muted { color: #888; }
+  /* Per-slam surface pill: the player's rating + rank on the surface that slam
+     was played on, beneath the surface-neutral overall rating. */
+  .surface-pill {
+    display: block;
+    width: fit-content;
+    margin: 3px auto 0;
+    padding: 1px 7px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+  .surface-pill .sp-rank { font-weight: 600; opacity: 0.75; }
+  .surface-pill.surface-hard  { background: #e3eff4; color: #1a6b8a; }
+  .surface-pill.surface-clay  { background: #f6e2d4; color: #b5562a; }
+  .surface-pill.surface-grass { background: #e1efe1; color: #2e7d32; }
   .num-cell {
     text-align: right;
     font-size: 13px;
@@ -1864,22 +1881,23 @@ async function renderPlayer(tour, player) {
     if (!date) return '-';
     const h = historyByDate[date];
     if (!h || h.rank == null) return '-';
-    // Surface-aware slam cells: rate/rank by the surface the slam was played on
-    // (Roland Garros -> clay, etc.), matching the Power Rankings board, so a clay
-    // specialist isn't buried by surface-neutral base right after winning on clay.
-    // Rank is recomputed on the same snapshot players the board re-ranks, so the
-    // two tabs agree. EOY stays surface-neutral (handled by eoyLine).
+    // Headline = surface-neutral overall (base) rating + overall rank.
+    const overall = `${h.base.toFixed(2)} <span class="muted">#${h.rank}</span>`;
+    // Surface pill beneath = the player's rating + rank on the surface that slam
+    // was played on (Roland Garros -> clay, etc.), so a clay specialist's clay
+    // standing is visible right next to their overall. Rank is recomputed on the
+    // same snapshot players the Power Rankings board re-ranks, so the two agree.
+    // EOY has no slam surface, so it shows the overall only (handled by eoyLine).
     const surf = SLAM_SURFACE[slamCode];
-    if (surf) {
-      const dk = `${surf}_delta`;
-      const adj = h.base + (h[dk] || 0);
-      const snap = prHist && prHist.snapshots && prHist.snapshots[`${year}_${slamCode}`];
-      const rank = (snap && snap.players)
-        ? 1 + snap.players.filter(p => (p.base + (p[dk] || 0)) > adj).length
-        : h.rank;
-      return `${adj.toFixed(2)} <span class="muted">#${rank}</span>`;
-    }
-    return `${h.base.toFixed(2)} <span class="muted">#${h.rank}</span>`;
+    if (!surf) return overall;
+    const dk = `${surf}_delta`;
+    const adj = h.base + (h[dk] || 0);
+    const snap = prHist && prHist.snapshots && prHist.snapshots[`${year}_${slamCode}`];
+    const rank = (snap && snap.players)
+      ? 1 + snap.players.filter(p => (p.base + (p[dk] || 0)) > adj).length
+      : h.rank;
+    return `${overall}<span class="surface-pill surface-${surf}">`
+      + `${SURFACE_LABELS[surf]} ${adj.toFixed(2)} <span class="sp-rank">#${rank}</span></span>`;
   };
 
   const renderCell = (y, s) => {
