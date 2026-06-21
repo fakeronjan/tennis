@@ -1864,6 +1864,21 @@ async function renderPlayer(tour, player) {
     if (!date) return '-';
     const h = historyByDate[date];
     if (!h || h.rank == null) return '-';
+    // Surface-aware slam cells: rate/rank by the surface the slam was played on
+    // (Roland Garros -> clay, etc.), matching the Power Rankings board, so a clay
+    // specialist isn't buried by surface-neutral base right after winning on clay.
+    // Rank is recomputed on the same snapshot players the board re-ranks, so the
+    // two tabs agree. EOY stays surface-neutral (handled by eoyLine).
+    const surf = SLAM_SURFACE[slamCode];
+    if (surf) {
+      const dk = `${surf}_delta`;
+      const adj = h.base + (h[dk] || 0);
+      const snap = prHist && prHist.snapshots && prHist.snapshots[`${year}_${slamCode}`];
+      const rank = (snap && snap.players)
+        ? 1 + snap.players.filter(p => (p.base + (p[dk] || 0)) > adj).length
+        : h.rank;
+      return `${adj.toFixed(2)} <span class="muted">#${rank}</span>`;
+    }
     return `${h.base.toFixed(2)} <span class="muted">#${h.rank}</span>`;
   };
 
