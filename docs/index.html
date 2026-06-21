@@ -2165,6 +2165,12 @@ const SNAP_CODE_SHORT = { AO: 'After Australian Open', FO: 'After Roland Garros'
 // stamps every match in a slam with its start date), so they read "started" - a
 // late-May Roland Garros snapshot shouldn't look like it ended in late May.
 const SLAM_CODES = new Set(['AO', 'FO', 'Wim', 'US']);
+// Surface each slam is played on. At a slam snapshot the power-rankings board
+// defaults to ranking by that surface (base + surface delta) so the champion
+// isn't buried by a surface-neutral base - e.g. a Roland Garros board ranks by
+// clay. EOY/Today have no slam surface, so they stay 'all' (surface-neutral base).
+const SLAM_SURFACE = { AO: 'hard', FO: 'clay', Wim: 'grass', US: 'hard' };
+const prLastKey = { m: null, w: null };  // last-rendered snapshot key per tour
 
 // Tennis data is only tournament-granular (every match carries the event's start
 // date), so we surface month/year, never a day. `shift` adds days to approximate a
@@ -2270,6 +2276,17 @@ async function refreshPowerRankings(tour) {
   if (!snap || !snap.players) {
     wrap.innerHTML = '<p class="loading">No data for this timeframe.</p>';
     return;
+  }
+
+  // Surface-aware slam snapshots: when the snapshot CHANGES, default the ranking
+  // surface to the slam just played (Roland Garros -> clay, etc.) so the "After
+  // <Slam>" board reflects that surface. A surface-pill click keeps the same
+  // snapshot key, so an explicit surface pick still sticks for this snapshot.
+  if (prLastKey[tour] !== key) {
+    prLastKey[tour] = key;
+    surfaceState[tour] = SLAM_SURFACE[code] || 'all';
+    document.querySelectorAll('.surface-pills[data-tab-target="power-rankings"] button')
+      .forEach(b => b.classList.toggle('active', b.dataset.surface === surfaceState[tour]));
   }
 
   const shortLabel = SNAP_CODE_SHORT[code] || snap.label;
