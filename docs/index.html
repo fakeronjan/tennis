@@ -1911,7 +1911,7 @@ async function renderPlayer(tour, player) {
     return `<tr><td class="year-cell">${y}</td>${cells}`
       + `<td class="num-cell">${ys.record}</td>`
       + `<td class="num-cell">${ys.titles}</td>`
-      + `<td class="num-cell">${eoyLine(y)}</td></tr>`;
+      + `<td class="num-cell" style="text-align:center">${eoyLine(y)}</td></tr>`;
   }).join('');
 
   const grid = `
