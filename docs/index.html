@@ -878,7 +878,7 @@
     <button data-surface="clay">Clay</button>
     <button data-surface="grass">Grass</button>
   </div>
-  <p class="data-note" id="power-rankings-asof">Current top 50 by fakeronjan WLS rating. <span class="footnote">Surface filter shows base rating + that surface's delta (effective rating on that surface).</span></p>
+  <p class="data-note" id="power-rankings-asof">Current top 50 by fakeronjan WLS rating. <span class="footnote">Surface filter shows base rating + that surface's delta (effective rating on that surface)</span></p>
   <div class="disrupted-note" id="power-rankings-disrupted-note" style="display:none"></div>
 
   <div class="mw-section" data-tab="power-rankings" data-mw="m">
@@ -1035,14 +1035,14 @@
     <div class="controls">
       <select id="player-select-m"><option value="">- Select a player -</option></select>
     </div>
-    <div id="player-content-m"><p class="loading">Select a player above.</p></div>
+    <div id="player-content-m"><p class="loading">Select a player above</p></div>
   </div>
 
   <div class="mw-section" data-tab="players" data-mw="w" hidden>
     <div class="controls">
       <select id="player-select-w"><option value="">- Select a player -</option></select>
     </div>
-    <div id="player-content-w"><p class="loading">Select a player above.</p></div>
+    <div id="player-content-w"><p class="loading">Select a player above</p></div>
   </div>
 </div>
 
@@ -1471,7 +1471,7 @@ function renderTable(tbodyId, tour, cohort) {
   const cell = v => `<td class="slam-cell${v === 0 ? ' zero' : ''}">${v === 0 ? '-' : v}</td>`;
   const tbody = document.getElementById(tbodyId);
   if (rows.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="8" class="muted-cell" style="text-align:center;padding:18px;">No cohort members have Open Era slams yet.</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="8" class="muted-cell" style="text-align:center;padding:18px;">No cohort members have Open Era slams yet</td></tr>`;
     return;
   }
   tbody.innerHTML = rows.map(([n, c, rank]) => {
@@ -1741,7 +1741,7 @@ function finishClass(code) {
 async function renderPlayer(tour, player) {
   const contentId = `player-content-${tour}`;
   if (!player) {
-    document.getElementById(contentId).innerHTML = `<p class="empty">Select a player above.</p>`;
+    document.getElementById(contentId).innerHTML = `<p class="empty">Select a player above</p>`;
     return;
   }
   // Resolve diacritic-stripped names (Sackmann) back to canonical Wikipedia
@@ -1758,7 +1758,7 @@ async function renderPlayer(tour, player) {
         <h2><span class="player-flag-big">${playerFlag(tour, player)}</span>${escapeHtml(player)}</h2>
         <p class="player-meta">${totalSlams} Open Era slam titles &middot; timeline not available</p>
       </div>
-      <p class="empty">Career performance timeline unavailable for this player.</p>`;
+      <p class="empty">Career performance timeline unavailable for this player</p>`;
     return;
   }
 
@@ -1999,7 +1999,7 @@ async function renderCareerChart(tour, player, svgId, legendId) {
     if (res.ok) data = await res.json();
   } catch (e) {}
   if (!data || !data.history || data.history.length === 0) {
-    svg.outerHTML = `<div class="chart-empty">No rating history available for this player (slam wins predate the rating window).</div>`;
+    svg.outerHTML = `<div class="chart-empty">No rating history available for this player (slam wins predate the rating window)</div>`;
     legend.innerHTML = '';
     return;
   }
@@ -2300,14 +2300,14 @@ async function refreshPowerRankings(tour) {
   populatePickers(tour);
   const { year, code } = prSnapState[tour] || {};
   if (!year || !code) {
-    wrap.innerHTML = '<p class="loading">Rankings unavailable.</p>';
+    wrap.innerHTML = '<p class="loading">Rankings unavailable</p>';
     return;
   }
   const hist = getHistoryForTour(tour);
   const key = snapshotKey(tour, year, code);
   const snap = hist && hist.snapshots[key];
   if (!snap || !snap.players) {
-    wrap.innerHTML = '<p class="loading">No data for this timeframe.</p>';
+    wrap.innerHTML = '<p class="loading">No data for this timeframe</p>';
     return;
   }
 
@@ -2334,7 +2334,7 @@ async function refreshPowerRankings(tour) {
     :                    `Top ${snap.players.length} &middot; ${shortLabel} ${year}${tagInline} &middot; ${fmtSpan(snap.date)}`;
   const noteFootnote = code === 'EOY'
     ? `<span class="footnote">End-of-year ratings use the full calendar year (Jan&nbsp;1&nbsp;-&nbsp;Dec&nbsp;31) with tier weighting only, no recency decay.</span>`
-    : `<span class="footnote">Surface filter shows base rating + that surface's delta (effective rating on that surface).</span>`;
+    : `<span class="footnote">Surface filter shows base rating + that surface's delta (effective rating on that surface)</span>`;
   document.getElementById('power-rankings-asof').innerHTML = `${labelText}. ${noteFootnote}`;
   // Disrupted-snapshot footnote box - fleet-wide pattern (DUNCAN style).
   const disruptedNote = document.getElementById('power-rankings-disrupted-note');
@@ -2442,7 +2442,7 @@ async function refreshGoatRating(tour) {
   else file = `goat_peak_${slug}.json`;
   const data = await fetchRatings(file);
   if (!data || !data.players) {
-    wrap.innerHTML = '<p class="loading">Ratings unavailable.</p>';
+    wrap.innerHTML = '<p class="loading">Ratings unavailable</p>';
     return;
   }
   let rows;
