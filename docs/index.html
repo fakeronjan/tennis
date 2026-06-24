@@ -2333,7 +2333,7 @@ async function refreshPowerRankings(tour) {
     : code === 'EOY'   ? `Top ${snap.players.length} &middot; ${shortLabel} ${year}${tagInline}`
     :                    `Top ${snap.players.length} &middot; ${shortLabel} ${year}${tagInline} &middot; ${fmtSpan(snap.date)}`;
   const noteFootnote = code === 'EOY'
-    ? `<span class="footnote">End-of-year ratings use the full calendar year (Jan&nbsp;1&nbsp;-&nbsp;Dec&nbsp;31) with tier weighting only, no recency decay.</span>`
+    ? `<span class="footnote">End-of-year ratings use the full calendar year (Jan&nbsp;1&nbsp;-&nbsp;Dec&nbsp;31) with tier weighting only, no recency decay</span>`
     : `<span class="footnote">Surface filter shows base rating + that surface's delta (effective rating on that surface)</span>`;
   document.getElementById('power-rankings-asof').innerHTML = `${labelText}. ${noteFootnote}`;
   // Disrupted-snapshot footnote box - fleet-wide pattern (DUNCAN style).
