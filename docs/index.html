@@ -2214,14 +2214,14 @@ function fmtMY(iso, shift) {
   if (shift) d.setUTCDate(d.getUTCDate() + shift);
   return `${d.getUTCMonth() + 1}/${d.getUTCFullYear()}`;
 }
-// Full written date ("Jun 27, 2026") for the data-coverage end point. The live
-// feed (2025+) carries every match's real day, so the "matches through" date is
-// exact - no tournament-start rounding, no slam +14 shift.
+// Full numeric date ("6/27/2026", same M/D/YYYY slash style as fmtMY) for the
+// data-coverage end point. The live feed (2025+) carries every match's real day,
+// so the "matches through" date is exact - no tournament-start rounding, no slam
+// +14 shift.
 function fmtFullDate(iso) {
   if (!iso) return '';
   const d = new Date(`${iso}T00:00:00Z`);
-  const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  return `${MON[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()}`;
+  return `${d.getUTCMonth() + 1}/${d.getUTCDate()}/${d.getUTCFullYear()}`;
 }
 // A tournament's ~2-week span as a month range ("5/2026-6/2026"), collapsed to one
 // month when it doesn't cross a month boundary.
