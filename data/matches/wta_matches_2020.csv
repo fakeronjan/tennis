@@ -1,0 +1,1277 @@
+tourney_name,tourney_level,tourney_date,surface,round,best_of,winner_name,loser_name,score,winner_rank,loser_rank,winner_rank_points,loser_rank_points
+Auckland,I,2020-01-06,Hard,F,3,Serena Williams,Jessica Pegula,6-3 6-4,10,82,3935,743
+Auckland,I,2020-01-06,Hard,SF,3,Serena Williams,Amanda Anisimova,6-1 6-1,10,25,3935,1734
+Auckland,I,2020-01-06,Hard,SF,3,Jessica Pegula,Caroline Wozniacki,3-6 6-4 6-0,82,39,743,1353
+Auckland,I,2020-01-06,Hard,QF,3,Serena Williams,Laura Siegemund,6-4 6-3,10,73,3935,805
+Auckland,I,2020-01-06,Hard,QF,3,Amanda Anisimova,Eugenie Bouchard,6-2 3-6 6-4,25,262,1734,223
+Auckland,I,2020-01-06,Hard,QF,3,Caroline Wozniacki,Julia Goerges,6-1 6-4,39,41,1353,1331
+Auckland,I,2020-01-06,Hard,QF,3,Jessica Pegula,Alize Cornet,6-0 3-2 RET,82,57,743,1015
+Auckland,I,2020-01-06,Hard,R16,3,Serena Williams,Christina Mchale,3-6 6-2 6-3,10,86,3935,720
+Auckland,I,2020-01-06,Hard,R16,3,Laura Siegemund,Coco Gauff,5-7 6-2 6-3,73,67,805,855
+Auckland,I,2020-01-06,Hard,R16,3,Amanda Anisimova,Daria Kasatkina,6-2 6-4,25,70,1734,851
+Auckland,I,2020-01-06,Hard,R16,3,Eugenie Bouchard,Caroline Garcia,6-4 6-4,262,46,223,1235
+Auckland,I,2020-01-06,Hard,R16,3,Caroline Wozniacki,Lauren Davis,6-1 4-6 6-4,39,63,1353,874
+Auckland,I,2020-01-06,Hard,R16,3,Julia Goerges,Jil Teichmann,6-3 6-2,41,68,1331,855
+Auckland,I,2020-01-06,Hard,R16,3,Jessica Pegula,Tamara Zidansek,6-2 6-3,82,64,743,870
+Auckland,I,2020-01-06,Hard,R16,3,Alize Cornet,Petra Martic,3-6 6-4 6-4,57,15,1015,2617
+Auckland,I,2020-01-06,Hard,R32,3,Serena Williams,Camila Giorgi,6-3 6-2,10,99,3935,680
+Auckland,I,2020-01-06,Hard,R32,3,Christina Mchale,Ann Li,7-5 6-2,86,145,720,414
+Auckland,I,2020-01-06,Hard,R32,3,Coco Gauff,Viktoria Hruncakova,6-3 6-1,67,61,855,965
+Auckland,I,2020-01-06,Hard,R32,3,Laura Siegemund,Caty Mcnally,6-2 6-2,73,118,805,539
+Auckland,I,2020-01-06,Hard,R32,3,Amanda Anisimova,Kateryna Baindl,6-3 6-4,25,89,1734,710
+Auckland,I,2020-01-06,Hard,R32,3,Daria Kasatkina,Carla Suarez Navarro,6-3 3-6 6-2,70,52,851,1048
+Auckland,I,2020-01-06,Hard,R32,3,Eugenie Bouchard,Kirsten Flipkens,7-5 7-5,262,72,223,819
+Auckland,I,2020-01-06,Hard,R32,3,Caroline Garcia,Taylor Townsend,5-7 6-3 7-5,46,77,1235,760
+Auckland,I,2020-01-06,Hard,R32,3,Caroline Wozniacki,Paige Mary Hourigan,6-1 6-0,39,447,1353,92
+Auckland,I,2020-01-06,Hard,R32,3,Lauren Davis,Varvara Lepchenko,7-6(7) 6-2,63,170,874,354
+Auckland,I,2020-01-06,Hard,R32,3,Jil Teichmann,Valentina Ivanov,6-4 6-3,68,1001,855,12
+Auckland,I,2020-01-06,Hard,R32,3,Julia Goerges,Greet Minnen,6-1 7-6(4),41,109,1331,599
+Auckland,I,2020-01-06,Hard,R32,3,Tamara Zidansek,Rebecca Peterson,7-6(7) 7-6(5),64,44,870,1275
+Auckland,I,2020-01-06,Hard,R32,3,Jessica Pegula,Catherine Cartan Bellis,6-0 6-4,82,855,743,19
+Auckland,I,2020-01-06,Hard,R32,3,Alize Cornet,Ysaline Bonaventure,4-6 7-5 6-3,57,116,1015,574
+Auckland,I,2020-01-06,Hard,R32,3,Petra Martic,Usue Maitane Arconada,5-7 6-4 6-4,15,135,2617,459
+Brisbane,P,2020-01-06,Hard,F,3,Karolina Pliskova,Madison Keys,6-4 4-6 7-5,2,13,5525,2767
+Brisbane,P,2020-01-06,Hard,SF,3,Madison Keys,Petra Kvitova,3-6 6-2 6-3,13,7,2767,4721
+Brisbane,P,2020-01-06,Hard,SF,3,Karolina Pliskova,Naomi Osaka,6-7(10) 7-6(3) 6-2,2,4,5525,5311
+Brisbane,P,2020-01-06,Hard,QF,3,Petra Kvitova,Jennifer Brady,6-4 6-2,7,53,4721,1047
+Brisbane,P,2020-01-06,Hard,QF,3,Madison Keys,Danielle Collins,6-4 6-1,13,27,2767,1566
+Brisbane,P,2020-01-06,Hard,QF,3,Naomi Osaka,Kiki Bertens,6-3 3-6 6-3,4,9,5311,4245
+Brisbane,P,2020-01-06,Hard,QF,3,Karolina Pliskova,Alison Riske Amritraj,7-6(6) 6-3,2,19,5525,2085
+Brisbane,P,2020-01-06,Hard,R16,3,Jennifer Brady,Ashleigh Barty,6-4 7-6(4),53,1,1047,7851
+Brisbane,P,2020-01-06,Hard,R16,3,Petra Kvitova,Liudmila Samsonova,6-3 6-2,7,129,4721,475
+Brisbane,P,2020-01-06,Hard,R16,3,Danielle Collins,Yulia Putintseva,6-1 6-0,27,32,1566,1460
+Brisbane,P,2020-01-06,Hard,R16,3,Madison Keys,Samantha Stosur,7-5 6-3,13,98,2767,683
+Brisbane,P,2020-01-06,Hard,R16,3,Kiki Bertens,Anett Kontaveit,6-3 2-6 7-5,9,26,4245,1575
+Brisbane,P,2020-01-06,Hard,R16,3,Naomi Osaka,Sofia Kenin,6-7(3) 6-3 6-1,4,14,5311,2740
+Brisbane,P,2020-01-06,Hard,R16,3,Alison Riske Amritraj,Barbora Strycova,6-3 6-4,19,31,2085,1462
+Brisbane,P,2020-01-06,Hard,R16,3,Karolina Pliskova,Ajla Tomljanovic,6-4 6-7(5) 6-1,2,54,5525,1045
+Brisbane,P,2020-01-06,Hard,R32,3,Jennifer Brady,Maria Sharapova,3-6 6-1 7-6(3),53,147,1047,406
+Brisbane,P,2020-01-06,Hard,R32,3,Liudmila Samsonova,Sloane Stephens,6-4 2-6 6-3,129,24,475,1737
+Brisbane,P,2020-01-06,Hard,R32,3,Petra Kvitova,Anastasia Pavlyuchenkova,2-6 6-1 6-0,7,29,4721,1531
+Brisbane,P,2020-01-06,Hard,R32,3,Danielle Collins,Elina Svitolina,6-1 6-1,27,5,1566,5075
+Brisbane,P,2020-01-06,Hard,R32,3,Yulia Putintseva,Donna Vekic,6-3 3-6 7-5,32,20,1460,2080
+Brisbane,P,2020-01-06,Hard,R32,3,Samantha Stosur,Angelique Kerber,7-6(5) 7-6(4),98,18,683,2175
+Brisbane,P,2020-01-06,Hard,R32,3,Madison Keys,Marie Bouzkova,6-3 6-2,13,60,2767,967
+Brisbane,P,2020-01-06,Hard,R32,3,Kiki Bertens,Dayana Yastremska,6-4 1-6 6-3,9,22,4245,1825
+Brisbane,P,2020-01-06,Hard,R32,3,Anett Kontaveit,Su Wei Hsieh,6-4 6-1,26,33,1575,1450
+Brisbane,P,2020-01-06,Hard,R32,3,Sofia Kenin,Anastasija Sevastova,7-6(1) 6-4,14,30,2740,1518
+Brisbane,P,2020-01-06,Hard,R32,3,Naomi Osaka,Maria Sakkari,6-2 6-7(4) 6-3,4,23,5311,1820
+Brisbane,P,2020-01-06,Hard,R32,3,Barbora Strycova,Johanna Konta,6-2 3-6 6-3,31,12,1462,2825
+Brisbane,P,2020-01-06,Hard,R32,3,Alison Riske Amritraj,Karolina Muchova,6-4 6-2,19,21,2085,1846
+Brisbane,P,2020-01-06,Hard,R32,3,Ajla Tomljanovic,Priscilla Hon,6-2 4-6 6-4,54,122,1045,500
+Shenzhen,I,2020-01-06,Hard,F,3,Ekaterina Alexandrova,Elena Rybakina,6-2 6-4,34,36,1425,1401
+Shenzhen,I,2020-01-06,Hard,SF,3,Ekaterina Alexandrova,Garbine Muguruza,6-4 6-3,34,35,1425,1412
+Shenzhen,I,2020-01-06,Hard,SF,3,Elena Rybakina,Kristyna Pliskova,6-2 7-5,36,66,1401,858
+Shenzhen,I,2020-01-06,Hard,QF,3,Garbine Muguruza,Zarina Diyas,6-4 2-6 6-4,35,75,1412,775
+Shenzhen,I,2020-01-06,Hard,QF,3,Ekaterina Alexandrova,Qiang Wang,3-6 6-4 6-3,34,28,1425,1563
+Shenzhen,I,2020-01-06,Hard,QF,3,Elena Rybakina,Elise Mertens,6-4 4-6 6-2,36,17,1401,2290
+Shenzhen,I,2020-01-06,Hard,QF,3,Kristyna Pliskova,Kateryna Bondarenko,6-4 6-4,66,1168,858,6
+Shenzhen,I,2020-01-06,Hard,R16,3,Zarina Diyas,Anna Blinkova,6-1 6-7(9) 6-4,75,58,775,1007
+Shenzhen,I,2020-01-06,Hard,R16,3,Garbine Muguruza,Shelby Rogers,6-1 7-6(2),35,174,1412,351
+Shenzhen,I,2020-01-06,Hard,R16,3,Qiang Wang,Aliaksandra Sasnovich,6-4 0-6 7-6(5),28,69,1563,853
+Shenzhen,I,2020-01-06,Hard,R16,3,Ekaterina Alexandrova,Shuai Peng,7-6(7) 6-1,34,108,1425,613
+Shenzhen,I,2020-01-06,Hard,R16,3,Elena Rybakina,Yafan Wang,6-3 6-4,36,50,1401,1105
+Shenzhen,I,2020-01-06,Hard,R16,3,Elise Mertens,Xiyu Wang,6-4 6-3,17,140,2290,430
+Shenzhen,I,2020-01-06,Hard,R16,3,Kateryna Bondarenko,Shuai Zhang,7-6(8) 6-3,1168,38,6,1355
+Shenzhen,I,2020-01-06,Hard,R16,3,Kristyna Pliskova,Aryna Sabalenka,6-4 6-4,66,11,858,2940
+Shenzhen,I,2020-01-06,Hard,R32,3,Anna Blinkova,Belinda Bencic,3-6 6-3 6-3,58,8,1007,4685
+Shenzhen,I,2020-01-06,Hard,R32,3,Zarina Diyas,Ying Ying Duan,6-3 6-4,75,397,775,113
+Shenzhen,I,2020-01-06,Hard,R32,3,Shelby Rogers,Nicole Gibbs,6-3 5-7 6-4,174,124,351,494
+Shenzhen,I,2020-01-06,Hard,R32,3,Garbine Muguruza,Xinyu Wang,3-6 6-3 6-0,35,153,1412,384
+Shenzhen,I,2020-01-06,Hard,R32,3,Qiang Wang,Ons Jabeur,6-0 6-3,28,81,1563,752
+Shenzhen,I,2020-01-06,Hard,R32,3,Aliaksandra Sasnovich,Anna Lena Friedsam,6-2 6-3,69,141,853,430
+Shenzhen,I,2020-01-06,Hard,R32,3,Shuai Peng,Lin Zhu,6-2 3-6 6-3,108,71,613,845
+Shenzhen,I,2020-01-06,Hard,R32,3,Ekaterina Alexandrova,Katerina Siniakova,6-4 6-4,34,55,1425,1020
+Shenzhen,I,2020-01-06,Hard,R32,3,Elena Rybakina,Saisai Zheng,6-2 1-6 6-2,36,40,1401,1350
+Shenzhen,I,2020-01-06,Hard,R32,3,Yafan Wang,Sara Sorribes Tormo,1-6 6-1 6-3,50,90,1105,708
+Shenzhen,I,2020-01-06,Hard,R32,3,Xiyu Wang,Sorana Cirstea,3-6 6-1 6-1,140,74,430,778
+Shenzhen,I,2020-01-06,Hard,R32,3,Elise Mertens,Lesia Tsurenko,6-3 6-3,17,119,2290,538
+Shenzhen,I,2020-01-06,Hard,R32,3,Shuai Zhang,Magda Linette,6-4 6-2,38,43,1355,1320
+Shenzhen,I,2020-01-06,Hard,R32,3,Kateryna Bondarenko,Misaki Doi,6-4 6-1,1168,80,6,754
+Shenzhen,I,2020-01-06,Hard,R32,3,Kristyna Pliskova,Irina Camelia Begu,6-3 6-3,66,101,858,669
+Shenzhen,I,2020-01-06,Hard,R32,3,Aryna Sabalenka,Margarita Gasparyan,6-3 6-0,11,103,2940,661
+Adelaide,P,2020-01-13,Hard,F,3,Ashleigh Barty,Dayana Yastremska,6-2 7-5,1,24,7547,1820
+Adelaide,P,2020-01-13,Hard,SF,3,Ashleigh Barty,Danielle Collins,3-6 6-1 7-6(5),1,27,7547,1641
+Adelaide,P,2020-01-13,Hard,SF,3,Dayana Yastremska,Aryna Sabalenka,6-4 7-6(4),24,12,1820,2940
+Adelaide,P,2020-01-13,Hard,QF,3,Ashleigh Barty,Marketa Vondrousova,6-3 6-3,1,16,7547,2390
+Adelaide,P,2020-01-13,Hard,QF,3,Danielle Collins,Belinda Bencic,6-3 6-1,27,7,1641,4605
+Adelaide,P,2020-01-13,Hard,QF,3,Dayana Yastremska,Donna Vekic,6-4 6-3,24,20,1820,2080
+Adelaide,P,2020-01-13,Hard,QF,3,Aryna Sabalenka,Simona Halep,6-4 6-2,12,4,2940,5461
+Adelaide,P,2020-01-13,Hard,R16,3,Ashleigh Barty,Anastasia Pavlyuchenkova,4-6 6-3 7-5,1,31,7547,1531
+Adelaide,P,2020-01-13,Hard,R16,3,Marketa Vondrousova,Arina Rodionova,6-0 6-0,16,201,2390,294
+Adelaide,P,2020-01-13,Hard,R16,3,Belinda Bencic,Julia Goerges,7-6(6) 7-6(4),7,38,4605,1390
+Adelaide,P,2020-01-13,Hard,R16,3,Danielle Collins,Sofia Kenin,6-3 6-1,27,15,1641,2565
+Adelaide,P,2020-01-13,Hard,R16,3,Donna Vekic,Maria Sakkari,2-6 7-5 6-1,20,23,2080,1820
+Adelaide,P,2020-01-13,Hard,R16,3,Dayana Yastremska,Angelique Kerber,6-3 2-0 RET,24,18,1820,2175
+Adelaide,P,2020-01-13,Hard,R16,3,Aryna Sabalenka,Bernarda Pera,7-6(4) 6-2,12,70,2940,863
+Adelaide,P,2020-01-13,Hard,R16,3,Simona Halep,Ajla Tomljanovic,6-4 7-5,4,52,5461,1070
+Adelaide,P,2020-01-13,Hard,R32,3,Anastasia Pavlyuchenkova,Anett Kontaveit,6-2 6-4,31,29,1531,1575
+Adelaide,P,2020-01-13,Hard,R32,3,Arina Rodionova,Sloane Stephens,6-2 6-2,201,25,294,1683
+Adelaide,P,2020-01-13,Hard,R32,3,Marketa Vondrousova,Tatjana Maria,6-3 6-0,16,83,2390,729
+Adelaide,P,2020-01-13,Hard,R32,3,Belinda Bencic,Daria Kasatkina,6-4 6-4,7,68,4605,880
+Adelaide,P,2020-01-13,Hard,R32,3,Julia Goerges,Priscilla Hon,7-6(7) 6-3,38,139,1390,428
+Adelaide,P,2020-01-13,Hard,R32,3,Danielle Collins,Aliaksandra Sasnovich,6-3 6-2,27,99,1641,673
+Adelaide,P,2020-01-13,Hard,R32,3,Sofia Kenin,Viktorija Golubic,6-0 6-4,15,78,2565,760
+Adelaide,P,2020-01-13,Hard,R32,3,Maria Sakkari,Vitalia Diatchenko,7-5 6-2,23,87,1820,719
+Adelaide,P,2020-01-13,Hard,R32,3,Donna Vekic,Anastasija Sevastova,4-6 6-1 6-3,20,32,2080,1518
+Adelaide,P,2020-01-13,Hard,R32,3,Dayana Yastremska,Timea Babos,7-5 6-3,24,86,1820,720
+Adelaide,P,2020-01-13,Hard,R32,3,Angelique Kerber,Qiang Wang,6-1 6-3,18,28,2175,1593
+Adelaide,P,2020-01-13,Hard,R32,3,Aryna Sabalenka,Su Wei Hsieh,5-7 6-1 7-5,12,36,2940,1450
+Adelaide,P,2020-01-13,Hard,R32,3,Bernarda Pera,Barbora Strycova,7-6(6) 6-3,70,33,863,1516
+Adelaide,P,2020-01-13,Hard,R32,3,Ajla Tomljanovic,Yulia Putintseva,7-6(4) 6-2,52,37,1070,1415
+Hobart,I,2020-01-13,Hard,F,3,Elena Rybakina,Shuai Zhang,7-6(7) 6-3,30,40,1551,1355
+Hobart,I,2020-01-13,Hard,SF,3,Elena Rybakina,Heather Watson,6-3 4-6 6-4,30,101,1551,657
+Hobart,I,2020-01-13,Hard,SF,3,Shuai Zhang,Veronika Kudermetova,6-3 6-4,40,42,1355,1328
+Hobart,I,2020-01-13,Hard,QF,3,Heather Watson,Elise Mertens,6-7(5) 6-4 7-5,101,17,657,2250
+Hobart,I,2020-01-13,Hard,QF,3,Elena Rybakina,Lizette Cabrera,6-7(4) 7-6(2) 7-5,30,129,1551,479
+Hobart,I,2020-01-13,Hard,QF,3,Shuai Zhang,Lauren Davis,6-1 6-4,40,65,1355,902
+Hobart,I,2020-01-13,Hard,QF,3,Veronika Kudermetova,Garbine Muguruza,W/O,42,34,1328,1467
+Hobart,I,2020-01-13,Hard,R16,3,Elise Mertens,Viktoria Hruncakova,6-1 6-0,17,61,2250,949
+Hobart,I,2020-01-13,Hard,R16,3,Heather Watson,Fiona Ferro,7-6(5) 6-3,101,63,657,926
+Hobart,I,2020-01-13,Hard,R16,3,Elena Rybakina,Alize Cornet,7-5 6-3,30,60,1551,965
+Hobart,I,2020-01-13,Hard,R16,3,Lizette Cabrera,Kristyna Pliskova,4-6 6-4 6-4,129,62,479,939
+Hobart,I,2020-01-13,Hard,R16,3,Lauren Davis,Magda Linette,6-4 6-4,65,43,902,1292
+Hobart,I,2020-01-13,Hard,R16,3,Shuai Zhang,Kateryna Baindl,4-6 6-1 6-2,40,91,1355,699
+Hobart,I,2020-01-13,Hard,R16,3,Veronika Kudermetova,Catherine Cartan Bellis,7-6(6) 6-1,42,838,1328,20
+Hobart,I,2020-01-13,Hard,R16,3,Garbine Muguruza,Ons Jabeur,3-6 6-3 7-6(4),34,85,1467,723
+Hobart,I,2020-01-13,Hard,R32,3,Elise Mertens,Christina Mchale,6-1 6-1,17,81,2250,738
+Hobart,I,2020-01-13,Hard,R32,3,Viktoria Hruncakova,Lin Zhu,5-7 6-2 7-6(3),61,71,949,850
+Hobart,I,2020-01-13,Hard,R32,3,Heather Watson,Jil Teichmann,1-6 6-4 6-4,101,67,657,883
+Hobart,I,2020-01-13,Hard,R32,3,Fiona Ferro,Rebecca Peterson,4-4 RET,63,44,926,1275
+Hobart,I,2020-01-13,Hard,R32,3,Elena Rybakina,Tamara Zidansek,6-1 6-4,30,69,1551,880
+Hobart,I,2020-01-13,Hard,R32,3,Alize Cornet,Alison Van Uytvanck,7-5 1-6 6-2,60,47,965,1175
+Hobart,I,2020-01-13,Hard,R32,3,Kristyna Pliskova,Nina Stojanovic,1-6 6-4 6-3,62,84,939,729
+Hobart,I,2020-01-13,Hard,R32,3,Lizette Cabrera,Caroline Garcia,4-6 6-4 6-2,129,46,479,1235
+Hobart,I,2020-01-13,Hard,R32,3,Magda Linette,Svetlana Kuznetsova,7-6(2) 7-6(9),43,53,1292,1052
+Hobart,I,2020-01-13,Hard,R32,3,Lauren Davis,Astra Sharma,6-3 3-6 7-6(6),65,110,902,597
+Hobart,I,2020-01-13,Hard,R32,3,Kateryna Baindl,Sara Sorribes Tormo,6-2 6-1,91,88,699,708
+Hobart,I,2020-01-13,Hard,R32,3,Shuai Zhang,Kirsten Flipkens,4-6 6-3 6-2,40,79,1355,760
+Hobart,I,2020-01-13,Hard,R32,3,Veronika Kudermetova,Samantha Stosur,6-2 6-2,42,97,1328,683
+Hobart,I,2020-01-13,Hard,R32,3,Catherine Cartan Bellis,Marie Bouzkova,3-6 7-6(4) 6-3,838,59,20,979
+Hobart,I,2020-01-13,Hard,R32,3,Ons Jabeur,Anna Blinkova,6-4 6-1,85,58,723,989
+Hobart,I,2020-01-13,Hard,R32,3,Garbine Muguruza,Yafan Wang,6-1 7-5,34,51,1467,1105
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Ashleigh Barty,Lesia Tsurenko,5-7 6-1 6-1,1,120,8017,538
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Polona Hercog,Rebecca Peterson,6-3 6-3,48,44,1145,1275
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Greet Minnen,Aliaksandra Sasnovich,7-6(3) 4-6 7-5,119,94,539,697
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Elena Rybakina,Bernarda Pera,6-3 6-2,26,65,1816,925
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Alison Riske Amritraj,Yafan Wang,7-6(5) 2-6 6-3,19,51,2130,1105
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Lin Zhu,Viktorija Golubic,4-6 6-1 7-6(5),71,76,850,772
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Julia Goerges,Viktoria Hruncakova,6-1 6-2,39,60,1415,965
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Petra Martic,Christina Mchale,6-3 6-0,14,84,2646,741
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Madison Keys,Daria Kasatkina,6-3 6-1,11,69,3072,880
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Arantxa Rus,Magda Linette,1-6 6-3 6-4,93,43,701,1302
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Nao Hibino,Shuai Peng,4-6 7-6(6) 6-3,103,104,645,642
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Maria Sakkari,Margarita Gasparyan,6-2 6-2,23,100,1845,678
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Ekaterina Alexandrova,Jil Teichmann,6-4 4-6 6-2,28,68,1645,883
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Barbora Krejcikova,Kaia Kanepi,7-6(3) 2-6 6-3,128,101,489,671
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Paula Badosa,Johanna Larsson,6-1 6-0,97,215,687,280
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Petra Kvitova,Katerina Siniakova,6-1 6-0,8,57,4436,996
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Naomi Osaka,Marie Bouzkova,6-2 6-4,4,59,5496,979
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Saisai Zheng,Anna Kalinskaya,6-3 6-2,42,109,1350,613
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Coco Gauff,Venus Williams,7-6(5) 6-3,67,55,885,1019
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Sorana Cirstea,Barbora Strycova,6-2 7-6(5),74,34,795,1516
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Shuai Zhang,Sloane Stephens,2-6 7-5 6-2,35,27,1505,1683
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Caty Mcnally,Samantha Stosur,6-1 6-4,116,99,552,683
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Ann Li,Lizette Cabrera,7-6(4) 7-6(10),142,121,423,538
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Sofia Kenin,Martina Trevisan,6-2 6-4,15,154,2565,384
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Ons Jabeur,Johanna Konta,6-4 6-2,78,13,770,2813
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Caroline Garcia,Madison Brengle,6-7(5) 6-2 6-2,46,95,1235,691
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Caroline Wozniacki,Kristie Ahn,6-1 6-3,36,92,1463,707
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Dayana Yastremska,Kaja Juvan,6-1 6-1,21,127,2070,490
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Qiang Wang,Pauline Parmentier,7-6(2) 6-3,29,133,1593,457
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Fiona Ferro,Alison Van Uytvanck,6-2 6-1,63,47,944,1175
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Tamara Zidansek,Na Lae Han,6-3 6-3,70,179,880,344
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Serena Williams,Anastasia Potapova,6-0 6-3,9,90,4215,711
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Belinda Bencic,Anna Karolina Schmiedlova,6-3 7-5,7,203,4675,293
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Jelena Ostapenko,Liudmila Samsonova,6-1 6-4,45,118,1250,542
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Sara Sorribes Tormo,Veronika Kudermetova,2-6 6-1 6-1,91,40,708,1383
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Anett Kontaveit,Astra Sharma,6-0 6-2,31,111,1575,597
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Donna Vekic,Maria Sharapova,6-3 6-4,20,145,2120,407
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Alize Cornet,Monica Niculescu,5-7 6-1 6-0,61,129,965,488
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Iga Swiatek,Timea Babos,6-3 6-2,56,88,997,720
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Carla Suarez Navarro,Aryna Sabalenka,7-6(6) 7-6(6),54,12,1048,3025
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Elise Mertens,Danka Kovinic,6-2 6-0,17,86,2250,734
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Heather Watson,Kristyna Pliskova,4-6 6-3 6-1,75,64,784,940
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Catherine Cartan Bellis,Tatjana Maria,6-0 6-2,600,87,50,729
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Karolina Muchova,Kirsten Flipkens,6-3 2-6 7-6(7),22,81,1847,760
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Danielle Collins,Vitalia Diatchenko,6-1 3-6 6-4,25,89,1825,719
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Yulia Putintseva,Su Wei Hsieh,6-1 6-3,38,37,1415,1450
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Harriet Dart,Misaki Doi,2-6 6-4 7-6(6),173,82,353,754
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Simona Halep,Jennifer Brady,7-6(5) 6-1,3,49,5561,1143
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Elina Svitolina,Katie Boulter,6-4 7-5,5,315,5075,170
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Lauren Davis,Leylah Fernandez,6-4 6-2,62,207,949,286
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Garbine Muguruza,Shelby Rogers,0-6 6-1 6-0,32,155,1526,380
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Ajla Tomljanovic,Anastasija Sevastova,6-1 6-1,52,33,1095,1518
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Zarina Diyas,Amanda Anisimova,6-3 4-6 6-3,73,24,835,1843
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Anna Blinkova,Jasmine Paolini,7-5 6-4,58,96,989,691
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Arina Rodionova,Kateryna Bondarenko,3-6 7-6(5) 6-0,163,535,366,66
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Kiki Bertens,Irina Camelia Begu,6-1 6-4,10,105,4165,627
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Svetlana Kuznetsova,Marketa Vondrousova,6-2 4-6 6-4,53,16,1053,2490
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Camila Giorgi,Antonia Lottner,6-3 6-3,102,156,654,375
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Priscilla Hon,Kateryna Baindl,6-3 6-4,139,83,428,746
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Angelique Kerber,Elisabetta Cocciaretto,6-2 6-2,18,175,2175,351
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Anastasia Pavlyuchenkova,Nina Stojanovic,6-1 7-5,30,85,1585,736
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Taylor Townsend,Jessica Pegula,6-4 7-6(5),79,66,761,910
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Laura Siegemund,Coco Vandeweghe,6-1 6-4,72,226,845,266
+Australian Open,Grand Slam,2020-01-20,Hard,R128,3,Karolina Pliskova,Kristina Mladenovic,6-1 7-5,2,41,5940,1360
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Ashleigh Barty,Polona Hercog,6-1 6-4,1,48,8017,1145
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Elena Rybakina,Greet Minnen,6-3 6-4,26,119,1816,539
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Alison Riske Amritraj,Lin Zhu,6-3 6-1,19,71,2130,850
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Julia Goerges,Petra Martic,4-6 6-3 7-5,39,14,1415,2646
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Madison Keys,Arantxa Rus,7-6(3) 6-2,11,93,3072,701
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Maria Sakkari,Nao Hibino,7-6(4) 6-4,23,103,1845,645
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Ekaterina Alexandrova,Barbora Krejcikova,6-1 6-3,28,128,1645,489
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Petra Kvitova,Paula Badosa,7-5 7-5,8,97,4436,687
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Naomi Osaka,Saisai Zheng,6-2 6-4,4,42,5496,1350
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Coco Gauff,Sorana Cirstea,4-6 6-3 7-5,67,74,885,795
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Shuai Zhang,Caty Mcnally,6-2 6-4,35,116,1505,552
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Sofia Kenin,Ann Li,6-1 6-3,15,142,2565,423
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Ons Jabeur,Caroline Garcia,1-6 6-2 6-3,78,46,770,1235
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Caroline Wozniacki,Dayana Yastremska,7-5 7-5,36,21,1463,2070
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Qiang Wang,Fiona Ferro,6-1 6-2,29,63,1593,944
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Serena Williams,Tamara Zidansek,6-2 6-3,9,70,4215,880
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Belinda Bencic,Jelena Ostapenko,7-5 7-5,7,45,4675,1250
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Anett Kontaveit,Sara Sorribes Tormo,6-2 4-6 6-1,31,91,1575,708
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Donna Vekic,Alize Cornet,6-4 6-2,20,61,2120,965
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Iga Swiatek,Carla Suarez Navarro,6-3 7-5,56,54,997,1048
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Elise Mertens,Heather Watson,6-3 6-0,17,75,2250,784
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Catherine Cartan Bellis,Karolina Muchova,6-4 6-4,600,22,50,1847
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Yulia Putintseva,Danielle Collins,6-4 2-6 7-5,38,25,1415,1825
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Simona Halep,Harriet Dart,6-2 6-4,3,173,5561,353
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Elina Svitolina,Lauren Davis,6-2 7-6(6),5,62,5075,949
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Garbine Muguruza,Ajla Tomljanovic,6-3 3-6 6-3,32,52,1526,1095
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Zarina Diyas,Anna Blinkova,4-6 6-3 6-4,73,58,835,989
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Kiki Bertens,Arina Rodionova,6-3 7-5,10,163,4165,366
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Camila Giorgi,Svetlana Kuznetsova,6-3 6-1,102,53,654,1053
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Angelique Kerber,Priscilla Hon,6-3 6-2,18,139,2175,428
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Anastasia Pavlyuchenkova,Taylor Townsend,7-5 7-6(1),30,79,1585,761
+Australian Open,Grand Slam,2020-01-20,Hard,R64,3,Karolina Pliskova,Laura Siegemund,6-3 6-3,2,72,5940,845
+Australian Open,Grand Slam,2020-01-20,Hard,R32,3,Ashleigh Barty,Elena Rybakina,6-3 6-2,1,26,8017,1816
+Australian Open,Grand Slam,2020-01-20,Hard,R32,3,Alison Riske Amritraj,Julia Goerges,1-6 7-6(4) 6-2,19,39,2130,1415
+Australian Open,Grand Slam,2020-01-20,Hard,R32,3,Maria Sakkari,Madison Keys,6-4 6-4,23,11,1845,3072
+Australian Open,Grand Slam,2020-01-20,Hard,R32,3,Petra Kvitova,Ekaterina Alexandrova,6-1 6-2,8,28,4436,1645
+Australian Open,Grand Slam,2020-01-20,Hard,R32,3,Coco Gauff,Naomi Osaka,6-3 6-4,67,4,885,5496
+Australian Open,Grand Slam,2020-01-20,Hard,R32,3,Sofia Kenin,Shuai Zhang,7-5 7-6(7),15,35,2565,1505
+Australian Open,Grand Slam,2020-01-20,Hard,R32,3,Ons Jabeur,Caroline Wozniacki,7-5 3-6 7-5,78,36,770,1463
+Australian Open,Grand Slam,2020-01-20,Hard,R32,3,Qiang Wang,Serena Williams,6-4 6-7(2) 7-5,29,9,1593,4215
+Australian Open,Grand Slam,2020-01-20,Hard,R32,3,Anett Kontaveit,Belinda Bencic,6-0 6-1,31,7,1575,4675
+Australian Open,Grand Slam,2020-01-20,Hard,R32,3,Iga Swiatek,Donna Vekic,7-5 6-3,56,20,997,2120
+Australian Open,Grand Slam,2020-01-20,Hard,R32,3,Elise Mertens,Catherine Cartan Bellis,6-1 6-7(5) 6-0,17,600,2250,50
+Australian Open,Grand Slam,2020-01-20,Hard,R32,3,Simona Halep,Yulia Putintseva,6-1 6-4,3,38,5561,1415
+Australian Open,Grand Slam,2020-01-20,Hard,R32,3,Garbine Muguruza,Elina Svitolina,6-1 6-2,32,5,1526,5075
+Australian Open,Grand Slam,2020-01-20,Hard,R32,3,Kiki Bertens,Zarina Diyas,6-2 7-6(3),10,73,4165,835
+Australian Open,Grand Slam,2020-01-20,Hard,R32,3,Angelique Kerber,Camila Giorgi,6-2 6-7(4) 6-3,18,102,2175,654
+Australian Open,Grand Slam,2020-01-20,Hard,R32,3,Anastasia Pavlyuchenkova,Karolina Pliskova,7-6(4) 7-6(3),30,2,1585,5940
+Australian Open,Grand Slam,2020-01-20,Hard,R16,3,Ashleigh Barty,Alison Riske Amritraj,6-3 1-6 6-4,1,19,8017,2130
+Australian Open,Grand Slam,2020-01-20,Hard,R16,3,Petra Kvitova,Maria Sakkari,6-7(4) 6-3 6-2,8,23,4436,1845
+Australian Open,Grand Slam,2020-01-20,Hard,R16,3,Sofia Kenin,Coco Gauff,6-7(5) 6-3 6-0,15,67,2565,885
+Australian Open,Grand Slam,2020-01-20,Hard,R16,3,Ons Jabeur,Qiang Wang,7-6(4) 6-1,78,29,770,1593
+Australian Open,Grand Slam,2020-01-20,Hard,R16,3,Anett Kontaveit,Iga Swiatek,6-7(4) 7-5 7-5,31,56,1575,997
+Australian Open,Grand Slam,2020-01-20,Hard,R16,3,Simona Halep,Elise Mertens,6-4 6-4,3,17,5561,2250
+Australian Open,Grand Slam,2020-01-20,Hard,R16,3,Garbine Muguruza,Kiki Bertens,6-3 6-3,32,10,1526,4165
+Australian Open,Grand Slam,2020-01-20,Hard,R16,3,Anastasia Pavlyuchenkova,Angelique Kerber,6-7(5) 7-6(4) 6-2,30,18,1585,2175
+Australian Open,Grand Slam,2020-01-20,Hard,QF,3,Ashleigh Barty,Petra Kvitova,7-6(6) 6-2,1,8,8017,4436
+Australian Open,Grand Slam,2020-01-20,Hard,QF,3,Sofia Kenin,Ons Jabeur,6-4 6-4,15,78,2565,770
+Australian Open,Grand Slam,2020-01-20,Hard,QF,3,Simona Halep,Anett Kontaveit,6-1 6-1,3,31,5561,1575
+Australian Open,Grand Slam,2020-01-20,Hard,QF,3,Garbine Muguruza,Anastasia Pavlyuchenkova,7-5 6-3,32,30,1526,1585
+Australian Open,Grand Slam,2020-01-20,Hard,SF,3,Sofia Kenin,Ashleigh Barty,7-6(6) 7-5,15,1,2565,8017
+Australian Open,Grand Slam,2020-01-20,Hard,SF,3,Garbine Muguruza,Simona Halep,7-6(8) 7-5,32,3,1526,5561
+Australian Open,Grand Slam,2020-01-20,Hard,F,3,Sofia Kenin,Garbine Muguruza,4-6 6-2 6-2,15,32,2565,1526
+Hua Hin,I,2020-02-10,Hard,F,3,Magda Linette,Leonie Kung,6-3 6-2,42,283,1212,196
+Hua Hin,I,2020-02-10,Hard,SF,3,Leonie Kung,Nao Hibino,7-5 4-6 6-3,283,84,196,740
+Hua Hin,I,2020-02-10,Hard,SF,3,Magda Linette,Patricia Maria Tig,7-5 6-4,42,105,1212,623
+Hua Hin,I,2020-02-10,Hard,QF,3,Nao Hibino,Elina Svitolina,6-4 6-2,84,4,740,4775
+Hua Hin,I,2020-02-10,Hard,QF,3,Leonie Kung,Qiang Wang,7-5 4-6 6-4,283,27,196,1703
+Hua Hin,I,2020-02-10,Hard,QF,3,Patricia Maria Tig,Saisai Zheng,6-4 6-2,105,36,623,1380
+Hua Hin,I,2020-02-10,Hard,QF,3,Magda Linette,Xiyu Wang,2-6 6-3 6-3,42,134,1212,455
+Hua Hin,I,2020-02-10,Hard,R16,3,Elina Svitolina,Storm Hunter,6-1 6-2,4,319,4775,159
+Hua Hin,I,2020-02-10,Hard,R16,3,Nao Hibino,Peangtarn Plipuech,6-0 6-1,84,286,740,194
+Hua Hin,I,2020-02-10,Hard,R16,3,Qiang Wang,Katarzyna Kawa,6-3 6-4,27,128,1703,485
+Hua Hin,I,2020-02-10,Hard,R16,3,Leonie Kung,Lin Zhu,6-3 6-1,283,70,196,855
+Hua Hin,I,2020-02-10,Hard,R16,3,Patricia Maria Tig,Xiaodi You,6-1 6-3,105,210,623,283
+Hua Hin,I,2020-02-10,Hard,R16,3,Saisai Zheng,En Shuo Liang,6-4 6-3,36,238,1380,242
+Hua Hin,I,2020-02-10,Hard,R16,3,Magda Linette,Shuai Peng,7-5 6-1,42,106,1212,613
+Hua Hin,I,2020-02-10,Hard,R16,3,Xiyu Wang,Barbara Haas,6-3 6-4,134,140,455,431
+Hua Hin,I,2020-02-10,Hard,R32,3,Elina Svitolina,Bibiane Schoofs,6-2 6-4,4,195,4775,297
+Hua Hin,I,2020-02-10,Hard,R32,3,Storm Hunter,Ulrikke Eikeri,6-3 6-4,319,243,159,235
+Hua Hin,I,2020-02-10,Hard,R32,3,Peangtarn Plipuech,Chloe Paquet,7-6(3) 3-6 6-4,286,165,194,359
+Hua Hin,I,2020-02-10,Hard,R32,3,Nao Hibino,Arina Rodionova,7-6(5) 7-5,84,148,740,407
+Hua Hin,I,2020-02-10,Hard,R32,3,Qiang Wang,Xinyun Han,6-1 6-1,27,187,1703,313
+Hua Hin,I,2020-02-10,Hard,R32,3,Katarzyna Kawa,Ankita Raina,3-6 6-0 6-1,128,175,485,339
+Hua Hin,I,2020-02-10,Hard,R32,3,Leonie Kung,Patcharin Cheapchandej,6-0 6-3,283,731,196,31
+Hua Hin,I,2020-02-10,Hard,R32,3,Lin Zhu,Varvara Flink,6-4 6-2,70,135,855,451
+Hua Hin,I,2020-02-10,Hard,R32,3,Patricia Maria Tig,Yafan Wang,6-1 1-6 7-6(5),105,56,623,1015
+Hua Hin,I,2020-02-10,Hard,R32,3,Xiaodi You,Ellen Perez,7-6(4) 6-2,210,251,283,229
+Hua Hin,I,2020-02-10,Hard,R32,3,En Shuo Liang,Xinyu Wang,6-3 6-0,238,141,242,430
+Hua Hin,I,2020-02-10,Hard,R32,3,Saisai Zheng,Natalija Stevanovic,7-6(6) 6-0,36,183,1380,321
+Hua Hin,I,2020-02-10,Hard,R32,3,Magda Linette,Kateryna Bondarenko,6-2 6-2,42,495,1212,76
+Hua Hin,I,2020-02-10,Hard,R32,3,Shuai Peng,Yue Yuan,6-1 6-0,106,205,613,284
+Hua Hin,I,2020-02-10,Hard,R32,3,Barbara Haas,Chihiro Muramatsu,3-6 7-5 6-3,140,214,431,276
+Hua Hin,I,2020-02-10,Hard,R32,3,Xiyu Wang,Petra Martic,6-3 6-4,134,15,455,2586
+St. Petersburg,P,2020-02-10,Hard,F,3,Kiki Bertens,Elena Rybakina,6-1 6-3,8,25,3965,1866
+St. Petersburg,P,2020-02-10,Hard,SF,3,Elena Rybakina,Maria Sakkari,3-6 7-5 6-1,25,21,1866,1955
+St. Petersburg,P,2020-02-10,Hard,SF,3,Kiki Bertens,Ekaterina Alexandrova,6-1 4-6 6-1,8,28,3965,1700
+St. Petersburg,P,2020-02-10,Hard,QF,3,Maria Sakkari,Belinda Bencic,2-6 6-4 6-3,21,5,1955,4675
+St. Petersburg,P,2020-02-10,Hard,QF,3,Elena Rybakina,Oceane Dodin,6-7(5) 7-5 6-2,25,159,1866,370
+St. Petersburg,P,2020-02-10,Hard,QF,3,Ekaterina Alexandrova,Petra Kvitova,W/O,28,11,1700,3466
+St. Petersburg,P,2020-02-10,Hard,QF,3,Kiki Bertens,Anastasia Potapova,6-4 7-6(3),8,101,3965,651
+St. Petersburg,P,2020-02-10,Hard,R16,3,Belinda Bencic,Svetlana Kuznetsova,7-6(4) 6-4,5,49,4675,1123
+St. Petersburg,P,2020-02-10,Hard,R16,3,Maria Sakkari,Alize Cornet,6-2 6-4,21,61,1955,965
+St. Petersburg,P,2020-02-10,Hard,R16,3,Oceane Dodin,Johanna Konta,6-3 6-4,159,14,370,2753
+St. Petersburg,P,2020-02-10,Hard,R16,3,Elena Rybakina,Fiona Ferro,6-3 6-4,25,58,1866,1004
+St. Petersburg,P,2020-02-10,Hard,R16,3,Ekaterina Alexandrova,Donna Vekic,6-1 7-5,28,23,1700,1935
+St. Petersburg,P,2020-02-10,Hard,R16,3,Petra Kvitova,Alison Van Uytvanck,7-6(1) 1-6 6-2,11,47,3466,1150
+St. Petersburg,P,2020-02-10,Hard,R16,3,Anastasia Potapova,Ajla Tomljanovic,7-6(2) 6-3,101,57,651,1005
+St. Petersburg,P,2020-02-10,Hard,R16,3,Kiki Bertens,Veronika Kudermetova,6-1 6-2,8,38,3965,1353
+St. Petersburg,P,2020-02-10,Hard,R32,3,Svetlana Kuznetsova,Jennifer Brady,6-3 6-1,49,52,1123,1104
+St. Petersburg,P,2020-02-10,Hard,R32,3,Alize Cornet,Jelena Ostapenko,6-1 6-2,61,40,965,1310
+St. Petersburg,P,2020-02-10,Hard,R32,3,Maria Sakkari,Vitalia Diatchenko,3-6 6-4 7-6(3),21,89,1955,709
+St. Petersburg,P,2020-02-10,Hard,R32,3,Oceane Dodin,Viktoria Hruncakova,6-2 6-2,159,65,370,905
+St. Petersburg,P,2020-02-10,Hard,R32,3,Fiona Ferro,Caroline Garcia,7-5 3-6 6-3,58,46,1004,1175
+St. Petersburg,P,2020-02-10,Hard,R32,3,Elena Rybakina,Katerina Siniakova,6-3 6-4,25,59,1866,996
+St. Petersburg,P,2020-02-10,Hard,R32,3,Donna Vekic,Kristie Ahn,6-4 6-1,23,97,1935,670
+St. Petersburg,P,2020-02-10,Hard,R32,3,Ekaterina Alexandrova,Daria Kasatkina,6-4 3-6 6-4,28,71,1700,850
+St. Petersburg,P,2020-02-10,Hard,R32,3,Alison Van Uytvanck,Kristina Mladenovic,6-4 6-1,47,37,1150,1360
+St. Petersburg,P,2020-02-10,Hard,R32,3,Ajla Tomljanovic,Marketa Vondrousova,3-6 6-3 6-4,57,17,1005,2430
+St. Petersburg,P,2020-02-10,Hard,R32,3,Anastasia Potapova,Liudmila Samsonova,6-2 6-4,101,115,651,562
+St. Petersburg,P,2020-02-10,Hard,R32,3,Veronika Kudermetova,Yulia Putintseva,7-6(4) 1-6 7-5,38,34,1353,1475
+Dubai,P,2020-02-17,Hard,F,3,Simona Halep,Elena Rybakina,3-6 6-3 7-6(5),2,19,5796,2141
+Dubai,P,2020-02-17,Hard,SF,3,Simona Halep,Jennifer Brady,6-2 6-0,2,52,5796,1104
+Dubai,P,2020-02-17,Hard,SF,3,Elena Rybakina,Petra Martic,7-6(5) 7-6(2),19,15,2141,2586
+Dubai,P,2020-02-17,Hard,QF,3,Simona Halep,Aryna Sabalenka,3-6 6-2 6-2,2,13,5796,2820
+Dubai,P,2020-02-17,Hard,QF,3,Jennifer Brady,Garbine Muguruza,6-7(5) 6-3 6-4,52,16,1104,2527
+Dubai,P,2020-02-17,Hard,QF,3,Petra Martic,Anett Kontaveit,7-6(4) 6-1,15,24,2586,1881
+Dubai,P,2020-02-17,Hard,QF,3,Elena Rybakina,Karolina Pliskova,7-6(1) 6-3,19,3,2141,5290
+Dubai,P,2020-02-17,Hard,R16,3,Simona Halep,Ons Jabeur,1-6 6-2 7-6(7),2,45,5796,1190
+Dubai,P,2020-02-17,Hard,R16,3,Aryna Sabalenka,Elise Mertens,6-4 6-3,13,22,2820,1950
+Dubai,P,2020-02-17,Hard,R16,3,Jennifer Brady,Marketa Vondrousova,4-6 6-4 6-1,52,17,1104,2431
+Dubai,P,2020-02-17,Hard,R16,3,Garbine Muguruza,Veronika Kudermetova,7-5 4-6 6-4,16,39,2527,1353
+Dubai,P,2020-02-17,Hard,R16,3,Petra Martic,Barbora Strycova,6-3 6-3,15,35,2586,1417
+Dubai,P,2020-02-17,Hard,R16,3,Anett Kontaveit,Anastasia Pavlyuchenkova,7-6(5) 7-5,24,31,1881,1486
+Dubai,P,2020-02-17,Hard,R16,3,Elena Rybakina,Katerina Siniakova,6-3 6-3,19,58,2141,996
+Dubai,P,2020-02-17,Hard,R16,3,Karolina Pliskova,Kristina Mladenovic,6-1 6-2,3,38,5290,1360
+Dubai,P,2020-02-17,Hard,R32,3,Ons Jabeur,Alison Riske Amritraj,7-6(3) 1-6 6-3,45,18,1190,2360
+Dubai,P,2020-02-17,Hard,R32,3,Elise Mertens,Qiang Wang,6-3 6-0,22,28,1950,1733
+Dubai,P,2020-02-17,Hard,R32,3,Aryna Sabalenka,Maria Sakkari,6-2 4-6 6-1,13,21,2820,2085
+Dubai,P,2020-02-17,Hard,R32,3,Jennifer Brady,Elina Svitolina,6-2 6-1,52,6,1104,4650
+Dubai,P,2020-02-17,Hard,R32,3,Marketa Vondrousova,Anastasija Sevastova,6-3 6-2,17,41,2431,1288
+Dubai,P,2020-02-17,Hard,R32,3,Veronika Kudermetova,Dayana Yastremska,5-7 6-3 7-6(2),39,26,1353,1785
+Dubai,P,2020-02-17,Hard,R32,3,Garbine Muguruza,Kim Clijsters,6-2 7-6(6),16,,2527,
+Dubai,P,2020-02-17,Hard,R32,3,Petra Martic,Su Wei Hsieh,6-4 6-3,15,40,2586,1330
+Dubai,P,2020-02-17,Hard,R32,3,Barbora Strycova,Amanda Anisimova,7-6(3) 2-6 6-4,35,29,1417,1613
+Dubai,P,2020-02-17,Hard,R32,3,Anett Kontaveit,Sorana Cirstea,6-1 6-3,24,70,1881,855
+Dubai,P,2020-02-17,Hard,R32,3,Anastasia Pavlyuchenkova,Belinda Bencic,1-6 6-1 6-1,31,4,1486,4720
+Dubai,P,2020-02-17,Hard,R32,3,Elena Rybakina,Sofia Kenin,6-7(2) 6-3 6-3,19,7,2141,4495
+Dubai,P,2020-02-17,Hard,R32,3,Katerina Siniakova,Karolina Muchova,6-4 4-6 6-0,58,27,996,1752
+Dubai,P,2020-02-17,Hard,R32,3,Kristina Mladenovic,Aliaksandra Sasnovich,6-4 6-3,38,114,1360,577
+Acapulco,I,2020-02-24,Hard,F,3,Heather Watson,Leylah Fernandez,6-4 6-7(8) 6-1,69,190,844,313
+Acapulco,I,2020-02-24,Hard,SF,3,Leylah Fernandez,Renata Zarazua,6-3 6-3,190,270,313,216
+Acapulco,I,2020-02-24,Hard,SF,3,Heather Watson,Xiyu Wang,6-4 7-6(6),69,127,844,506
+Acapulco,I,2020-02-24,Hard,QF,3,Renata Zarazua,Tamara Zidansek,6-2 3-6 6-2,270,74,216,790
+Acapulco,I,2020-02-24,Hard,QF,3,Leylah Fernandez,Anastasia Potapova,6-3 7-5,190,97,313,666
+Acapulco,I,2020-02-24,Hard,QF,3,Heather Watson,Christina Mchale,6-3 1-6 6-1,69,86,844,725
+Acapulco,I,2020-02-24,Hard,QF,3,Xiyu Wang,Lin Zhu,6-2 6-2,127,77,506,785
+Acapulco,I,2020-02-24,Hard,R16,3,Renata Zarazua,Katie Volynets,4-6 7-5 6-0,270,384,216,115
+Acapulco,I,2020-02-24,Hard,R16,3,Tamara Zidansek,Kaja Juvan,6-2 6-2,74,125,790,510
+Acapulco,I,2020-02-24,Hard,R16,3,Anastasia Potapova,Tatjana Maria,6-3 6-3,97,90,666,701
+Acapulco,I,2020-02-24,Hard,R16,3,Leylah Fernandez,Nao Hibino,6-3 6-0,190,71,313,821
+Acapulco,I,2020-02-24,Hard,R16,3,Heather Watson,Kateryna Bondarenko,7-6(2) 6-2,69,494,844,77
+Acapulco,I,2020-02-24,Hard,R16,3,Christina Mchale,Caroline Dolehide,5-7 6-4 6-3,86,139,725,440
+Acapulco,I,2020-02-24,Hard,R16,3,Lin Zhu,Katie Boulter,7-6(2) 7-5,77,394,785,110
+Acapulco,I,2020-02-24,Hard,R16,3,Xiyu Wang,Sara Errani,7-5 6-7(3) 6-1,127,185,506,321
+Acapulco,I,2020-02-24,Hard,R32,3,Renata Zarazua,Sloane Stephens,6-4 6-2,270,35,216,1453
+Acapulco,I,2020-02-24,Hard,R32,3,Katie Volynets,Shelby Rogers,6-2 7-6(5),384,114,115,572
+Acapulco,I,2020-02-24,Hard,R32,3,Tamara Zidansek,Anna Kalinskaya,6-3 6-4,74,111,790,596
+Acapulco,I,2020-02-24,Hard,R32,3,Kaja Juvan,Venus Williams,4-6 7-6(4) 6-2,125,64,510,899
+Acapulco,I,2020-02-24,Hard,R32,3,Tatjana Maria,Marie Bouzkova,6-4 1-6 6-2,90,57,701,985
+Acapulco,I,2020-02-24,Hard,R32,3,Anastasia Potapova,Anna Karolina Schmiedlova,4-6 7-5 6-1,97,200,666,293
+Acapulco,I,2020-02-24,Hard,R32,3,Leylah Fernandez,Nina Stojanovic,6-4 6-1,190,82,313,751
+Acapulco,I,2020-02-24,Hard,R32,3,Nao Hibino,Arantxa Rus,6-3 6-1,71,75,821,789
+Acapulco,I,2020-02-24,Hard,R32,3,Heather Watson,Coco Vandeweghe,4-6 6-4 6-4,69,193,844,305
+Acapulco,I,2020-02-24,Hard,R32,3,Kateryna Bondarenko,Danka Kovinic,6-7(7) 6-4 6-2,494,87,77,714
+Acapulco,I,2020-02-24,Hard,R32,3,Caroline Dolehide,Usue Maitane Arconada,6-2 6-2,139,132,440,464
+Acapulco,I,2020-02-24,Hard,R32,3,Christina Mchale,Lauren Davis,6-2 1-6 6-4,86,60,725,962
+Acapulco,I,2020-02-24,Hard,R32,3,Lin Zhu,Katarina Zavatska,7-6(2) 6-2,77,106,785,627
+Acapulco,I,2020-02-24,Hard,R32,3,Katie Boulter,Francesca Di Lorenzo,2-6 6-3 6-2,394,120,110,537
+Acapulco,I,2020-02-24,Hard,R32,3,Sara Errani,Sara Sorribes Tormo,7-5 6-4,185,80,321,767
+Acapulco,I,2020-02-24,Hard,R32,3,Xiyu Wang,Yafan Wang,6-4 7-6(8),127,56,506,1015
+Doha,P,2020-02-24,Hard,F,3,Aryna Sabalenka,Petra Kvitova,6-3 6-3,13,11,2815,2981
+Doha,P,2020-02-24,Hard,SF,3,Petra Kvitova,Ashleigh Barty,6-4 2-6 6-4,11,1,2981,8367
+Doha,P,2020-02-24,Hard,SF,3,Aryna Sabalenka,Svetlana Kuznetsova,6-4 6-3,13,46,2815,1178
+Doha,P,2020-02-24,Hard,QF,3,Ashleigh Barty,Garbine Muguruza,6-1 6-7(4) 6-2,1,16,8367,2522
+Doha,P,2020-02-24,Hard,QF,3,Petra Kvitova,Ons Jabeur,7-6(2) 7-6(4),11,44,2981,1185
+Doha,P,2020-02-24,Hard,QF,3,Svetlana Kuznetsova,Belinda Bencic,6-4 6-4,46,9,1178,3875
+Doha,P,2020-02-24,Hard,QF,3,Aryna Sabalenka,Saisai Zheng,3-6 7-6(2) 6-3,13,37,2815,1380
+Doha,P,2020-02-24,Hard,R16,3,Ashleigh Barty,Elena Rybakina,W/O,1,17,8367,2416
+Doha,P,2020-02-24,Hard,R16,3,Garbine Muguruza,Dayana Yastremska,6-2 6-4,16,25,2522,1785
+Doha,P,2020-02-24,Hard,R16,3,Ons Jabeur,Karolina Pliskova,6-4 3-6 6-3,44,3,1185,5200
+Doha,P,2020-02-24,Hard,R16,3,Petra Kvitova,Jelena Ostapenko,6-2 5-7 6-1,11,41,2981,1256
+Doha,P,2020-02-24,Hard,R16,3,Svetlana Kuznetsova,Amanda Anisimova,W/O,46,29,1178,1613
+Doha,P,2020-02-24,Hard,R16,3,Belinda Bencic,Yulia Putintseva,6-4 6-3,9,32,3875,1475
+Doha,P,2020-02-24,Hard,R16,3,Saisai Zheng,Kiki Bertens,3-6 6-3 6-4,37,6,1380,4335
+Doha,P,2020-02-24,Hard,R16,3,Aryna Sabalenka,Maria Sakkari,6-3 6-0,13,20,2815,2085
+Doha,P,2020-02-24,Hard,R32,3,Ashleigh Barty,Laura Siegemund,6-3 6-2,1,68,8367,845
+Doha,P,2020-02-24,Hard,R32,3,Elena Rybakina,Alison Van Uytvanck,5-7 6-2 7-6(8),17,62,2416,925
+Doha,P,2020-02-24,Hard,R32,3,Garbine Muguruza,Ajla Tomljanovic,6-1 6-2,16,54,2522,1030
+Doha,P,2020-02-24,Hard,R32,3,Dayana Yastremska,Sofia Kenin,6-3 7-6(4),25,5,1785,4490
+Doha,P,2020-02-24,Hard,R32,3,Karolina Pliskova,Bernarda Pera,6-3 6-0,3,63,5200,913
+Doha,P,2020-02-24,Hard,R32,3,Ons Jabeur,Jennifer Brady,6-4 6-3,44,45,1185,1179
+Doha,P,2020-02-24,Hard,R32,3,Jelena Ostapenko,Barbora Strycova,6-1 6-2,41,34,1256,1471
+Doha,P,2020-02-24,Hard,R32,3,Petra Kvitova,Carla Suarez Navarro,4-6 6-3 6-0,11,70,2981,822
+Doha,P,2020-02-24,Hard,R32,3,Amanda Anisimova,Elina Svitolina,6-3 6-3,29,7,1613,4301
+Doha,P,2020-02-24,Hard,R32,3,Svetlana Kuznetsova,Iga Swiatek,6-2 6-2,46,50,1178,1079
+Doha,P,2020-02-24,Hard,R32,3,Yulia Putintseva,Elise Mertens,4-6 6-3 6-2,32,23,1475,1950
+Doha,P,2020-02-24,Hard,R32,3,Belinda Bencic,Veronika Kudermetova,6-4 4-6 7-6(4),9,38,3875,1373
+Doha,P,2020-02-24,Hard,R32,3,Kiki Bertens,Karolina Muchova,6-2 6-4,6,27,4335,1753
+Doha,P,2020-02-24,Hard,R32,3,Saisai Zheng,Vera Zvonareva,7-5 6-1,37,424,1380,98
+Doha,P,2020-02-24,Hard,R32,3,Maria Sakkari,Tereza Martincova,3-6 7-6(5) 6-0,20,157,2085,393
+Doha,P,2020-02-24,Hard,R32,3,Aryna Sabalenka,Anett Kontaveit,7-5 2-6 7-5,13,22,2815,1980
+Doha,P,2020-02-24,Hard,R64,3,Laura Siegemund,Yaroslava Shvedova,6-3 6-2,68,,845,
+Doha,P,2020-02-24,Hard,R64,3,Alison Van Uytvanck,Polona Hercog,6-2 6-2,62,42,925,1205
+Doha,P,2020-02-24,Hard,R64,3,Elena Rybakina,Sorana Cirstea,3-6 6-3 6-1,17,72,2416,820
+Doha,P,2020-02-24,Hard,R64,3,Garbine Muguruza,Daria Kasatkina,7-5 5-7 6-3,16,73,2522,803
+Doha,P,2020-02-24,Hard,R64,3,Ajla Tomljanovic,Priscilla Hon,6-2 6-4,54,130,1030,471
+Doha,P,2020-02-24,Hard,R64,3,Dayana Yastremska,Kirsten Flipkens,6-2 6-4,25,78,1785,772
+Doha,P,2020-02-24,Hard,R64,3,Bernarda Pera,Caroline Garcia,6-3 6-1,63,47,913,1145
+Doha,P,2020-02-24,Hard,R64,3,Ons Jabeur,Katerina Siniakova,6-3 6-2,44,55,1185,1016
+Doha,P,2020-02-24,Hard,R64,3,Jennifer Brady,Alison Riske Amritraj,7-6(10) 1-6 7-6(3),45,19,1179,2270
+Doha,P,2020-02-24,Hard,R64,3,Barbora Strycova,Petra Martic,4-6 6-1 6-2,34,14,1471,2770
+Doha,P,2020-02-24,Hard,R64,3,Jelena Ostapenko,Jil Teichmann,7-5 2-6 7-5,41,66,1256,867
+Doha,P,2020-02-24,Hard,R64,3,Carla Suarez Navarro,Shuai Zhang,7-5 6-0,70,31,822,1475
+Doha,P,2020-02-24,Hard,R64,3,Amanda Anisimova,Ekaterina Alexandrova,6-3 7-6(4),29,26,1613,1775
+Doha,P,2020-02-24,Hard,R64,3,Svetlana Kuznetsova,Cagla Buyukakcay,6-2 6-2,46,172,1178,344
+Doha,P,2020-02-24,Hard,R64,3,Iga Swiatek,Donna Vekic,6-4 7-5,50,24,1079,1935
+Doha,P,2020-02-24,Hard,R64,3,Elise Mertens,Qiang Wang,6-1 6-2,23,28,1950,1733
+Doha,P,2020-02-24,Hard,R64,3,Yulia Putintseva,Timea Babos,6-3 6-4,32,98,1475,660
+Doha,P,2020-02-24,Hard,R64,3,Veronika Kudermetova,Kristina Mladenovic,7-6(6) 0-6 6-3,38,39,1373,1335
+Doha,P,2020-02-24,Hard,R64,3,Karolina Muchova,Magda Linette,6-3 6-1,27,33,1753,1472
+Doha,P,2020-02-24,Hard,R64,3,Vera Zvonareva,Su Wei Hsieh,6-4 6-4,424,53,98,1035
+Doha,P,2020-02-24,Hard,R64,3,Saisai Zheng,Marketa Vondrousova,1-6 6-3 6-2,37,18,1380,2306
+Doha,P,2020-02-24,Hard,R64,3,Maria Sakkari,Julia Goerges,6-4 6-3,20,36,2085,1423
+Doha,P,2020-02-24,Hard,R64,3,Tereza Martincova,Misaki Doi,6-2 3-6 6-2,157,89,393,705
+Doha,P,2020-02-24,Hard,R64,3,Anett Kontaveit,Anastasija Sevastova,6-4 7-6(3),22,40,1980,1288
+Lyon,I,2020-03-02,Hard,F,3,Sofia Kenin,Anna Lena Friedsam,6-2 4-6 6-4,5,136,4365,457
+Lyon,I,2020-03-02,Hard,SF,3,Sofia Kenin,Alison Van Uytvanck,7-6(5) 6-7(2) 7-6(2),5,62,4365,955
+Lyon,I,2020-03-02,Hard,SF,3,Anna Lena Friedsam,Daria Kasatkina,6-3 3-6 6-2,136,73,457,820
+Lyon,I,2020-03-02,Hard,QF,3,Sofia Kenin,Oceane Dodin,6-1 6-7(5) 6-2,5,130,4365,487
+Lyon,I,2020-03-02,Hard,QF,3,Alison Van Uytvanck,Caroline Garcia,6-2 6-2,62,46,955,1145
+Lyon,I,2020-03-02,Hard,QF,3,Daria Kasatkina,Camila Giorgi,6-2 4-6 6-2,73,94,820,673
+Lyon,I,2020-03-02,Hard,QF,3,Anna Lena Friedsam,Viktoria Hruncakova,3-6 7-6(4) 6-2,136,85,457,729
+Lyon,I,2020-03-02,Hard,R16,3,Sofia Kenin,Jaqueline Cristian,6-7(5) 7-5 6-4,5,174,4365,341
+Lyon,I,2020-03-02,Hard,R16,3,Oceane Dodin,Jil Teichmann,W/O,130,66,487,896
+Lyon,I,2020-03-02,Hard,R16,3,Caroline Garcia,Ysaline Bonaventure,7-5 6-2,46,122,1145,528
+Lyon,I,2020-03-02,Hard,R16,3,Alison Van Uytvanck,Viktoriya Tomova,3-6 6-4 7-6(2),62,143,955,432
+Lyon,I,2020-03-02,Hard,R16,3,Daria Kasatkina,Irina Bara,6-3 6-2,73,168,820,357
+Lyon,I,2020-03-02,Hard,R16,3,Camila Giorgi,Alize Cornet,4-6 7-6(5) 6-2,94,58,673,985
+Lyon,I,2020-03-02,Hard,R16,3,Viktoria Hruncakova,Tereza Martincova,6-4 4-6 6-4,85,132,729,471
+Lyon,I,2020-03-02,Hard,R16,3,Anna Lena Friedsam,Kristina Mladenovic,6-3 6-3,136,42,457,1335
+Lyon,I,2020-03-02,Hard,R32,3,Sofia Kenin,Vitalia Diatchenko,6-4 6-3,5,107,4365,619
+Lyon,I,2020-03-02,Hard,R32,3,Jaqueline Cristian,Priscilla Hon,6-2 6-0,174,129,341,500
+Lyon,I,2020-03-02,Hard,R32,3,Oceane Dodin,Mandy Minella,6-4 6-4,130,144,487,428
+Lyon,I,2020-03-02,Hard,R32,3,Jil Teichmann,Clara Burel,6-4 6-3,66,499,896,75
+Lyon,I,2020-03-02,Hard,R32,3,Caroline Garcia,Greet Minnen,6-4 1-6 7-6(5),46,103,1145,636
+Lyon,I,2020-03-02,Hard,R32,3,Ysaline Bonaventure,Marta Kostyuk,6-4 6-4,122,141,528,434
+Lyon,I,2020-03-02,Hard,R32,3,Viktoriya Tomova,Magdalena Frech,7-5 6-7(5) 6-4,143,169,432,352
+Lyon,I,2020-03-02,Hard,R32,3,Alison Van Uytvanck,Katarzyna Kawa,6-1 6-3,62,121,955,531
+Lyon,I,2020-03-02,Hard,R32,3,Daria Kasatkina,Pauline Parmentier,6-2 5-7 6-4,73,147,820,410
+Lyon,I,2020-03-02,Hard,R32,3,Irina Bara,Timea Babos,6-3 6-7(2) 6-4,168,99,357,650
+Lyon,I,2020-03-02,Hard,R32,3,Camila Giorgi,Vera Lapko,6-3 6-4,94,378,673,118
+Lyon,I,2020-03-02,Hard,R32,3,Alize Cornet,Antonia Lottner,7-5 6-0,58,162,985,379
+Lyon,I,2020-03-02,Hard,R32,3,Viktoria Hruncakova,Lesley Pattinama Kerkhove,6-2 2-6 6-2,85,164,729,369
+Lyon,I,2020-03-02,Hard,R32,3,Tereza Martincova,Ana Bogdan,6-3 4-6 6-3,132,90,471,710
+Lyon,I,2020-03-02,Hard,R32,3,Anna Lena Friedsam,Anastasiya Komardina,6-2 6-2,136,208,457,287
+Lyon,I,2020-03-02,Hard,R32,3,Kristina Mladenovic,Chloe Paquet,1-6 6-2 6-4,42,166,1335,359
+Monterrey,I,2020-03-02,Hard,F,3,Elina Svitolina,Marie Bouzkova,7-5 4-6 6-4,7,57,4301,985
+Monterrey,I,2020-03-02,Hard,SF,3,Elina Svitolina,Arantxa Rus,6-0 6-1,7,76,4301,789
+Monterrey,I,2020-03-02,Hard,SF,3,Marie Bouzkova,Johanna Konta,6-3 6-4,57,16,985,2694
+Monterrey,I,2020-03-02,Hard,QF,3,Elina Svitolina,Leylah Fernandez,6-4 7-5,7,126,4301,510
+Monterrey,I,2020-03-02,Hard,QF,3,Arantxa Rus,Rebecca Peterson,6-1 6-1,76,45,789,1195
+Monterrey,I,2020-03-02,Hard,QF,3,Marie Bouzkova,Yafan Wang,6-2 7-5,57,84,985,736
+Monterrey,I,2020-03-02,Hard,QF,3,Johanna Konta,Anastasia Potapova,6-7(6) 6-3 7-6(7),16,89,2694,713
+Monterrey,I,2020-03-02,Hard,R16,3,Elina Svitolina,Olga Govortsova,6-3 6-4,7,142,4301,433
+Monterrey,I,2020-03-02,Hard,R16,3,Leylah Fernandez,Sloane Stephens,6-7(4) 6-3 6-3,126,37,510,1424
+Monterrey,I,2020-03-02,Hard,R16,3,Arantxa Rus,Lauren Davis,7-5 6-0,76,61,789,962
+Monterrey,I,2020-03-02,Hard,R16,3,Rebecca Peterson,Kateryna Bondarenko,7-6(2) 7-5,45,404,1195,107
+Monterrey,I,2020-03-02,Hard,R16,3,Yafan Wang,Astra Sharma,7-6(5) 4-6 6-3,84,127,736,508
+Monterrey,I,2020-03-02,Hard,R16,3,Marie Bouzkova,Anna Karolina Schmiedlova,6-4 6-1,57,199,985,294
+Monterrey,I,2020-03-02,Hard,R16,3,Anastasia Potapova,Tamara Zidansek,1-6 7-6(3) 6-1,89,71,713,830
+Monterrey,I,2020-03-02,Hard,R16,3,Johanna Konta,Tatjana Maria,7-6(4) 6-3,16,91,2694,701
+Monterrey,I,2020-03-02,Hard,R32,3,Elina Svitolina,Danka Kovinic,6-3 6-2,7,88,4301,714
+Monterrey,I,2020-03-02,Hard,R32,3,Olga Govortsova,Caroline Dolehide,3-6 6-2 6-1,142,131,433,478
+Monterrey,I,2020-03-02,Hard,R32,3,Leylah Fernandez,Stefanie Voegele,7-6(5) 6-2,126,108,510,604
+Monterrey,I,2020-03-02,Hard,R32,3,Sloane Stephens,Emma Navarro,6-4 5-7 6-1,37,497,1424,76
+Monterrey,I,2020-03-02,Hard,R32,3,Lauren Davis,Nadia Podoroska,6-0 6-3,61,178,962,335
+Monterrey,I,2020-03-02,Hard,R32,3,Arantxa Rus,Varvara Flink,4-3 RET,76,149,789,408
+Monterrey,I,2020-03-02,Hard,R32,3,Kateryna Bondarenko,Sara Sorribes Tormo,4-6 6-0 6-2,404,79,107,763
+Monterrey,I,2020-03-02,Hard,R32,3,Rebecca Peterson,Kateryna Baindl,3-6 7-6(1) 6-4,45,96,1195,658
+Monterrey,I,2020-03-02,Hard,R32,3,Yafan Wang,Lara Arruabarrena,6-4 6-4,84,159,736,389
+Monterrey,I,2020-03-02,Hard,R32,3,Astra Sharma,Nina Stojanovic,6-4 6-4,127,81,508,751
+Monterrey,I,2020-03-02,Hard,R32,3,Anna Karolina Schmiedlova,Venus Williams,4-6 6-3 6-2,199,65,294,900
+Monterrey,I,2020-03-02,Hard,R32,3,Marie Bouzkova,Kristina Kucova,6-4 6-2,57,173,985,347
+Monterrey,I,2020-03-02,Hard,R32,3,Tamara Zidansek,Victoria Azarenka,6-2 6-2,71,56,830,991
+Monterrey,I,2020-03-02,Hard,R32,3,Anastasia Potapova,Giulia Gatto Monticone,6-4 4-6 6-4,89,148,713,409
+Monterrey,I,2020-03-02,Hard,R32,3,Tatjana Maria,Heather Watson,7-6(4) 3-6 7-5,91,49,701,1122
+Monterrey,I,2020-03-02,Hard,R32,3,Johanna Konta,Kim Clijsters,6-3 7-5,16,,2694,
+Palermo,I,2020-08-03,Clay,F,3,Fiona Ferro,Anett Kontaveit,6-2 7-5,53,22,1047,2010
+Palermo,I,2020-08-03,Clay,SF,3,Anett Kontaveit,Petra Martic,6-2 6-4,22,15,2010,2770
+Palermo,I,2020-08-03,Clay,SF,3,Fiona Ferro,Camila Giorgi,2-6 6-2 7-5,53,89,1047,732
+Palermo,I,2020-08-03,Clay,QF,3,Petra Martic,Aliaksandra Sasnovich,7-6(5) 7-6(3),15,119,2770,561
+Palermo,I,2020-08-03,Clay,QF,3,Anett Kontaveit,Elisabetta Cocciaretto,6-1 4-6 6-1,22,156,2010,402
+Palermo,I,2020-08-03,Clay,QF,3,Fiona Ferro,Sara Errani,6-4 6-1,53,167,1047,368
+Palermo,I,2020-08-03,Clay,QF,3,Camila Giorgi,Dayana Yastremska,4-6 7-6(5) 6-3,89,25,732,1835
+Palermo,I,2020-08-03,Clay,R16,3,Petra Martic,Liudmila Samsonova,5-7 6-4 6-2,15,117,2770,569
+Palermo,I,2020-08-03,Clay,R16,3,Aliaksandra Sasnovich,Jasmine Paolini,6-0 6-2,119,95,561,689
+Palermo,I,2020-08-03,Clay,R16,3,Anett Kontaveit,Laura Siegemund,3-6 6-2 6-2,22,65,2010,910
+Palermo,I,2020-08-03,Clay,R16,3,Elisabetta Cocciaretto,Donna Vekic,6-2 6-4,156,24,402,1880
+Palermo,I,2020-08-03,Clay,R16,3,Fiona Ferro,Ekaterina Alexandrova,7-5 6-2,53,27,1047,1775
+Palermo,I,2020-08-03,Clay,R16,3,Sara Errani,Kristyna Pliskova,3-6 6-4 6-3,167,69,368,880
+Palermo,I,2020-08-03,Clay,R16,3,Dayana Yastremska,Oceane Dodin,6-2 6-4,25,116,1835,579
+Palermo,I,2020-08-03,Clay,R16,3,Camila Giorgi,Kaja Juvan,3-6 6-2 6-4,89,121,732,557
+Palermo,I,2020-08-03,Clay,R32,3,Petra Martic,Alison Van Uytvanck,6-0 6-3,15,57,2770,1035
+Palermo,I,2020-08-03,Clay,R32,3,Liudmila Samsonova,Kirsten Flipkens,6-4 6-2,117,77,569,801
+Palermo,I,2020-08-03,Clay,R32,3,Jasmine Paolini,Daria Kasatkina,5-7 6-4 6-4,95,66,689,905
+Palermo,I,2020-08-03,Clay,R32,3,Aliaksandra Sasnovich,Elise Mertens,6-4 6-1,119,23,561,1950
+Palermo,I,2020-08-03,Clay,R32,3,Anett Kontaveit,Patricia Maria Tig,6-3 6-3,22,85,2010,759
+Palermo,I,2020-08-03,Clay,R32,3,Laura Siegemund,Irina Camelia Begu,6-3 6-4,65,81,910,777
+Palermo,I,2020-08-03,Clay,R32,3,Elisabetta Cocciaretto,Polona Hercog,7-6(1) 6-3,156,45,402,1205
+Palermo,I,2020-08-03,Clay,R32,3,Donna Vekic,Arantxa Rus,6-1 6-2,24,70,1880,869
+Palermo,I,2020-08-03,Clay,R32,3,Ekaterina Alexandrova,Kristina Mladenovic,5-7 6-0 6-1,27,42,1775,1335
+Palermo,I,2020-08-03,Clay,R32,3,Fiona Ferro,Nadia Podoroska,6-2 6-1,53,175,1047,352
+Palermo,I,2020-08-03,Clay,R32,3,Sara Errani,Sorana Cirstea,7-5 1-6 6-4,167,75,368,820
+Palermo,I,2020-08-03,Clay,R32,3,Kristyna Pliskova,Maria Sakkari,6-4 6-4,69,20,880,2130
+Palermo,I,2020-08-03,Clay,R32,3,Dayana Yastremska,Sara Sorribes Tormo,6-3 6-4,25,83,1835,763
+Palermo,I,2020-08-03,Clay,R32,3,Oceane Dodin,Tamara Zidansek,2-6 6-4 6-4,116,71,579,840
+Palermo,I,2020-08-03,Clay,R32,3,Camila Giorgi,Rebecca Peterson,7-5 6-4,89,44,732,1225
+Palermo,I,2020-08-03,Clay,R32,3,Kaja Juvan,Marketa Vondrousova,1-6 7-5 6-4,121,18,557,2307
+Lexington,I,2020-08-10,Hard,F,3,Jennifer Brady,Jil Teichmann,6-3 6-4,49,63,1144,924
+Lexington,I,2020-08-10,Hard,SF,3,Jil Teichmann,Shelby Rogers,6-3 6-2,63,116,924,586
+Lexington,I,2020-08-10,Hard,SF,3,Jennifer Brady,Coco Gauff,6-2 6-4,49,53,1144,1081
+Lexington,I,2020-08-10,Hard,QF,3,Shelby Rogers,Serena Williams,1-6 6-4 7-6(5),116,9,586,3915
+Lexington,I,2020-08-10,Hard,QF,3,Jil Teichmann,Catherine Cartan Bellis,6-2 6-4,63,302,924,180
+Lexington,I,2020-08-10,Hard,QF,3,Jennifer Brady,Marie Bouzkova,6-1 6-2,49,48,1144,1147
+Lexington,I,2020-08-10,Hard,QF,3,Coco Gauff,Ons Jabeur,4-6 6-4 6-1,53,39,1081,1373
+Lexington,I,2020-08-10,Hard,R16,3,Serena Williams,Venus Williams,3-6 6-3 6-4,9,67,3915,900
+Lexington,I,2020-08-10,Hard,R16,3,Shelby Rogers,Leylah Fernandez,6-2 7-5,116,120,586,569
+Lexington,I,2020-08-10,Hard,R16,3,Catherine Cartan Bellis,Jessica Pegula,6-3 6-2,302,81,180,783
+Lexington,I,2020-08-10,Hard,R16,3,Jil Teichmann,Yulia Putintseva,6-2 6-2,63,33,924,1525
+Lexington,I,2020-08-10,Hard,R16,3,Jennifer Brady,Magda Linette,6-2 6-3,49,36,1144,1472
+Lexington,I,2020-08-10,Hard,R16,3,Marie Bouzkova,Anna Blinkova,6-4 6-2,48,61,1147,969
+Lexington,I,2020-08-10,Hard,R16,3,Ons Jabeur,Olga Govortsova,3-6 6-2 6-4,39,135,1373,477
+Lexington,I,2020-08-10,Hard,R16,3,Coco Gauff,Aryna Sabalenka,7-6(4) 4-6 6-4,53,11,1081,3615
+Lexington,I,2020-08-10,Hard,R32,3,Serena Williams,Bernarda Pera,4-6 6-4 6-1,9,60,3915,985
+Lexington,I,2020-08-10,Hard,R32,3,Venus Williams,Victoria Azarenka,6-3 6-2,67,58,900,992
+Lexington,I,2020-08-10,Hard,R32,3,Shelby Rogers,Misaki Doi,6-4 4-6 6-2,116,77,586,818
+Lexington,I,2020-08-10,Hard,R32,3,Leylah Fernandez,Sloane Stephens,6-3 6-3,120,37,569,1453
+Lexington,I,2020-08-10,Hard,R32,3,Catherine Cartan Bellis,Francesca Di Lorenzo,6-1 6-2,302,128,180,520
+Lexington,I,2020-08-10,Hard,R32,3,Jessica Pegula,Vera Zvonareva,6-1 5-7 6-4,81,267,783,215
+Lexington,I,2020-08-10,Hard,R32,3,Jil Teichmann,Anna Kalinskaya,6-2 7-5,63,114,924,596
+Lexington,I,2020-08-10,Hard,R32,3,Yulia Putintseva,Ajla Tomljanovic,6-0 6-4,33,56,1525,1035
+Lexington,I,2020-08-10,Hard,R32,3,Magda Linette,Lauren Davis,6-2 6-3,36,62,1472,967
+Lexington,I,2020-08-10,Hard,R32,3,Jennifer Brady,Heather Watson,6-2 6-1,49,51,1144,1122
+Lexington,I,2020-08-10,Hard,R32,3,Anna Blinkova,Kristie Ahn,2-6 6-4 3-1 RET,61,96,969,668
+Lexington,I,2020-08-10,Hard,R32,3,Marie Bouzkova,Johanna Konta,6-4 6-4,48,15,1147,2803
+Lexington,I,2020-08-10,Hard,R32,3,Ons Jabeur,Caty Mcnally,6-2 6-4,39,124,1373,544
+Lexington,I,2020-08-10,Hard,R32,3,Olga Govortsova,Bethanie Mattek Sands,7-6(4) 6-1,135,358,477,131
+Lexington,I,2020-08-10,Hard,R32,3,Coco Gauff,Caroline Dolehide,7-5 7-5,53,134,1081,480
+Lexington,I,2020-08-10,Hard,R32,3,Aryna Sabalenka,Madison Brengle,6-1 6-7(5) 6-2,11,80,3615,786
+Prague,I,2020-08-10,Clay,F,3,Simona Halep,Elise Mertens,6-2 7-5,2,23,6076,1950
+Prague,I,2020-08-10,Clay,SF,3,Simona Halep,Irina Camelia Begu,7-6(2) 6-3,2,82,6076,777
+Prague,I,2020-08-10,Clay,SF,3,Elise Mertens,Kristyna Pliskova,7-5 7-6(4),23,69,1950,880
+Prague,I,2020-08-10,Clay,QF,3,Simona Halep,Magdalena Frech,6-2 6-0,2,174,6076,360
+Prague,I,2020-08-10,Clay,QF,3,Irina Camelia Begu,Sara Sorribes Tormo,6-2 4-6 6-2,82,84,777,763
+Prague,I,2020-08-10,Clay,QF,3,Elise Mertens,Eugenie Bouchard,6-4 1-6 6-4,23,330,1950,155
+Prague,I,2020-08-10,Clay,QF,3,Kristyna Pliskova,Ana Bogdan,2-5 RET,69,92,880,710
+Prague,I,2020-08-10,Clay,R16,3,Simona Halep,Barbora Krejcikova,3-6 7-5 6-2,2,118,6076,580
+Prague,I,2020-08-10,Clay,R16,3,Magdalena Frech,Arantxa Rus,6-3 2-6 6-4,174,70,360,869
+Prague,I,2020-08-10,Clay,R16,3,Irina Camelia Begu,Leonie Kung,6-7(3) 7-5 7-6(7),82,157,777,408
+Prague,I,2020-08-10,Clay,R16,3,Sara Sorribes Tormo,Laura Siegemund,6-2 6-3,84,65,763,911
+Prague,I,2020-08-10,Clay,R16,3,Eugenie Bouchard,Tamara Zidansek,7-6(2) 6-7(2) 6-2,330,72,155,840
+Prague,I,2020-08-10,Clay,R16,3,Elise Mertens,Camila Giorgi,6-4 6-2,23,71,1950,841
+Prague,I,2020-08-10,Clay,R16,3,Ana Bogdan,Lesia Tsurenko,W/O,92,139,710,460
+Prague,I,2020-08-10,Clay,R16,3,Kristyna Pliskova,Petra Martic,6-1 7-5,69,14,880,2850
+Prague,I,2020-08-10,Clay,R32,3,Simona Halep,Polona Hercog,6-1 1-6 7-6(3),2,46,6076,1205
+Prague,I,2020-08-10,Clay,R32,3,Barbora Krejcikova,Patricia Maria Tig,6-4 6-3,118,86,580,759
+Prague,I,2020-08-10,Clay,R32,3,Magdalena Frech,Elena Gabriela Ruse,7-6(8) 6-3,174,173,360,360
+Prague,I,2020-08-10,Clay,R32,3,Arantxa Rus,Anastasia Pavlyuchenkova,7-5 6-2,70,30,869,1540
+Prague,I,2020-08-10,Clay,R32,3,Irina Camelia Begu,Anastasija Sevastova,6-2 6-2,82,43,777,1288
+Prague,I,2020-08-10,Clay,R32,3,Leonie Kung,Aliona Bolsova,6-4 6-3,157,102,408,645
+Prague,I,2020-08-10,Clay,R32,3,Laura Siegemund,Mayar Sherif,4-6 6-0 6-1,65,172,911,362
+Prague,I,2020-08-10,Clay,R32,3,Sara Sorribes Tormo,Barbora Strycova,7-6(3) 6-1,84,31,763,1530
+Prague,I,2020-08-10,Clay,R32,3,Eugenie Bouchard,Veronika Kudermetova,6-0 6-3,330,40,155,1373
+Prague,I,2020-08-10,Clay,R32,3,Tamara Zidansek,Katerina Siniakova,6-3 3-6 6-0,72,54,840,1045
+Prague,I,2020-08-10,Clay,R32,3,Camila Giorgi,Marta Kostyuk,4-6 6-2 7-6(4),71,140,841,460
+Prague,I,2020-08-10,Clay,R32,3,Elise Mertens,Jasmine Paolini,7-5 4-6 6-3,23,95,1950,689
+Prague,I,2020-08-10,Clay,R32,3,Lesia Tsurenko,Ekaterina Alexandrova,6-2 6-4,139,27,460,1775
+Prague,I,2020-08-10,Clay,R32,3,Ana Bogdan,Storm Hunter,6-1 6-1,92,275,710,207
+Prague,I,2020-08-10,Clay,R32,3,Kristyna Pliskova,Linda Fruhvirtova,6-2 7-5,69,820,880,23
+Prague,I,2020-08-10,Clay,R32,3,Petra Martic,Varvara Gracheva,7-6(2) 6-3,14,101,2850,646
+Cincinnati,P,2020-08-24,Hard,F,3,Victoria Azarenka,Naomi Osaka,W/O,59,10,992,3625
+Cincinnati,P,2020-08-24,Hard,SF,3,Naomi Osaka,Elise Mertens,6-2 7-6(5),10,22,3625,2070
+Cincinnati,P,2020-08-24,Hard,SF,3,Victoria Azarenka,Johanna Konta,4-6 6-4 6-1,59,15,992,2803
+Cincinnati,P,2020-08-24,Hard,QF,3,Elise Mertens,Jessica Pegula,6-1 6-3,22,83,2070,783
+Cincinnati,P,2020-08-24,Hard,QF,3,Naomi Osaka,Anett Kontaveit,4-6 6-2 7-5,10,20,3625,2135
+Cincinnati,P,2020-08-24,Hard,QF,3,Johanna Konta,Maria Sakkari,6-4 6-3,15,21,2803,2130
+Cincinnati,P,2020-08-24,Hard,QF,3,Victoria Azarenka,Ons Jabeur,7-6(9) 6-2,59,39,992,1413
+Cincinnati,P,2020-08-24,Hard,R16,3,Elise Mertens,Veronika Kudermetova,6-2 6-3,22,41,2070,1373
+Cincinnati,P,2020-08-24,Hard,R16,3,Jessica Pegula,Aryna Sabalenka,6-2 2-6 6-3,83,11,783,3615
+Cincinnati,P,2020-08-24,Hard,R16,3,Naomi Osaka,Dayana Yastremska,6-3 6-1,10,25,3625,1835
+Cincinnati,P,2020-08-24,Hard,R16,3,Anett Kontaveit,Marie Bouzkova,6-3 6-3,20,48,2135,1189
+Cincinnati,P,2020-08-24,Hard,R16,3,Johanna Konta,Vera Zvonareva,6-4 6-2,15,270,2803,216
+Cincinnati,P,2020-08-24,Hard,R16,3,Maria Sakkari,Serena Williams,5-7 7-6(5) 6-1,21,9,2130,3975
+Cincinnati,P,2020-08-24,Hard,R16,3,Ons Jabeur,Christina Mchale,6-3 6-0,39,90,1413,737
+Cincinnati,P,2020-08-24,Hard,R16,3,Victoria Azarenka,Alize Cornet,6-4 7-5,59,60,992,985
+Cincinnati,P,2020-08-24,Hard,R32,3,Veronika Kudermetova,Karolina Pliskova,7-5 6-4,41,3,1373,5205
+Cincinnati,P,2020-08-24,Hard,R32,3,Elise Mertens,Kristina Mladenovic,6-1 6-7(5) 6-3,22,43,2070,1335
+Cincinnati,P,2020-08-24,Hard,R32,3,Jessica Pegula,Amanda Anisimova,7-5 6-2,83,28,783,1717
+Cincinnati,P,2020-08-24,Hard,R32,3,Aryna Sabalenka,Catherine Cartan Bellis,6-7(1) 6-4 7-5,11,249,3615,240
+Cincinnati,P,2020-08-24,Hard,R32,3,Naomi Osaka,Karolina Muchova,6-7(5) 6-4 6-2,10,26,3625,1813
+Cincinnati,P,2020-08-24,Hard,R32,3,Dayana Yastremska,Bernarda Pera,7-6(5) 4-6 6-3,25,61,1835,985
+Cincinnati,P,2020-08-24,Hard,R32,3,Anett Kontaveit,Jil Teichmann,6-3 6-4,20,54,2135,1092
+Cincinnati,P,2020-08-24,Hard,R32,3,Marie Bouzkova,Petra Kvitova,2-6 7-5 6-2,48,12,1189,3566
+Cincinnati,P,2020-08-24,Hard,R32,3,Johanna Konta,Kirsten Flipkens,6-2 6-0,15,79,2803,801
+Cincinnati,P,2020-08-24,Hard,R32,3,Vera Zvonareva,Laura Siegemund,6-1 6-1,270,67,216,911
+Cincinnati,P,2020-08-24,Hard,R32,3,Maria Sakkari,Yulia Putintseva,6-4 7-6(9),21,33,2130,1525
+Cincinnati,P,2020-08-24,Hard,R32,3,Serena Williams,Arantxa Rus,7-6(6) 3-6 7-6(0),9,72,3975,869
+Cincinnati,P,2020-08-24,Hard,R32,3,Ons Jabeur,Madison Keys,6-4 6-1,39,13,1413,2962
+Cincinnati,P,2020-08-24,Hard,R32,3,Christina Mchale,Ekaterina Alexandrova,6-1 7-6(8),90,27,737,1775
+Cincinnati,P,2020-08-24,Hard,R32,3,Victoria Azarenka,Caroline Garcia,6-2 7-6(8),59,49,992,1175
+Cincinnati,P,2020-08-24,Hard,R32,3,Alize Cornet,Sofia Kenin,6-1 7-6(7),60,4,985,4590
+Cincinnati,P,2020-08-24,Hard,R64,3,Veronika Kudermetova,Ajla Tomljanovic,5-7 6-3 7-5,41,57,1373,1035
+Cincinnati,P,2020-08-24,Hard,R64,3,Kristina Mladenovic,Anastasija Sevastova,6-3 6-4,43,44,1335,1288
+Cincinnati,P,2020-08-24,Hard,R64,3,Elise Mertens,Rebecca Peterson,6-0 6-2,22,46,2070,1225
+Cincinnati,P,2020-08-24,Hard,R64,3,Amanda Anisimova,Alison Riske Amritraj,6-3 6-3,28,19,1717,2256
+Cincinnati,P,2020-08-24,Hard,R64,3,Jessica Pegula,Jennifer Brady,7-6(5) 6-4,83,40,783,1395
+Cincinnati,P,2020-08-24,Hard,R64,3,Catherine Cartan Bellis,Oceane Dodin,6-2 3-6 7-6(1),249,118,240,596
+Cincinnati,P,2020-08-24,Hard,R64,3,Karolina Muchova,Ann Li,6-4 6-4,26,133,1813,504
+Cincinnati,P,2020-08-24,Hard,R64,3,Bernarda Pera,Heather Watson,6-1 3-6 6-3,61,52,985,1122
+Cincinnati,P,2020-08-24,Hard,R64,3,Dayana Yastremska,Venus Williams,5-7 6-2 7-5,25,65,1835,929
+Cincinnati,P,2020-08-24,Hard,R64,3,Anett Kontaveit,Daria Kasatkina,6-3 6-1,20,68,2135,905
+Cincinnati,P,2020-08-24,Hard,R64,3,Jil Teichmann,Danielle Collins,6-3 6-3,54,53,1092,1115
+Cincinnati,P,2020-08-24,Hard,R64,3,Marie Bouzkova,Anna Kalinskaya,6-1 7-5,48,117,1189,596
+Cincinnati,P,2020-08-24,Hard,R64,3,Kirsten Flipkens,Katerina Siniakova,6-3 6-3,79,55,801,1045
+Cincinnati,P,2020-08-24,Hard,R64,3,Vera Zvonareva,Magda Linette,1-6 6-3 6-1,270,35,216,1482
+Cincinnati,P,2020-08-24,Hard,R64,3,Laura Siegemund,Marketa Vondrousova,6-3 6-7(3) 6-4,67,18,911,2308
+Cincinnati,P,2020-08-24,Hard,R64,3,Maria Sakkari,Coco Gauff,6-1 6-3,21,50,2130,1173
+Cincinnati,P,2020-08-24,Hard,R64,3,Yulia Putintseva,Shuai Zhang,6-4 6-3,33,36,1525,1475
+Cincinnati,P,2020-08-24,Hard,R64,3,Arantxa Rus,Alison Van Uytvanck,6-2 6-3,72,58,869,1035
+Cincinnati,P,2020-08-24,Hard,R64,3,Ons Jabeur,Leylah Fernandez,0-6 6-4 6-3,39,111,1413,616
+Cincinnati,P,2020-08-24,Hard,R64,3,Christina Mchale,Iga Swiatek,6-2 6-4,90,51,737,1139
+Cincinnati,P,2020-08-24,Hard,R64,3,Ekaterina Alexandrova,Elena Rybakina,7-5 7-6(6),27,17,1775,2471
+Cincinnati,P,2020-08-24,Hard,R64,3,Victoria Azarenka,Donna Vekic,6-2 6-3,59,24,992,1880
+Cincinnati,P,2020-08-24,Hard,R64,3,Caroline Garcia,Sloane Stephens,6-3 7-6(4),49,37,1175,1453
+Cincinnati,P,2020-08-24,Hard,R64,3,Alize Cornet,Caty Mcnally,6-0 6-4,60,124,985,544
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Karolina Pliskova,Anhelina Kalinina,6-4 6-0,3,145,5205,436
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Caroline Garcia,Jasmine Paolini,6-3 6-2,50,97,1205,689
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Catherine Cartan Bellis,Tamara Korpatsch,6-7(13) 6-3 6-2,188,118,330,599
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Jennifer Brady,Anna Blinkova,6-3 6-2,41,62,1395,984
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Angelique Kerber,Ajla Tomljanovic,6-4 6-4,23,59,2040,1035
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Anna Lena Friedsam,Caroline Dolehide,6-2 6-2,109,135,629,493
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Ann Li,Arantxa Rus,6-4 2-6 6-1,128,68,526,929
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Alison Riske Amritraj,Tatjana Maria,6-3 6-2,20,95,2256,702
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Marketa Vondrousova,Greet Minnen,6-1 6-4,19,107,2308,636
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Aliaksandra Sasnovich,Francesca Di Lorenzo,2-6 7-6(6) 6-0,106,129,638,520
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Vera Lapko,Viktorija Golubic,1-6 7-6(2) 6-2,351,123,137,548
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Yulia Putintseva,Robin Montgomery,6-1 6-3,35,593,1525,54
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Kristina Mladenovic,Hailey Baptiste,7-5 6-2,44,236,1335,255
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Varvara Gracheva,Paula Badosa,6-4 7-5,102,94,646,706
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Kateryna Bondarenko,Allie Kiick,3-6 6-3 6-1,349,162,141,396
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Petra Martic,Tereza Martincova,5-7 6-2 6-4,15,136,2850,488
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Naomi Osaka,Misaki Doi,6-2 5-7 6-2,9,81,4020,818
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Camila Giorgi,Alison Van Uytvanck,2-6 6-1 7-5,74,60,870,1035
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Marta Kostyuk,Daria Kasatkina,6-1 6-2,137,70,477,905
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Anastasija Sevastova,Coco Gauff,6-3 5-7 6-4,45,51,1288,1174
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Magda Linette,Maddison Inglis,6-1 4-6 6-4,37,119,1482,586
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Danka Kovinic,Lizette Cabrera,6-4 3-6 6-2,92,127,714,528
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Kaja Juvan,Usue Maitane Arconada,6-4 7-6(2),113,140,613,467
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Anett Kontaveit,Danielle Collins,5-7 6-2 6-2,21,55,2220,1115
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Elena Rybakina,Katarina Zavatska,6-3 6-0,17,108,2471,631
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Shelby Rogers,Irina Khromacheva,6-2 6-2,93,674,713,40
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Madison Brengle,Arina Rodionova,6-2 6-2,84,154,786,417
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Dayana Yastremska,Astra Sharma,6-3 6-7(4) 7-6(2),25,126,1880,529
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Kirsten Flipkens,Rebecca Peterson,7-6(1) 6-4,72,48,878,1225
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Jessica Pegula,Marie Bouzkova,3-6 6-2 7-6(3),63,46,983,1274
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Kateryna Baindl,Whitney Osuigwe,6-3 7-5,99,143,658,447
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Petra Kvitova,Irina Camelia Begu,6-3 6-2,12,73,3566,872
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Madison Keys,Timea Babos,6-1 6-1,14,101,2962,650
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Aliona Bolsova,Jil Teichmann,7-6(3) 6-2,103,52,645,1164
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Alize Cornet,Lauren Davis,6-3 1-6 6-0,56,65,1060,967
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Ysaline Bonaventure,Shuai Zhang,4-6 6-3 6-2,121,38,574,1475
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Donna Vekic,Kristyna Pliskova,3-6 7-6(6) 6-4,24,66,1880,960
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Patricia Maria Tig,Kurumi Nara,6-1 6-0,88,142,759,449
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Tsvetana Pironkova,Liudmila Samsonova,6-2 6-3,,120,,576
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Garbine Muguruza,Nao Hibino,6-4 6-4,16,78,2711,838
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Maria Sakkari,Stefanie Voegele,6-3 3-6 7-5,22,114,2130,612
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Bernarda Pera,Zarina Diyas,7-6(4) 6-0,61,69,1015,918
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Katrina Scott,Natalia Vikhlyantseva,7-6(3) 6-2,637,131,46,519
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Amanda Anisimova,Viktoriya Tomova,7-5 7-5,28,133,1775,505
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Sloane Stephens,Mihaela Buzarnescu,6-3 6-3,39,122,1453,558
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Olga Govortsova,Asia Muhammad,6-1 6-2,130,194,520,323
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Margarita Gasparyan,Monica Puig,6-3 6-7(0) 6-0,117,91,601,722
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Serena Williams,Kristie Ahn,7-5 6-3,8,96,4080,698
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Aryna Sabalenka,Oceane Dodin,7-6(1) 6-4,11,115,3615,611
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Victoria Azarenka,Barbara Haas,6-1 6-2,27,139,1832,469
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Sachia Vickery,Taylor Townsend,6-2 6-4,160,79,399,836
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Iga Swiatek,Veronika Kudermetova,6-3 6-3,53,42,1139,1388
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Karolina Muchova,Venus Williams,6-3 7-5,26,67,1872,929
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Anna Kalinskaya,Nina Stojanovic,6-4 6-3,110,86,625,761
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Sorana Cirstea,Christina Mchale,6-4 7-5,77,75,839,857
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Johanna Konta,Heather Watson,7-6(7) 6-1,13,54,3152,1122
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Elise Mertens,Laura Siegemund,6-2 6-2,18,64,2360,971
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Sara Sorribes Tormo,Claire Liu,6-2 6-4,82,238,798,253
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Caty Mcnally,Viktoria Hruncakova,6-4 6-1,124,85,544,775
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Ekaterina Alexandrova,Kim Clijsters,3-6 7-5 6-1,29,,1775,
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Ons Jabeur,Katarzyna Kawa,6-2 7-6(6),31,125,1573,531
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Kaia Kanepi,Katerina Siniakova,6-1 6-2,100,57,656,1045
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Leylah Fernandez,Vera Zvonareva,6-4 7-5,104,178,645,351
+Us Open,Grand Slam,2020-08-31,Hard,R128,3,Sofia Kenin,Yanina Wickmayer,6-2 6-2,4,146,4590,435
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Caroline Garcia,Karolina Pliskova,6-1 7-6(2),50,3,1205,5205
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Jennifer Brady,Catherine Cartan Bellis,6-1 6-2,41,188,1395,330
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Angelique Kerber,Anna Lena Friedsam,6-3 7-6(6),23,109,2040,629
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Ann Li,Alison Riske Amritraj,6-0 6-3,128,20,526,2256
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Aliaksandra Sasnovich,Marketa Vondrousova,6-1 6-2,106,19,638,2308
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Yulia Putintseva,Vera Lapko,6-3 6-3,35,351,1525,137
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Varvara Gracheva,Kristina Mladenovic,1-6 7-6(2) 6-0,102,44,646,1335
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Petra Martic,Kateryna Bondarenko,6-3 6-4,15,349,2850,141
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Naomi Osaka,Camila Giorgi,6-1 6-2,9,74,4020,870
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Marta Kostyuk,Anastasija Sevastova,6-3 7-6(5),137,45,477,1288
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Magda Linette,Danka Kovinic,6-1 6-7(2) 7-6(4),37,92,1482,714
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Anett Kontaveit,Kaja Juvan,6-4 6-1,21,113,2220,613
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Shelby Rogers,Elena Rybakina,7-5 6-1,93,17,713,2471
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Madison Brengle,Dayana Yastremska,6-2 6-3,84,25,786,1880
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Jessica Pegula,Kirsten Flipkens,7-6(1) 6-7(3) 6-3,63,72,983,878
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Petra Kvitova,Kateryna Baindl,7-6(3) 6-2,12,99,3566,658
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Madison Keys,Aliona Bolsova,6-2 6-1,14,103,2962,645
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Alize Cornet,Ysaline Bonaventure,7-6(4) 6-3,56,121,1060,574
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Donna Vekic,Patricia Maria Tig,6-2 6-1,24,88,1880,759
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Tsvetana Pironkova,Garbine Muguruza,7-5 6-3,,16,,2711
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Maria Sakkari,Bernarda Pera,2-6 6-3 6-2,22,61,2130,1015
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Amanda Anisimova,Katrina Scott,4-6 6-4 6-1,28,637,1775,46
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Sloane Stephens,Olga Govortsova,6-2 6-2,39,130,1453,520
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Serena Williams,Margarita Gasparyan,6-2 6-4,8,117,4080,601
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Victoria Azarenka,Aryna Sabalenka,6-1 6-3,27,11,1832,3615
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Iga Swiatek,Sachia Vickery,6-7(5) 6-3 6-4,53,160,1139,399
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Karolina Muchova,Anna Kalinskaya,6-3 7-6(4),26,110,1872,625
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Sorana Cirstea,Johanna Konta,2-6 7-6(5) 6-4,77,13,839,3152
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Elise Mertens,Sara Sorribes Tormo,6-3 7-5,18,82,2360,798
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Caty Mcnally,Ekaterina Alexandrova,4-6 6-3 7-6(2),124,29,544,1775
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Ons Jabeur,Kaia Kanepi,7-6(8) 6-0,31,100,1573,656
+Us Open,Grand Slam,2020-08-31,Hard,R64,3,Sofia Kenin,Leylah Fernandez,6-4 6-3,4,104,4590,645
+Us Open,Grand Slam,2020-08-31,Hard,R32,3,Jennifer Brady,Caroline Garcia,6-3 6-3,41,50,1395,1205
+Us Open,Grand Slam,2020-08-31,Hard,R32,3,Angelique Kerber,Ann Li,6-3 6-4,23,128,2040,526
+Us Open,Grand Slam,2020-08-31,Hard,R32,3,Yulia Putintseva,Aliaksandra Sasnovich,3-6 6-2 6-1,35,106,1525,638
+Us Open,Grand Slam,2020-08-31,Hard,R32,3,Petra Martic,Varvara Gracheva,6-3 6-3,15,102,2850,646
+Us Open,Grand Slam,2020-08-31,Hard,R32,3,Naomi Osaka,Marta Kostyuk,6-3 6-7(4) 6-2,9,137,4020,477
+Us Open,Grand Slam,2020-08-31,Hard,R32,3,Anett Kontaveit,Magda Linette,6-3 6-2,21,37,2220,1482
+Us Open,Grand Slam,2020-08-31,Hard,R32,3,Shelby Rogers,Madison Brengle,6-2 6-4,93,84,713,786
+Us Open,Grand Slam,2020-08-31,Hard,R32,3,Petra Kvitova,Jessica Pegula,6-4 6-3,12,63,3566,983
+Us Open,Grand Slam,2020-08-31,Hard,R32,3,Alize Cornet,Madison Keys,7-6(4) 3-2 RET,56,14,1060,2962
+Us Open,Grand Slam,2020-08-31,Hard,R32,3,Tsvetana Pironkova,Donna Vekic,6-4 6-1,,24,,1880
+Us Open,Grand Slam,2020-08-31,Hard,R32,3,Maria Sakkari,Amanda Anisimova,6-3 6-1,22,28,2130,1775
+Us Open,Grand Slam,2020-08-31,Hard,R32,3,Serena Williams,Sloane Stephens,2-6 6-2 6-2,8,39,4080,1453
+Us Open,Grand Slam,2020-08-31,Hard,R32,3,Victoria Azarenka,Iga Swiatek,6-4 6-2,27,53,1832,1139
+Us Open,Grand Slam,2020-08-31,Hard,R32,3,Karolina Muchova,Sorana Cirstea,6-3 2-6 7-6(7),26,77,1872,839
+Us Open,Grand Slam,2020-08-31,Hard,R32,3,Elise Mertens,Caty Mcnally,7-5 6-1,18,124,2360,544
+Us Open,Grand Slam,2020-08-31,Hard,R32,3,Sofia Kenin,Ons Jabeur,7-6(4) 6-3,4,31,4590,1573
+Us Open,Grand Slam,2020-08-31,Hard,R16,3,Jennifer Brady,Angelique Kerber,6-1 6-4,41,23,1395,2040
+Us Open,Grand Slam,2020-08-31,Hard,R16,3,Yulia Putintseva,Petra Martic,6-3 2-6 6-4,35,15,1525,2850
+Us Open,Grand Slam,2020-08-31,Hard,R16,3,Naomi Osaka,Anett Kontaveit,6-3 6-4,9,21,4020,2220
+Us Open,Grand Slam,2020-08-31,Hard,R16,3,Shelby Rogers,Petra Kvitova,7-6(5) 3-6 7-6(6),93,12,713,3566
+Us Open,Grand Slam,2020-08-31,Hard,R16,3,Tsvetana Pironkova,Alize Cornet,6-4 6-7(5) 6-3,,56,,1060
+Us Open,Grand Slam,2020-08-31,Hard,R16,3,Serena Williams,Maria Sakkari,6-3 6-7(6) 6-3,8,22,4080,2130
+Us Open,Grand Slam,2020-08-31,Hard,R16,3,Victoria Azarenka,Karolina Muchova,5-7 6-1 6-4,27,26,1832,1872
+Us Open,Grand Slam,2020-08-31,Hard,R16,3,Elise Mertens,Sofia Kenin,6-3 6-3,18,4,2360,4590
+Us Open,Grand Slam,2020-08-31,Hard,QF,3,Jennifer Brady,Yulia Putintseva,6-3 6-2,41,35,1395,1525
+Us Open,Grand Slam,2020-08-31,Hard,QF,3,Naomi Osaka,Shelby Rogers,6-3 6-4,9,93,4020,713
+Us Open,Grand Slam,2020-08-31,Hard,QF,3,Serena Williams,Tsvetana Pironkova,4-6 6-3 6-2,8,,4080,
+Us Open,Grand Slam,2020-08-31,Hard,QF,3,Victoria Azarenka,Elise Mertens,6-1 6-0,27,18,1832,2360
+Us Open,Grand Slam,2020-08-31,Hard,SF,3,Naomi Osaka,Jennifer Brady,7-6(1) 3-6 6-3,9,41,4020,1395
+Us Open,Grand Slam,2020-08-31,Hard,SF,3,Victoria Azarenka,Serena Williams,1-6 6-3 6-3,27,8,1832,4080
+Us Open,Grand Slam,2020-08-31,Hard,F,3,Naomi Osaka,Victoria Azarenka,1-6 6-3 6-3,9,27,4020,1832
+Istanbul,I,2020-09-07,Clay,F,3,Patricia Maria Tig,Eugenie Bouchard,2-6 6-1 7-6(4),88,272,759,214
+Istanbul,I,2020-09-07,Clay,SF,3,Eugenie Bouchard,Paula Badosa,6-3 6-2,272,94,214,706
+Istanbul,I,2020-09-07,Clay,SF,3,Patricia Maria Tig,Tereza Martincova,6-3 6-3,88,136,759,488
+Istanbul,I,2020-09-07,Clay,QF,3,Eugenie Bouchard,Danka Kovinic,3-6 6-4 7-5,272,92,214,714
+Istanbul,I,2020-09-07,Clay,QF,3,Paula Badosa,Polona Hercog,4-6 6-3 6-4,94,49,706,1205
+Istanbul,I,2020-09-07,Clay,QF,3,Tereza Martincova,Aliaksandra Sasnovich,6-2 6-3,136,106,488,638
+Istanbul,I,2020-09-07,Clay,QF,3,Patricia Maria Tig,Rebecca Peterson,6-3 6-1,88,48,759,1225
+Istanbul,I,2020-09-07,Clay,R16,3,Eugenie Bouchard,Svetlana Kuznetsova,7-6(3) 6-7(5) 6-2,272,34,214,1527
+Istanbul,I,2020-09-07,Clay,R16,3,Danka Kovinic,Alison Van Uytvanck,6-3 6-4,92,60,714,1035
+Istanbul,I,2020-09-07,Clay,R16,3,Polona Hercog,Jasmine Paolini,7-5 6-4,49,97,1205,689
+Istanbul,I,2020-09-07,Clay,R16,3,Paula Badosa,Sara Sorribes Tormo,6-1 6-4,94,82,706,798
+Istanbul,I,2020-09-07,Clay,R16,3,Aliaksandra Sasnovich,Anna Karolina Schmiedlova,6-7(5) 6-4 6-3,106,182,638,342
+Istanbul,I,2020-09-07,Clay,R16,3,Tereza Martincova,Caroline Garcia,6-1 6-4,136,50,488,1205
+Istanbul,I,2020-09-07,Clay,R16,3,Patricia Maria Tig,Misaki Doi,6-2 6-0,88,81,759,818
+Istanbul,I,2020-09-07,Clay,R16,3,Rebecca Peterson,Margarita Gasparyan,3-2 RET,48,117,1225,601
+Istanbul,I,2020-09-07,Clay,R32,3,Eugenie Bouchard,Viktoriya Tomova,6-2 6-4,272,133,214,505
+Istanbul,I,2020-09-07,Clay,R32,3,Danka Kovinic,Kateryna Bondarenko,7-5 6-2,92,349,714,141
+Istanbul,I,2020-09-07,Clay,R32,3,Alison Van Uytvanck,Viktoria Hruncakova,6-3 6-4,60,85,1035,775
+Istanbul,I,2020-09-07,Clay,R32,3,Polona Hercog,Berfu Cengiz,6-2 6-3,49,387,1205,120
+Istanbul,I,2020-09-07,Clay,R32,3,Jasmine Paolini,Stefanie Voegele,6-1 4-6 6-3,97,114,689,612
+Istanbul,I,2020-09-07,Clay,R32,3,Paula Badosa,Katarina Zavatska,6-1 6-2,94,108,706,631
+Istanbul,I,2020-09-07,Clay,R32,3,Sara Sorribes Tormo,Heather Watson,3-2 RET,82,54,798,1122
+Istanbul,I,2020-09-07,Clay,R32,3,Aliaksandra Sasnovich,Zarina Diyas,3-6 7-5 6-1,106,69,638,918
+Istanbul,I,2020-09-07,Clay,R32,3,Anna Karolina Schmiedlova,Kaja Juvan,7-5 1-6 6-4,182,113,342,613
+Istanbul,I,2020-09-07,Clay,R32,3,Tereza Martincova,Greet Minnen,7-6(5) 6-3,136,107,488,636
+Istanbul,I,2020-09-07,Clay,R32,3,Caroline Garcia,Cagla Buyukakcay,6-4 0-6 7-5,50,186,1205,336
+Istanbul,I,2020-09-07,Clay,R32,3,Misaki Doi,Ellen Perez,6-7(4) 7-5 6-1,81,248,818,246
+Istanbul,I,2020-09-07,Clay,R32,3,Patricia Maria Tig,Olga Danilovic,6-3 7-5,88,174,759,363
+Istanbul,I,2020-09-07,Clay,R32,3,Margarita Gasparyan,Pemra Ozgen,6-2 6-0,117,214,601,287
+Rome,P,2020-09-14,Clay,F,3,Simona Halep,Karolina Pliskova,6-0 2-1 RET,2,4,6356,5205
+Rome,P,2020-09-14,Clay,SF,3,Simona Halep,Garbine Muguruza,6-3 4-6 6-4,2,17,6356,2771
+Rome,P,2020-09-14,Clay,SF,3,Karolina Pliskova,Marketa Vondrousova,6-2 6-4,4,19,5205,2378
+Rome,P,2020-09-14,Clay,QF,3,Simona Halep,Yulia Putintseva,6-2 2-0 RET,2,30,6356,1825
+Rome,P,2020-09-14,Clay,QF,3,Garbine Muguruza,Victoria Azarenka,3-6 6-3 6-4,17,14,2771,3122
+Rome,P,2020-09-14,Clay,QF,3,Marketa Vondrousova,Elina Svitolina,6-3 6-0,19,6,2378,4580
+Rome,P,2020-09-14,Clay,QF,3,Karolina Pliskova,Elise Mertens,6-3 3-6 6-0,4,20,5205,2360
+Rome,P,2020-09-14,Clay,R16,3,Simona Halep,Dayana Yastremska,7-5 6-4,2,29,6356,1880
+Rome,P,2020-09-14,Clay,R16,3,Yulia Putintseva,Elena Rybakina,4-6 7-6(3) 6-2,30,18,1825,2501
+Rome,P,2020-09-14,Clay,R16,3,Victoria Azarenka,Daria Kasatkina,6-6 RET,14,74,3122,905
+Rome,P,2020-09-14,Clay,R16,3,Garbine Muguruza,Johanna Konta,6-4 6-1,17,13,2771,3152
+Rome,P,2020-09-14,Clay,R16,3,Marketa Vondrousova,Polona Hercog,1-6 6-1 7-6(5),19,50,2378,1235
+Rome,P,2020-09-14,Clay,R16,3,Elina Svitolina,Svetlana Kuznetsova,7-6(6) 6-4,6,38,4580,1527
+Rome,P,2020-09-14,Clay,R16,3,Elise Mertens,Danka Kovinic,6-4 6-4,20,86,2360,812
+Rome,P,2020-09-14,Clay,R16,3,Karolina Pliskova,Anna Blinkova,6-4 6-3,4,65,5205,984
+Rome,P,2020-09-14,Clay,R32,3,Simona Halep,Jasmine Paolini,6-3 6-4,2,99,6356,707
+Rome,P,2020-09-14,Clay,R32,3,Dayana Yastremska,Amanda Anisimova,4-6 7-6(3) 6-4,29,27,1880,1905
+Rome,P,2020-09-14,Clay,R32,3,Elena Rybakina,Marie Bouzkova,7-5 7-6(3),18,47,2501,1274
+Rome,P,2020-09-14,Clay,R32,3,Yulia Putintseva,Petra Martic,6-3 6-7(2) 6-4,30,16,1825,2850
+Rome,P,2020-09-14,Clay,R32,3,Victoria Azarenka,Sofia Kenin,6-0 6-0,14,5,3122,4700
+Rome,P,2020-09-14,Clay,R32,3,Daria Kasatkina,Katerina Siniakova,6-2 6-3,74,61,905,1045
+Rome,P,2020-09-14,Clay,R32,3,Garbine Muguruza,Coco Gauff,7-6(3) 3-6 6-3,17,53,2771,1174
+Rome,P,2020-09-14,Clay,R32,3,Johanna Konta,Irina Camelia Begu,6-0 6-4,13,77,3152,872
+Rome,P,2020-09-14,Clay,R32,3,Polona Hercog,Kiki Bertens,6-4 6-4,50,8,1235,4335
+Rome,P,2020-09-14,Clay,R32,3,Marketa Vondrousova,Arantxa Rus,6-3 6-3,19,71,2378,929
+Rome,P,2020-09-14,Clay,R32,3,Svetlana Kuznetsova,Anett Kontaveit,4-6 7-5 6-3,38,21,1527,2330
+Rome,P,2020-09-14,Clay,R32,3,Elina Svitolina,Anastasia Pavlyuchenkova,6-3 7-6(4),6,36,4580,1540
+Rome,P,2020-09-14,Clay,R32,3,Danka Kovinic,Belinda Bencic,6-3 6-1,86,10,812,4010
+Rome,P,2020-09-14,Clay,R32,3,Elise Mertens,Magda Linette,6-2 6-4,20,35,2360,1542
+Rome,P,2020-09-14,Clay,R32,3,Anna Blinkova,Aliona Bolsova,4-6 6-1 7-6(4),65,107,984,645
+Rome,P,2020-09-14,Clay,R32,3,Karolina Pliskova,Barbora Strycova,6-3 6-3,4,37,5205,1530
+Rome,P,2020-09-14,Clay,R64,3,Jasmine Paolini,Anastasija Sevastova,6-2 6-3,99,46,707,1288
+Rome,P,2020-09-14,Clay,R64,3,Dayana Yastremska,Camila Giorgi,7-5 6-7(5) 6-4,29,69,1880,930
+Rome,P,2020-09-14,Clay,R64,3,Amanda Anisimova,Donna Vekic,7-6(4) 7-6(6),27,28,1905,1880
+Rome,P,2020-09-14,Clay,R64,3,Elena Rybakina,Ekaterina Alexandrova,6-0 6-4,18,31,2501,1775
+Rome,P,2020-09-14,Clay,R64,3,Marie Bouzkova,Ajla Tomljanovic,6-3 6-4,47,63,1274,1035
+Rome,P,2020-09-14,Clay,R64,3,Yulia Putintseva,Rebecca Peterson,6-2 6-4,30,49,1825,1255
+Rome,P,2020-09-14,Clay,R64,3,Victoria Azarenka,Venus Williams,7-6(7) 6-2,14,70,3122,929
+Rome,P,2020-09-14,Clay,R64,3,Daria Kasatkina,Vera Zvonareva,6-2 6-2,74,181,905,361
+Rome,P,2020-09-14,Clay,R64,3,Katerina Siniakova,Angelique Kerber,6-3 6-1,61,22,1045,2270
+Rome,P,2020-09-14,Clay,R64,3,Garbine Muguruza,Sloane Stephens,6-3 6-3,17,33,2771,1573
+Rome,P,2020-09-14,Clay,R64,3,Coco Gauff,Ons Jabeur,6-4 6-3,53,34,1174,1573
+Rome,P,2020-09-14,Clay,R64,3,Irina Camelia Begu,Elisabetta Cocciaretto,6-2 6-2,77,128,872,549
+Rome,P,2020-09-14,Clay,R64,3,Polona Hercog,Kaja Juvan,4-6 6-4 6-1,50,102,1235,673
+Rome,P,2020-09-14,Clay,R64,3,Arantxa Rus,Iga Swiatek,7-6(5) 6-3,71,52,929,1199
+Rome,P,2020-09-14,Clay,R64,3,Marketa Vondrousova,Misaki Doi,6-1 4-6 6-4,19,80,2378,846
+Rome,P,2020-09-14,Clay,R64,3,Anett Kontaveit,Caroline Garcia,6-3 7-6(1),21,45,2330,1325
+Rome,P,2020-09-14,Clay,R64,3,Svetlana Kuznetsova,Bernarda Pera,3-6 7-6(3) 6-3,38,60,1527,1075
+Rome,P,2020-09-14,Clay,R64,3,Anastasia Pavlyuchenkova,Shuai Zhang,6-4 6-7(5) 6-1,36,40,1540,1475
+Rome,P,2020-09-14,Clay,R64,3,Danka Kovinic,Julia Goerges,6-1 6-0,86,41,812,1423
+Rome,P,2020-09-14,Clay,R64,3,Magda Linette,Jelena Ostapenko,6-4 6-3,35,43,1542,1360
+Rome,P,2020-09-14,Clay,R64,3,Elise Mertens,Su Wei Hsieh,6-3 6-1,20,62,2360,1035
+Rome,P,2020-09-14,Clay,R64,3,Aliona Bolsova,Alison Riske Amritraj,5-7 7-6(4) 6-3,107,23,645,2256
+Rome,P,2020-09-14,Clay,R64,3,Anna Blinkova,Jil Teichmann,6-3 6-3,65,54,984,1164
+Rome,P,2020-09-14,Clay,R64,3,Barbora Strycova,Veronika Kudermetova,6-3 6-3,37,42,1530,1388
+Strasbourg,I,2020-09-21,Clay,F,3,Elina Svitolina,Elena Rybakina,6-4 1-6 6-2,5,18,4740,2546
+Strasbourg,I,2020-09-21,Clay,SF,3,Elena Rybakina,Nao Hibino,6-3 6-4,18,84,2546,838
+Strasbourg,I,2020-09-21,Clay,SF,3,Elina Svitolina,Aryna Sabalenka,6-2 4-6 6-4,5,12,4740,3615
+Strasbourg,I,2020-09-21,Clay,QF,3,Nao Hibino,Jelena Ostapenko,7-6(2) 7-6(4),84,43,838,1360
+Strasbourg,I,2020-09-21,Clay,QF,3,Elena Rybakina,Shuai Zhang,6-3 6-2,18,40,2546,1475
+Strasbourg,I,2020-09-21,Clay,QF,3,Aryna Sabalenka,Katerina Siniakova,2-6 6-3 6-3,12,62,3615,1045
+Strasbourg,I,2020-09-21,Clay,QF,3,Elina Svitolina,Jil Teichmann,6-4 6-3,5,54,4740,1164
+Strasbourg,I,2020-09-21,Clay,R16,3,Jelena Ostapenko,Kiki Bertens,2-6 6-4 4-2 RET,43,8,1360,4335
+Strasbourg,I,2020-09-21,Clay,R16,3,Nao Hibino,Zarina Diyas,7-5 6-3,84,76,838,918
+Strasbourg,I,2020-09-21,Clay,R16,3,Shuai Zhang,Clara Burel,6-3 7-6(3),40,415,1475,109
+Strasbourg,I,2020-09-21,Clay,R16,3,Elena Rybakina,Alize Cornet,6-3 7-6(8),18,52,2546,1230
+Strasbourg,I,2020-09-21,Clay,R16,3,Katerina Siniakova,Ekaterina Alexandrova,6-2 6-4,62,31,1045,1775
+Strasbourg,I,2020-09-21,Clay,R16,3,Aryna Sabalenka,Anna Blinkova,1-6 6-4 6-2,12,59,3615,1104
+Strasbourg,I,2020-09-21,Clay,R16,3,Jil Teichmann,Anastasia Pavlyuchenkova,7-6(3) 7-5,54,38,1164,1570
+Strasbourg,I,2020-09-21,Clay,R16,3,Elina Svitolina,Magda Linette,7-6(0) 7-5,5,36,4740,1573
+Strasbourg,I,2020-09-21,Clay,R32,3,Jelena Ostapenko,Lauren Davis,6-2 6-3,43,68,1360,967
+Strasbourg,I,2020-09-21,Clay,R32,3,Zarina Diyas,Christina Mchale,6-7(4) 7-5 7-6(3),76,81,918,857
+Strasbourg,I,2020-09-21,Clay,R32,3,Nao Hibino,Sloane Stephens,6-2 3-6 6-1,84,34,838,1573
+Strasbourg,I,2020-09-21,Clay,R32,3,Clara Burel,Kateryna Bondarenko,3-6 6-1 6-4,415,287,109,212
+Strasbourg,I,2020-09-21,Clay,R32,3,Shuai Zhang,Ajla Tomljanovic,3-6 6-4 6-2,40,64,1475,1035
+Strasbourg,I,2020-09-21,Clay,R32,3,Alize Cornet,Polona Hercog,6-3 6-4,52,47,1230,1310
+Strasbourg,I,2020-09-21,Clay,R32,3,Elena Rybakina,Greet Minnen,7-5 6-4,18,111,2546,636
+Strasbourg,I,2020-09-21,Clay,R32,3,Ekaterina Alexandrova,Storm Hunter,6-1 6-0,31,277,1775,221
+Strasbourg,I,2020-09-21,Clay,R32,3,Katerina Siniakova,Bernarda Pera,4-6 7-6(3) 6-1,62,61,1045,1075
+Strasbourg,I,2020-09-21,Clay,R32,3,Anna Blinkova,Myrtille Georges,6-1 6-2,59,294,1104,204
+Strasbourg,I,2020-09-21,Clay,R32,3,Aryna Sabalenka,Ellen Perez,6-4 6-3,12,240,3615,263
+Strasbourg,I,2020-09-21,Clay,R32,3,Jil Teichmann,Amanda Anisimova,6-2 6-3,54,29,1164,1905
+Strasbourg,I,2020-09-21,Clay,R32,3,Anastasia Pavlyuchenkova,Alison Van Uytvanck,6-3 7-5,38,65,1570,1035
+Strasbourg,I,2020-09-21,Clay,R32,3,Magda Linette,Pauline Parmentier,6-4 6-3,36,164,1573,418
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Simona Halep,Sara Sorribes Tormo,6-4 6-0,2,70,7255,945
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Irina Camelia Begu,Jil Teichmann,6-4 4-6 6-3,73,53,932,1206
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Bernarda Pera,Catherine Cartan Bellis,7-6(3) 6-1,62,171,1075,400
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Amanda Anisimova,Tamara Korpatsch,6-2 6-0,29,123,1905,601
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Daria Saville,Dayana Yastremska,6-4 6-3,788,28,26,1925
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Eugenie Bouchard,Anna Kalinskaya,6-4 6-4,168,108,411,643
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Su Wei Hsieh,Barbara Haas,6-3 7-6(1),63,143,1035,470
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Iga Swiatek,Marketa Vondrousova,6-1 6-2,54,19,1200,2538
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Coco Gauff,Johanna Konta,6-3 6-3,51,13,1234,3152
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Martina Trevisan,Camila Giorgi,7-5 3-0 RET,159,75,429,930
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Kamilla Rakhimova,Shelby Rogers,6-2 6-3,182,55,362,1133
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Maria Sakkari,Ajla Tomljanovic,6-0 7-5,24,64,2240,1035
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Anastasia Pavlyuchenkova,Svetlana Kuznetsova,6-1 2-6 6-1,38,33,1570,1631
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Katerina Siniakova,Lauren Davis,7-6(5) 6-2,61,68,1075,967
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Sara Errani,Monica Puig,6-2 6-1,150,98,446,722
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Kiki Bertens,Katarina Zavatska,2-6 6-2 6-0,8,112,4335,633
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Elina Svitolina,Varvara Gracheva,7-6(2) 6-4,5,89,4960,778
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Renata Zarazua,Elsa Jacquemot,6-1 6-2,178,525,378,71
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Astra Sharma,Anna Blinkova,6-3 2-6 7-5,134,58,529,1114
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Ekaterina Alexandrova,Maddison Inglis,6-3 6-3,31,124,1775,586
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Caroline Garcia,Anett Kontaveit,6-4 3-6 6-4,45,21,1325,2330
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Aliaksandra Sasnovich,Anna Lena Friedsam,6-2 2-6 6-3,96,104,738,680
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Kaia Kanepi,Marie Bouzkova,4-6 6-4 6-2,106,46,656,1314
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Elise Mertens,Margarita Gasparyan,6-2 6-3,20,122,2490,601
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Victoria Azarenka,Danka Kovinic,6-1 6-2,14,74,3122,932
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Anna Karolina Schmiedlova,Venus Williams,6-4 6-4,161,76,427,929
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Nadia Podoroska,Greet Minnen,6-2 6-1,131,110,545,641
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Yulia Putintseva,Kirsten Flipkens,6-1 6-2,27,80,1955,878
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Barbora Strycova,Varvara Lepchenko,7-5 6-2,37,184,1570,359
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Barbora Krejcikova,Nina Stojanovic,6-3 7-5,114,91,626,761
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Tsvetana Pironkova,Andrea Petkovic,6-3 6-3,157,95,430,750
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Serena Williams,Kristie Ahn,7-6(2) 6-0,9,102,4080,698
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Aryna Sabalenka,Jessica Pegula,6-3 6-1,12,60,3615,1103
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Daria Kasatkina,Harmony Tan,6-2 6-1,71,238,935,270
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Nao Hibino,Marta Kostyuk,6-4 6-0,72,119,933,605
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Ons Jabeur,Zarina Diyas,4-6 6-3 6-1,35,77,1573,928
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Clara Tauson,Jennifer Brady,6-4 3-6 9-7,188,25,354,2165
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Danielle Collins,Monica Niculescu,2-6 6-2 6-1,57,141,1115,480
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Kristyna Pliskova,Viktoria Hruncakova,6-1 6-2,69,90,960,775
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Garbine Muguruza,Tamara Zidansek,7-5 4-6 8-6,15,83,3016,840
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Elena Rybakina,Sorana Cirstea,6-0 6-3,18,84,2666,839
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Fiona Ferro,Heather Watson,7-6(4) 6-4,49,56,1267,1130
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Patricia Maria Tig,Stefanie Voegele,7-5 7-5,59,117,1105,618
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Christina Mchale,Karolina Muchova,6-2 6-4,82,26,857,1982
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Irina Bara,Donna Vekic,6-3 6-4,142,30,479,1880
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Alison Van Uytvanck,Rebecca Peterson,2-6 6-3 6-1,65,50,1035,1255
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Ana Bogdan,Timea Babos,6-4 6-2,93,107,755,650
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Sofia Kenin,Liudmila Samsonova,6-4 3-6 6-3,6,125,4700,576
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Petra Kvitova,Oceane Dodin,6-3 7-5,11,118,3736,614
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Jasmine Paolini,Aliona Bolsova,6-4 6-3,94,97,755,726
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Polona Hercog,Diane Parry,6-4 6-2,47,305,1310,186
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Leylah Fernandez,Magda Linette,1-6 6-2 6-3,100,36,714,1573
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Kaja Juvan,Angelique Kerber,6-3 6-3,103,22,693,2271
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Clara Burel,Arantxa Rus,6-7(7) 7-6(2) 6-3,357,67,139,971
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Alize Cornet,Chloe Paquet,6-3 6-2,52,185,1230,359
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Shuai Zhang,Madison Keys,6-3 7-6(2),39,16,1523,2962
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Petra Martic,Misaki Doi,7-6(2) 7-5,17,81,2850,863
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Veronika Kudermetova,Pauline Parmentier,6-2 6-3,42,164,1388,418
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Laura Siegemund,Kristina Mladenovic,7-5 6-3,66,44,971,1335
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Julia Goerges,Alison Riske Amritraj,6-3 6-7(4) 6-1,41,23,1423,2256
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Sloane Stephens,Vitalia Diatchenko,6-2 6-2,34,116,1573,619
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Paula Badosa,Kateryna Baindl,6-2 4-6 6-3,87,99,798,718
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Jelena Ostapenko,Madison Brengle,6-2 6-1,43,78,1365,906
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,3,Karolina Pliskova,Mayar Sherif,6-7(9) 6-2 6-4,4,172,5205,400
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Simona Halep,Irina Camelia Begu,6-3 6-4,2,73,7255,932
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Amanda Anisimova,Bernarda Pera,6-2 6-0,29,62,1905,1075
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Eugenie Bouchard,Daria Saville,5-7 6-4 6-3,168,788,411,26
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Iga Swiatek,Su Wei Hsieh,6-1 6-4,54,63,1200,1035
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Martina Trevisan,Coco Gauff,4-6 6-2 7-5,159,51,429,1234
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Maria Sakkari,Kamilla Rakhimova,7-6(0) 6-2,24,182,2240,362
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Katerina Siniakova,Anastasia Pavlyuchenkova,6-3 6-4,61,38,1075,1570
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Kiki Bertens,Sara Errani,7-6(5) 3-6 9-7,8,150,4335,446
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Elina Svitolina,Renata Zarazua,6-3 0-6 6-2,5,178,4960,378
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Ekaterina Alexandrova,Astra Sharma,6-3 6-3,31,134,1775,529
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Caroline Garcia,Aliaksandra Sasnovich,7-6(5) 6-2,45,96,1325,738
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Elise Mertens,Kaia Kanepi,6-4 7-5,20,106,2490,656
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Anna Karolina Schmiedlova,Victoria Azarenka,6-2 6-2,161,14,427,3122
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Nadia Podoroska,Yulia Putintseva,6-3 1-6 6-2,131,27,545,1955
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Barbora Krejcikova,Barbora Strycova,6-4 3-6 6-3,114,37,626,1570
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Tsvetana Pironkova,Serena Williams,W/O,157,9,430,4080
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Aryna Sabalenka,Daria Kasatkina,7-6(6) 6-0,12,71,3615,935
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Ons Jabeur,Nao Hibino,7-6(4) 6-4,35,72,1573,933
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Danielle Collins,Clara Tauson,6-2 6-3,57,188,1115,354
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Garbine Muguruza,Kristyna Pliskova,6-3 6-2,15,69,3016,960
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Fiona Ferro,Elena Rybakina,6-3 4-6 6-2,49,18,1267,2666
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Patricia Maria Tig,Christina Mchale,6-4 6-3,59,82,1105,857
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Irina Bara,Alison Van Uytvanck,6-1 4-0 RET,142,65,479,1035
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Sofia Kenin,Ana Bogdan,3-6 6-3 6-2,6,93,4700,755
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Petra Kvitova,Jasmine Paolini,6-3 6-3,11,94,3736,755
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Leylah Fernandez,Polona Hercog,6-4 3-6 6-1,100,47,714,1310
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Clara Burel,Kaja Juvan,7-6(6) 6-2,357,103,139,693
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Shuai Zhang,Alize Cornet,6-4 7-6(3),39,52,1523,1230
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Petra Martic,Veronika Kudermetova,6-7(1) 7-5 6-3,17,42,2850,1388
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Laura Siegemund,Julia Goerges,1-6 6-1 6-3,66,41,971,1423
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Paula Badosa,Sloane Stephens,6-4 4-6 6-2,87,34,798,1573
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,3,Jelena Ostapenko,Karolina Pliskova,6-4 6-2,43,4,1365,5205
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,3,Simona Halep,Amanda Anisimova,6-0 6-1,2,29,7255,1905
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,3,Iga Swiatek,Eugenie Bouchard,6-3 6-2,54,168,1200,411
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,3,Martina Trevisan,Maria Sakkari,1-6 7-6(6) 6-3,159,24,429,2240
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,3,Kiki Bertens,Katerina Siniakova,6-2 6-2,8,61,4335,1075
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,3,Elina Svitolina,Ekaterina Alexandrova,6-4 7-5,5,31,4960,1775
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,3,Caroline Garcia,Elise Mertens,1-6 6-4 7-5,45,20,1325,2490
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,3,Nadia Podoroska,Anna Karolina Schmiedlova,6-3 6-2,131,161,545,427
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,3,Barbora Krejcikova,Tsvetana Pironkova,5-7 6-4 6-3,114,157,626,430
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,3,Ons Jabeur,Aryna Sabalenka,7-6(7) 2-6 6-3,35,12,1573,3615
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,3,Danielle Collins,Garbine Muguruza,7-5 2-6 6-4,57,15,1115,3016
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,3,Fiona Ferro,Patricia Maria Tig,7-6(7) 4-6 6-0,49,59,1267,1105
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,3,Sofia Kenin,Irina Bara,6-2 6-0,6,142,4700,479
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,3,Petra Kvitova,Leylah Fernandez,7-5 6-3,11,100,3736,714
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,3,Shuai Zhang,Clara Burel,7-6(2) 7-5,39,357,1523,139
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,3,Laura Siegemund,Petra Martic,6-7(5) 6-3 6-0,66,17,971,2850
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,3,Paula Badosa,Jelena Ostapenko,6-4 6-3,87,43,798,1365
+Roland Garros,Grand Slam,2020-09-28,Clay,R16,3,Iga Swiatek,Simona Halep,6-1 6-2,54,2,1200,7255
+Roland Garros,Grand Slam,2020-09-28,Clay,R16,3,Martina Trevisan,Kiki Bertens,6-4 6-4,159,8,429,4335
+Roland Garros,Grand Slam,2020-09-28,Clay,R16,3,Elina Svitolina,Caroline Garcia,6-1 6-3,5,45,4960,1325
+Roland Garros,Grand Slam,2020-09-28,Clay,R16,3,Nadia Podoroska,Barbora Krejcikova,2-6 6-2 6-3,131,114,545,626
+Roland Garros,Grand Slam,2020-09-28,Clay,R16,3,Danielle Collins,Ons Jabeur,6-4 4-6 6-4,57,35,1115,1573
+Roland Garros,Grand Slam,2020-09-28,Clay,R16,3,Sofia Kenin,Fiona Ferro,2-6 6-2 6-1,6,49,4700,1267
+Roland Garros,Grand Slam,2020-09-28,Clay,R16,3,Petra Kvitova,Shuai Zhang,6-2 6-4,11,39,3736,1523
+Roland Garros,Grand Slam,2020-09-28,Clay,R16,3,Laura Siegemund,Paula Badosa,7-5 6-2,66,87,971,798
+Roland Garros,Grand Slam,2020-09-28,Clay,QF,3,Iga Swiatek,Martina Trevisan,6-3 6-1,54,159,1200,429
+Roland Garros,Grand Slam,2020-09-28,Clay,QF,3,Nadia Podoroska,Elina Svitolina,6-2 6-4,131,5,545,4960
+Roland Garros,Grand Slam,2020-09-28,Clay,QF,3,Sofia Kenin,Danielle Collins,6-4 4-6 6-0,6,57,4700,1115
+Roland Garros,Grand Slam,2020-09-28,Clay,QF,3,Petra Kvitova,Laura Siegemund,6-3 6-3,11,66,3736,971
+Roland Garros,Grand Slam,2020-09-28,Clay,SF,3,Iga Swiatek,Nadia Podoroska,6-2 6-1,54,131,1200,545
+Roland Garros,Grand Slam,2020-09-28,Clay,SF,3,Sofia Kenin,Petra Kvitova,6-4 7-5,6,11,4700,3736
+Roland Garros,Grand Slam,2020-09-28,Clay,F,3,Iga Swiatek,Sofia Kenin,6-4 6-1,54,6,1200,4700
+Ostrava,P,2020-10-19,Hard,F,3,Aryna Sabalenka,Victoria Azarenka,6-2 6-2,12,14,3675,3122
+Ostrava,P,2020-10-19,Hard,SF,3,Victoria Azarenka,Maria Sakkari,6-1 6-3,14,23,3122,2300
+Ostrava,P,2020-10-19,Hard,SF,3,Aryna Sabalenka,Jennifer Brady,6-4 6-4,12,26,3675,2165
+Ostrava,P,2020-10-19,Hard,QF,3,Maria Sakkari,Ons Jabeur,3-6 6-3 6-1,23,32,2300,1803
+Ostrava,P,2020-10-19,Hard,QF,3,Victoria Azarenka,Elise Mertens,6-4 6-1,14,21,3122,2490
+Ostrava,P,2020-10-19,Hard,QF,3,Aryna Sabalenka,Sara Sorribes Tormo,0-6 6-4 6-0,12,73,3675,945
+Ostrava,P,2020-10-19,Hard,QF,3,Jennifer Brady,Veronika Kudermetova,6-7(5) 6-3 6-1,26,47,2165,1388
+Ostrava,P,2020-10-19,Hard,R16,3,Maria Sakkari,Elina Svitolina,6-3 6-3,23,5,2300,5260
+Ostrava,P,2020-10-19,Hard,R16,3,Ons Jabeur,Jelena Ostapenko,6-4 6-4,32,44,1803,1485
+Ostrava,P,2020-10-19,Hard,R16,3,Victoria Azarenka,Barbora Krejcikova,2-6 6-2 6-1,14,85,3122,868
+Ostrava,P,2020-10-19,Hard,R16,3,Elise Mertens,Karolina Muchova,6-4 6-2,21,28,2490,1982
+Ostrava,P,2020-10-19,Hard,R16,3,Sara Sorribes Tormo,Anett Kontaveit,6-1 6-4,73,22,945,2330
+Ostrava,P,2020-10-19,Hard,R16,3,Aryna Sabalenka,Coco Gauff,1-6 7-5 7-6(2),12,55,3675,1284
+Ostrava,P,2020-10-19,Hard,R16,3,Jennifer Brady,Daria Kasatkina,7-5 6-2,26,75,2165,935
+Ostrava,P,2020-10-19,Hard,R16,3,Veronika Kudermetova,Karolina Pliskova,4-6 6-4 6-3,47,6,1388,5205
+Ostrava,P,2020-10-19,Hard,R32,3,Maria Sakkari,Kristyna Pliskova,6-3 6-3,23,68,2300,1020
+Ostrava,P,2020-10-19,Hard,R32,3,Ons Jabeur,Barbora Strycova,6-2 6-2,32,37,1803,1630
+Ostrava,P,2020-10-19,Hard,R32,3,Jelena Ostapenko,Petra Martic,6-3 6-1,44,18,1485,2850
+Ostrava,P,2020-10-19,Hard,R32,3,Barbora Krejcikova,Tereza Martincova,7-5 6-1,85,121,868,620
+Ostrava,P,2020-10-19,Hard,R32,3,Karolina Muchova,Shuai Zhang,6-1 6-1,28,35,1982,1693
+Ostrava,P,2020-10-19,Hard,R32,3,Elise Mertens,Amanda Anisimova,6-2 6-3,21,30,2490,1905
+Ostrava,P,2020-10-19,Hard,R32,3,Anett Kontaveit,Ekaterina Alexandrova,4-6 6-2 7-6(6),22,33,2330,1775
+Ostrava,P,2020-10-19,Hard,R32,3,Sara Sorribes Tormo,Magda Linette,6-1 6-3,73,40,945,1573
+Ostrava,P,2020-10-19,Hard,R32,3,Coco Gauff,Katerina Siniakova,7-5 6-4,55,65,1284,1075
+Ostrava,P,2020-10-19,Hard,R32,3,Daria Kasatkina,Elena Rybakina,6-2 3-6 6-3,75,19,935,2696
+Ostrava,P,2020-10-19,Hard,R32,3,Jennifer Brady,Dayana Yastremska,3-6 7-6(6) 6-1,26,29,2165,1925
+Ostrava,P,2020-10-19,Hard,R32,3,Veronika Kudermetova,Donna Vekic,6-2 6-4,47,31,1388,1880
+Linz,I,2020-11-09,Hard,F,3,Aryna Sabalenka,Elise Mertens,7-5 6-2,11,21,4045,2530
+Linz,I,2020-11-09,Hard,SF,3,Aryna Sabalenka,Barbora Krejcikova,7-5 4-6 6-3,11,74,4045,947
+Linz,I,2020-11-09,Hard,SF,3,Elise Mertens,Ekaterina Alexandrova,2-6 6-1 7-5,21,33,2530,1775
+Linz,I,2020-11-09,Hard,QF,3,Aryna Sabalenka,Oceane Dodin,6-3 3-3 RET,11,115,4045,646
+Linz,I,2020-11-09,Hard,QF,3,Barbora Krejcikova,Aliaksandra Sasnovich,6-3 6-1,74,92,947,798
+Linz,I,2020-11-09,Hard,QF,3,Ekaterina Alexandrova,Nadia Podoroska,6-2 6-1,33,48,1775,1356
+Linz,I,2020-11-09,Hard,QF,3,Elise Mertens,Veronika Kudermetova,6-4 6-1,21,46,2530,1453
+Linz,I,2020-11-09,Hard,R16,3,Aryna Sabalenka,Stefanie Voegele,6-0 6-3,11,124,4045,618
+Linz,I,2020-11-09,Hard,R16,3,Oceane Dodin,Sorana Cirstea,6-4 6-4,115,87,646,839
+Linz,I,2020-11-09,Hard,R16,3,Barbora Krejcikova,Greet Minnen,5-7 7-6(7) 6-4,74,110,947,669
+Linz,I,2020-11-09,Hard,R16,3,Aliaksandra Sasnovich,Jana Fett,3-6 6-1 6-3,92,236,798,272
+Linz,I,2020-11-09,Hard,R16,3,Nadia Podoroska,Camila Giorgi,6-7(4) 6-1 6-4,48,75,1356,940
+Linz,I,2020-11-09,Hard,R16,3,Ekaterina Alexandrova,Varvara Gracheva,7-5 6-1,33,95,1775,778
+Linz,I,2020-11-09,Hard,R16,3,Veronika Kudermetova,Arantxa Rus,6-4 1-6 6-3,46,72,1453,971
+Linz,I,2020-11-09,Hard,R16,3,Elise Mertens,Vera Zvonareva,6-4 5-7 6-2,21,173,2530,411
+Linz,I,2020-11-09,Hard,R32,3,Aryna Sabalenka,Jasmine Paolini,6-4 6-4,11,94,4045,785
+Linz,I,2020-11-09,Hard,R32,3,Stefanie Voegele,Viktoria Hruncakova,7-6(3) 6-3,124,96,618,775
+Linz,I,2020-11-09,Hard,R32,3,Sorana Cirstea,Julia Grabher,2-3 RET,87,225,839,286
+Linz,I,2020-11-09,Hard,R32,3,Oceane Dodin,Jil Teichmann,1-6 6-4 6-2,115,57,646,1206
+Linz,I,2020-11-09,Hard,R32,3,Greet Minnen,Dayana Yastremska,6-4 6-3,110,29,669,1925
+Linz,I,2020-11-09,Hard,R32,3,Barbora Krejcikova,Harmony Tan,6-3 5-7 6-2,74,240,947,270
+Linz,I,2020-11-09,Hard,R32,3,Jana Fett,Tereza Martincova,6-2 3-1 RET,236,121,272,630
+Linz,I,2020-11-09,Hard,R32,3,Aliaksandra Sasnovich,Bernarda Pera,6-3 6-1,92,61,798,1105
+Linz,I,2020-11-09,Hard,R32,3,Nadia Podoroska,Irina Camelia Begu,6-4 6-4,48,76,1356,932
+Linz,I,2020-11-09,Hard,R32,3,Camila Giorgi,Sara Sorribes Tormo,6-3 5-7 6-4,75,65,940,1040
+Linz,I,2020-11-09,Hard,R32,3,Varvara Gracheva,Katarina Zavatska,6-4 7-5,95,118,778,634
+Linz,I,2020-11-09,Hard,R32,3,Ekaterina Alexandrova,Katerina Siniakova,6-3 6-4,33,64,1775,1075
+Linz,I,2020-11-09,Hard,R32,3,Veronika Kudermetova,Barbara Haas,6-0 6-0,46,148,1453,500
+Linz,I,2020-11-09,Hard,R32,3,Arantxa Rus,Tamara Zidansek,6-4 6-4,72,86,971,840
+Linz,I,2020-11-09,Hard,R32,3,Vera Zvonareva,Marta Kostyuk,6-4 6-2,173,98,411,767
+Linz,I,2020-11-09,Hard,R32,3,Elise Mertens,Anhelina Kalinina,2-6 6-1 6-2,21,163,2530,436
+Fed Cup G1 RR: COL vs VEN,D,2020-02-05,Clay,RR,3,Emiliana Arango,Mary Victoria Cancini,6-1 6-2,542,,64,
+Fed Cup G1 RR: COL vs VEN,D,2020-02-05,Clay,RR,3,Camila Osorio,Andrea Gamiz,7-6(4) 6-4,201,506,291,72
+Fed Cup G1 RR: PAR vs COL,D,2020-02-07,Clay,RR,3,Emiliana Arango,Lara Escauriza,6-2 6-1,542,785,64,25
+Fed Cup G1 RR: PAR vs COL,D,2020-02-07,Clay,RR,3,Veronica Cepede Royg,Camila Osorio,6-1 6-3,150,201,406,291
+Fed Cup G1 RR: PAR vs VEN,D,2020-02-06,Clay,RR,3,Lara Escauriza,Aymet Uzcategui,7-5 0-6 6-4,785,,25,
+Fed Cup G1 RR: PAR vs VEN,D,2020-02-06,Clay,RR,3,Veronica Cepede Royg,Andrea Gamiz,6-4 6-3,150,506,406,72
+Fed Cup G1 RR: ARG vs CHI,D,2020-02-06,Clay,RR,3,Nadia Podoroska,Barbara Gatica,6-2 6-3,171,469,343,83
+Fed Cup G1 RR: ARG vs CHI,D,2020-02-06,Clay,RR,3,Paula Ormaechea,Daniela Seguel,6-3 6-3,259,216,220,273
+Fed Cup G1 RR: ARG vs MEX,D,2020-02-05,Clay,RR,3,Nadia Podoroska,Fernanda Contreras Gomez,6-2 6-0,171,462,343,86
+Fed Cup G1 RR: ARG vs MEX,D,2020-02-05,Clay,RR,3,Giuliana Olmos,Paula Ormaechea,6-3 6-4,410,259,105,220
+Fed Cup G1 RR: ARG vs PER,D,2020-02-07,Clay,RR,3,Victoria Bosio,Daianne Hayashida,7-5 6-1,437,,93,
+Fed Cup G1 RR: ARG vs PER,D,2020-02-07,Clay,RR,3,Paula Ormaechea,Romina Ccuno,6-1 6-1,259,985,220,13
+Fed Cup G1 RR: CHI vs MEX,D,2020-02-07,Clay,RR,3,Fernanda Contreras Gomez,Barbara Gatica,4-6 6-3 6-2,462,469,86,83
+Fed Cup G1 RR: CHI vs MEX,D,2020-02-07,Clay,RR,3,Daniela Seguel,Giuliana Olmos,6-2 6-4,216,410,273,105
+Fed Cup G1 RR: CHI vs PER,D,2020-02-05,Clay,RR,3,Barbara Gatica,Dana Guzman,6-1 6-1,469,,83,
+Fed Cup G1 RR: CHI vs PER,D,2020-02-05,Clay,RR,3,Daniela Seguel,Romina Ccuno,6-0 6-0,216,985,273,13
+Fed Cup G1 RR: MEX vs PER,D,2020-02-06,Clay,RR,3,Fernanda Contreras Gomez,Camila Soares,6-0 6-1,462,,86,
+Fed Cup G1 RR: MEX vs PER,D,2020-02-06,Clay,RR,3,Giuliana Olmos,Romina Ccuno,7-6(2) 7-5,410,985,105,13
+Fed Cup G1 PPO: ARG vs COL,D,2020-02-08,Clay,RR,3,Nadia Podoroska,Emiliana Arango,7-5 6-2,171,542,343,64
+Fed Cup G1 PPO: ARG vs COL,D,2020-02-08,Clay,RR,3,Paula Ormaechea,Camila Osorio,6-4 6-4,259,201,220,291
+Fed Cup G1 PPO: PAR vs MEX,D,2020-02-08,Clay,RR,3,Fernanda Contreras Gomez,Lara Escauriza,6-1 1-6 6-3,462,785,86,25
+Fed Cup G1 PPO: PAR vs MEX,D,2020-02-08,Clay,RR,3,Veronica Cepede Royg,Giuliana Olmos,6-1 6-3,150,410,406,105
+Fed Cup G1 REL: VEN vs CHI,D,2020-02-08,Clay,RR,3,Barbara Gatica,Aymet Uzcategui,6-2 6-0,469,,83,
+Fed Cup G1 REL: VEN vs CHI,D,2020-02-08,Clay,RR,3,Andrea Gamiz,Daniela Seguel,7-6(3) 4-6 6-0,506,216,72,273
+Fed Cup G1 RR: CHN vs INA,D,2020-03-04,Hard,RR,3,Saisai Zheng,Janice Tjen,6-1 6-1,34,,1510,
+Fed Cup G1 RR: CHN vs INA,D,2020-03-04,Hard,RR,3,Qiang Wang,Aldila Sutjiadi,6-3 6-3,29,370,1706,123
+Fed Cup G1 RR: CHN vs IND,D,2020-03-03,Hard,RR,3,Shuai Zhang,Rutuja Bhosale,6-4 6-2,35,433,1475,95
+Fed Cup G1 RR: CHN vs IND,D,2020-03-03,Hard,RR,3,Qiang Wang,Ankita Raina,1-6 6-2 6-4,29,160,1706,383
+Fed Cup G1 RR: CHN vs KOR,D,2020-03-07,Hard,RR,3,Saisai Zheng,Su Jeong Jang,6-1 6-0,34,309,1510,170
+Fed Cup G1 RR: CHN vs KOR,D,2020-03-07,Hard,RR,3,Shuai Zhang,Na Lae Han,6-3 7-5,35,182,1475,324
+Fed Cup G1 RR: CHN vs TPE,D,2020-03-05,Hard,RR,3,Saisai Zheng,Ya Yi Yang,6-1 6-2,34,852,1510,20
+Fed Cup G1 RR: CHN vs TPE,D,2020-03-05,Hard,RR,3,Qiang Wang,En Shuo Liang,6-3 6-3,29,205,1706,289
+Fed Cup G1 RR: CHN vs UZB,D,2020-03-06,Hard,RR,3,Saisai Zheng,Yasmina Karimjanova,6-0 6-1,34,,1510,
+Fed Cup G1 RR: CHN vs UZB,D,2020-03-06,Hard,RR,3,Qiang Wang,Sabina Sharipova,6-1 6-3,29,355,1706,129
+Fed Cup G1 RR: INA vs KOR,D,2020-03-06,Hard,RR,3,Su Jeong Jang,Priska Madelyn Nugroho,7-5 6-3,309,,170,
+Fed Cup G1 RR: INA vs KOR,D,2020-03-06,Hard,RR,3,Na Lae Han,Aldila Sutjiadi,6-4 6-1,182,370,324,123
+Fed Cup G1 RR: INA vs UZB,D,2020-03-05,Hard,RR,3,Priska Madelyn Nugroho,Nigina Abduraimova,6-0 6-4,,520,,68
+Fed Cup G1 RR: INA vs UZB,D,2020-03-05,Hard,RR,3,Aldila Sutjiadi,Akgul Amanmuradova,3-6 7-5 6-4,370,398,123,110
+Fed Cup G1 RR: IND vs INA,D,2020-03-07,Hard,RR,3,Priska Madelyn Nugroho,Rutuja Bhosale,6-3 0-6 6-3,,433,,95
+Fed Cup G1 RR: IND vs INA,D,2020-03-07,Hard,RR,3,Ankita Raina,Aldila Sutjiadi,6-3 6-3,160,370,383,123
+Fed Cup G1 RR: IND vs KOR,D,2020-03-05,Hard,RR,3,Rutuja Bhosale,Su Jeong Jang,7-5 6-4,433,309,95,170
+Fed Cup G1 RR: IND vs KOR,D,2020-03-05,Hard,RR,3,Na Lae Han,Ankita Raina,6-4 6-0,182,160,324,383
+Fed Cup G1 RR: IND vs UZB,D,2020-03-04,Hard,RR,3,Rutuja Bhosale,Akgul Amanmuradova,2-6 6-2 7-5,433,398,95,110
+Fed Cup G1 RR: IND vs UZB,D,2020-03-04,Hard,RR,3,Ankita Raina,Sabina Sharipova,7-5 6-1,160,355,383,129
+Fed Cup G1 RR: KOR vs UZB,D,2020-03-03,Hard,RR,3,Su Jeong Jang,Akgul Amanmuradova,6-3 6-4,309,398,170,110
+Fed Cup G1 RR: KOR vs UZB,D,2020-03-03,Hard,RR,3,Na Lae Han,Sabina Sharipova,5-7 6-4 6-3,182,355,324,129
+Fed Cup G1 RR: TPE vs INA,D,2020-03-03,Hard,RR,3,Priska Madelyn Nugroho,Ya Yi Yang,6-4 6-7(10) 6-0,,852,,20
+Fed Cup G1 RR: TPE vs INA,D,2020-03-03,Hard,RR,3,Aldila Sutjiadi,En Shuo Liang,6-2 4-6 6-2,370,205,123,289
+Fed Cup G1 RR: TPE vs IND,D,2020-03-06,Hard,RR,3,Rutuja Bhosale,Ya Yi Yang,6-3 3-6 7-6(6),433,852,95,20
+Fed Cup G1 RR: TPE vs IND,D,2020-03-06,Hard,RR,3,En Shuo Liang,Ankita Raina,3-6 6-2 6-3,205,160,289,383
+Fed Cup G1 RR: TPE vs KOR,D,2020-03-04,Hard,RR,3,Su Jeong Jang,Ya Yi Yang,6-3 6-1,309,852,170,20
+Fed Cup G1 RR: TPE vs KOR,D,2020-03-04,Hard,RR,3,En Shuo Liang,Na Lae Han,6-4 6-2,205,182,289,324
+Fed Cup G1 RR: TPE vs UZB,D,2020-03-07,Hard,RR,3,Ya Yi Yang,Setora Normurodova,6-3 6-0,852,,20,
+Fed Cup G1 RR: TPE vs UZB,D,2020-03-07,Hard,RR,3,Sabina Sharipova,En Shuo Liang,6-2 7-5,355,205,129,289
+Fed Cup G1 RR: CRO vs BUL,D,2020-02-05,Hard,RR,3,Lea Boskovic,Isabella Shinikova,2-6 6-4 6-4,300,165,177,357
+Fed Cup G1 RR: CRO vs BUL,D,2020-02-05,Hard,RR,3,Viktoriya Tomova,Jana Fett,6-2 6-4,143,234,414,247
+Fed Cup G1 RR: UKR vs BUL,D,2020-02-06,Hard,RR,3,Dayana Yastremska,Isabella Shinikova,6-2 6-1,26,165,1785,357
+Fed Cup G1 RR: UKR vs BUL,D,2020-02-06,Hard,RR,3,Elina Svitolina,Viktoriya Tomova,7-6(5) 6-3,4,143,4775,414
+Fed Cup G1 RR: UKR vs CRO,D,2020-02-07,Hard,RR,3,Dayana Yastremska,Lea Boskovic,6-4 6-4,26,300,1785,177
+Fed Cup G1 RR: UKR vs CRO,D,2020-02-07,Hard,RR,3,Elina Svitolina,Jana Fett,6-3 3-6 6-1,4,234,4775,247
+Fed Cup G1 RR: AUT vs GRE,D,2020-02-06,Hard,RR,3,Valentini Grammatikopoulou,Sinja Kraus,6-4 6-4,301,869,176,19
+Fed Cup G1 RR: AUT vs GRE,D,2020-02-06,Hard,RR,3,Julia Grabher,Despina Papamichail,1-6 6-4 7-5,221,258,263,222
+Fed Cup G1 RR: EST vs AUT,D,2020-02-07,Hard,RR,3,Elena Malygina,Melanie Klaffner,7-6(5) 6-2,553,525,61,68
+Fed Cup G1 RR: EST vs AUT,D,2020-02-07,Hard,RR,3,Anett Kontaveit,Julia Grabher,6-1 6-2,22,221,1935,263
+Fed Cup G1 RR: EST vs GRE,D,2020-02-05,Hard,RR,3,Valentini Grammatikopoulou,Elena Malygina,6-4 4-6 7-6(8),301,553,176,61
+Fed Cup G1 RR: EST vs GRE,D,2020-02-05,Hard,RR,3,Anett Kontaveit,Despina Papamichail,3-6 6-3 6-0,22,258,1935,222
+Fed Cup G1 RR: ITA vs AUT,D,2020-02-05,Hard,RR,3,Camila Giorgi,Mira Antonitsch,4-6 6-3 6-0,100,638,654,43
+Fed Cup G1 RR: ITA vs AUT,D,2020-02-05,Hard,RR,3,Jasmine Paolini,Julia Grabher,6-3 6-1,94,221,689,263
+Fed Cup G1 RR: ITA vs EST,D,2020-02-06,Hard,RR,3,Elisabetta Cocciaretto,Elena Malygina,6-1 6-1,153,553,391,61
+Fed Cup G1 RR: ITA vs EST,D,2020-02-06,Hard,RR,3,Anett Kontaveit,Camila Giorgi,6-3 4-6 7-6(4),22,100,1935,654
+Fed Cup G1 RR: ITA vs GRE,D,2020-02-07,Hard,RR,3,Elisabetta Cocciaretto,Dimitra Pavlou,6-1 6-2,153,,391,
+Fed Cup G1 RR: ITA vs GRE,D,2020-02-07,Hard,RR,3,Jasmine Paolini,Michaela Laki,6-1 6-4,94,,689,
+Fed Cup G1 PPO: CRO vs ITA,D,2020-02-08,Hard,RR,3,Elisabetta Cocciaretto,Lea Boskovic,6-3 6-3,153,300,391,177
+Fed Cup G1 PPO: CRO vs ITA,D,2020-02-08,Hard,RR,3,Camila Giorgi,Jana Fett,7-6(4) 6-4,100,234,654,247
+Fed Cup G1 PPO: UKR vs EST,D,2020-02-08,Hard,RR,3,Dayana Yastremska,Elena Malygina,6-3 6-1,26,553,1785,61
+Fed Cup G1 PPO: UKR vs EST,D,2020-02-08,Hard,RR,3,Anett Kontaveit,Elina Svitolina,6-3 6-7(5) 6-2,22,4,1935,4775
+Fed Cup G1 REL: BUL vs GRE,D,2020-02-08,Hard,RR,3,Isabella Shinikova,Valentini Grammatikopoulou,6-3 6-1,165,301,357,176
+Fed Cup G1 REL: BUL vs GRE,D,2020-02-08,Hard,RR,3,Viktoriya Tomova,Despina Papamichail,6-2 6-4,143,258,414,222
+Fed Cup G1 RR: SRB vs LUX,D,2020-02-06,Hard,RR,3,Olga Danilovic,Laura Correia,6-1 6-2,174,,338,
+Fed Cup G1 RR: SRB vs LUX,D,2020-02-06,Hard,RR,3,Eleonora Molinaro,Nina Stojanovic,6-3 6-3,254,82,224,751
+Fed Cup G1 RR: SRB vs SWE,D,2020-02-07,Hard,RR,3,Aleksandra Krunic,Mirjam Bjorklund,6-2 3-6 6-3,193,325,299,156
+Fed Cup G1 RR: SRB vs SWE,D,2020-02-07,Hard,RR,3,Johanna Larsson,Nina Stojanovic,6-1 6-0,232,82,250,751
+Fed Cup G1 RR: SWE vs LUX,D,2020-02-05,Hard,RR,3,Mirjam Bjorklund,Tiffany Cornelius,6-1 6-3,325,,156,
+Fed Cup G1 RR: SWE vs LUX,D,2020-02-05,Hard,RR,3,Eleonora Molinaro,Johanna Larsson,0-6 6-3 6-1,254,232,224,250
+Fed Cup G1 RR: POL vs SLO,D,2020-02-06,Hard,RR,3,Iga Swiatek,Nika Radisic,6-2 6-1,48,529,1127,67
+Fed Cup G1 RR: POL vs SLO,D,2020-02-06,Hard,RR,3,Magda Linette,Tamara Zidansek,7-5 6-4,42,75,1212,790
+Fed Cup G1 RR: POL vs TUR,D,2020-02-07,Hard,RR,3,Iga Swiatek,Berfu Cengiz,6-3 6-0,48,450,1127,91
+Fed Cup G1 RR: POL vs TUR,D,2020-02-07,Hard,RR,3,Magda Linette,Pemra Ozgen,6-0 6-3,42,209,1212,283
+Fed Cup G1 RR: TUR vs SLO,D,2020-02-05,Hard,RR,3,Kaja Juvan,Basak Eraydin,6-4 7-5,123,424,510,98
+Fed Cup G1 RR: TUR vs SLO,D,2020-02-05,Hard,RR,3,Pemra Ozgen,Tamara Zidansek,6-3 5-7 6-2,209,75,283,790
+Fed Cup G1 PPO: POL vs SWE,D,2020-02-08,Hard,RR,3,Iga Swiatek,Mirjam Bjorklund,7-5 4-6 6-3,48,325,1127,156
+Fed Cup G1 PPO: POL vs SWE,D,2020-02-08,Hard,RR,3,Magda Linette,Johanna Larsson,7-5 6-4,42,232,1212,250
+Fed Cup G1 PPO: SRB vs SLO,D,2020-02-08,Hard,RR,3,Kaja Juvan,Olga Danilovic,6-2 6-2,123,174,510,338
+Fed Cup G1 PPO: SRB vs SLO,D,2020-02-08,Hard,RR,3,Nina Stojanovic,Tamara Zidansek,6-4 7-5,82,75,751,790
+Fed Cup G1 REL: LUX vs TUR,D,2020-02-08,Hard,RR,3,Berfu Cengiz,Tiffany Cornelius,6-2 6-2,450,,91,
+Fed Cup G1 REL: LUX vs TUR,D,2020-02-08,Hard,RR,3,Pemra Ozgen,Eleonora Molinaro,6-3 6-4,209,254,283,224
+Fed Cup G2 RR: NZL vs MGL,D,2020-02-05,Hard,RR,3,Valentina Ivanov,Bolor Enkhbayar,6-0 6-0,972,,13,
+Fed Cup G2 RR: NZL vs MGL,D,2020-02-05,Hard,RR,3,Emily Fanning,Erdenesuren Erdenebat,6-1 6-0,605,,49,
+Fed Cup G2 RR: NZL vs PAK,D,2020-02-06,Hard,RR,3,Emily Fanning,Mahin Qureshi,6-0 6-2,605,,49,
+Fed Cup G2 RR: NZL vs PAK,D,2020-02-06,Hard,RR,3,Paige Mary Hourigan,Sarah Mahboob Khan,6-2 6-0,427,,98,
+Fed Cup G2 RR: PAK vs MGL,D,2020-02-04,Hard,RR,3,Erdenesuren Erdenebat,Mahin Qureshi,6-3 6-1,,,,
+Fed Cup G2 RR: PAK vs MGL,D,2020-02-04,Hard,RR,3,Ushna Suhail,Jargal Altansarnai,6-3 6-0,,,,
+Fed Cup G2 RR: SGP vs MGL,D,2020-02-06,Hard,RR,3,Hx Izabella Tan,Erdenesuren Erdenebat,6-1 7-5,,,,
+Fed Cup G2 RR: SGP vs MGL,D,2020-02-06,Hard,RR,3,Jargal Altansarnai,Tammy Tan,6-2 6-2,,,,
+Fed Cup G2 RR: SGP vs NZL,D,2020-02-07,Hard,RR,3,Valentina Ivanov,Sarah Pang,6-1 6-1,972,,13,
+Fed Cup G2 RR: SGP vs NZL,D,2020-02-07,Hard,RR,3,Paige Mary Hourigan,Hx Izabella Tan,6-1 6-1,427,,98,
+Fed Cup G2 RR: SGP vs PAK,D,2020-02-05,Hard,RR,3,Ushna Suhail,Sarah Pang,6-0 6-0,,,,
+Fed Cup G2 RR: SGP vs PAK,D,2020-02-05,Hard,RR,3,Hx Izabella Tan,Sarah Mahboob Khan,6-2 6-1,,,,
+Fed Cup G2 RR: PHI vs GUM,D,2020-02-04,Hard,RR,3,Anna Clarice Patrimonio,Katrina Lai,6-3 6-2,,,,
+Fed Cup G2 RR: PHI vs GUM,D,2020-02-04,Hard,RR,3,Marian Jade Capadocia,Nadine Del Carmen,6-0 6-4,,,,
+Fed Cup G2 RR: PHI vs TKM,D,2020-02-07,Hard,RR,3,Shaira Hope Rivera,Rozhan Karajayeva,6-2 6-0,,,,
+Fed Cup G2 RR: PHI vs TKM,D,2020-02-07,Hard,RR,3,Anna Clarice Patrimonio,Arzuv Klycheva,6-1 6-2,,,,
+Fed Cup G2 RR: THA vs GUM,D,2020-02-07,Hard,RR,3,Tamachan Momkoonthod,Katrina Lai,6-0 6-0,1036,,11,
+Fed Cup G2 RR: THA vs GUM,D,2020-02-07,Hard,RR,3,Watsachol Sawasdee,Nadine Del Carmen,6-2 6-3,756,,27,
+Fed Cup G2 RR: THA vs PHI,D,2020-02-06,Hard,RR,3,Anchisa Chanta,Anna Clarice Patrimonio,6-1 6-4,,,,
+Fed Cup G2 RR: THA vs PHI,D,2020-02-06,Hard,RR,3,Marian Jade Capadocia,Chompoothip Jandakate,6-3 6-3,,652,,41
+Fed Cup G2 RR: THA vs TKM,D,2020-02-04,Hard,RR,3,Anchisa Chanta,Arzuv Klycheva,6-2 6-1,,,,
+Fed Cup G2 RR: THA vs TKM,D,2020-02-04,Hard,RR,3,Chompoothip Jandakate,Bahar Toymyradova,6-0 6-1,652,,41,
+Fed Cup G2 RR: TKM vs GUM,D,2020-02-05,Hard,RR,3,Katrina Lai,Arzuv Klycheva,6-2 6-1,,,,
+Fed Cup G2 RR: TKM vs GUM,D,2020-02-05,Hard,RR,3,Nadine Del Carmen,Bahar Toymyradova,6-3 7-6(3),,,,
+Fed Cup G2 PM: THA vs PAK,D,2020-02-08,Hard,RR,3,Watsachol Sawasdee,Mahin Qureshi,6-3 6-0,756,,27,
+Fed Cup G2 PM: THA vs PAK,D,2020-02-08,Hard,RR,3,Anchisa Chanta,Ushna Suhail,6-3 6-7(3) 6-2,,,,
+Fed Cup G2 PM: GUM vs MGL,D,2020-02-08,Hard,RR,3,Katrina Lai,Shinejargal Battur,6-2 6-2,,,,
+Fed Cup G2 PM: GUM vs MGL,D,2020-02-08,Hard,RR,3,Nadine Del Carmen,Jargal Altansarnai,0-6 7-5 6-2,,,,
+Fed Cup G2 PM: SGP vs TKM,D,2020-02-08,Hard,RR,3,Sarah Pang,Arzuv Klycheva,7-5 6-2,,,,
+Fed Cup G2 PM: SGP vs TKM,D,2020-02-08,Hard,RR,3,Hx Izabella Tan,Bahar Toymyradova,6-1 6-3,,,,
+Fed Cup G2 PPO: NZL vs PHI,D,2020-02-08,Hard,RR,3,Valentina Ivanov,Shaira Hope Rivera,7-5 6-1,972,,13,
+Fed Cup G2 PPO: NZL vs PHI,D,2020-02-08,Hard,RR,3,Paige Mary Hourigan,Marian Jade Capadocia,6-2 6-3,427,,98,
+Fed Cup G2 RR: GEO vs MDA,D,2020-02-05,Hard,RR,3,Ekaterine Gorgodze,Iana Tishchenko,6-0 6-0,205,,284,
+Fed Cup G2 RR: GEO vs MDA,D,2020-02-05,Hard,RR,3,Mariam Bolkvadze,Anastasia Vdovenco,7-5 6-3,162,916,365,17
+Fed Cup G2 RR: ISR vs GEO,D,2020-02-04,Hard,RR,3,Ekaterine Gorgodze,Lina Glushko,6-3 4-6 6-4,205,636,284,44
+Fed Cup G2 RR: ISR vs GEO,D,2020-02-04,Hard,RR,3,Mariam Bolkvadze,Vlada Ekshibarova,7-6(5) 6-1,162,642,365,43
+Fed Cup G2 RR: ISR vs MDA,D,2020-02-06,Hard,RR,3,Shelly Bereznyak,Daniela Ciobanu,6-3 6-1,816,,22,
+Fed Cup G2 RR: ISR vs MDA,D,2020-02-06,Hard,RR,3,Lina Glushko,Anastasia Vdovenco,6-4 6-1,636,916,44,17
+Fed Cup G2 RR: ISR vs TUN,D,2020-02-05,Hard,RR,3,Lina Glushko,Chiraz Bechri,6-1 6-2,636,1017,44,12
+Fed Cup G2 RR: ISR vs TUN,D,2020-02-05,Hard,RR,3,Ons Jabeur,Vlada Ekshibarova,6-4 6-0,45,642,1190,43
+Fed Cup G2 RR: TUN vs GEO,D,2020-02-06,Hard,RR,3,Ekaterine Gorgodze,Chiraz Bechri,6-1 6-3,205,1017,284,12
+Fed Cup G2 RR: TUN vs GEO,D,2020-02-06,Hard,RR,3,Ons Jabeur,Mariam Bolkvadze,6-2 6-2,45,162,1190,365
+Fed Cup G2 RR: TUN vs MDA,D,2020-02-04,Hard,RR,3,Chiraz Bechri,Daniela Ciobanu,6-2 6-3,1017,,12,
+Fed Cup G2 RR: TUN vs MDA,D,2020-02-04,Hard,RR,3,Ons Jabeur,Anastasia Vdovenco,6-2 6-0,45,916,1190,17
+Fed Cup G2 RR: DEN vs EGY,D,2020-02-06,Hard,RR,3,Sandra Samir,Karen Barbat,6-3 7-6(7),367,,123,
+Fed Cup G2 RR: DEN vs EGY,D,2020-02-06,Hard,RR,3,Clara Tauson,Mayar Sherif,6-1 6-1,261,188,219,311
+Fed Cup G2 RR: DEN vs FIN,D,2020-02-04,Hard,RR,3,Anastasia Kulikova,Karen Barbat,2-6 6-3 6-3,526,,68,
+Fed Cup G2 RR: DEN vs FIN,D,2020-02-04,Hard,RR,3,Clara Tauson,Oona Orpana,6-4 7-6(5),261,479,219,81
+Fed Cup G2 RR: DEN vs POR,D,2020-02-05,Hard,RR,3,Karen Barbat,Ines Murta,6-1 6-0,,628,,45
+Fed Cup G2 RR: DEN vs POR,D,2020-02-05,Hard,RR,3,Clara Tauson,Francisca Jorge,6-1 6-1,261,561,219,59
+Fed Cup G2 RR: FIN vs EGY,D,2020-02-05,Hard,RR,3,Anastasia Kulikova,Sandra Samir,6-1 6-2,526,367,68,123
+Fed Cup G2 RR: FIN vs EGY,D,2020-02-05,Hard,RR,3,Oona Orpana,Mayar Sherif,6-4 6-2,479,188,81,311
+Fed Cup G2 RR: POR vs EGY,D,2020-02-04,Hard,RR,3,Sandra Samir,Maria Ines Fonte,4-6 6-4 6-2,367,894,123,18
+Fed Cup G2 RR: POR vs EGY,D,2020-02-04,Hard,RR,3,Mayar Sherif,Francisca Jorge,6-7(5) 6-4 7-6(6),188,561,311,59
+Fed Cup G2 RR: POR vs FIN,D,2020-02-06,Hard,RR,3,Anastasia Kulikova,Maria Ines Fonte,6-0 6-3,526,894,68,18
+Fed Cup G2 RR: POR vs FIN,D,2020-02-06,Hard,RR,3,Francisca Jorge,Oona Orpana,6-3 6-3,561,479,59,81
+Fed Cup G2 PPO: DEN vs TUN,D,2020-02-07,Hard,RR,3,Karen Barbat,Chiraz Bechri,6-1 6-4,,1017,,12
+Fed Cup G2 PPO: DEN vs TUN,D,2020-02-07,Hard,RR,3,Ons Jabeur,Clara Tauson,6-4 6-4,45,261,1190,219
+Fed Cup G2 PPO: GEO vs FIN,D,2020-02-07,Hard,RR,3,Anastasia Kulikova,Ekaterine Gorgodze,6-2 6-4,526,205,68,284
+Fed Cup G2 PPO: GEO vs FIN,D,2020-02-07,Hard,RR,3,Mariam Bolkvadze,Oona Orpana,7-5 6-4,162,479,365,81
+Fed Cup G2 REL: EGY vs MDA,D,2020-02-07,Hard,RR,3,Sandra Samir,Daniela Ciobanu,6-1 7-5,367,,123,
+Fed Cup G2 REL: EGY vs MDA,D,2020-02-07,Hard,RR,3,Mayar Sherif,Anastasia Vdovenco,6-4 1-6 7-6(5),188,916,311,17
+Fed Cup G2 REL: ISR vs POR,D,2020-02-07,Hard,RR,3,Shelly Bereznyak,Maria Ines Fonte,6-3 6-2,816,894,22,18
+Fed Cup G2 REL: ISR vs POR,D,2020-02-07,Hard,RR,3,Lina Glushko,Francisca Jorge,6-4 6-0,636,561,44,59
+Fed Cup QLS R1: BEL vs KAZ,D,2020-02-07,Hard,RR,3,Elise Mertens,Zarina Diyas,1-6 6-2 6-1,19,63,2360,955
+Fed Cup QLS R1: BEL vs KAZ,D,2020-02-07,Hard,RR,3,Yulia Putintseva,Ysaline Bonaventure,3-6 7-6(2) 6-2,34,115,1475,560
+Fed Cup QLS R1: BEL vs KAZ,D,2020-02-07,Hard,RR,3,Elise Mertens,Yulia Putintseva,6-1 7-6(1),19,34,2360,1475
+Fed Cup QLS R1: BEL vs KAZ,D,2020-02-07,Hard,RR,3,Kirsten Flipkens,Zarina Diyas,6-3 6-4,81,63,760,955
+Fed Cup QLS R1: BLR vs NED,D,2020-02-07,Clay,RR,3,Kiki Bertens,Aliaksandra Sasnovich,6-7(5) 6-2 6-1,8,113,3965,577
+Fed Cup QLS R1: BLR vs NED,D,2020-02-07,Clay,RR,3,Aryna Sabalenka,Arantxa Rus,6-2 6-3,13,77,2820,769
+Fed Cup QLS R1: BLR vs NED,D,2020-02-07,Clay,RR,3,Kiki Bertens,Aryna Sabalenka,6-4 6-4,8,13,3965,2820
+Fed Cup QLS R1: BLR vs NED,D,2020-02-07,Clay,RR,3,Aliaksandra Sasnovich,Arantxa Rus,0-6 7-5 6-2,113,77,577,769
+Fed Cup QLS R1: ESP vs JPN,D,2020-02-07,Clay,RR,3,Sara Sorribes Tormo,Naomi Osaka,6-0 6-3,78,10,767,3626
+Fed Cup QLS R1: ESP vs JPN,D,2020-02-07,Clay,RR,3,Carla Suarez Navarro,Misaki Doi,6-3 6-4,55,86,1048,724
+Fed Cup QLS R1: ESP vs JPN,D,2020-02-07,Clay,RR,3,Carla Suarez Navarro,Kurumi Nara,6-1 6-3,55,137,1048,433
+Fed Cup QLS R1: GBR vs SVK,D,2020-02-07,Clay,RR,3,Anna Karolina Schmiedlova,Heather Watson,6-2 6-3,199,74,293,844
+Fed Cup QLS R1: GBR vs SVK,D,2020-02-07,Clay,RR,3,Viktoria Hruncakova,Harriet Dart,6-7(3) 6-3 7-5,65,141,905,423
+Fed Cup QLS R1: GBR vs SVK,D,2020-02-07,Clay,RR,3,Heather Watson,Rebecca Sramkova,6-0 7-5,74,202,844,289
+Fed Cup QLS R1: GBR vs SVK,D,2020-02-07,Clay,RR,3,Anna Karolina Schmiedlova,Harriet Dart,7-5 6-3,199,141,293,423
+Fed Cup QLS R1: GER vs BRA,D,2020-02-07,Clay,RR,3,Laura Siegemund,Teliana Pereira,6-3 6-3,73,359,845,126
+Fed Cup QLS R1: GER vs BRA,D,2020-02-07,Clay,RR,3,Tatjana Maria,Gabriela Ce,6-3 7-6(5),91,225,701,256
+Fed Cup QLS R1: GER vs BRA,D,2020-02-07,Clay,RR,3,Laura Siegemund,Gabriela Ce,6-1 6-2,73,225,845,256
+Fed Cup QLS R1: ROU vs RUS,D,2020-02-07,Hard,RR,3,Ekaterina Alexandrova,Elena Gabriela Ruse,6-1 6-4,28,166,1700,354
+Fed Cup QLS R1: ROU vs RUS,D,2020-02-07,Hard,RR,3,Ana Bogdan,Veronika Kudermetova,6-3 6-7(5) 6-1,90,38,704,1353
+Fed Cup QLS R1: ROU vs RUS,D,2020-02-07,Hard,RR,3,Ekaterina Alexandrova,Ana Bogdan,7-5 3-6 7-5,28,90,1700,704
+Fed Cup QLS R1: ROU vs RUS,D,2020-02-07,Hard,RR,3,Jaqueline Cristian,Veronika Kudermetova,7-5 6-3,197,38,296,1353
+Fed Cup QLS R1: SUI vs CAN,D,2020-02-07,Hard,RR,3,Jil Teichmann,Leylah Fernandez,7-6(4) 6-4,68,185,878,313
+Fed Cup QLS R1: SUI vs CAN,D,2020-02-07,Hard,RR,3,Belinda Bencic,Gabriela Dabrowski,6-1 6-2,5,448,4675,91
+Fed Cup QLS R1: SUI vs CAN,D,2020-02-07,Hard,RR,3,Leylah Fernandez,Belinda Bencic,6-2 7-6(3),185,5,313,4675
+Fed Cup QLS R1: SUI vs CAN,D,2020-02-07,Hard,RR,3,Jil Teichmann,Gabriela Dabrowski,6-3 6-4,68,448,878,91
+Fed Cup QLS R1: USA vs LAT,D,2020-02-07,Hard,RR,3,Sofia Kenin,Anastasija Sevastova,6-2 6-2,7,41,4495,1288
+Fed Cup QLS R1: USA vs LAT,D,2020-02-07,Hard,RR,3,Serena Williams,Jelena Ostapenko,7-6(4) 7-6(3),9,40,3915,1310
+Fed Cup QLS R1: USA vs LAT,D,2020-02-07,Hard,RR,3,Jelena Ostapenko,Sofia Kenin,6-3 2-6 6-2,40,7,1310,4495
+Fed Cup QLS R1: USA vs LAT,D,2020-02-07,Hard,RR,3,Anastasija Sevastova,Serena Williams,7-6(5) 3-6 7-6(4),41,9,1288,3915

@@ -2,15 +2,16 @@
 tennis_engine.py - fakeronjan WLS rating engine for tennis (singles, ATP + WTA, 1973+).
 
 Pipeline:
-  1. download_sackmann()   - fetch & cache Jeff Sackmann's tennis_atp + tennis_wta CSVs
+  1. download_matches()    - fetch & cache ATP + WTA singles CSVs (+ players.csv)
   2. build_unified()       - parse + normalize into all_matches.csv (one row per match)
   3. build_observations()  - one row per SET, response = signed sqrt(game margin)
   4. solve_ratings()       - WLS solve: base rating + 4 surface deltas, per tour separately
   5. write_outputs()       - ratings CSVs + JSON snapshots for the SPA
 
-Data source: Jeff Sackmann (CC-BY-NC-SA 4.0). Attribution required.
-  https://github.com/JeffSackmann/tennis_atp
-  https://github.com/JeffSackmann/tennis_wta
+Data source: LuckyLoser91/TennisCourtLog (CC BY-NC-SA 4.0). Attribution required.
+  Carries both tours in one schema: Jeff Sackmann's 1968-2024 history +
+  tennis-data.co.uk live feed (2025+). Sackmann's own repos were deleted in 2026.
+  https://github.com/LuckyLoser91/TennisCourtLog
 """
 
 from __future__ import annotations
@@ -30,9 +31,18 @@ import pandas as pd
 # PARAMETERS
 # ============================================================
 
-MIN_YEAR = 1973   # Open Era data is patchy 1968-72; Sackmann coverage solidifies in '73
-DATA_DIR = Path(__file__).parent / "data" / "sackmann"
+MIN_YEAR = 1973   # Open Era data is patchy 1968-72; coverage solidifies in '73
+DATA_DIR = Path(__file__).parent / "data" / "matches"
 ALL_MATCHES_CSV = Path(__file__).parent / "all_matches.csv"
+
+# --- Match-data source: LuckyLoser91/TennisCourtLog ------------------------
+# A maintained mirror carrying BOTH tours in one identical schema:
+#   1968-2024  = Jeff Sackmann's historical CC-BY-NC data (permanent copy)
+#   2025-      = tennis-data.co.uk live feed (independent, both tours, weekly)
+# Sackmann's own tennis_atp/tennis_wta repos were deleted from GitHub in 2026,
+# so we source from this mirror. Licensed CC BY-NC-SA 4.0 (see site credit).
+SOURCE_REPO = "LuckyLoser91/TennisCourtLog"
+SOURCE_TOURS = {"atp": "tennis_atp", "wta": "tennis_wta"}  # tour -> repo subdir
 
 # Tournament tier weights - mirrors MESSI's continental boost / ZIDANE's UCL boost.
 # Sackmann's tourney_level codes:
@@ -72,6 +82,28 @@ TIER_WEIGHTS = {
 # Carpet retired around 2009 but had a real role in '70s-'90s indoor events.
 SURFACES = {"Hard", "Clay", "Grass", "Carpet"}
 
+# TennisCourtLog carries a mix of Sackmann's single-letter tier codes (kept for
+# 1968-2024) and the verbose codes its live tennis-data.co.uk feed emits for
+# 2025+. Normalize the verbose ones onto the letter codes TIER_WEIGHTS is keyed
+# by. Mapping follows the 2021 WTA restructure so weights stay continuous across
+# the seam: Premier Mandatory/Premier 5 -> WTA1000, Premier -> WTA500,
+# International -> WTA250 (all already weighted 1.5/1.5/0.8 historically).
+# Letter codes already in TIER_WEIGHTS (A, D, F, W, I, P, PM, T1..T5) pass
+# through unchanged. Codes absent from TIER_WEIGHTS after mapping (O Olympics,
+# CC country-cup, E exhibition, J juniors) are filtered out downstream - the
+# same exclusion the old Sackmann pipeline applied.
+LEVEL_NORMALIZE = {
+    "Grand Slam":   "G",
+    "Masters 1000": "M",
+    "Masters Cup":  "F",   # 2000-08 Tennis Masters Cup = year-end final
+    "ATP250":       "A",
+    "ATP500":       "A",
+    "WTA1000":      "PM",
+    "WTA500":       "P",
+    "WTA250":       "I",
+    "WTA Finals":   "F",
+}
+
 
 # ============================================================
 # STEP 1 - DOWNLOAD SACKMANN
@@ -100,43 +132,52 @@ def _resolve_branch(repo: str, probe_file: str) -> "str | None":
     return None
 
 
-def download_sackmann(min_year: int = MIN_YEAR, refresh_latest: int = 2) -> None:
-    """Download (and cache) Jeff Sackmann's per-year ATP + WTA singles match CSVs.
+def download_matches(min_year: int = MIN_YEAR, refresh_latest: int = 2) -> None:
+    """Download (and cache) per-year ATP + WTA singles match CSVs from
+    LuckyLoser91/TennisCourtLog, plus each tour's players.csv (name -> IOC/id).
 
-    Idempotent: skips files already on disk except for the latest `refresh_latest`
-    years (always re-fetched to absorb new matches mid-season).
+    Idempotent: skips year-files already on disk except for the latest
+    `refresh_latest` years (always re-fetched to absorb new matches). The
+    players.csv files are small and always refreshed.
 
-    Auto-detects the upstream default branch (master vs main) so a rename doesn't
-    silently break the build. Raises if nothing could be fetched.
+    Auto-detects the upstream default branch (main vs master) so a rename
+    doesn't silently break the build. Raises if nothing could be fetched.
 
     Layout written:
-      data/sackmann/atp_matches_<YEAR>.csv
-      data/sackmann/wta_matches_<YEAR>.csv
+      data/matches/atp_matches_<YEAR>.csv   data/matches/atp_players.csv
+      data/matches/wta_matches_<YEAR>.csv   data/matches/wta_players.csv
     """
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     this_year = datetime.now().year
     refresh_from = this_year - refresh_latest + 1
     written = 0
 
-    for tour, repo in [
-        ("atp", "JeffSackmann/tennis_atp"),
-        ("wta", "JeffSackmann/tennis_wta"),
-    ]:
-        branch = _resolve_branch(repo, f"{tour}_matches_{min_year}.csv")
+    for tour, subdir in SOURCE_TOURS.items():
+        branch = _resolve_branch(SOURCE_REPO, f"{subdir}/{tour}_matches_{min_year}.csv")
         if branch is None:
-            print(f"  ! {repo}: unreachable on master AND main - skipping")
+            print(f"  ! {SOURCE_REPO}/{subdir}: unreachable on main AND master - skipping")
             continue
-        print(f"  {repo}: using '{branch}' branch")
-        base = f"https://raw.githubusercontent.com/{repo}/{branch}"
+        print(f"  {SOURCE_REPO}/{subdir}: using '{branch}' branch")
+        base = f"https://raw.githubusercontent.com/{SOURCE_REPO}/{branch}/{subdir}"
+
+        # players.csv (name -> ioc/id lookup) - always refresh, it's small
+        try:
+            print(f"  fetching {tour.upper()} players...", end=" ", flush=True)
+            data = _http_get(f"{base}/{tour}_players.csv")
+            (DATA_DIR / f"{tour}_players.csv").write_bytes(data)
+            written += 1
+            print(f"{len(data):,} bytes")
+        except Exception as e:
+            print(f"FAILED ({e})")
+
         for year in range(min_year, this_year + 1):
             fname = f"{tour}_matches_{year}.csv"
             path = DATA_DIR / fname
             if path.exists() and year < refresh_from:
                 continue
-            url = f"{base}/{fname}"
             try:
                 print(f"  fetching {tour.upper()} {year}...", end=" ", flush=True)
-                data = _http_get(url)
+                data = _http_get(f"{base}/{fname}")
                 path.write_bytes(data)
                 written += 1
                 print(f"{len(data):,} bytes")
@@ -148,12 +189,12 @@ def download_sackmann(min_year: int = MIN_YEAR, refresh_latest: int = 2) -> None
             except Exception as e:
                 print(f"FAILED ({e})")
 
-    cached = len(list(DATA_DIR.glob("*.csv")))
+    cached = len(list(DATA_DIR.glob("*_matches_*.csv")))
     if written == 0 and cached == 0:
         raise RuntimeError(
-            "download_sackmann fetched 0 files and no cache exists - Sackmann's "
-            "tennis_atp / tennis_wta repos look unreachable or moved (checked both "
-            "the master and main branches)."
+            f"download_matches fetched 0 files and no cache exists - "
+            f"{SOURCE_REPO} looks unreachable or moved (checked both the main "
+            f"and master branches)."
         )
 
 
@@ -161,12 +202,36 @@ def download_sackmann(min_year: int = MIN_YEAR, refresh_latest: int = 2) -> None
 # STEP 2 - BUILD UNIFIED all_matches.csv
 # ============================================================
 
-def _parse_date(raw) -> pd.Timestamp:
-    """Sackmann's tourney_date is an int YYYYMMDD (e.g. 20210712)."""
-    s = str(int(raw)) if pd.notna(raw) else ""
-    if len(s) == 8:
-        return pd.to_datetime(s, format="%Y%m%d", errors="coerce")
-    return pd.NaT
+def _parse_dates(raw: pd.Series) -> pd.Series:
+    """TennisCourtLog's tourney_date comes in two shapes: 'YYYY-MM-DD' (the
+    Sackmann-sourced 1968-2024 history) and 'YYYY/M/D' (the tennis-data.co.uk
+    live feed, 2025+). Normalize slashes to dashes, then let pandas infer -
+    both 'YYYY-M-D' and 'YYYY-MM-DD' parse cleanly."""
+    s = raw.fillna("").astype(str).str.strip().str.replace("/", "-", regex=False)
+    return pd.to_datetime(s, errors="coerce")
+
+
+def _load_players(tour: str) -> dict:
+    """name -> (player_id, ioc) from data/matches/<tour>_players.csv.
+
+    TennisCourtLog's match rows carry names only; country (IOC) and stable IDs
+    live in the players table. Keyed on whitespace-collapsed name for a slightly
+    more forgiving join (catches the odd double-space typo)."""
+    path = DATA_DIR / f"{tour.lower()}_players.csv"
+    if not path.exists():
+        print(f"  ! {path.name} missing - flags/IDs will be blank for {tour}")
+        return {}
+    pl = pd.read_csv(path, dtype=str).fillna("")
+    out = {}
+    for r in pl.itertuples(index=False):
+        key = " ".join(str(r.name).split())
+        out[key] = (str(r.player_id), str(r.ioc))
+    return out
+
+
+def _norm_name(s: pd.Series) -> pd.Series:
+    """Collapse internal whitespace to match the players-table join key."""
+    return s.fillna("").astype(str).str.split().str.join(" ")
 
 
 def _load_one(path: Path, tour: str) -> pd.DataFrame:
@@ -182,7 +247,7 @@ def _load_one(path: Path, tour: str) -> pd.DataFrame:
         return pd.DataFrame()
 
     df["tour"] = tour.upper()  # "ATP" or "WTA"
-    df["date"] = df["tourney_date"].apply(_parse_date)
+    df["date"] = _parse_dates(df["tourney_date"])
     # Drop rows with no parseable date or no winner/loser name
     df = df.dropna(subset=["date"])
     df = df[df["winner_name"].notna() & df["loser_name"].notna()].copy()
@@ -190,7 +255,7 @@ def _load_one(path: Path, tour: str) -> pd.DataFrame:
 
 
 def build_unified(out_path: Path = ALL_MATCHES_CSV) -> pd.DataFrame:
-    """Load all cached Sackmann CSVs, concat into one DataFrame, write all_matches.csv.
+    """Load all cached match CSVs, concat into one DataFrame, write all_matches.csv.
 
     Filters:
       - Tier in TIER_WEIGHTS (excludes Challenger/Satellite/Futures)
@@ -200,31 +265,49 @@ def build_unified(out_path: Path = ALL_MATCHES_CSV) -> pd.DataFrame:
     """
     if not DATA_DIR.exists():
         raise FileNotFoundError(
-            f"{DATA_DIR} not found - run download_sackmann() first."
+            f"{DATA_DIR} not found - run download_matches() first."
         )
 
     frames = []
-    for path in sorted(DATA_DIR.glob("*.csv")):
+    for path in sorted(DATA_DIR.glob("*_matches_*.csv")):
         tour = "ATP" if path.name.startswith("atp_") else "WTA"
         d = _load_one(path, tour)
         if not d.empty:
             frames.append(d)
 
     if not frames:
-        raise RuntimeError("No Sackmann data loaded. Did download_sackmann run?")
+        raise RuntimeError("No match data loaded. Did download_matches run?")
 
     df = pd.concat(frames, axis=0, ignore_index=True, sort=False)
     print(f"\nLoaded {len(df):,} raw matches from {len(frames)} files.")
 
-    # Normalize surface (Sackmann is usually consistent but defensive parse)
+    # Normalize surface (defensive parse)
     df["surface"] = df["surface"].fillna("").str.strip()
     # Filter to known surfaces
     df = df[df["surface"].isin(SURFACES)].copy()
 
-    # Tier filter + weight
+    # Tier: fold TennisCourtLog's verbose codes onto Sackmann letter codes, then
+    # filter + weight. Codes still absent from TIER_WEIGHTS (O/CC/E/J) drop here.
     df["tier"] = df["tourney_level"].fillna("").str.strip()
+    df["tier"] = df["tier"].replace(LEVEL_NORMALIZE)
     df = df[df["tier"].isin(TIER_WEIGHTS.keys())].copy()
     df["tier_weight"] = df["tier"].map(TIER_WEIGHTS)
+
+    # TennisCourtLog match rows carry names only - attach country (IOC) and a
+    # stable id by joining each tour's players.csv on (whitespace-normalized)
+    # name. IOC feeds the player flag map; the ids are vestigial (the rating
+    # solve keys on names) but downstream itertuples expects the columns.
+    for col in ("winner_ioc", "loser_ioc", "winner_id", "loser_id"):
+        df[col] = ""
+    for tour in ("ATP", "WTA"):
+        pmap = _load_players(tour)
+        mask = df["tour"] == tour
+        for side in ("winner", "loser"):
+            keys = _norm_name(df.loc[mask, f"{side}_name"])
+            df.loc[mask, f"{side}_ioc"] = keys.map(lambda k: pmap.get(k, ("", ""))[1])
+            df.loc[mask, f"{side}_id"] = keys.map(lambda k: pmap.get(k, (k, ""))[0])
+    # Synthetic tourney_id (unused downstream, but kept in the output schema)
+    df["tourney_id"] = df["date"].dt.year.astype(str) + "-" + df["tourney_name"].fillna("")
 
     # Drop walkovers and empty-score rows
     df["score"] = df["score"].fillna("").str.strip()
@@ -1564,13 +1647,13 @@ if __name__ == "__main__":
     # INCREMENTAL_STALENESS_DAYS (30) that already exist in the cached
     # tennis_ratings.csv.gz are reused, and only the recent tail + brand-new
     # anchors get re-solved. Used by the daily cron; the annual Dec 31 run
-    # passes --full to re-canvass everything against retroactive Sackmann
-    # corrections.
+    # passes --full to re-canvass everything against retroactive upstream
+    # data corrections.
     full_rebuild = "--full" in args
     args.discard("--full")
     if not args or "download" in args:
-        print("=== Downloading Sackmann data ===")
-        download_sackmann()
+        print("=== Downloading match data (TennisCourtLog) ===")
+        download_matches()
     if not args or "build" in args:
         print("\n=== Building unified all_matches.csv ===")
         build_unified()

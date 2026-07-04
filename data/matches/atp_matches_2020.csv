@@ -1,0 +1,1463 @@
+tourney_name,tourney_level,tourney_date,surface,round,best_of,winner_name,loser_name,score,winner_rank,loser_rank,winner_rank_points,loser_rank_points
+Atp Cup,A,2020-01-06,Hard,F,3,Novak Djokovic,Rafael Nadal,6-2 7-6(4),2,1,9055,9985
+Atp Cup,A,2020-01-06,Hard,F,3,Roberto Bautista Agut,Dusan Lajovic,7-5 6-1,10,34,2335,1251
+Atp Cup,A,2020-01-06,Hard,SF,3,Novak Djokovic,Daniil Medvedev,6-1 5-7 6-4,2,5,9055,5705
+Atp Cup,A,2020-01-06,Hard,SF,3,Dusan Lajovic,Karen Khachanov,7-5 7-6(1),34,17,1251,1840
+Atp Cup,A,2020-01-06,Hard,SF,3,Rafael Nadal,Alex De Minaur,4-6 7-5 6-1,1,18,9985,1775
+Atp Cup,A,2020-01-06,Hard,SF,3,Roberto Bautista Agut,Nick Kyrgios,6-1 6-4,10,29,2335,1375
+Atp Cup,A,2020-01-06,Hard,QF,3,Novak Djokovic,Denis Shapovalov,4-6 6-1 7-6(4),2,14,9055,2050
+Atp Cup,A,2020-01-06,Hard,QF,3,Dusan Lajovic,Felix Auger Aliassime,6-4 6-2,34,21,1251,1636
+Atp Cup,A,2020-01-06,Hard,QF,3,Daniil Medvedev,Diego Schwartzman,6-4 4-6 6-3,5,13,5705,2125
+Atp Cup,A,2020-01-06,Hard,QF,3,Karen Khachanov,Guido Pella,6-2 7-6(4),17,25,1840,1530
+Atp Cup,A,2020-01-06,Hard,QF,3,Daniel Evans,Alex De Minaur,7-6(4) 4-6 7-6(2),42,18,1124,1775
+Atp Cup,A,2020-01-06,Hard,QF,3,Nick Kyrgios,Cameron Norrie,6-2 6-2,29,52,1375,975
+Atp Cup,A,2020-01-06,Hard,QF,3,David Goffin,Rafael Nadal,6-4 7-6(3),11,1,2335,9985
+Atp Cup,A,2020-01-06,Hard,QF,3,Roberto Bautista Agut,Kimmer Coppejans,6-1 6-4,10,158,2335,328
+Atp Cup,A,2020-01-06,Hard,RR,3,Novak Djokovic,Gael Monfils,6-3 6-2,2,9,9055,2530
+Atp Cup,A,2020-01-06,Hard,RR,3,Benoit Paire,Dusan Lajovic,6-2 6-7(6) 6-4,24,34,1538,1251
+Atp Cup,A,2020-01-06,Hard,RR,3,Novak Djokovic,Kevin Anderson,7-6(5) 7-6(6),2,147,9055,360
+Atp Cup,A,2020-01-06,Hard,RR,3,Dusan Lajovic,Lloyd Harris,3-6 7-6(4) 6-3,34,99,1251,569
+Atp Cup,A,2020-01-06,Hard,RR,3,Novak Djokovic,Cristian Garin,6-3 6-3,2,33,9055,1291
+Atp Cup,A,2020-01-06,Hard,RR,3,Dusan Lajovic,Nicolas Jarry,6-2 7-6(3),34,77,1251,675
+Atp Cup,A,2020-01-06,Hard,RR,3,Kevin Anderson,Benoit Paire,2-6 7-6(1) 7-6(5),147,24,360,1538
+Atp Cup,A,2020-01-06,Hard,RR,3,Gilles Simon,Lloyd Harris,2-6 6-2 6-2,57,99,910,569
+Atp Cup,A,2020-01-06,Hard,RR,3,Gael Monfils,Cristian Garin,6-3 7-5,9,33,2530,1291
+Atp Cup,A,2020-01-06,Hard,RR,3,Benoit Paire,Nicolas Jarry,6-7(3) 6-3 6-3,24,77,1538,675
+Atp Cup,A,2020-01-06,Hard,RR,3,Kevin Anderson,Cristian Garin,6-0 6-3,147,33,360,1291
+Atp Cup,A,2020-01-06,Hard,RR,3,Lloyd Harris,Nicolas Jarry,6-4 6-4,99,77,569,675
+Atp Cup,A,2020-01-06,Hard,RR,3,Rafael Nadal,Yoshihito Nishioka,7-6(4) 6-4,1,72,9985,764
+Atp Cup,A,2020-01-06,Hard,RR,3,Roberto Bautista Agut,Go Soeda,6-2 6-4,10,119,2335,461
+Atp Cup,A,2020-01-06,Hard,RR,3,Rafael Nadal,Nikoloz Basilashvili,6-3 7-5,1,26,9985,1450
+Atp Cup,A,2020-01-06,Hard,RR,3,Roberto Bautista Agut,Aleksandre Metreveli,6-0 6-0,10,678,2335,29
+Atp Cup,A,2020-01-06,Hard,RR,3,Rafael Nadal,Pablo Cuevas,6-2 6-1,1,45,9985,1097
+Atp Cup,A,2020-01-06,Hard,RR,3,Roberto Bautista Agut,Franco Roncadelli,6-1 6-2,10,,2335,
+Atp Cup,A,2020-01-06,Hard,RR,3,Yoshihito Nishioka,Nikoloz Basilashvili,6-2 6-3,72,26,764,1450
+Atp Cup,A,2020-01-06,Hard,RR,3,Go Soeda,Aleksandre Metreveli,4-6 6-3 6-2,119,678,461,29
+Atp Cup,A,2020-01-06,Hard,RR,3,Yoshihito Nishioka,Pablo Cuevas,6-0 6-1,72,45,764,1097
+Atp Cup,A,2020-01-06,Hard,RR,3,Go Soeda,Martin Cuevas,6-1 6-3,119,523,461,52
+Atp Cup,A,2020-01-06,Hard,RR,3,Nikoloz Basilashvili,Pablo Cuevas,6-4 1-6 6-4,26,45,1450,1097
+Atp Cup,A,2020-01-06,Hard,RR,3,Aleksandre Metreveli,Franco Roncadelli,6-2 6-1,678,,29,
+Atp Cup,A,2020-01-06,Hard,RR,3,Daniel Evans,David Goffin,6-4 6-4,42,11,1124,2335
+Atp Cup,A,2020-01-06,Hard,RR,3,Steve Darcis,Cameron Norrie,6-2 6-4,200,52,242,975
+Atp Cup,A,2020-01-06,Hard,RR,3,David Goffin,Grigor Dimitrov,4-6 6-2 6-2,11,20,2335,1702
+Atp Cup,A,2020-01-06,Hard,RR,3,Dimitar Kuzmanov,Steve Darcis,6-0 6-3,417,200,80,242
+Atp Cup,A,2020-01-06,Hard,RR,3,David Goffin,Radu Albot,6-4 6-1,11,46,2335,1067
+Atp Cup,A,2020-01-06,Hard,RR,3,Steve Darcis,Alexander Cozbinov,6-4 6-7(4) 7-5,200,816,242,18
+Atp Cup,A,2020-01-06,Hard,RR,3,Grigor Dimitrov,Daniel Evans,2-6 6-4 6-1,20,42,1702,1124
+Atp Cup,A,2020-01-06,Hard,RR,3,Cameron Norrie,Dimitar Kuzmanov,6-2 3-6 6-2,52,417,975,80
+Atp Cup,A,2020-01-06,Hard,RR,3,Daniel Evans,Radu Albot,6-2 6-2,42,46,1124,1067
+Atp Cup,A,2020-01-06,Hard,RR,3,Cameron Norrie,Alexander Cozbinov,6-2 6-2,52,816,975,18
+Atp Cup,A,2020-01-06,Hard,RR,3,Grigor Dimitrov,Radu Albot,6-2 6-3,20,46,1702,1067
+Atp Cup,A,2020-01-06,Hard,RR,3,Dimitar Kuzmanov,Alexander Cozbinov,6-1 7-5,417,816,80,18
+Atp Cup,A,2020-01-06,Hard,RR,3,Daniil Medvedev,Fabio Fognini,1-6 6-1 6-3,5,12,5705,2290
+Atp Cup,A,2020-01-06,Hard,RR,3,Karen Khachanov,Stefano Travaglia,7-5 6-3,17,82,1840,637
+Atp Cup,A,2020-01-06,Hard,RR,3,Daniil Medvedev,John Isner,6-3 6-1,5,19,5705,1770
+Atp Cup,A,2020-01-06,Hard,RR,3,Karen Khachanov,Taylor Fritz,3-6 7-5 6-1,17,31,1840,1315
+Atp Cup,A,2020-01-06,Hard,RR,3,Daniil Medvedev,Casper Ruud,6-3 7-6(6),5,53,5705,949
+Atp Cup,A,2020-01-06,Hard,RR,3,Karen Khachanov,Viktor Durasovic,6-2 6-1,17,329,1840,117
+Atp Cup,A,2020-01-06,Hard,RR,3,Fabio Fognini,John Isner,6-4 7-6(5),12,19,2290,1770
+Atp Cup,A,2020-01-06,Hard,RR,3,Stefano Travaglia,Taylor Fritz,7-6(3) 7-6(1),82,31,637,1315
+Atp Cup,A,2020-01-06,Hard,RR,3,Casper Ruud,Fabio Fognini,6-2 6-2,53,12,949,2290
+Atp Cup,A,2020-01-06,Hard,RR,3,Stefano Travaglia,Viktor Durasovic,6-1 6-1,82,329,637,117
+Atp Cup,A,2020-01-06,Hard,RR,3,Casper Ruud,John Isner,6-7(3) 7-6(10) 7-5,53,19,949,1770
+Atp Cup,A,2020-01-06,Hard,RR,3,Taylor Fritz,Viktor Durasovic,6-2 6-2,31,329,1315,117
+Atp Cup,A,2020-01-06,Hard,RR,3,Borna Coric,Dominic Thiem,7-6(4) 2-6 6-3,28,4,1415,5825
+Atp Cup,A,2020-01-06,Hard,RR,3,Marin Cilic,Dennis Novak,6-7(4) 6-4 6-4,38,105,1165,524
+Atp Cup,A,2020-01-06,Hard,RR,3,Dominic Thiem,Diego Schwartzman,6-3 7-6(3),4,13,5825,2125
+Atp Cup,A,2020-01-06,Hard,RR,3,Dennis Novak,Guido Pella,0-6 6-4 6-4,105,25,524,1530
+Atp Cup,A,2020-01-06,Hard,RR,3,Hubert Hurkacz,Dominic Thiem,3-6 6-4 7-6(5),37,4,1198,5825
+Atp Cup,A,2020-01-06,Hard,RR,3,Kacper Zuk,Dennis Novak,5-7 7-6(3) 6-3,448,105,70,524
+Atp Cup,A,2020-01-06,Hard,RR,3,Diego Schwartzman,Borna Coric,6-2 6-2,13,28,2125,1415
+Atp Cup,A,2020-01-06,Hard,RR,3,Guido Pella,Marin Cilic,7-6(1) 6-3,25,38,1530,1165
+Atp Cup,A,2020-01-06,Hard,RR,3,Hubert Hurkacz,Borna Coric,6-2 6-2,37,28,1198,1415
+Atp Cup,A,2020-01-06,Hard,RR,3,Marin Cilic,Kacper Zuk,7-6(8) 6-4,38,448,1165,70
+Atp Cup,A,2020-01-06,Hard,RR,3,Hubert Hurkacz,Diego Schwartzman,4-6 6-2 6-3,37,13,1198,2125
+Atp Cup,A,2020-01-06,Hard,RR,3,Guido Pella,Kamil Majchrzak,6-2 2-6 6-2,25,97,1530,575
+Atp Cup,A,2020-01-06,Hard,RR,3,Stefanos Tsitsipas,Alexander Zverev,6-1 6-4,6,7,5300,3345
+Atp Cup,A,2020-01-06,Hard,RR,3,Jan Lennard Struff,Michail Pervolarakis,6-4 6-1,35,486,1245,62
+Atp Cup,A,2020-01-06,Hard,RR,3,Denis Shapovalov,Alexander Zverev,6-2 6-2,14,7,2050,3345
+Atp Cup,A,2020-01-06,Hard,RR,3,Jan Lennard Struff,Felix Auger Aliassime,6-1 6-4,35,21,1245,1636
+Atp Cup,A,2020-01-06,Hard,RR,3,Alex De Minaur,Alexander Zverev,4-6 7-6(3) 6-2,18,7,1775,3345
+Atp Cup,A,2020-01-06,Hard,RR,3,Nick Kyrgios,Jan Lennard Struff,6-4 7-6(4),29,35,1375,1245
+Atp Cup,A,2020-01-06,Hard,RR,3,Denis Shapovalov,Stefanos Tsitsipas,7-6(6) 7-6(4),14,6,2050,5300
+Atp Cup,A,2020-01-06,Hard,RR,3,Felix Auger Aliassime,Michail Pervolarakis,6-1 6-3,21,486,1636,62
+Atp Cup,A,2020-01-06,Hard,RR,3,Nick Kyrgios,Stefanos Tsitsipas,7-6(7) 6-7(3) 7-6(5),29,6,1375,5300
+Atp Cup,A,2020-01-06,Hard,RR,3,John Millman,Michail Pervolarakis,4-6 6-1 7-6(1),48,486,1026,62
+Atp Cup,A,2020-01-06,Hard,RR,3,Alex De Minaur,Denis Shapovalov,6-7(6) 6-4 6-2,18,14,1775,2050
+Atp Cup,A,2020-01-06,Hard,RR,3,John Millman,Felix Auger Aliassime,6-4 6-2,48,21,1026,1636
+Doha,A,2020-01-06,Hard,F,3,Andrey Rublev,Corentin Moutet,6-2 7-6(3),23,81,1584,638
+Doha,A,2020-01-06,Hard,SF,3,Corentin Moutet,Stan Wawrinka,3-6 7-5 6-3,81,15,638,1955
+Doha,A,2020-01-06,Hard,SF,3,Andrey Rublev,Miomir Kecmanovic,6-3 6-1,23,62,1584,881
+Doha,A,2020-01-06,Hard,QF,3,Stan Wawrinka,Aljaz Bedene,6-3 6-4,15,58,1955,905
+Doha,A,2020-01-06,Hard,QF,3,Corentin Moutet,Fernando Verdasco,6-4 4-6 6-4,81,49,638,1025
+Doha,A,2020-01-06,Hard,QF,3,Miomir Kecmanovic,Marton Fucsovics,6-2 6-0,62,70,881,790
+Doha,A,2020-01-06,Hard,QF,3,Andrey Rublev,Pierre Hugues Herbert,6-4 6-3,23,65,1584,840
+Doha,A,2020-01-06,Hard,R16,3,Stan Wawrinka,Jeremy Chardy,6-3 6-4,15,54,1955,920
+Doha,A,2020-01-06,Hard,R16,3,Aljaz Bedene,Alexander Bublik,6-3 7-5,58,55,905,919
+Doha,A,2020-01-06,Hard,R16,3,Corentin Moutet,Milos Raonic,7-6(4) 7-6(4),81,32,638,1305
+Doha,A,2020-01-06,Hard,R16,3,Fernando Verdasco,Filip Krajinovic,7-5 4-6 6-0,49,40,1025,1148
+Doha,A,2020-01-06,Hard,R16,3,Marton Fucsovics,Cem Ilkel,6-1 6-4,70,279,790,144
+Doha,A,2020-01-06,Hard,R16,3,Miomir Kecmanovic,Jo-Wilfried Tsonga,7-6(9) 6-1,62,30,881,1340
+Doha,A,2020-01-06,Hard,R16,3,Pierre Hugues Herbert,Laslo Djere,6-1 6-3,65,39,840,1151
+Doha,A,2020-01-06,Hard,R16,3,Andrey Rublev,Mikhail Kukushkin,6-4 6-2,23,66,1584,816
+Doha,A,2020-01-06,Hard,R32,3,Jeremy Chardy,Gregoire Barrere,6-3 3-6 6-3,54,83,920,636
+Doha,A,2020-01-06,Hard,R32,3,Aljaz Bedene,Mikael Ymer,3-6 6-4 6-3,58,76,905,681
+Doha,A,2020-01-06,Hard,R32,3,Alexander Bublik,Adrian Mannarino,6-3 6-4,55,43,919,1111
+Doha,A,2020-01-06,Hard,R32,3,Corentin Moutet,Tennys Sandgren,7-6(3) 6-4,81,68,638,803
+Doha,A,2020-01-06,Hard,R32,3,Fernando Verdasco,Pablo Andujar,6-4 6-3,49,64,1025,867
+Doha,A,2020-01-06,Hard,R32,3,Filip Krajinovic,Kyle Edmund,4-6 6-3 6-3,40,69,1148,800
+Doha,A,2020-01-06,Hard,R32,3,Marton Fucsovics,Frances Tiafoe,6-4 4-6 6-4,70,47,790,1050
+Doha,A,2020-01-06,Hard,R32,3,Cem Ilkel,Ricardas Berankis,6-2 4-6 6-2,279,67,144,804
+Doha,A,2020-01-06,Hard,R32,3,Miomir Kecmanovic,Jordan Thompson,6-4 6-2,62,63,881,878
+Doha,A,2020-01-06,Hard,R32,3,Laslo Djere,Lorenzo Sonego,6-1 3-6 6-2,39,51,1151,990
+Doha,A,2020-01-06,Hard,R32,3,Pierre Hugues Herbert,Marco Cecchinato,6-3 6-4,65,75,840,690
+Doha,A,2020-01-06,Hard,R32,3,Mikhail Kukushkin,Malek Jaziri,6-0 6-3,66,229,816,206
+Adelaide,A,2020-01-13,Hard,F,3,Andrey Rublev,Lloyd Harris,6-3 6-0,18,91,1799,594
+Adelaide,A,2020-01-13,Hard,SF,3,Lloyd Harris,Tommy Paul,6-4 6-7(3) 6-3,91,90,594,600
+Adelaide,A,2020-01-13,Hard,SF,3,Andrey Rublev,Felix Auger Aliassime,7-6(5) 6-7(7) 6-4,18,22,1799,1656
+Adelaide,A,2020-01-13,Hard,QF,3,Tommy Paul,Albert Ramos,6-3 6-4,90,42,600,1130
+Adelaide,A,2020-01-13,Hard,QF,3,Lloyd Harris,Pablo Carreno Busta,6-3 6-3,91,30,594,1377
+Adelaide,A,2020-01-13,Hard,QF,3,Andrey Rublev,Daniel Evans,6-4 3-6 6-3,18,33,1799,1324
+Adelaide,A,2020-01-13,Hard,QF,3,Felix Auger Aliassime,Alex Bolt,6-3 6-0,22,157,1656,332
+Adelaide,A,2020-01-13,Hard,R16,3,Albert Ramos,Jaume Munar,7-6(3) 6-3,42,88,1130,608
+Adelaide,A,2020-01-13,Hard,R16,3,Tommy Paul,Pablo Cuevas,6-1 6-2,90,44,600,1097
+Adelaide,A,2020-01-13,Hard,R16,3,Pablo Carreno Busta,Jeremy Chardy,6-3 6-2,30,56,1377,920
+Adelaide,A,2020-01-13,Hard,R16,3,Lloyd Harris,Laslo Djere,7-6(5) 6-3,91,40,594,1165
+Adelaide,A,2020-01-13,Hard,R16,3,Daniel Evans,Alexander Bublik,7-5 6-2,33,55,1324,934
+Adelaide,A,2020-01-13,Hard,R16,3,Andrey Rublev,Sam Querrey,6-3 6-3,18,45,1799,1080
+Adelaide,A,2020-01-13,Hard,R16,3,Alex Bolt,Jan Lennard Struff,6-3 6-4,157,37,332,1270
+Adelaide,A,2020-01-13,Hard,R16,3,Felix Auger Aliassime,James Duckworth,6-3 7-6(0),22,96,1656,576
+Adelaide,A,2020-01-13,Hard,R32,3,Albert Ramos,Jordan Thompson,6-4 6-7(5) 6-3,42,65,1130,843
+Adelaide,A,2020-01-13,Hard,R32,3,Tommy Paul,Aljaz Bedene,6-4 6-4,90,54,600,950
+Adelaide,A,2020-01-13,Hard,R32,3,Pablo Cuevas,Reilly Opelka,5-7 7-6(9) 7-6(2),44,38,1097,1227
+Adelaide,A,2020-01-13,Hard,R32,3,Jeremy Chardy,Gilles Simon,6-3 7-5,56,60,920,890
+Adelaide,A,2020-01-13,Hard,R32,3,Laslo Djere,Alexei Popyrin,7-6(3) 3-6 6-4,40,95,1165,585
+Adelaide,A,2020-01-13,Hard,R32,3,Lloyd Harris,Cristian Garin,7-6(5) 3-6 6-4,91,36,594,1285
+Adelaide,A,2020-01-13,Hard,R32,3,Alexander Bublik,Taylor Fritz,6-4 7-6(4),55,32,934,1335
+Adelaide,A,2020-01-13,Hard,R32,3,Daniel Evans,Juan Ignacio Londero,6-2 6-4,33,51,1324,1017
+Adelaide,A,2020-01-13,Hard,R32,3,Sam Querrey,Gregoire Barrere,6-7(4) 6-2 7-6(5),45,82,1080,643
+Adelaide,A,2020-01-13,Hard,R32,3,Jan Lennard Struff,Salvatore Caruso,6-4 6-2,37,94,1270,586
+Adelaide,A,2020-01-13,Hard,R32,3,Alex Bolt,Stephane Robert,6-4 2-6 6-0,157,661,332,30
+Adelaide,A,2020-01-13,Hard,R32,3,James Duckworth,Federico Delbonis,6-4 6-4,96,73,576,709
+Auckland,A,2020-01-13,Hard,F,3,Ugo Humbert,Benoit Paire,7-6(2) 3-6 7-6(5),57,24,900,1598
+Auckland,A,2020-01-13,Hard,SF,3,Benoit Paire,Hubert Hurkacz,6-4 6-7(1) 6-2,24,34,1598,1318
+Auckland,A,2020-01-13,Hard,SF,3,Ugo Humbert,John Isner,7-6(5) 6-4,57,20,900,1770
+Auckland,A,2020-01-13,Hard,QF,3,Hubert Hurkacz,Feliciano Lopez,6-4 6-7(11) 6-4,34,61,1318,888
+Auckland,A,2020-01-13,Hard,QF,3,Benoit Paire,John Millman,3-6 6-1 6-4,24,47,1598,1071
+Auckland,A,2020-01-13,Hard,QF,3,John Isner,Kyle Edmund,7-6(5) 7-6(5),20,69,1770,800
+Auckland,A,2020-01-13,Hard,QF,3,Ugo Humbert,Denis Shapovalov,7-5 6-4,57,13,900,2200
+Auckland,A,2020-01-13,Hard,R16,3,Feliciano Lopez,Fabio Fognini,3-6 6-4 6-3,61,12,888,2310
+Auckland,A,2020-01-13,Hard,R16,3,Hubert Hurkacz,Mikael Ymer,6-2 7-6(2),34,77,1318,685
+Auckland,A,2020-01-13,Hard,R16,3,John Millman,Karen Khachanov,4-6 6-3 6-3,47,16,1071,1995
+Auckland,A,2020-01-13,Hard,R16,3,Benoit Paire,Thiago Monteiro,4-6 6-4 6-3,24,86,1598,616
+Auckland,A,2020-01-13,Hard,R16,3,Kyle Edmund,Andreas Seppi,6-3 7-6(4),69,84,800,636
+Auckland,A,2020-01-13,Hard,R16,3,John Isner,Tennys Sandgren,7-6(3) 6-7(1) 6-3,20,101,1770,553
+Auckland,A,2020-01-13,Hard,R16,3,Ugo Humbert,Marco Cecchinato,6-1 6-4,57,76,900,690
+Auckland,A,2020-01-13,Hard,R16,3,Denis Shapovalov,Vasek Pospisil,6-4 7-6(2),13,146,2200,360
+Auckland,A,2020-01-13,Hard,R32,3,Feliciano Lopez,Pablo Andujar,3-6 7-6(4) 6-4,61,63,888,867
+Auckland,A,2020-01-13,Hard,R32,3,Mikael Ymer,Frances Tiafoe,6-4 5-7 6-1,77,49,685,1050
+Auckland,A,2020-01-13,Hard,R32,3,Hubert Hurkacz,Lorenzo Sonego,7-5 6-3,34,52,1318,990
+Auckland,A,2020-01-13,Hard,R32,3,John Millman,Michael Mmoh,7-6(5) 6-4,47,227,1071,207
+Auckland,A,2020-01-13,Hard,R32,3,Thiago Monteiro,Cameron Norrie,7-6(3) 6-2,86,62,616,885
+Auckland,A,2020-01-13,Hard,R32,3,Benoit Paire,Jannik Sinner,6-4 2-6 6-4,24,79,1598,671
+Auckland,A,2020-01-13,Hard,R32,3,Andreas Seppi,Adrian Mannarino,3-6 6-4 6-4,84,43,636,1111
+Auckland,A,2020-01-13,Hard,R32,3,Kyle Edmund,Alejandro Davidovich Fokina,6-2 4-6 6-3,69,85,800,627
+Auckland,A,2020-01-13,Hard,R32,3,Tennys Sandgren,Michael Venus,6-4 6-3,101,,553,
+Auckland,A,2020-01-13,Hard,R32,3,Marco Cecchinato,Leonardo Mayer,7-6(6) 6-7(18) 7-6(2),76,100,690,558
+Auckland,A,2020-01-13,Hard,R32,3,Ugo Humbert,Casper Ruud,7-6(3) 2-6 6-3,57,46,900,1079
+Auckland,A,2020-01-13,Hard,R32,3,Vasek Pospisil,Joao Sousa,6-4 6-2,146,58,360,891
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Rafael Nadal,Hugo Dellien,6-2 6-3 6-0,1,73,10235,743
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Federico Delbonis,Joao Sousa,6-3 6-4 7-6(3),76,59,711,891
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Peter Gojowczyk,Christopher Eubanks,7-6(1) 6-3 4-6 6-0,120,221,463,215
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Pablo Carreno Busta,Jozef Kovalik,6-4 3-6 6-1 7-6(2),30,139,1422,379
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Nick Kyrgios,Lorenzo Sonego,6-2 7-6(3) 7-6(1),26,53,1520,990
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Gilles Simon,Pablo Cuevas,6-1 6-3 6-3,61,46,890,1097
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Mikael Ymer,Yasutaka Uchiyama,6-4 6-1 6-2,78,93,709,594
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Karen Khachanov,Mario Vilella Martinez,4-6 6-4 7-6(4) 6-3,17,196,1995,254
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Gael Monfils,Yen Hsun Lu,6-1 6-4 6-2,10,,2565,
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Ivo Karlovic,Vasek Pospisil,7-6(4) 6-4 7-5,124,138,436,392
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Aljaz Bedene,James Duckworth,6-4 6-7(5) 6-7(5) 6-2 6-4,55,94,950,588
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Ernests Gulbis,Felix Auger Aliassime,7-5 4-6 7-6(4) 6-4,256,22,179,1701
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Taylor Fritz,Tallon Griekspoor,6-3 6-3 6-3,34,175,1335,288
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Kevin Anderson,Ilya Ivashka,6-4 2-6 4-6 6-4 7-6(8),122,149,445,354
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Alex Bolt,Albert Ramos,7-6(1) 1-6 6-7(5) 6-1 6-4,140,42,377,1130
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Dominic Thiem,Adrian Mannarino,6-3 7-5 6-2,5,44,5890,1111
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Daniil Medvedev,Frances Tiafoe,6-3 4-6 6-4 6-2,4,50,5960,1050
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Pedro Martinez,Dominik Koepfer,6-3 6-4 7-5,168,89,300,609
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Jaume Munar,Hugo Gaston,7-5 5-7 6-0 6-3,90,247,608,189
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Alexei Popyrin,Jo-Wilfried Tsonga,6-7(5) 6-2 6-1 0-0 RET,96,33,585,1340
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,John Isner,Thiago Monteiro,6-7(5) 7-6(4) 7-6(7) 7-6(5),19,86,1860,640
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Alejandro Tabilo,Daniel Elahi Galan,4-6 6-3 6-4 6-7(6) 6-4,208,186,233,269
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Andreas Seppi,Miomir Kecmanovic,6-4 6-4 7-6(3),85,54,646,959
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Stan Wawrinka,Damir Dzumhur,7-5 6-7(4) 6-4 6-4,15,92,2045,594
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,David Goffin,Jeremy Chardy,6-4 6-3 6-1,11,58,2555,920
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Pierre Hugues Herbert,Cameron Norrie,7-5 3-6 3-6 7-5 6-4,64,62,865,885
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Yuichi Sugita,Elliot Benchetrit,6-2 6-0 6-3,91,231,608,205
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Andrey Rublev,Christopher Oconnell,6-3 0-6 6-4 7-6(5),16,115,2004,481
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Nikoloz Basilashvili,Soon Woo Kwon,6-7(5) 6-4 7-5 3-6 6-3,29,87,1485,637
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Fernando Verdasco,Evgeny Donskoy,7-5 6-2 6-1,51,106,1050,522
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Egor Gerasimov,Casper Ruud,6-3 7-6(6) 1-6 4-6 7-6(6),98,48,575,1079
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Alexander Zverev,Marco Cecchinato,6-4 7-6(4) 6-3,7,77,3345,710
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Matteo Berrettini,Andrew Harris,6-3 6-1 6-3,8,162,2870,316
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Tennys Sandgren,Marco Trungelliti,6-1 6-4 7-5,100,202,573,238
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Ricardas Berankis,Roberto Carballes Baena,6-4 6-2 6-2,69,83,804,664
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Sam Querrey,Borna Coric,6-3 6-4 6-4,45,28,1100,1490
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Guido Pella,John Patrick Smith,6-3 7-5 6-4,25,308,1585,130
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Gregoire Barrere,Mohamed Safwat,6-7(8) 7-6(1) 6-4 7-6(5),84,173,649,291
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Jordan Thompson,Alexander Bublik,6-4 6-3 6-2,66,56,843,948
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Fabio Fognini,Reilly Opelka,3-6 6-7(3) 6-4 6-3 7-6(5),12,38,2310,1227
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Marton Fucsovics,Denis Shapovalov,6-3 6-7(7) 6-1 7-6(3),67,13,827,2200
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Jannik Sinner,Max Purcell,7-6(2) 6-2 6-4,82,216,671,221
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Tommy Paul,Leonardo Mayer,4-6 6-4 6-4 6-4,80,101,696,564
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Grigor Dimitrov,Juan Ignacio Londero,4-6 6-2 6-0 6-4,20,52,1772,1017
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Hubert Hurkacz,Dennis Novak,6-7(4) 1-6 6-2 6-3 6-4,31,99,1398,574
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,John Millman,Ugo Humbert,7-6(3) 6-3 1-6 7-5,47,43,1096,1130
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Filip Krajinovic,Quentin Halys,7-6(7) 7-6(1) 3-6 4-6 7-5,41,215,1158,222
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Roger Federer,Steve Johnson,6-3 6-2 6-2,3,75,6590,720
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Stefanos Tsitsipas,Salvatore Caruso,6-0 6-2 6-3,6,95,5375,586
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Philipp Kohlschreiber,Marcos Giron,7-5 6-1 6-2,79,107,700,521
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Cristian Garin,Stefano Travaglia,6-4 6-3 6-4,36,74,1285,730
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Milos Raonic,Lorenzo Giustino,6-2 6-1 6-3,35,150,1305,347
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Benoit Paire,Cedrik Marcel Stebe,6-4 3-6 6-3 6-7(2) 6-0,21,154,1703,340
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Marin Cilic,Corentin Moutet,6-3 6-2 6-4,39,70,1205,800
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Michael Mmoh,Pablo Andujar,6-1 6-4 6-4,217,63,219,867
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Roberto Bautista Agut,Feliciano Lopez,6-2 6-2 7-5,9,57,2630,933
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Diego Schwartzman,Lloyd Harris,6-4 6-2 6-2,14,72,2130,746
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Alejandro Davidovich Fokina,Norbert Gombos,4-6 6-4 2-6 6-3 6-2,88,113,627,498
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Marc Polmans,Mikhail Kukushkin,6-4 6-3 4-6 6-7(8) 6-4,133,68,411,816
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Dusan Lajovic,Kyle Edmund,7-6(7) 6-3 7-6(4),27,65,1516,845
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Daniel Evans,Mackenzie Mcdonald,3-6 4-6 6-1 6-2 6-3,32,129,1349,419
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Yoshihito Nishioka,Laslo Djere,6-4 3-6 6-2 7-6(1),71,40,797,1185
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Tatsuma Ito,Prajnesh Gunneswaran,6-4 6-2 7-5,146,123,362,442
+Australian Open,Grand Slam,2020-01-20,Hard,R128,5,Novak Djokovic,Jan Lennard Struff,7-6(5) 6-2 2-6 6-1,2,37,9720,1270
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Rafael Nadal,Federico Delbonis,6-3 7-6(4) 6-1,1,76,10235,711
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Pablo Carreno Busta,Peter Gojowczyk,6-4 6-1 1-6 6-4,30,120,1422,463
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Nick Kyrgios,Gilles Simon,6-2 6-4 4-6 7-5,26,61,1520,890
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Karen Khachanov,Mikael Ymer,6-2 2-6 6-4 3-6 7-6(8),17,78,1995,709
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Gael Monfils,Ivo Karlovic,4-6 7-6(8) 6-4 7-5,10,124,2565,436
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Ernests Gulbis,Aljaz Bedene,7-5 6-3 6-2,256,55,179,950
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Taylor Fritz,Kevin Anderson,4-6 6-7(5) 7-6(4) 6-2 6-2,34,122,1335,445
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Dominic Thiem,Alex Bolt,6-2 5-7 6-7(5) 6-1 6-2,5,140,5890,377
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Daniil Medvedev,Pedro Martinez,7-5 6-1 6-3,4,168,5960,300
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Alexei Popyrin,Jaume Munar,6-2 7-6(5) 6-2,96,90,585,608
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,John Isner,Alejandro Tabilo,6-4 6-3 6-3,19,208,1860,233
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Stan Wawrinka,Andreas Seppi,4-6 7-5 6-3 3-6 6-4,15,85,2045,646
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,David Goffin,Pierre Hugues Herbert,6-1 6-4 4-6 1-6 6-3,11,64,2555,865
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Andrey Rublev,Yuichi Sugita,6-2 6-3 7-6(5),16,91,2004,608
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Fernando Verdasco,Nikoloz Basilashvili,4-6 7-6(5) 6-4 6-4,51,29,1050,1485
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Alexander Zverev,Egor Gerasimov,7-6(5) 6-4 7-5,7,98,3345,575
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Tennys Sandgren,Matteo Berrettini,7-6(7) 6-4 4-6 2-6 7-5,100,8,573,2870
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Sam Querrey,Ricardas Berankis,7-6(2) 4-6 6-4 6-4,45,69,1100,804
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Guido Pella,Gregoire Barrere,6-1 6-4 3-6 6-3,25,84,1585,649
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Fabio Fognini,Jordan Thompson,7-6(4) 6-1 3-6 4-6 7-6(4),12,66,2310,843
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Marton Fucsovics,Jannik Sinner,6-4 6-4 6-3,67,82,827,671
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Tommy Paul,Grigor Dimitrov,6-4 7-6(6) 3-6 6-7(3) 7-6(3),80,20,696,1772
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,John Millman,Hubert Hurkacz,6-4 7-5 6-3,47,31,1096,1398
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Roger Federer,Filip Krajinovic,6-1 6-4 6-1,3,41,6590,1158
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Stefanos Tsitsipas,Philipp Kohlschreiber,W/O,6,79,5375,700
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Milos Raonic,Cristian Garin,6-3 6-4 6-2,35,36,1305,1285
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Marin Cilic,Benoit Paire,6-2 6-7(6) 3-6 6-1 7-6(3),39,21,1205,1703
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Roberto Bautista Agut,Michael Mmoh,5-7 6-2 6-4 6-1,9,217,2630,219
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Diego Schwartzman,Alejandro Davidovich Fokina,6-1 6-4 6-2,14,88,2130,627
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Dusan Lajovic,Marc Polmans,6-2 6-4 6-3,27,133,1516,411
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Yoshihito Nishioka,Daniel Evans,6-4 6-3 6-4,71,32,797,1349
+Australian Open,Grand Slam,2020-01-20,Hard,R64,5,Novak Djokovic,Tatsuma Ito,6-1 6-4 6-2,2,146,9720,362
+Australian Open,Grand Slam,2020-01-20,Hard,R32,5,Rafael Nadal,Pablo Carreno Busta,6-1 6-2 6-4,1,30,10235,1422
+Australian Open,Grand Slam,2020-01-20,Hard,R32,5,Nick Kyrgios,Karen Khachanov,6-2 7-6(5) 6-7(6) 6-7(7) 7-6(8),26,17,1520,1995
+Australian Open,Grand Slam,2020-01-20,Hard,R32,5,Gael Monfils,Ernests Gulbis,7-6(2) 6-4 6-3,10,256,2565,179
+Australian Open,Grand Slam,2020-01-20,Hard,R32,5,Dominic Thiem,Taylor Fritz,6-2 6-4 6-7(5) 6-4,5,34,5890,1335
+Australian Open,Grand Slam,2020-01-20,Hard,R32,5,Daniil Medvedev,Alexei Popyrin,6-4 6-3 6-2,4,96,5960,585
+Australian Open,Grand Slam,2020-01-20,Hard,R32,5,Stan Wawrinka,John Isner,6-4 4-1 RET,15,19,2045,1860
+Australian Open,Grand Slam,2020-01-20,Hard,R32,5,Andrey Rublev,David Goffin,2-6 7-6(3) 6-4 7-6(4),16,11,2004,2555
+Australian Open,Grand Slam,2020-01-20,Hard,R32,5,Alexander Zverev,Fernando Verdasco,6-2 6-2 6-4,7,51,3345,1050
+Australian Open,Grand Slam,2020-01-20,Hard,R32,5,Tennys Sandgren,Sam Querrey,6-4 6-4 6-4,100,45,573,1100
+Australian Open,Grand Slam,2020-01-20,Hard,R32,5,Fabio Fognini,Guido Pella,7-6(0) 6-2 6-3,12,25,2310,1585
+Australian Open,Grand Slam,2020-01-20,Hard,R32,5,Marton Fucsovics,Tommy Paul,6-1 6-1 6-4,67,80,827,696
+Australian Open,Grand Slam,2020-01-20,Hard,R32,5,Roger Federer,John Millman,4-6 7-6(2) 6-4 4-6 7-6(8),3,47,6590,1096
+Australian Open,Grand Slam,2020-01-20,Hard,R32,5,Milos Raonic,Stefanos Tsitsipas,7-5 6-4 7-6(2),35,6,1305,5375
+Australian Open,Grand Slam,2020-01-20,Hard,R32,5,Marin Cilic,Roberto Bautista Agut,6-7(3) 6-4 6-0 5-7 6-3,39,9,1205,2630
+Australian Open,Grand Slam,2020-01-20,Hard,R32,5,Diego Schwartzman,Dusan Lajovic,6-2 6-3 7-6(7),14,27,2130,1516
+Australian Open,Grand Slam,2020-01-20,Hard,R32,5,Novak Djokovic,Yoshihito Nishioka,6-3 6-2 6-2,2,71,9720,797
+Australian Open,Grand Slam,2020-01-20,Hard,R16,5,Rafael Nadal,Nick Kyrgios,6-3 3-6 7-6(6) 7-6(4),1,26,10235,1520
+Australian Open,Grand Slam,2020-01-20,Hard,R16,5,Dominic Thiem,Gael Monfils,6-2 6-4 6-4,5,10,5890,2565
+Australian Open,Grand Slam,2020-01-20,Hard,R16,5,Stan Wawrinka,Daniil Medvedev,6-2 2-6 4-6 7-6(2) 6-2,15,4,2045,5960
+Australian Open,Grand Slam,2020-01-20,Hard,R16,5,Alexander Zverev,Andrey Rublev,6-4 6-4 6-4,7,16,3345,2004
+Australian Open,Grand Slam,2020-01-20,Hard,R16,5,Tennys Sandgren,Fabio Fognini,7-6(5) 7-5 6-7(2) 6-4,100,12,573,2310
+Australian Open,Grand Slam,2020-01-20,Hard,R16,5,Roger Federer,Marton Fucsovics,4-6 6-1 6-2 6-2,3,67,6590,827
+Australian Open,Grand Slam,2020-01-20,Hard,R16,5,Milos Raonic,Marin Cilic,6-4 6-3 7-5,35,39,1305,1205
+Australian Open,Grand Slam,2020-01-20,Hard,R16,5,Novak Djokovic,Diego Schwartzman,6-3 6-4 6-4,2,14,9720,2130
+Australian Open,Grand Slam,2020-01-20,Hard,QF,5,Dominic Thiem,Rafael Nadal,7-6(3) 7-6(4) 4-6 7-6(6),5,1,5890,10235
+Australian Open,Grand Slam,2020-01-20,Hard,QF,5,Alexander Zverev,Stan Wawrinka,1-6 6-3 6-4 6-2,7,15,3345,2045
+Australian Open,Grand Slam,2020-01-20,Hard,QF,5,Roger Federer,Tennys Sandgren,6-3 2-6 2-6 7-6(8) 6-3,3,100,6590,573
+Australian Open,Grand Slam,2020-01-20,Hard,QF,5,Novak Djokovic,Milos Raonic,6-4 6-3 7-6(1),2,35,9720,1305
+Australian Open,Grand Slam,2020-01-20,Hard,SF,5,Dominic Thiem,Alexander Zverev,3-6 6-4 7-6(3) 7-6(4),5,7,5890,3345
+Australian Open,Grand Slam,2020-01-20,Hard,SF,5,Novak Djokovic,Roger Federer,7-6(1) 6-4 6-3,2,3,9720,6590
+Australian Open,Grand Slam,2020-01-20,Hard,F,5,Novak Djokovic,Dominic Thiem,6-4 4-6 2-6 6-3 6-4,2,5,9720,5890
+Cordoba,A,2020-02-03,Clay,F,3,Cristian Garin,Diego Schwartzman,2-6 6-4 6-0,31,14,1320,2220
+Cordoba,A,2020-02-03,Clay,SF,3,Diego Schwartzman,Laslo Djere,6-1 1-6 6-2,14,39,2220,1185
+Cordoba,A,2020-02-03,Clay,SF,3,Cristian Garin,Andrej Martin,2-6 6-2 6-2,31,100,1320,551
+Cordoba,A,2020-02-03,Clay,QF,3,Diego Schwartzman,Albert Ramos,6-0 7-6(0),14,42,2220,1130
+Cordoba,A,2020-02-03,Clay,QF,3,Laslo Djere,Juan Ignacio Londero,6-7(5) 6-3 7-6(5),39,50,1185,1012
+Cordoba,A,2020-02-03,Clay,QF,3,Cristian Garin,Pablo Cuevas,1-6 6-3 6-4,31,48,1320,1062
+Cordoba,A,2020-02-03,Clay,QF,3,Andrej Martin,Corentin Moutet,6-3 6-2,100,71,551,777
+Cordoba,A,2020-02-03,Clay,R16,3,Diego Schwartzman,Jaume Munar,6-1 7-5,14,87,2220,643
+Cordoba,A,2020-02-03,Clay,R16,3,Albert Ramos,Pablo Andujar,6-3 6-7(4) 6-4,42,63,1130,867
+Cordoba,A,2020-02-03,Clay,R16,3,Laslo Djere,Pedro Martinez,6-3 6-4,39,150,1185,347
+Cordoba,A,2020-02-03,Clay,R16,3,Juan Ignacio Londero,Pedro Cachin,6-3 6-3,50,354,1012,104
+Cordoba,A,2020-02-03,Clay,R16,3,Pablo Cuevas,Gianluca Mager,6-7(5) 7-6(2) 6-1,48,133,1062,401
+Cordoba,A,2020-02-03,Clay,R16,3,Cristian Garin,Attila Balazs,6-3 6-0,31,108,1320,505
+Cordoba,A,2020-02-03,Clay,R16,3,Andrej Martin,Carlos Taberner,6-3 7-6(7),100,198,551,252
+Cordoba,A,2020-02-03,Clay,R16,3,Corentin Moutet,Guido Pella,6-7(4) 7-5 6-3,71,22,777,1665
+Cordoba,A,2020-02-03,Clay,R32,3,Jaume Munar,Leonardo Mayer,6-4 6-3,87,103,643,529
+Cordoba,A,2020-02-03,Clay,R32,3,Pablo Andujar,Filip Horansky,6-2 6-2,63,173,867,300
+Cordoba,A,2020-02-03,Clay,R32,3,Albert Ramos,Facundo Bagnis,6-4 7-6(3),42,135,1130,392
+Cordoba,A,2020-02-03,Clay,R32,3,Pedro Martinez,Federico Gaio,4-6 6-3 6-4,150,124,347,422
+Cordoba,A,2020-02-03,Clay,R32,3,Pedro Cachin,Hugo Dellien,6-1 6-1,354,77,104,738
+Cordoba,A,2020-02-03,Clay,R32,3,Juan Ignacio Londero,Marco Cecchinato,6-2 7-5,50,72,1012,758
+Cordoba,A,2020-02-03,Clay,R32,3,Pablo Cuevas,Federico Delbonis,7-5 6-2,48,74,1062,746
+Cordoba,A,2020-02-03,Clay,R32,3,Gianluca Mager,Juan Pablo Ficovich,6-2 3-6 6-2,133,244,401,196
+Cordoba,A,2020-02-03,Clay,R32,3,Attila Balazs,Lorenzo Sonego,6-2 7-6(3),108,52,505,980
+Cordoba,A,2020-02-03,Clay,R32,3,Carlos Taberner,Fernando Verdasco,4-6 6-1 6-4,198,49,252,1050
+Cordoba,A,2020-02-03,Clay,R32,3,Andrej Martin,Federico Coria,7-6(5) 6-4,100,116,551,466
+Cordoba,A,2020-02-03,Clay,R32,3,Corentin Moutet,Thiago Monteiro,6-4 6-3,71,89,777,634
+Montpellier,A,2020-02-03,Hard,F,3,Gael Monfils,Vasek Pospisil,7-5 6-3,9,132,2700,402
+Montpellier,A,2020-02-03,Hard,SF,3,Gael Monfils,Filip Krajinovic,7-6(4) 6-2,9,44,2700,1113
+Montpellier,A,2020-02-03,Hard,SF,3,Vasek Pospisil,David Goffin,6-3 1-6 7-5,132,10,402,2555
+Montpellier,A,2020-02-03,Hard,QF,3,Gael Monfils,Norbert Gombos,6-3 6-4,9,104,2700,527
+Montpellier,A,2020-02-03,Hard,QF,3,Filip Krajinovic,Gregoire Barrere,6-2 7-5,44,91,1113,612
+Montpellier,A,2020-02-03,Hard,QF,3,Vasek Pospisil,Richard Gasquet,6-1 1-0 RET,132,58,402,890
+Montpellier,A,2020-02-03,Hard,QF,3,David Goffin,Pierre Hugues Herbert,6-4 7-6(5),10,67,2555,820
+Montpellier,A,2020-02-03,Hard,R16,3,Gael Monfils,Adrian Mannarino,4-6 6-1 6-4,9,45,2700,1111
+Montpellier,A,2020-02-03,Hard,R16,3,Norbert Gombos,Emil Ruusuvuori,7-5 6-4,104,101,527,540
+Montpellier,A,2020-02-03,Hard,R16,3,Gregoire Barrere,Grigor Dimitrov,6-7(4) 6-4 7-5,91,23,612,1637
+Montpellier,A,2020-02-03,Hard,R16,3,Filip Krajinovic,Mikael Ymer,6-1 6-1,44,76,1113,739
+Montpellier,A,2020-02-03,Hard,R16,3,Richard Gasquet,Feliciano Lopez,6-7(1) 6-4 6-2,58,55,890,933
+Montpellier,A,2020-02-03,Hard,R16,3,Vasek Pospisil,Denis Shapovalov,6-2 6-3,132,16,402,2120
+Montpellier,A,2020-02-03,Hard,R16,3,Pierre Hugues Herbert,Felix Auger Aliassime,7-6(2) 7-5,67,21,820,1666
+Montpellier,A,2020-02-03,Hard,R16,3,David Goffin,Alexander Bublik,6-3 7-6(9),10,54,2555,952
+Montpellier,A,2020-02-03,Hard,R32,3,Adrian Mannarino,Alexei Popyrin,6-0 6-7(7) 6-0,45,99,1111,585
+Montpellier,A,2020-02-03,Hard,R32,3,Emil Ruusuvuori,Dennis Novak,7-6(3) 4-6 6-2,101,93,540,609
+Montpellier,A,2020-02-03,Hard,R32,3,Norbert Gombos,Pablo Carreno Busta,3-6 6-4 6-3,104,29,527,1332
+Montpellier,A,2020-02-03,Hard,R32,3,Gregoire Barrere,Joao Sousa,6-2 7-6(6),91,69,612,811
+Montpellier,A,2020-02-03,Hard,R32,3,Mikael Ymer,Jannik Sinner,6-3 6-4,76,78,739,710
+Montpellier,A,2020-02-03,Hard,R32,3,Filip Krajinovic,Enzo Couacaud,6-4 6-4,44,214,1113,221
+Montpellier,A,2020-02-03,Hard,R32,3,Feliciano Lopez,Ugo Humbert,6-4 6-1,55,43,933,1121
+Montpellier,A,2020-02-03,Hard,R32,3,Richard Gasquet,Gilles Simon,6-4 6-4,58,59,890,890
+Montpellier,A,2020-02-03,Hard,R32,3,Vasek Pospisil,Aljaz Bedene,6-3 6-4,132,51,402,985
+Montpellier,A,2020-02-03,Hard,R32,3,Felix Auger Aliassime,Damir Dzumhur,6-7(5) 6-2 6-2,21,97,1666,594
+Montpellier,A,2020-02-03,Hard,R32,3,Pierre Hugues Herbert,Sergiy Stakhovsky,6-2 7-5,67,153,820,342
+Montpellier,A,2020-02-03,Hard,R32,3,Alexander Bublik,Henri Laaksonen,6-7(2) 6-1 7-6(2),54,112,952,480
+Pune,A,2020-02-03,Hard,F,3,Jiri Vesely,Egor Gerasimov,7-6(2) 5-7 6-3,107,90,520,620
+Pune,A,2020-02-03,Hard,SF,3,Egor Gerasimov,James Duckworth,7-6(2) 6-4,90,96,620,598
+Pune,A,2020-02-03,Hard,SF,3,Jiri Vesely,Ricardas Berankis,6-7(8) 7-6(3) 7-6(7),107,73,520,751
+Pune,A,2020-02-03,Hard,QF,3,James Duckworth,Roberto Marcora,6-3 7-6(4),96,174,598,297
+Pune,A,2020-02-03,Hard,QF,3,Egor Gerasimov,Soon Woo Kwon,4-6 7-6(1) 6-4,90,88,620,637
+Pune,A,2020-02-03,Hard,QF,3,Jiri Vesely,Ilya Ivashka,2-6 6-1 7-6(11),107,152,520,344
+Pune,A,2020-02-03,Hard,QF,3,Ricardas Berankis,Yuichi Sugita,4-6 7-6(4) 6-2,73,86,751,645
+Pune,A,2020-02-03,Hard,R16,3,Roberto Marcora,Benoit Paire,6-4 6-4,174,19,297,1738
+Pune,A,2020-02-03,Hard,R16,3,James Duckworth,Taro Daniel,6-7(4) 7-6(6) 6-3,96,102,598,536
+Pune,A,2020-02-03,Hard,R16,3,Soon Woo Kwon,Prajnesh Gunneswaran,6-3 7-6(5),88,122,637,433
+Pune,A,2020-02-03,Hard,R16,3,Egor Gerasimov,Nikola Milojevic,2-6 6-3 6-2,90,148,620,357
+Pune,A,2020-02-03,Hard,R16,3,Jiri Vesely,Salvatore Caruso,7-6(5) 6-4,107,98,520,588
+Pune,A,2020-02-03,Hard,R16,3,Ilya Ivashka,Stefano Travaglia,7-6(5) 7-6(3),152,82,344,670
+Pune,A,2020-02-03,Hard,R16,3,Yuichi Sugita,Viktor Troicki,W/O,86,191,645,263
+Pune,A,2020-02-03,Hard,R16,3,Ricardas Berankis,Cedrik Marcel Stebe,7-6(2) 6-1,73,149,751,350
+Pune,A,2020-02-03,Hard,R32,3,Roberto Marcora,Lukas Rosol,6-3 6-2,174,176,297,292
+Pune,A,2020-02-03,Hard,R32,3,Taro Daniel,Sasi Kumar Mukund,6-2 7-6(7),102,263,536,168
+Pune,A,2020-02-03,Hard,R32,3,James Duckworth,Peter Gojowczyk,7-6(5) 6-4,96,106,598,523
+Pune,A,2020-02-03,Hard,R32,3,Prajnesh Gunneswaran,Yannick Maden,7-6(4) 7-6(5),122,131,433,404
+Pune,A,2020-02-03,Hard,R32,3,Nikola Milojevic,Antoine Hoang,7-6(5) 6-4,148,126,357,415
+Pune,A,2020-02-03,Hard,R32,3,Egor Gerasimov,Paolo Lorenzi,6-2 6-3,90,115,620,472
+Pune,A,2020-02-03,Hard,R32,3,Salvatore Caruso,Ramkumar Ramanathan,3-6 6-4 7-5,98,182,588,280
+Pune,A,2020-02-03,Hard,R32,3,Jiri Vesely,Arjun Kadhe,6-2 6-4,107,612,520,36
+Pune,A,2020-02-03,Hard,R32,3,Ilya Ivashka,Evgeny Donskoy,6-3 6-2,152,109,344,503
+Pune,A,2020-02-03,Hard,R32,3,Yuichi Sugita,Thomas Fabbiano,6-3 6-0,86,134,645,394
+Pune,A,2020-02-03,Hard,R32,3,Viktor Troicki,Sumit Nagal,6-2 6-7(4) 6-1,191,125,263,416
+Pune,A,2020-02-03,Hard,R32,3,Cedrik Marcel Stebe,Ivo Karlovic,6-3 6-4,149,121,350,436
+Buenos Aires,A,2020-02-10,Clay,F,3,Casper Ruud,Pedro Sousa,6-1 6-4,45,145,1079,373
+Buenos Aires,A,2020-02-10,Clay,SF,3,Pedro Sousa,Diego Schwartzman,W/O,145,14,373,2325
+Buenos Aires,A,2020-02-10,Clay,SF,3,Casper Ruud,Juan Ignacio Londero,4-6 7-5 6-1,45,69,1079,807
+Buenos Aires,A,2020-02-10,Clay,QF,3,Diego Schwartzman,Pablo Cuevas,5-7 7-6(11) 7-5,14,48,2325,1017
+Buenos Aires,A,2020-02-10,Clay,QF,3,Pedro Sousa,Thiago Monteiro,7-6(5) 6-4,145,92,373,634
+Buenos Aires,A,2020-02-10,Clay,QF,3,Casper Ruud,Dusan Lajovic,7-5 6-1,45,23,1079,1596
+Buenos Aires,A,2020-02-10,Clay,QF,3,Juan Ignacio Londero,Guido Pella,6-4 7-6(4),69,27,807,1560
+Buenos Aires,A,2020-02-10,Clay,R16,3,Diego Schwartzman,Federico Delbonis,6-3 4-6 6-2,14,87,2325,666
+Buenos Aires,A,2020-02-10,Clay,R16,3,Pablo Cuevas,Albert Ramos,6-4 4-6 6-4,48,42,1017,1130
+Buenos Aires,A,2020-02-10,Clay,R16,3,Thiago Monteiro,Borna Coric,6-4 7-6(6),92,31,634,1320
+Buenos Aires,A,2020-02-10,Clay,R16,3,Pedro Sousa,Jozef Kovalik,7-6(3) 7-6(5),145,129,373,405
+Buenos Aires,A,2020-02-10,Clay,R16,3,Casper Ruud,Roberto Carballes Baena,6-1 6-0,45,88,1079,664
+Buenos Aires,A,2020-02-10,Clay,R16,3,Dusan Lajovic,Pedro Martinez,7-6(6) 7-6(6),23,142,1596,379
+Buenos Aires,A,2020-02-10,Clay,R16,3,Juan Ignacio Londero,Laslo Djere,6-7(3) 6-2 6-1,69,35,807,1265
+Buenos Aires,A,2020-02-10,Clay,R16,3,Guido Pella,Facundo Bagnis,7-6(2) 6-7(2) 6-4,27,134,1560,392
+Buenos Aires,A,2020-02-10,Clay,R32,3,Federico Delbonis,Hugo Dellien,1-6 6-3 7-5,87,77,666,738
+Buenos Aires,A,2020-02-10,Clay,R32,3,Pablo Cuevas,Lorenzo Sonego,6-4 6-4,48,49,1017,980
+Buenos Aires,A,2020-02-10,Clay,R32,3,Albert Ramos,Leonardo Mayer,4-6 6-3 7-5,42,107,1130,529
+Buenos Aires,A,2020-02-10,Clay,R32,3,Thiago Monteiro,Jaume Munar,6-3 6-3,92,95,634,618
+Buenos Aires,A,2020-02-10,Clay,R32,3,Jozef Kovalik,Corentin Moutet,6-3 7-6(4),129,76,405,742
+Buenos Aires,A,2020-02-10,Clay,R32,3,Pedro Sousa,Facundo Diaz Acosta,4-6 6-2 6-3,145,471,373,65
+Buenos Aires,A,2020-02-10,Clay,R32,3,Casper Ruud,Pablo Andujar,6-2 6-3,45,58,1079,887
+Buenos Aires,A,2020-02-10,Clay,R32,3,Roberto Carballes Baena,Marco Cecchinato,6-4 7-6(3),88,73,664,758
+Buenos Aires,A,2020-02-10,Clay,R32,3,Pedro Martinez,Joao Domingues,7-6(0) 7-5,142,175,379,286
+Buenos Aires,A,2020-02-10,Clay,R32,3,Laslo Djere,Francisco Cerundolo,6-2 2-6 6-4,35,239,1265,197
+Buenos Aires,A,2020-02-10,Clay,R32,3,Juan Ignacio Londero,Filip Horansky,6-4 4-6 6-2,69,182,807,277
+Buenos Aires,A,2020-02-10,Clay,R32,3,Facundo Bagnis,Andrej Martin,6-4 6-1,134,93,392,629
+New York,A,2020-02-10,Hard,F,3,Kyle Edmund,Andreas Seppi,7-5 6-1,62,98,845,601
+New York,A,2020-02-10,Hard,SF,3,Andreas Seppi,Jason Jung,6-3 6-2,98,131,601,400
+New York,A,2020-02-10,Hard,SF,3,Kyle Edmund,Miomir Kecmanovic,6-1 6-4,62,54,845,921
+New York,A,2020-02-10,Hard,QF,3,Andreas Seppi,Jordan Thompson,6-7(2) 6-4 6-1,98,63,601,843
+New York,A,2020-02-10,Hard,QF,3,Jason Jung,Reilly Opelka,5-7 6-4 6-4,131,40,400,1152
+New York,A,2020-02-10,Hard,QF,3,Miomir Kecmanovic,Ugo Humbert,3-6 6-2 6-4,54,43,921,1121
+New York,A,2020-02-10,Hard,QF,3,Kyle Edmund,Soon Woo Kwon,3-6 6-2 7-6(5),62,84,845,672
+New York,A,2020-02-10,Hard,R16,3,Jordan Thompson,John Isner,7-6(2) 6-7(3) 6-3,63,18,843,1940
+New York,A,2020-02-10,Hard,R16,3,Andreas Seppi,Steve Johnson,7-6(4) 6-3,98,75,601,745
+New York,A,2020-02-10,Hard,R16,3,Reilly Opelka,Yoshihito Nishioka,6-4 6-4,40,64,1152,842
+New York,A,2020-02-10,Hard,R16,3,Jason Jung,Cameron Norrie,6-4 6-4,131,59,400,885
+New York,A,2020-02-10,Hard,R16,3,Miomir Kecmanovic,Paolo Lorenzi,6-3 6-3,54,116,921,472
+New York,A,2020-02-10,Hard,R16,3,Ugo Humbert,Marcos Giron,6-1 6-0,43,113,1121,483
+New York,A,2020-02-10,Hard,R16,3,Kyle Edmund,Dominik Koepfer,6-2 6-4,62,94,845,626
+New York,A,2020-02-10,Hard,R16,3,Soon Woo Kwon,Milos Raonic,7-6(4) 6-7(4) 6-4,84,32,672,1305
+New York,A,2020-02-10,Hard,R32,3,Jordan Thompson,Ivo Karlovic,6-3 7-6(2),63,122,843,436
+New York,A,2020-02-10,Hard,R32,3,Andreas Seppi,Damir Dzumhur,6-3 1-6 7-6(6),98,100,601,594
+New York,A,2020-02-10,Hard,R32,3,Steve Johnson,Tennys Sandgren,6-7(5) 6-3 7-6(3),75,53,745,923
+New York,A,2020-02-10,Hard,R32,3,Yoshihito Nishioka,Henri Laaksonen,6-3 0-6 6-2,64,114,842,480
+New York,A,2020-02-10,Hard,R32,3,Jason Jung,Kevin Anderson,7-6(6) 6-4,131,120,400,445
+New York,A,2020-02-10,Hard,R32,3,Cameron Norrie,Brian Shi,7-5 6-3,59,,885,
+New York,A,2020-02-10,Hard,R32,3,Miomir Kecmanovic,Tommy Paul,6-4 6-2,54,70,921,778
+New York,A,2020-02-10,Hard,R32,3,Paolo Lorenzi,Danilo Petrovic,4-6 6-4 6-0,116,159,472,328
+New York,A,2020-02-10,Hard,R32,3,Marcos Giron,Jack Sock,6-3 6-4,113,,483,
+New York,A,2020-02-10,Hard,R32,3,Kyle Edmund,Yasutaka Uchiyama,7-5 6-4,62,97,845,604
+New York,A,2020-02-10,Hard,R32,3,Dominik Koepfer,Brayden Schnur,6-4 6-3,94,121,626,440
+New York,A,2020-02-10,Hard,R32,3,Soon Woo Kwon,Go Soeda,6-2 6-7(2) 6-3,84,112,672,500
+Rotterdam,A,2020-02-10,Hard,F,3,Gael Monfils,Felix Auger Aliassime,6-2 6-4,9,21,2860,1666
+Rotterdam,A,2020-02-10,Hard,SF,3,Gael Monfils,Filip Krajinovic,6-4 7-6(5),9,39,2860,1158
+Rotterdam,A,2020-02-10,Hard,SF,3,Felix Auger Aliassime,Pablo Carreno Busta,7-6(2) 6-4,21,30,1666,1332
+Rotterdam,A,2020-02-10,Hard,QF,3,Filip Krajinovic,Andrey Rublev,7-6(2) 6-4,39,15,1158,2174
+Rotterdam,A,2020-02-10,Hard,QF,3,Gael Monfils,Daniel Evans,7-6(5) 6-2,9,33,2860,1296
+Rotterdam,A,2020-02-10,Hard,QF,3,Pablo Carreno Busta,Jannik Sinner,7-5 3-6 7-6(6),30,79,1332,710
+Rotterdam,A,2020-02-10,Hard,QF,3,Felix Auger Aliassime,Aljaz Bedene,6-4 7-6(6),21,52,1666,940
+Rotterdam,A,2020-02-10,Hard,R16,3,Filip Krajinovic,Vasek Pospisil,6-4 7-6(7),39,104,1158,552
+Rotterdam,A,2020-02-10,Hard,R16,3,Andrey Rublev,Alexander Bublik,7-5 6-3,15,56,2174,892
+Rotterdam,A,2020-02-10,Hard,R16,3,Gael Monfils,Gilles Simon,6-4 6-1,9,57,2860,890
+Rotterdam,A,2020-02-10,Hard,R16,3,Daniel Evans,Karen Khachanov,4-6 6-3 6-4,33,17,1296,1995
+Rotterdam,A,2020-02-10,Hard,R16,3,Pablo Carreno Busta,Roberto Bautista Agut,6-4 2-6 7-6(4),30,12,1332,2360
+Rotterdam,A,2020-02-10,Hard,R16,3,Jannik Sinner,David Goffin,7-6(7) 7-5,79,10,710,2600
+Rotterdam,A,2020-02-10,Hard,R16,3,Felix Auger Aliassime,Grigor Dimitrov,6-4 6-2,21,22,1666,1637
+Rotterdam,A,2020-02-10,Hard,R16,3,Aljaz Bedene,Stefanos Tsitsipas,7-5 6-4,52,6,940,4745
+Rotterdam,A,2020-02-10,Hard,R32,3,Vasek Pospisil,Daniil Medvedev,6-4 6-3,104,5,552,5890
+Rotterdam,A,2020-02-10,Hard,R32,3,Filip Krajinovic,Tallon Griekspoor,6-4 6-1,39,172,1158,294
+Rotterdam,A,2020-02-10,Hard,R32,3,Alexander Bublik,Gregoire Barrere,6-3 6-7(2) 6-4,56,90,892,651
+Rotterdam,A,2020-02-10,Hard,R32,3,Andrey Rublev,Nikoloz Basilashvili,6-2 6-3,15,28,2174,1440
+Rotterdam,A,2020-02-10,Hard,R32,3,Gael Monfils,Joao Sousa,6-3 6-2,9,68,2860,811
+Rotterdam,A,2020-02-10,Hard,R32,3,Gilles Simon,Mikhail Kukushkin,7-6(3) 3-6 6-3,57,67,890,816
+Rotterdam,A,2020-02-10,Hard,R32,3,Daniel Evans,Philipp Kohlschreiber,6-3 7-5,33,81,1296,700
+Rotterdam,A,2020-02-10,Hard,R32,3,Karen Khachanov,Fabio Fognini,6-3 6-3,17,11,1995,2400
+Rotterdam,A,2020-02-10,Hard,R32,3,Roberto Bautista Agut,Marton Fucsovics,4-6 7-6(1) 6-1,12,66,2360,832
+Rotterdam,A,2020-02-10,Hard,R32,3,Pablo Carreno Busta,Adrian Mannarino,7-5 6-7(3) 6-4,30,44,1332,1111
+Rotterdam,A,2020-02-10,Hard,R32,3,Jannik Sinner,Radu Albot,W/O,79,50,710,977
+Rotterdam,A,2020-02-10,Hard,R32,3,David Goffin,Robin Haase,3-6 7-6(5) 6-4,10,167,2600,305
+Rotterdam,A,2020-02-10,Hard,R32,3,Grigor Dimitrov,Denis Shapovalov,6-3 7-6(3),22,16,1637,2120
+Rotterdam,A,2020-02-10,Hard,R32,3,Felix Auger Aliassime,Jan Lennard Struff,6-3 1-6 6-3,21,34,1666,1270
+Rotterdam,A,2020-02-10,Hard,R32,3,Aljaz Bedene,Benoit Paire,6-2 6-4,52,19,940,1738
+Rotterdam,A,2020-02-10,Hard,R32,3,Stefanos Tsitsipas,Hubert Hurkacz,6-7(2) 6-3 6-1,6,29,4745,1433
+Delray Beach,A,2020-02-17,Hard,F,3,Reilly Opelka,Yoshihito Nishioka,7-5 6-7(4) 6-2,54,63,947,862
+Delray Beach,A,2020-02-17,Hard,SF,3,Yoshihito Nishioka,Ugo Humbert,1-6 6-4 6-0,63,44,862,1086
+Delray Beach,A,2020-02-17,Hard,SF,3,Reilly Opelka,Milos Raonic,4-6 7-6(6) 6-3,54,37,947,1260
+Delray Beach,A,2020-02-17,Hard,QF,3,Ugo Humbert,Frances Tiafoe,6-1 6-2,44,84,1086,700
+Delray Beach,A,2020-02-17,Hard,QF,3,Yoshihito Nishioka,Brandon Nakashima,3-6 7-6(5) 6-4,63,294,862,139
+Delray Beach,A,2020-02-17,Hard,QF,3,Reilly Opelka,Soon Woo Kwon,6-3 6-4,54,82,947,702
+Delray Beach,A,2020-02-17,Hard,QF,3,Milos Raonic,Steve Johnson,7-6(6) 6-3,37,76,1260,745
+Delray Beach,A,2020-02-17,Hard,R16,3,Frances Tiafoe,Tommy Paul,7-5 7-6(4),84,70,700,778
+Delray Beach,A,2020-02-17,Hard,R16,3,Ugo Humbert,Miomir Kecmanovic,6-4 7-6(6),44,50,1086,999
+Delray Beach,A,2020-02-17,Hard,R16,3,Brandon Nakashima,Cameron Norrie,7-5 6-2,294,60,139,885
+Delray Beach,A,2020-02-17,Hard,R16,3,Yoshihito Nishioka,Noah Rubin,6-1 6-2,63,269,862,162
+Delray Beach,A,2020-02-17,Hard,R16,3,Soon Woo Kwon,Ryan Harrison,6-4 3-6 7-6(0),82,433,702,73
+Delray Beach,A,2020-02-17,Hard,R16,3,Reilly Opelka,Mackenzie Mcdonald,6-3 6-4,54,159,947,327
+Delray Beach,A,2020-02-17,Hard,R16,3,Steve Johnson,Jack Sock,6-4 5-7 6-1,76,,745,
+Delray Beach,A,2020-02-17,Hard,R16,3,Milos Raonic,Cedrik Marcel Stebe,7-5 6-3,37,147,1260,370
+Delray Beach,A,2020-02-17,Hard,R32,3,Tommy Paul,Daniel Elahi Galan,6-2 6-4,70,146,778,376
+Delray Beach,A,2020-02-17,Hard,R32,3,Frances Tiafoe,Emilio Gomez,7-6(3) 6-2,84,148,700,363
+Delray Beach,A,2020-02-17,Hard,R32,3,Miomir Kecmanovic,Jordan Thompson,6-2 0-0 RET,50,65,999,843
+Delray Beach,A,2020-02-17,Hard,R32,3,Ugo Humbert,Stefan Kozlov,6-7(5) 6-3 6-1,44,367,1086,97
+Delray Beach,A,2020-02-17,Hard,R32,3,Cameron Norrie,Taylor Fritz,6-4 6-7(4) 6-4,60,38,885,1255
+Delray Beach,A,2020-02-17,Hard,R32,3,Brandon Nakashima,Jiri Vesely,7-6(4) 6-1,294,74,139,760
+Delray Beach,A,2020-02-17,Hard,R32,3,Noah Rubin,Jason Jung,6-3 4-3 RET,269,119,162,457
+Delray Beach,A,2020-02-17,Hard,R32,3,Yoshihito Nishioka,John Millman,3-6 6-4 6-2,63,40,862,1141
+Delray Beach,A,2020-02-17,Hard,R32,3,Soon Woo Kwon,Adrian Mannarino,1-6 6-3 6-2,82,42,702,1111
+Delray Beach,A,2020-02-17,Hard,R32,3,Ryan Harrison,Damir Dzumhur,6-3 6-2,433,108,73,520
+Delray Beach,A,2020-02-17,Hard,R32,3,Mackenzie Mcdonald,Yasutaka Uchiyama,6-2 7-6(5),159,96,327,604
+Delray Beach,A,2020-02-17,Hard,R32,3,Reilly Opelka,Ernests Gulbis,6-7(5) 6-4 7-6(4),54,224,947,209
+Delray Beach,A,2020-02-17,Hard,R32,3,Jack Sock,Radu Albot,3-6 6-3 7-6(2),,51,,977
+Delray Beach,A,2020-02-17,Hard,R32,3,Steve Johnson,Henri Laaksonen,7-6(5) 6-4,76,134,745,400
+Delray Beach,A,2020-02-17,Hard,R32,3,Cedrik Marcel Stebe,Bernard Tomic,6-2 3-6 6-2,147,197,370,249
+Delray Beach,A,2020-02-17,Hard,R32,3,Milos Raonic,Denis Istomin,6-2 6-2,37,164,1260,305
+Marseille,A,2020-02-17,Hard,F,3,Stefanos Tsitsipas,Felix Auger Aliassime,6-3 6-4,6,18,4745,1921
+Marseille,A,2020-02-17,Hard,SF,3,Felix Auger Aliassime,Gilles Simon,7-5 7-6(2),18,58,1921,890
+Marseille,A,2020-02-17,Hard,SF,3,Stefanos Tsitsipas,Alexander Bublik,7-5 6-3,6,55,4745,930
+Marseille,A,2020-02-17,Hard,QF,3,Gilles Simon,Daniil Medvedev,6-4 6-0,58,5,890,5890
+Marseille,A,2020-02-17,Hard,QF,3,Felix Auger Aliassime,Egor Gerasimov,7-5 6-2,18,72,1921,764
+Marseille,A,2020-02-17,Hard,QF,3,Alexander Bublik,Denis Shapovalov,7-5 4-6 6-3,55,15,930,2075
+Marseille,A,2020-02-17,Hard,QF,3,Stefanos Tsitsipas,Vasek Pospisil,7-5 6-3,6,98,4745,597
+Marseille,A,2020-02-17,Hard,R16,3,Daniil Medvedev,Jannik Sinner,1-6 6-1 6-2,5,68,5890,793
+Marseille,A,2020-02-17,Hard,R16,3,Gilles Simon,Aljaz Bedene,7-6(6) 6-4,58,47,890,1010
+Marseille,A,2020-02-17,Hard,R16,3,Egor Gerasimov,David Goffin,6-4 7-6(5),72,10,764,2600
+Marseille,A,2020-02-17,Hard,R16,3,Felix Auger Aliassime,Pierre Hugues Herbert,6-0 6-7(6) 7-6(9),18,79,1921,715
+Marseille,A,2020-02-17,Hard,R16,3,Alexander Bublik,Benoit Paire,3-6 6-4 6-4,55,20,930,1738
+Marseille,A,2020-02-17,Hard,R16,3,Denis Shapovalov,Marin Cilic,6-4 4-6 6-2,15,39,2075,1205
+Marseille,A,2020-02-17,Hard,R16,3,Vasek Pospisil,Hubert Hurkacz,6-3 6-4,98,29,597,1433
+Marseille,A,2020-02-17,Hard,R16,3,Stefanos Tsitsipas,Mikael Ymer,6-1 6-3,6,75,4745,749
+Marseille,A,2020-02-17,Hard,R32,3,Jannik Sinner,Norbert Gombos,6-4 7-6(5),68,102,793,565
+Marseille,A,2020-02-17,Hard,R32,3,Gilles Simon,Harold Mayot,6-4 7-6(3),58,509,890,55
+Marseille,A,2020-02-17,Hard,R32,3,Aljaz Bedene,Karen Khachanov,4-6 6-4 7-5,47,17,1010,2040
+Marseille,A,2020-02-17,Hard,R32,3,Egor Gerasimov,Dennis Novak,7-6(3) 6-3,72,95,764,609
+Marseille,A,2020-02-17,Hard,R32,3,Pierre Hugues Herbert,Mikhail Kukushkin,7-6(4) 6-4,79,69,715,791
+Marseille,A,2020-02-17,Hard,R32,3,Felix Auger Aliassime,Stefano Travaglia,6-7(3) 7-6(6) 6-3,18,85,1921,684
+Marseille,A,2020-02-17,Hard,R32,3,Benoit Paire,Gregoire Barrere,6-4 7-6(1),20,89,1738,665
+Marseille,A,2020-02-17,Hard,R32,3,Alexander Bublik,Marton Fucsovics,6-4 7-5,55,73,930,762
+Marseille,A,2020-02-17,Hard,R32,3,Marin Cilic,Ilya Ivashka,3-6 7-6(5) 6-4,39,137,1205,394
+Marseille,A,2020-02-17,Hard,R32,3,Hubert Hurkacz,Antoine Hoang,6-4 6-1,29,129,1433,412
+Marseille,A,2020-02-17,Hard,R32,3,Vasek Pospisil,Emil Ruusuvuori,7-6(6) 6-3,98,101,597,576
+Marseille,A,2020-02-17,Hard,R32,3,Mikael Ymer,Richard Gasquet,6-3 3-6 7-5,75,57,749,915
+ATP Rio de Janeiro,A,2020-02-17,Clay,F,3,Cristian Garin,Gianluca Mager,7-6(3) 7-5,25,128,1550,413
+ATP Rio de Janeiro,A,2020-02-17,Clay,SF,3,Gianluca Mager,Attila Balazs,7-6(4) 4-6 7-6(2),128,106,413,525
+ATP Rio de Janeiro,A,2020-02-17,Clay,SF,3,Cristian Garin,Borna Coric,6-4 7-5,25,32,1550,1320
+ATP Rio de Janeiro,A,2020-02-17,Clay,QF,3,Gianluca Mager,Dominic Thiem,7-6(4) 7-5,128,4,413,7045
+ATP Rio de Janeiro,A,2020-02-17,Clay,QF,3,Attila Balazs,Pedro Martinez,2-6 6-4 6-2,106,133,525,404
+ATP Rio de Janeiro,A,2020-02-17,Clay,QF,3,Cristian Garin,Federico Coria,2-6 6-3 7-5,25,116,1550,466
+ATP Rio de Janeiro,A,2020-02-17,Clay,QF,3,Borna Coric,Lorenzo Sonego,7-6(5) 6-3,32,52,1320,960
+ATP Rio de Janeiro,A,2020-02-17,Clay,R16,3,Dominic Thiem,Jaume Munar,6-7(5) 6-3 6-4,4,99,7045,593
+ATP Rio de Janeiro,A,2020-02-17,Clay,R16,3,Gianluca Mager,Joao Domingues,6-3 7-6(5),128,169,413,292
+ATP Rio de Janeiro,A,2020-02-17,Clay,R16,3,Attila Balazs,Thiago Monteiro,1-6 6-1 6-4,106,88,525,669
+ATP Rio de Janeiro,A,2020-02-17,Clay,R16,3,Pedro Martinez,Pablo Andujar,6-1 6-4,133,59,404,887
+ATP Rio de Janeiro,A,2020-02-17,Clay,R16,3,Federico Coria,Carlos Alcaraz,6-4 4-6 6-4,116,406,466,82
+ATP Rio de Janeiro,A,2020-02-17,Clay,R16,3,Cristian Garin,Federico Delbonis,6-4 6-3,25,86,1550,676
+ATP Rio de Janeiro,A,2020-02-17,Clay,R16,3,Borna Coric,Thiago Seyboth Wild,6-3 1-6 7-6(5),32,206,1320,235
+ATP Rio de Janeiro,A,2020-02-17,Clay,R16,3,Lorenzo Sonego,Dusan Lajovic,7-6(5) 7-6(5),52,23,960,1641
+ATP Rio de Janeiro,A,2020-02-17,Clay,R32,3,Dominic Thiem,Felipe Meligeni Alves,6-2 4-6 6-1,4,341,7045,111
+ATP Rio de Janeiro,A,2020-02-17,Clay,R32,3,Jaume Munar,Salvatore Caruso,7-5 6-4,99,97,593,600
+ATP Rio de Janeiro,A,2020-02-17,Clay,R32,3,Joao Domingues,Federico Gaio,7-6(8) 6-4,169,127,292,422
+ATP Rio de Janeiro,A,2020-02-17,Clay,R32,3,Gianluca Mager,Casper Ruud,7-6(4) 7-5,128,34,413,1313
+ATP Rio de Janeiro,A,2020-02-17,Clay,R32,3,Thiago Monteiro,Guido Pella,5-7 6-4 7-6(3),88,26,669,1515
+ATP Rio de Janeiro,A,2020-02-17,Clay,R32,3,Attila Balazs,Pablo Cuevas,6-4 6-3,106,46,525,1017
+ATP Rio de Janeiro,A,2020-02-17,Clay,R32,3,Pedro Martinez,Hugo Dellien,3-6 6-2 7-5,133,78,404,738
+ATP Rio de Janeiro,A,2020-02-17,Clay,R32,3,Pablo Andujar,Fernando Verdasco,6-3 6-3,59,49,887,1000
+ATP Rio de Janeiro,A,2020-02-17,Clay,R32,3,Carlos Alcaraz,Albert Ramos,7-6(2) 4-6 7-6(2),406,41,82,1130
+ATP Rio de Janeiro,A,2020-02-17,Clay,R32,3,Federico Coria,Corentin Moutet,1-6 7-6(1) 7-6(3),116,77,466,742
+ATP Rio de Janeiro,A,2020-02-17,Clay,R32,3,Federico Delbonis,Roberto Carballes Baena,6-2 6-4,86,93,676,639
+ATP Rio de Janeiro,A,2020-02-17,Clay,R32,3,Cristian Garin,Andrej Martin,4-6 7-5 7-6(5),25,94,1550,629
+ATP Rio de Janeiro,A,2020-02-17,Clay,R32,3,Borna Coric,Juan Ignacio Londero,7-6(5) 7-5,32,61,1320,881
+ATP Rio de Janeiro,A,2020-02-17,Clay,R32,3,Thiago Seyboth Wild,Alejandro Davidovich Fokina,5-7 7-6(3) 7-5,206,90,235,655
+ATP Rio de Janeiro,A,2020-02-17,Clay,R32,3,Lorenzo Sonego,Leonardo Mayer,6-1 5-7 6-4,52,109,960,509
+ATP Rio de Janeiro,A,2020-02-17,Clay,R32,3,Dusan Lajovic,Marco Cecchinato,6-4 6-7(4) 6-1,23,111,1641,508
+Acapulco,A,2020-02-24,Hard,F,3,Rafael Nadal,Taylor Fritz,6-3 6-2,2,35,9395,1255
+Acapulco,A,2020-02-24,Hard,SF,3,Rafael Nadal,Grigor Dimitrov,6-3 6-2,2,22,9395,1682
+Acapulco,A,2020-02-24,Hard,SF,3,Taylor Fritz,John Isner,2-6 7-5 6-3,35,20,1255,1760
+Acapulco,A,2020-02-24,Hard,QF,3,Rafael Nadal,Soon Woo Kwon,6-2 6-1,2,76,9395,732
+Acapulco,A,2020-02-24,Hard,QF,3,Grigor Dimitrov,Stan Wawrinka,6-4 6-4,22,16,1682,2060
+Acapulco,A,2020-02-24,Hard,QF,3,Taylor Fritz,Kyle Edmund,6-4 6-3,35,44,1255,1085
+Acapulco,A,2020-02-24,Hard,QF,3,John Isner,Tommy Paul,7-6(3) 3-6 6-2,20,66,1760,792
+Acapulco,A,2020-02-24,Hard,R16,3,Rafael Nadal,Miomir Kecmanovic,6-2 7-5,2,50,9395,1003
+Acapulco,A,2020-02-24,Hard,R16,3,Soon Woo Kwon,Dusan Lajovic,7-6(2) 6-0,76,24,732,1670
+Acapulco,A,2020-02-24,Hard,R16,3,Stan Wawrinka,Pedro Martinez,6-4 6-4,16,113,2060,504
+Acapulco,A,2020-02-24,Hard,R16,3,Grigor Dimitrov,Adrian Mannarino,6-7(8) 6-2 7-6(2),22,42,1682,1086
+Acapulco,A,2020-02-24,Hard,R16,3,Taylor Fritz,Ugo Humbert,6-4 6-1,35,43,1255,1086
+Acapulco,A,2020-02-24,Hard,R16,3,Kyle Edmund,Felix Auger Aliassime,6-4 6-4,44,19,1085,1771
+Acapulco,A,2020-02-24,Hard,R16,3,John Isner,Marcos Giron,6-3 7-6(4),20,115,1760,498
+Acapulco,A,2020-02-24,Hard,R16,3,Tommy Paul,Alexander Zverev,6-3 6-4,66,7,792,3885
+Acapulco,A,2020-02-24,Hard,R32,3,Rafael Nadal,Pablo Andujar,6-3 6-2,2,54,9395,932
+Acapulco,A,2020-02-24,Hard,R32,3,Miomir Kecmanovic,Alex De Minaur,3-6 6-4 6-3,50,25,1003,1575
+Acapulco,A,2020-02-24,Hard,R32,3,Soon Woo Kwon,Taro Daniel,6-2 2-6 6-3,76,110,732,511
+Acapulco,A,2020-02-24,Hard,R32,3,Dusan Lajovic,Steve Johnson,6-7(5) 6-4 6-3,24,73,1670,745
+Acapulco,A,2020-02-24,Hard,R32,3,Stan Wawrinka,Frances Tiafoe,6-3 6-7(4) 7-6(1),16,82,2060,700
+Acapulco,A,2020-02-24,Hard,R32,3,Pedro Martinez,Radu Albot,6-3 6-2,113,69,504,772
+Acapulco,A,2020-02-24,Hard,R32,3,Adrian Mannarino,Cameron Norrie,2-6 6-3 6-3,42,58,1086,872
+Acapulco,A,2020-02-24,Hard,R32,3,Grigor Dimitrov,Damir Dzumhur,6-3 6-3,22,109,1682,520
+Acapulco,A,2020-02-24,Hard,R32,3,Ugo Humbert,Nick Kyrgios,6-3 0-0 RET,43,23,1086,1670
+Acapulco,A,2020-02-24,Hard,R32,3,Taylor Fritz,John Millman,7-5 3-6 6-1,35,40,1255,1141
+Acapulco,A,2020-02-24,Hard,R32,3,Kyle Edmund,Feliciano Lopez,6-4 6-1,44,52,1085,953
+Acapulco,A,2020-02-24,Hard,R32,3,Felix Auger Aliassime,Alex Bolt,6-3 7-6(5),19,137,1771,395
+Acapulco,A,2020-02-24,Hard,R32,3,John Isner,Mischa Zverev,6-3 7-6(4),20,257,1760,182
+Acapulco,A,2020-02-24,Hard,R32,3,Marcos Giron,Gerardo Lopez Villasenor,6-4 7-6(3),115,518,498,54
+Acapulco,A,2020-02-24,Hard,R32,3,Tommy Paul,Mackenzie Mcdonald,6-7(4) 6-4 6-4,66,196,792,257
+Acapulco,A,2020-02-24,Hard,R32,3,Alexander Zverev,Jason Jung,7-6(6) 6-1,7,119,3885,457
+Dubai,A,2020-02-24,Hard,F,3,Novak Djokovic,Stefanos Tsitsipas,6-3 6-4,1,6,9720,4745
+Dubai,A,2020-02-24,Hard,SF,3,Novak Djokovic,Gael Monfils,2-6 7-6(8) 6-1,1,9,9720,2860
+Dubai,A,2020-02-24,Hard,SF,3,Stefanos Tsitsipas,Daniel Evans,6-2 6-3,6,37,4745,1224
+Dubai,A,2020-02-24,Hard,QF,3,Novak Djokovic,Karen Khachanov,6-2 6-2,1,17,9720,2040
+Dubai,A,2020-02-24,Hard,QF,3,Gael Monfils,Richard Gasquet,6-3 6-3,9,56,2860,915
+Dubai,A,2020-02-24,Hard,QF,3,Daniel Evans,Andrey Rublev,6-2 7-6(9),37,14,1224,2219
+Dubai,A,2020-02-24,Hard,QF,3,Stefanos Tsitsipas,Jan Lennard Struff,4-6 6-4 6-4,6,34,4745,1270
+Dubai,A,2020-02-24,Hard,R16,3,Novak Djokovic,Philipp Kohlschreiber,6-3 6-1,1,80,9720,704
+Dubai,A,2020-02-24,Hard,R16,3,Karen Khachanov,Dennis Novak,6-3 6-4,17,96,2040,621
+Dubai,A,2020-02-24,Hard,R16,3,Gael Monfils,Yasutaka Uchiyama,6-1 6-2,9,99,2860,604
+Dubai,A,2020-02-24,Hard,R16,3,Richard Gasquet,Benoit Paire,6-4 6-4,56,21,915,1738
+Dubai,A,2020-02-24,Hard,R16,3,Andrey Rublev,Filip Krajinovic,7-6(3) 6-0,14,33,2219,1318
+Dubai,A,2020-02-24,Hard,R16,3,Daniel Evans,Pierre Hugues Herbert,7-5 3-6 7-6(7),37,78,1224,715
+Dubai,A,2020-02-24,Hard,R16,3,Jan Lennard Struff,Nikoloz Basilashvili,6-1 6-0,34,29,1270,1440
+Dubai,A,2020-02-24,Hard,R16,3,Stefanos Tsitsipas,Alexander Bublik,7-6(1) 6-4,6,47,4745,1010
+Dubai,A,2020-02-24,Hard,R32,3,Novak Djokovic,Malek Jaziri,6-1 6-2,1,260,9720,181
+Dubai,A,2020-02-24,Hard,R32,3,Philipp Kohlschreiber,Mohamed Safwat,4-6 6-4 6-0,80,132,704,407
+Dubai,A,2020-02-24,Hard,R32,3,Dennis Novak,Prajnesh Gunneswaran,6-4 6-3,96,134,621,405
+Dubai,A,2020-02-24,Hard,R32,3,Karen Khachanov,Mikhail Kukushkin,7-6(2) 6-1,17,89,2040,661
+Dubai,A,2020-02-24,Hard,R32,3,Gael Monfils,Marton Fucsovics,6-4 7-5,9,70,2860,762
+Dubai,A,2020-02-24,Hard,R32,3,Yasutaka Uchiyama,Yen Hsun Lu,3-6 6-1 6-2,99,962,604,10
+Dubai,A,2020-02-24,Hard,R32,3,Richard Gasquet,Lloyd Harris,7-6(5) 6-4,56,93,915,641
+Dubai,A,2020-02-24,Hard,R32,3,Benoit Paire,Marin Cilic,2-6 7-5 7-6(1),21,36,1738,1225
+Dubai,A,2020-02-24,Hard,R32,3,Andrey Rublev,Lorenzo Musetti,6-4 6-4,14,311,2219,129
+Dubai,A,2020-02-24,Hard,R32,3,Filip Krajinovic,Joao Sousa,4-6 6-3 6-3,33,68,1318,776
+Dubai,A,2020-02-24,Hard,R32,3,Pierre Hugues Herbert,Yoshihito Nishioka,7-5 6-2,78,48,715,1007
+Dubai,A,2020-02-24,Hard,R32,3,Daniel Evans,Fabio Fognini,3-6 6-4 7-5,37,11,1224,2400
+Dubai,A,2020-02-24,Hard,R32,3,Jan Lennard Struff,Roberto Bautista Agut,7-6(2) 7-5,34,12,1270,2360
+Dubai,A,2020-02-24,Hard,R32,3,Nikoloz Basilashvili,Ricardas Berankis,5-7 7-6(2) 6-3,29,62,1440,841
+Dubai,A,2020-02-24,Hard,R32,3,Alexander Bublik,Hubert Hurkacz,6-2 7-5,47,30,1010,1433
+Dubai,A,2020-02-24,Hard,R32,3,Stefanos Tsitsipas,Pablo Carreno Busta,7-6(1) 6-1,6,27,4745,1500
+Santiago,A,2020-02-24,Clay,F,3,Thiago Seyboth Wild,Casper Ruud,7-5 4-6 6-3,182,38,277,1219
+Santiago,A,2020-02-24,Clay,SF,3,Thiago Seyboth Wild,Renzo Olivo,6-1 6-3,182,297,277,139
+Santiago,A,2020-02-24,Clay,SF,3,Casper Ruud,Albert Ramos,7-6(5) 6-2,38,45,1219,1085
+Santiago,A,2020-02-24,Clay,QF,3,Thiago Seyboth Wild,Cristian Garin,7-6(1) 0-0 RET,182,18,277,2005
+Santiago,A,2020-02-24,Clay,QF,3,Renzo Olivo,Hugo Dellien,3-6 7-6(5) 7-5,297,94,139,638
+Santiago,A,2020-02-24,Clay,QF,3,Albert Ramos,Thiago Monteiro,6-4 6-4,45,88,1085,669
+Santiago,A,2020-02-24,Clay,QF,3,Casper Ruud,Federico Delbonis,7-5 7-5,38,85,1219,676
+Santiago,A,2020-02-24,Clay,R16,3,Cristian Garin,Alejandro Davidovich Fokina,6-2 0-6 7-6(4),18,98,2005,611
+Santiago,A,2020-02-24,Clay,R16,3,Thiago Seyboth Wild,Juan Ignacio Londero,7-6(7) 6-4,182,63,277,832
+Santiago,A,2020-02-24,Clay,R16,3,Renzo Olivo,Pablo Cuevas,5-7 7-6(5) 7-6(8),297,60,139,857
+Santiago,A,2020-02-24,Clay,R16,3,Hugo Dellien,Tomas Barrios Vera,6-3 7-6(2),94,300,638,134
+Santiago,A,2020-02-24,Clay,R16,3,Thiago Monteiro,Roberto Carballes Baena,6-1 6-4,88,97,669,614
+Santiago,A,2020-02-24,Clay,R16,3,Albert Ramos,Juan Pablo Varillas,7-6(3) 6-2,45,146,1085,380
+Santiago,A,2020-02-24,Clay,R16,3,Federico Delbonis,Salvatore Caruso,7-6(1) 6-3,85,100,676,600
+Santiago,A,2020-02-24,Clay,R16,3,Casper Ruud,Alejandro Tabilo,6-4 7-5,38,166,1219,290
+Santiago,A,2020-02-24,Clay,R32,3,Alejandro Davidovich Fokina,Andrej Martin,2-6 7-6(5) 6-3,98,95,611,629
+Santiago,A,2020-02-24,Clay,R32,3,Thiago Seyboth Wild,Facundo Bagnis,6-1 3-6 6-1,182,131,277,409
+Santiago,A,2020-02-24,Clay,R32,3,Juan Ignacio Londero,Federico Coria,6-4 6-2,63,104,832,569
+Santiago,A,2020-02-24,Clay,R32,3,Renzo Olivo,Pedro Sousa,4-6 6-3 6-4,297,108,139,522
+Santiago,A,2020-02-24,Clay,R32,3,Tomas Barrios Vera,Carlos Taberner,4-6 6-4 6-2,300,175,134,281
+Santiago,A,2020-02-24,Clay,R32,3,Hugo Dellien,Marco Cecchinato,6-3 1-6 6-3,94,112,638,508
+Santiago,A,2020-02-24,Clay,R32,3,Thiago Monteiro,Leonardo Mayer,6-7(0) 6-3 6-4,88,111,669,509
+Santiago,A,2020-02-24,Clay,R32,3,Roberto Carballes Baena,Jaume Munar,6-4 4-6 6-4,97,105,614,548
+Santiago,A,2020-02-24,Clay,R32,3,Juan Pablo Varillas,Filip Horansky,6-4 6-2,146,164,380,296
+Santiago,A,2020-02-24,Clay,R32,3,Federico Delbonis,Martin Klizan,6-1 7-6(5),85,158,676,315
+Santiago,A,2020-02-24,Clay,R32,3,Salvatore Caruso,Jozef Kovalik,6-2 6-3,100,120,600,447
+Santiago,A,2020-02-24,Clay,R32,3,Alejandro Tabilo,Paolo Lorenzi,6-3 6-4,166,121,290,446
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,F,3,Novak Djokovic,Milos Raonic,1-6 6-3 6-4,1,30,10220,1350
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,SF,3,Novak Djokovic,Roberto Bautista Agut,4-6 6-4 7-6(0),1,12,10220,2360
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,SF,3,Milos Raonic,Stefanos Tsitsipas,7-6(5) 6-3,30,6,1350,4745
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,QF,3,Novak Djokovic,Jan Lennard Struff,6-3 6-1,1,34,10220,1315
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,QF,3,Roberto Bautista Agut,Daniil Medvedev,1-6 6-4 6-3,12,5,2360,5890
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,QF,3,Stefanos Tsitsipas,Reilly Opelka,5-6 RET,6,39,4745,1177
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,QF,3,Milos Raonic,Filip Krajinovic,4-6 7-6(2) 7-5,30,32,1350,1343
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R16,3,Novak Djokovic,Tennys Sandgren,6-2 6-4,1,55,10220,923
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R16,3,Jan Lennard Struff,David Goffin,6-4 3-6 6-4,34,10,1315,2555
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R16,3,Daniil Medvedev,Aljaz Bedene,6-3 6-3,5,61,5890,850
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R16,3,Roberto Bautista Agut,Karen Khachanov,4-6 6-3 6-2,12,16,2360,2120
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R16,3,Reilly Opelka,Matteo Berrettini,6-3 7-6(4),39,8,1177,2860
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R16,3,Stefanos Tsitsipas,John Isner,7-6(2) 7-6(4),6,21,4745,1760
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R16,3,Milos Raonic,Andy Murray,6-2 6-2,30,134,1350,412
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R16,3,Filip Krajinovic,Marton Fucsovics,6-2 6-1,32,84,1343,692
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R32,3,Novak Djokovic,Ricardas Berankis,7-6(2) 6-4,1,72,10220,739
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R32,3,Tennys Sandgren,Felix Auger Aliassime,6-7(4) 6-2 7-6(5),55,20,923,1771
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R32,3,Jan Lennard Struff,Denis Shapovalov,7-6(4) 3-6 6-4,34,17,1315,2075
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R32,3,David Goffin,Borna Coric,7-6(6) 6-4,10,33,2555,1320
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R32,3,Daniil Medvedev,Marcos Giron,6-4 6-4,5,101,5890,577
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R32,3,Aljaz Bedene,Taylor Fritz,7-6(5) 7-5,61,24,850,1510
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R32,3,Karen Khachanov,Pablo Carreno Busta,7-6(8) 6-1,16,25,2120,1500
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R32,3,Roberto Bautista Agut,Richard Gasquet,7-5 6-1,12,50,2360,985
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R32,3,Matteo Berrettini,Emil Ruusuvuori,6-4 6-7(3) 7-5,8,100,2860,584
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R32,3,Reilly Opelka,Diego Schwartzman,6-3 7-6(4),39,13,1177,2265
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R32,3,John Isner,John Millman,4-6 7-6(3) 7-6(5),21,43,1760,1071
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R32,3,Stefanos Tsitsipas,Kevin Anderson,6-1 6-3,6,124,4745,445
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R32,3,Andy Murray,Alexander Zverev,6-3 3-6 7-5,134,7,412,3630
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R32,3,Milos Raonic,Daniel Evans,6-3 7-5,30,28,1350,1359
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R32,3,Marton Fucsovics,Grigor Dimitrov,7-5 4-6 6-2,84,19,692,1850
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R32,3,Filip Krajinovic,Dominic Thiem,6-2 6-1,32,3,1343,7045
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R64,3,Ricardas Berankis,Tommy Paul,6-7(4) 6-4 7-5,72,57,739,894
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R64,3,Tennys Sandgren,Lorenzo Sonego,6-3 7-6(7),55,46,923,1030
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R64,3,Felix Auger Aliassime,Nikoloz Basilashvili,6-4 6-1,20,27,1771,1395
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R64,3,Denis Shapovalov,Marin Cilic,6-3 6-3,17,37,2075,1225
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R64,3,Jan Lennard Struff,Alex De Minaur,6-2 6-4,34,26,1315,1485
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R64,3,Borna Coric,Benoit Paire,6-0 1-0 RET,33,22,1320,1738
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R64,3,Marcos Giron,Mackenzie Mcdonald,7-6(2) 7-5,101,269,577,172
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R64,3,Taylor Fritz,Lloyd Harris,6-1 6-3,24,97,1510,616
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R64,3,Aljaz Bedene,Cristian Garin,6-4 6-7(8) 6-0,61,18,850,1900
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R64,3,Karen Khachanov,Alexander Bublik,6-4 6-4,16,51,2120,965
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R64,3,Pablo Carreno Busta,Dusan Lajovic,7-5 6-1,25,23,1500,1695
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R64,3,Richard Gasquet,J J Wolf,6-4 6-4,50,143,985,383
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R64,3,Emil Ruusuvuori,Sebastian Korda,7-6(3) 4-6 7-5,100,225,584,220
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R64,3,Reilly Opelka,Cameron Norrie,6-3 6-4,39,77,1177,712
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R64,3,Diego Schwartzman,Casper Ruud,7-6(2) 6-3,13,36,2265,1279
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R64,3,John Isner,Hubert Hurkacz,7-5 6-4,21,29,1760,1353
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R64,3,John Millman,Adrian Mannarino,4-6 6-4 7-6(2),43,38,1071,1191
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R64,3,Kevin Anderson,Kyle Edmund,7-6(3) 4-6 6-3,124,44,445,1050
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R64,3,Andy Murray,Frances Tiafoe,7-6(6) 3-6 6-1,134,81,412,700
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R64,3,Milos Raonic,Sam Querrey,6-4 6-4,30,45,1350,1045
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R64,3,Daniel Evans,Andrey Rublev,7-5 3-6 6-2,28,14,1359,2234
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R64,3,Grigor Dimitrov,Ugo Humbert,6-3 6-4,19,42,1850,1111
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R64,3,Marton Fucsovics,Norbert Gombos,6-3 6-4,84,109,692,522
+Cincinnati Masters,Masters 1000,2020-08-24,Hard,R64,3,Filip Krajinovic,Salvatore Caruso,7-5 6-4,32,99,1343,597
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Novak Djokovic,Damir Dzumhur,6-1 6-4 6-1,1,109,10860,524
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Kyle Edmund,Alexander Bublik,2-6 7-5 7-5 6-0,44,54,1050,965
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Michael Mmoh,Joao Sousa,6-2 7-5 2-6 6-1,186,68,281,776
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Jan Lennard Struff,Pedro Martinez,6-0 7-5 6-4,29,106,1405,546
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Pablo Carreno Busta,Yasutaka Uchiyama,4-6 6-3 1-6 6-3 6-3,27,86,1500,685
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Mitchell Krueger,Pedro Sousa,3-6 6-2 7-5 6-3,198,110,264,522
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Ricardas Berankis,Federico Gaio,7-6(3) 4-6 6-4 6-4,65,132,809,423
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Steve Johnson,John Isner,6-7(5) 6-3 6-7(5) 6-3 7-6(3),64,22,825,1805
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Denis Shapovalov,Sebastian Korda,6-4 4-6 6-3 6-2,17,205,2075,252
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Soon Woo Kwon,Thai Son Kwiatkowski,3-6 7-6(4) 6-1 6-2,73,187,742,281
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Gilles Simon,Mohamed Safwat,6-1 6-4 6-4,52,135,970,407
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Taylor Fritz,Dominik Koepfer,6-7(7) 6-3 6-2 6-4,25,91,1545,652
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Filip Krajinovic,Mikael Ymer,6-2 7-6(3) 6-3,26,71,1503,759
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Marcos Giron,Marc Polmans,6-4 6-7(5) 3-6 6-4 6-2,96,121,639,462
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Lloyd Harris,Marco Cecchinato,6-4 7-5 6-2,95,108,641,526
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,David Goffin,Reilly Opelka,7-6(2) 3-6 6-1 6-4,10,35,2555,1312
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Stefanos Tsitsipas,Albert Ramos,6-2 6-1 6-1,6,41,5095,1130
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Maxime Cressy,Jozef Kovalik,6-1 2-6 6-4 6-4,168,123,320,452
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Juan Ignacio Londero,Evgeny Donskoy,6-3 6-3 7-5,62,114,832,505
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Borna Coric,Pablo Andujar,7-5 6-3 6-1,32,56,1355,942
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Egor Gerasimov,Dusan Lajovic,6-1 4-6 6-4 6-4,72,24,744,1695
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Jordan Thompson,Stefano Travaglia,6-3 6-4 4-6 6-2,63,87,829,684
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Mikhail Kukushkin,Attila Balazs,6-4 7-5 6-4,90,78,661,715
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Cristian Garin,Ulises Blanch,4-6 5-7 6-4 6-4 6-2,19,244,1900,207
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Cameron Norrie,Diego Schwartzman,3-6 4-6 6-2 6-1 7-5,76,13,727,2265
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Federico Coria,Jason Jung,2-6 4-6 6-4 6-1 2-0 RET,103,122,569,462
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Alejandro Davidovich Fokina,Dennis Novak,3-6 6-4 6-3 1-6 6-0,99,85,627,695
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Hubert Hurkacz,Peter Gojowczyk,6-3 6-4 6-4,33,127,1353,444
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Adrian Mannarino,Lorenzo Sonego,6-1 6-4 2-6 6-3,39,46,1191,1030
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Jack Sock,Pablo Cuevas,3-6 6-4 6-2 4-6 7-6(2),389,61,95,857
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Brandon Nakashima,Paolo Lorenzi,6-3 6-2 7-6(3),223,125,229,447
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Alexander Zverev,Kevin Anderson,7-6(2) 5-7 6-3 7-5,7,117,3630,490
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Matteo Berrettini,Go Soeda,7-6(5) 6-1 6-4,8,119,2940,480
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Ugo Humbert,Yuichi Sugita,6-3 6-4 6-3,42,88,1111,682
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Emil Ruusuvuori,Aljaz Bedene,6-3 3-6 6-1 4-6 6-1,92,53,648,965
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Casper Ruud,Mackenzie Mcdonald,4-6 4-6 6-4 6-3 6-2,37,243,1279,207
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Ernesto Escobedo,Kamil Majchrzak,7-6(3) 6-2 6-3,185,107,284,532
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Salvatore Caruso,James Duckworth,4-6 7-5 7-5 6-2,100,84,623,697
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Gregoire Barrere,Taro Daniel,6-3 6-4 3-6 6-1,93,112,647,511
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Andrey Rublev,Jeremy Chardy,6-4 6-4 6-3,14,60,2234,860
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Grigor Dimitrov,Tommy Paul,6-4 6-3 6-1,20,58,1885,894
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Marton Fucsovics,Hugo Dellien,6-3 6-3 6-1,66,97,787,638
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Frances Tiafoe,Andreas Seppi,4-6 6-3 6-4 7-5,82,89,700,671
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,John Millman,Nikoloz Basilashvili,6-1 6-4 6-4,43,30,1096,1395
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,J J Wolf,Guido Pella,6-2 0-6 6-3 6-3,138,36,402,1310
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Roberto Carballes Baena,Feliciano Lopez,3-6 7-6(5) 6-4 6-3,101,57,614,908
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Christopher Oconnell,Laslo Djere,4-6 6-4 7-6(2) 6-4,116,81,498,705
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Daniil Medvedev,Federico Delbonis,6-1 6-2 6-4,5,79,5890,711
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Roberto Bautista Agut,Tennys Sandgren,6-4 6-4 7-6(3),11,48,2540,1013
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Miomir Kecmanovic,Gianluca Mager,6-4 6-4 6-7(6) 3-6 6-2,47,80,1028,711
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Vasek Pospisil,Philipp Kohlschreiber,7-6(4) 7-5 7-6(3),94,75,642,729
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Milos Raonic,Leonardo Mayer,6-3 6-2 6-3,18,120,1950,464
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Alex De Minaur,Andrej Martin,6-4 6-3 7-5,28,98,1485,638
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Richard Gasquet,Ivo Karlovic,7-6(0) 7-6(4) 6-1,51,126,985,444
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Andrey Kuznetsov,Sam Querrey,6-4 7-6(6) 6-2,,45,,1045
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Karen Khachanov,Jannik Sinner,3-6 6-7(7) 6-2 6-0 7-6(4),16,74,2120,733
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Felix Auger Aliassime,Thiago Monteiro,6-3 6-7(7) 7-6(6) 7-6(6),21,83,1806,700
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Andy Murray,Yoshihito Nishioka,4-6 4-6 7-6(5) 7-6(4) 6-4,115,49,502,1007
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Corentin Moutet,Jiri Vesely,6-4 6-4 7-5,77,67,722,785
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Daniel Evans,Thiago Seyboth Wild,6-2 6-1 7-6(5),31,113,1384,507
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Marin Cilic,Denis Kudla,6-7(3) 3-6 7-5 7-5 6-3,38,111,1225,521
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Norbert Gombos,Radu Albot,6-4 6-1 6-4,104,70,550,772
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Sumit Nagal,Bradley Klahn,6-1 6-3 3-6 6-1,124,129,448,436
+Us Open,Grand Slam,2020-08-31,Hard,R128,5,Dominic Thiem,Jaume Munar,7-6(6) 6-3 RET,3,105,7135,548
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Novak Djokovic,Kyle Edmund,6-7(5) 6-3 6-4 6-2,1,44,10860,1050
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Jan Lennard Struff,Michael Mmoh,6-2 6-2 7-5,29,186,1405,281
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Pablo Carreno Busta,Mitchell Krueger,6-1 6-2 6-2,27,198,1500,264
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Ricardas Berankis,Steve Johnson,7-5 6-2 1-6 7-6(1),65,64,809,825
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Denis Shapovalov,Soon Woo Kwon,6-7(5) 6-4 6-4 6-2,17,73,2075,742
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Taylor Fritz,Gilles Simon,7-5 6-3 6-2,25,52,1545,970
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Filip Krajinovic,Marcos Giron,6-4 6-1 6-3,26,96,1503,639
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,David Goffin,Lloyd Harris,7-6(6) 4-6 6-1 6-4,10,95,2555,641
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Stefanos Tsitsipas,Maxime Cressy,7-6(2) 6-3 6-4,6,168,5095,320
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Borna Coric,Juan Ignacio Londero,7-5 4-6 6-7(5) 6-2 6-3,32,62,1355,832
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Jordan Thompson,Egor Gerasimov,6-1 6-4 3-6 6-3,63,72,829,744
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Mikhail Kukushkin,Cristian Garin,6-2 6-1 3-6 4-6 7-5,90,19,661,1900
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Cameron Norrie,Federico Coria,6-3 6-4 6-4,76,103,727,569
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Alejandro Davidovich Fokina,Hubert Hurkacz,6-4 1-6 6-2 6-2,99,33,627,1353
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Adrian Mannarino,Jack Sock,7-6(5) 7-5 6-2,39,389,1191,95
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Alexander Zverev,Brandon Nakashima,7-5 6-7(8) 6-3 6-1,7,223,3630,229
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Matteo Berrettini,Ugo Humbert,6-4 6-4 7-6(6),8,42,2940,1111
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Casper Ruud,Emil Ruusuvuori,6-4 6-3 3-2 RET,37,92,1279,648
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Salvatore Caruso,Ernesto Escobedo,3-6 6-4 6-3 6-4,100,185,623,284
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Andrey Rublev,Gregoire Barrere,6-2 6-4 7-6(4),14,93,2234,647
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Marton Fucsovics,Grigor Dimitrov,6-7(5) 7-6(4) 3-6 6-4 6-1,66,20,787,1885
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Frances Tiafoe,John Millman,7-6(6) 3-6 1-6 6-3 6-3,82,43,700,1096
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,J J Wolf,Roberto Carballes Baena,6-2 6-4 6-3,138,101,402,614
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Daniil Medvedev,Christopher Oconnell,6-3 6-2 6-4,5,116,5890,498
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Roberto Bautista Agut,Miomir Kecmanovic,6-3 3-6 6-3 6-4,11,47,2540,1028
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Vasek Pospisil,Milos Raonic,6-7(1) 6-3 7-6(4) 6-3,94,18,642,1950
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Alex De Minaur,Richard Gasquet,6-4 6-3 6-7(6) 7-5,28,51,1485,985
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Karen Khachanov,Andrey Kuznetsov,6-3 6-4 6-1,16,,2120,
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Felix Auger Aliassime,Andy Murray,6-2 6-3 6-4,21,115,1806,502
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Corentin Moutet,Daniel Evans,4-6 6-3 7-6(5) 7-6(1),77,31,722,1384
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Marin Cilic,Norbert Gombos,6-3 1-6 7-6(2) 7-5,38,104,1225,550
+Us Open,Grand Slam,2020-08-31,Hard,R64,5,Dominic Thiem,Sumit Nagal,6-3 6-3 6-2,3,124,7135,448
+Us Open,Grand Slam,2020-08-31,Hard,R32,5,Novak Djokovic,Jan Lennard Struff,6-3 6-3 6-1,1,29,10860,1405
+Us Open,Grand Slam,2020-08-31,Hard,R32,5,Pablo Carreno Busta,Ricardas Berankis,6-4 6-3 6-2,27,65,1500,809
+Us Open,Grand Slam,2020-08-31,Hard,R32,5,Denis Shapovalov,Taylor Fritz,3-6 6-3 4-6 7-6(5) 6-2,17,25,2075,1545
+Us Open,Grand Slam,2020-08-31,Hard,R32,5,David Goffin,Filip Krajinovic,6-1 7-6(5) 6-4,10,26,2555,1503
+Us Open,Grand Slam,2020-08-31,Hard,R32,5,Borna Coric,Stefanos Tsitsipas,6-7(2) 6-4 4-6 7-5 7-6(4),32,6,1355,5095
+Us Open,Grand Slam,2020-08-31,Hard,R32,5,Jordan Thompson,Mikhail Kukushkin,7-5 6-4 6-1,63,90,829,661
+Us Open,Grand Slam,2020-08-31,Hard,R32,5,Alejandro Davidovich Fokina,Cameron Norrie,7-6(2) 4-6 6-2 6-1,99,76,627,727
+Us Open,Grand Slam,2020-08-31,Hard,R32,5,Alexander Zverev,Adrian Mannarino,6-7(4) 6-4 6-2 6-2,7,39,3630,1191
+Us Open,Grand Slam,2020-08-31,Hard,R32,5,Matteo Berrettini,Casper Ruud,6-4 6-4 6-2,8,37,2940,1279
+Us Open,Grand Slam,2020-08-31,Hard,R32,5,Andrey Rublev,Salvatore Caruso,6-0 6-4 6-0,14,100,2234,623
+Us Open,Grand Slam,2020-08-31,Hard,R32,5,Frances Tiafoe,Marton Fucsovics,6-2 6-3 6-2,82,66,700,787
+Us Open,Grand Slam,2020-08-31,Hard,R32,5,Daniil Medvedev,J J Wolf,6-3 6-3 6-2,5,138,5890,402
+Us Open,Grand Slam,2020-08-31,Hard,R32,5,Vasek Pospisil,Roberto Bautista Agut,7-5 2-6 4-6 6-3 6-2,94,11,642,2540
+Us Open,Grand Slam,2020-08-31,Hard,R32,5,Alex De Minaur,Karen Khachanov,6-4 0-6 4-6 6-3 6-1,28,16,1485,2120
+Us Open,Grand Slam,2020-08-31,Hard,R32,5,Felix Auger Aliassime,Corentin Moutet,6-1 6-0 6-4,21,77,1806,722
+Us Open,Grand Slam,2020-08-31,Hard,R32,5,Dominic Thiem,Marin Cilic,6-2 6-2 3-6 6-3,3,38,7135,1225
+Us Open,Grand Slam,2020-08-31,Hard,R16,5,Pablo Carreno Busta,Novak Djokovic,6-5 DEF,27,1,1500,10860
+Us Open,Grand Slam,2020-08-31,Hard,R16,5,Denis Shapovalov,David Goffin,6-7(0) 6-3 6-4 6-3,17,10,2075,2555
+Us Open,Grand Slam,2020-08-31,Hard,R16,5,Borna Coric,Jordan Thompson,7-5 6-1 6-3,32,63,1355,829
+Us Open,Grand Slam,2020-08-31,Hard,R16,5,Alexander Zverev,Alejandro Davidovich Fokina,6-2 6-2 6-1,7,99,3630,627
+Us Open,Grand Slam,2020-08-31,Hard,R16,5,Andrey Rublev,Matteo Berrettini,4-6 6-3 6-3 6-3,14,8,2234,2940
+Us Open,Grand Slam,2020-08-31,Hard,R16,5,Daniil Medvedev,Frances Tiafoe,6-4 6-1 6-0,5,82,5890,700
+Us Open,Grand Slam,2020-08-31,Hard,R16,5,Alex De Minaur,Vasek Pospisil,7-6(6) 6-3 6-2,28,94,1485,642
+Us Open,Grand Slam,2020-08-31,Hard,R16,5,Dominic Thiem,Felix Auger Aliassime,7-6(4) 6-1 6-1,3,21,7135,1806
+Us Open,Grand Slam,2020-08-31,Hard,QF,5,Pablo Carreno Busta,Denis Shapovalov,3-6 7-6(5) 7-6(4) 0-6 6-3,27,17,1500,2075
+Us Open,Grand Slam,2020-08-31,Hard,QF,5,Alexander Zverev,Borna Coric,1-6 7-6(5) 7-6(1) 6-3,7,32,3630,1355
+Us Open,Grand Slam,2020-08-31,Hard,QF,5,Daniil Medvedev,Andrey Rublev,7-6(6) 6-3 7-6(5),5,14,5890,2234
+Us Open,Grand Slam,2020-08-31,Hard,QF,5,Dominic Thiem,Alex De Minaur,6-1 6-2 6-4,3,28,7135,1485
+Us Open,Grand Slam,2020-08-31,Hard,SF,5,Alexander Zverev,Pablo Carreno Busta,3-6 2-6 6-3 6-4 6-3,7,27,3630,1500
+Us Open,Grand Slam,2020-08-31,Hard,SF,5,Dominic Thiem,Daniil Medvedev,6-2 7-6(7) 7-6(5),3,5,7135,5890
+Us Open,Grand Slam,2020-08-31,Hard,F,5,Dominic Thiem,Alexander Zverev,2-6 4-6 6-4 6-3 7-6(6),3,7,7135,3630
+Kitzbuhel,A,2020-09-07,Clay,F,3,Miomir Kecmanovic,Yannick Hanfmann,6-4 6-4,47,118,1028,486
+Kitzbuhel,A,2020-09-07,Clay,SF,3,Miomir Kecmanovic,Marc Andrea Huesler,6-2 5-7 6-3,47,303,1028,139
+Kitzbuhel,A,2020-09-07,Clay,SF,3,Yannick Hanfmann,Laslo Djere,4-6 6-3 7-6(5),118,81,486,705
+Kitzbuhel,A,2020-09-07,Clay,QF,3,Marc Andrea Huesler,Feliciano Lopez,6-4 6-3,303,57,139,908
+Kitzbuhel,A,2020-09-07,Clay,QF,3,Miomir Kecmanovic,Federico Delbonis,6-4 6-7(5) 7-5,47,79,1028,711
+Kitzbuhel,A,2020-09-07,Clay,QF,3,Yannick Hanfmann,Maximilian Marterer,6-2 7-5,118,337,486,118
+Kitzbuhel,A,2020-09-07,Clay,QF,3,Laslo Djere,Diego Schwartzman,7-6(2) 6-3,81,13,705,2265
+Kitzbuhel,A,2020-09-07,Clay,R16,3,Marc Andrea Huesler,Fabio Fognini,6-1 6-2,303,12,139,2400
+Kitzbuhel,A,2020-09-07,Clay,R16,3,Feliciano Lopez,Guido Pella,7-5 6-7(4) 7-6(3),57,36,908,1310
+Kitzbuhel,A,2020-09-07,Clay,R16,3,Federico Delbonis,Nikoloz Basilashvili,7-5 6-3,79,30,711,1395
+Kitzbuhel,A,2020-09-07,Clay,R16,3,Miomir Kecmanovic,Jordan Thompson,6-2 6-2,47,63,1028,829
+Kitzbuhel,A,2020-09-07,Clay,R16,3,Maximilian Marterer,Hubert Hurkacz,6-1 6-4,337,33,118,1353
+Kitzbuhel,A,2020-09-07,Clay,R16,3,Yannick Hanfmann,Dusan Lajovic,4-6 6-3 6-4,118,24,486,1695
+Kitzbuhel,A,2020-09-07,Clay,R16,3,Laslo Djere,Jannik Sinner,6-4 6-4,81,74,705,733
+Kitzbuhel,A,2020-09-07,Clay,R16,3,Diego Schwartzman,Sebastian Ofner,6-2 2-6 7-5,13,159,2265,341
+Kitzbuhel,A,2020-09-07,Clay,R32,3,Marc Andrea Huesler,Emil Ruusuvuori,3-6 6-4 7-6(2),303,92,139,648
+Kitzbuhel,A,2020-09-07,Clay,R32,3,Feliciano Lopez,Pierre Hugues Herbert,6-4 6-3,57,69,908,775
+Kitzbuhel,A,2020-09-07,Clay,R32,3,Guido Pella,Yoshihito Nishioka,6-3 6-0,36,49,1310,1007
+Kitzbuhel,A,2020-09-07,Clay,R32,3,Federico Delbonis,Juan Ignacio Londero,6-4 6-0,79,62,711,832
+Kitzbuhel,A,2020-09-07,Clay,R32,3,Jordan Thompson,John Millman,6-3 4-6 7-6(2),63,43,829,1096
+Kitzbuhel,A,2020-09-07,Clay,R32,3,Miomir Kecmanovic,Kei Nishikori,4-6 6-4 6-2,47,34,1028,1345
+Kitzbuhel,A,2020-09-07,Clay,R32,3,Hubert Hurkacz,Joao Sousa,6-3 7-5,33,68,1353,776
+Kitzbuhel,A,2020-09-07,Clay,R32,3,Maximilian Marterer,Dennis Novak,7-6(6) 6-4,337,85,118,695
+Kitzbuhel,A,2020-09-07,Clay,R32,3,Yannick Hanfmann,Alexander Bublik,7-5 6-2,118,54,486,965
+Kitzbuhel,A,2020-09-07,Clay,R32,3,Laslo Djere,Albert Ramos,6-1 3-6 7-6(2),81,41,705,1130
+Kitzbuhel,A,2020-09-07,Clay,R32,3,Jannik Sinner,Philipp Kohlschreiber,6-3 6-2,74,75,733,729
+Kitzbuhel,A,2020-09-07,Clay,R32,3,Sebastian Ofner,Radu Albot,6-7(5) 6-4 7-6(4),159,70,341,772
+Rome Masters,Masters 1000,2020-09-14,Clay,F,3,Novak Djokovic,Diego Schwartzman,7-5 6-3,1,15,10860,2265
+Rome Masters,Masters 1000,2020-09-14,Clay,SF,3,Novak Djokovic,Casper Ruud,7-5 6-3,1,34,10860,1359
+Rome Masters,Masters 1000,2020-09-14,Clay,SF,3,Diego Schwartzman,Denis Shapovalov,6-4 5-7 7-6(4),15,14,2265,2345
+Rome Masters,Masters 1000,2020-09-14,Clay,QF,3,Novak Djokovic,Dominik Koepfer,6-3 4-6 6-3,1,97,10860,652
+Rome Masters,Masters 1000,2020-09-14,Clay,QF,3,Casper Ruud,Matteo Berrettini,4-6 6-3 7-6(5),34,8,1359,2940
+Rome Masters,Masters 1000,2020-09-14,Clay,QF,3,Denis Shapovalov,Grigor Dimitrov,6-2 3-6 6-2,14,22,2345,1885
+Rome Masters,Masters 1000,2020-09-14,Clay,QF,3,Diego Schwartzman,Rafael Nadal,6-2 7-5,15,2,2265,9850
+Rome Masters,Masters 1000,2020-09-14,Clay,R16,3,Novak Djokovic,Filip Krajinovic,7-6(7) 6-3,1,29,10860,1583
+Rome Masters,Masters 1000,2020-09-14,Clay,R16,3,Dominik Koepfer,Lorenzo Musetti,6-4 6-0,97,249,652,207
+Rome Masters,Masters 1000,2020-09-14,Clay,R16,3,Matteo Berrettini,Stefano Travaglia,7-6(5) 7-6(1),8,84,2940,719
+Rome Masters,Masters 1000,2020-09-14,Clay,R16,3,Casper Ruud,Marin Cilic,6-2 7-6(6),34,40,1359,1225
+Rome Masters,Masters 1000,2020-09-14,Clay,R16,3,Denis Shapovalov,Ugo Humbert,6-7(5) 6-1 6-4,14,42,2345,1146
+Rome Masters,Masters 1000,2020-09-14,Clay,R16,3,Grigor Dimitrov,Jannik Sinner,4-6 6-4 6-4,22,81,1885,743
+Rome Masters,Masters 1000,2020-09-14,Clay,R16,3,Diego Schwartzman,Hubert Hurkacz,3-6 6-2 6-4,15,31,2265,1398
+Rome Masters,Masters 1000,2020-09-14,Clay,R16,3,Rafael Nadal,Dusan Lajovic,6-1 6-3,2,25,9850,1695
+Rome Masters,Masters 1000,2020-09-14,Clay,R32,3,Novak Djokovic,Salvatore Caruso,6-3 6-2,1,87,10860,703
+Rome Masters,Masters 1000,2020-09-14,Clay,R32,3,Filip Krajinovic,Marco Cecchinato,6-4 6-1,29,113,1583,526
+Rome Masters,Masters 1000,2020-09-14,Clay,R32,3,Lorenzo Musetti,Kei Nishikori,6-3 6-4,249,35,207,1345
+Rome Masters,Masters 1000,2020-09-14,Clay,R32,3,Dominik Koepfer,Gael Monfils,6-2 6-4,97,9,652,2860
+Rome Masters,Masters 1000,2020-09-14,Clay,R32,3,Matteo Berrettini,Federico Coria,7-5 6-1,8,104,2940,607
+Rome Masters,Masters 1000,2020-09-14,Clay,R32,3,Stefano Travaglia,Borna Coric,7-6(2) 7-5,84,26,719,1670
+Rome Masters,Masters 1000,2020-09-14,Clay,R32,3,Casper Ruud,Lorenzo Sonego,6-3 6-4,34,47,1359,1030
+Rome Masters,Masters 1000,2020-09-14,Clay,R32,3,Marin Cilic,David Goffin,6-2 6-2,40,11,1225,2555
+Rome Masters,Masters 1000,2020-09-14,Clay,R32,3,Ugo Humbert,Fabio Fognini,7-5 7-6(4),42,13,1146,2400
+Rome Masters,Masters 1000,2020-09-14,Clay,R32,3,Denis Shapovalov,Pedro Martinez,6-4 6-4,14,109,2345,548
+Rome Masters,Masters 1000,2020-09-14,Clay,R32,3,Grigor Dimitrov,Yoshihito Nishioka,6-1 6-0,22,50,1885,1007
+Rome Masters,Masters 1000,2020-09-14,Clay,R32,3,Jannik Sinner,Stefanos Tsitsipas,6-1 6-7(9) 6-2,81,6,743,5175
+Rome Masters,Masters 1000,2020-09-14,Clay,R32,3,Diego Schwartzman,John Millman,6-4 7-6(1),15,43,2265,1131
+Rome Masters,Masters 1000,2020-09-14,Clay,R32,3,Hubert Hurkacz,Andrey Rublev,7-6(6) 3-6 6-2,31,12,1398,2414
+Rome Masters,Masters 1000,2020-09-14,Clay,R32,3,Dusan Lajovic,Milos Raonic,7-6(3) 4-6 6-2,25,19,1695,1995
+Rome Masters,Masters 1000,2020-09-14,Clay,R32,3,Rafael Nadal,Pablo Carreno Busta,6-1 6-1,2,18,9850,2130
+Rome Masters,Masters 1000,2020-09-14,Clay,R64,3,Salvatore Caruso,Tennys Sandgren,3-6 6-3 7-6(4),87,49,703,1013
+Rome Masters,Masters 1000,2020-09-14,Clay,R64,3,Marco Cecchinato,Kyle Edmund,3-6 7-6(7) 6-2,113,45,526,1085
+Rome Masters,Masters 1000,2020-09-14,Clay,R64,3,Filip Krajinovic,Felix Auger Aliassime,6-4 7-5,29,20,1583,1976
+Rome Masters,Masters 1000,2020-09-14,Clay,R64,3,Lorenzo Musetti,Stan Wawrinka,6-0 7-6(2),249,17,207,2185
+Rome Masters,Masters 1000,2020-09-14,Clay,R64,3,Kei Nishikori,Albert Ramos,6-4 7-6(3),35,44,1345,1130
+Rome Masters,Masters 1000,2020-09-14,Clay,R64,3,Dominik Koepfer,Alex De Minaur,3-6 6-3 7-6(5),97,27,652,1665
+Rome Masters,Masters 1000,2020-09-14,Clay,R64,3,Federico Coria,Jan Lennard Struff,6-1 7-6(5),104,30,607,1450
+Rome Masters,Masters 1000,2020-09-14,Clay,R64,3,Stefano Travaglia,Taylor Fritz,6-4 7-6(4),84,28,719,1625
+Rome Masters,Masters 1000,2020-09-14,Clay,R64,3,Borna Coric,Cristian Garin,6-4 6-4,26,21,1670,1900
+Rome Masters,Masters 1000,2020-09-14,Clay,R64,3,Casper Ruud,Karen Khachanov,6-3 3-6 6-1,34,16,1359,2200
+Rome Masters,Masters 1000,2020-09-14,Clay,R64,3,Lorenzo Sonego,Nikoloz Basilashvili,6-3 6-1,47,32,1030,1395
+Rome Masters,Masters 1000,2020-09-14,Clay,R64,3,Marin Cilic,Alexander Bublik,6-7(4) 6-2 6-4,40,56,1225,965
+Rome Masters,Masters 1000,2020-09-14,Clay,R64,3,Ugo Humbert,Kevin Anderson,6-3 7-6(5),42,119,1146,500
+Rome Masters,Masters 1000,2020-09-14,Clay,R64,3,Pedro Martinez,Sam Querrey,6-3 7-6(3),109,46,548,1045
+Rome Masters,Masters 1000,2020-09-14,Clay,R64,3,Denis Shapovalov,Guido Pella,6-2 6-3,14,37,2345,1310
+Rome Masters,Masters 1000,2020-09-14,Clay,R64,3,Grigor Dimitrov,Gianluca Mager,7-5 6-1,22,85,1885,713
+Rome Masters,Masters 1000,2020-09-14,Clay,R64,3,Yoshihito Nishioka,Miomir Kecmanovic,6-4 6-1,50,39,1007,1258
+Rome Masters,Masters 1000,2020-09-14,Clay,R64,3,Jannik Sinner,Benoit Paire,6-2 6-1,81,24,743,1738
+Rome Masters,Masters 1000,2020-09-14,Clay,R64,3,John Millman,Joao Sousa,7-5 7-6(2),43,74,1131,776
+Rome Masters,Masters 1000,2020-09-14,Clay,R64,3,Hubert Hurkacz,Daniel Evans,6-3 3-6 7-5,31,33,1398,1384
+Rome Masters,Masters 1000,2020-09-14,Clay,R64,3,Andrey Rublev,Facundo Bagnis,6-4 6-4,12,135,2414,426
+Rome Masters,Masters 1000,2020-09-14,Clay,R64,3,Milos Raonic,Adrian Mannarino,7-6(3) 6-2,19,38,1995,1271
+Rome Masters,Masters 1000,2020-09-14,Clay,R64,3,Dusan Lajovic,Alejandro Davidovich Fokina,6-4 6-4,25,70,1695,801
+Hamburg,A,2020-09-21,Clay,F,3,Andrey Rublev,Stefanos Tsitsipas,6-4 3-6 7-5,14,6,2414,5175
+Hamburg,A,2020-09-21,Clay,SF,3,Andrey Rublev,Casper Ruud,6-4 6-2,14,30,2414,1604
+Hamburg,A,2020-09-21,Clay,SF,3,Stefanos Tsitsipas,Cristian Garin,7-5 3-6 6-4,6,22,5175,1910
+Hamburg,A,2020-09-21,Clay,QF,3,Casper Ruud,Ugo Humbert,7-5 3-6 6-1,30,41,1604,1216
+Hamburg,A,2020-09-21,Clay,QF,3,Andrey Rublev,Roberto Bautista Agut,6-2 7-5,14,11,2414,2620
+Hamburg,A,2020-09-21,Clay,QF,3,Cristian Garin,Alexander Bublik,3-6 6-4 6-4,22,56,1910,965
+Hamburg,A,2020-09-21,Clay,QF,3,Stefanos Tsitsipas,Dusan Lajovic,7-6(5) 6-2,6,24,5175,1740
+Hamburg,A,2020-09-21,Clay,R16,3,Ugo Humbert,Jiri Vesely,6-4 6-3,41,75,1216,785
+Hamburg,A,2020-09-21,Clay,R16,3,Casper Ruud,Fabio Fognini,6-3 6-3,30,15,1604,2400
+Hamburg,A,2020-09-21,Clay,R16,3,Roberto Bautista Agut,Dominik Koepfer,6-3 3-6 6-3,11,66,2620,849
+Hamburg,A,2020-09-21,Clay,R16,3,Andrey Rublev,Tommy Paul,6-1 3-6 6-2,14,59,2414,894
+Hamburg,A,2020-09-21,Clay,R16,3,Alexander Bublik,Felix Auger Aliassime,6-4 6-2,56,21,965,1976
+Hamburg,A,2020-09-21,Clay,R16,3,Cristian Garin,Yannick Hanfmann,6-2 7-6(3),22,103,1910,642
+Hamburg,A,2020-09-21,Clay,R16,3,Dusan Lajovic,Karen Khachanov,6-1 6-2,24,16,1740,2200
+Hamburg,A,2020-09-21,Clay,R16,3,Stefanos Tsitsipas,Pablo Cuevas,7-5 6-4,6,64,5175,857
+Hamburg,A,2020-09-21,Clay,R32,3,Ugo Humbert,Daniil Medvedev,6-4 6-3,41,5,1216,5890
+Hamburg,A,2020-09-21,Clay,R32,3,Jiri Vesely,Gilles Simon,7-5 6-2,75,52,785,1005
+Hamburg,A,2020-09-21,Clay,R32,3,Casper Ruud,Benoit Paire,6-4 2-0 RET,30,25,1604,1738
+Hamburg,A,2020-09-21,Clay,R32,3,Fabio Fognini,Philipp Kohlschreiber,4-6 6-1 7-5,15,85,2400,729
+Hamburg,A,2020-09-21,Clay,R32,3,Roberto Bautista Agut,Nikoloz Basilashvili,6-4 6-3,11,33,2620,1395
+Hamburg,A,2020-09-21,Clay,R32,3,Dominik Koepfer,Yoshihito Nishioka,7-6(0) 4-6 6-1,66,50,849,1017
+Hamburg,A,2020-09-21,Clay,R32,3,Tommy Paul,Kevin Anderson,6-4 0-6 6-4,59,118,894,510
+Hamburg,A,2020-09-21,Clay,R32,3,Andrey Rublev,Tennys Sandgren,6-3 6-3,14,48,2414,1048
+Hamburg,A,2020-09-21,Clay,R32,3,Alexander Bublik,Albert Ramos,6-2 7-6(5),56,44,965,1130
+Hamburg,A,2020-09-21,Clay,R32,3,Felix Auger Aliassime,Lorenzo Sonego,6-2 7-6(2),21,46,1976,1075
+Hamburg,A,2020-09-21,Clay,R32,3,Cristian Garin,Kei Nishikori,6-0 6-3,22,35,1910,1345
+Hamburg,A,2020-09-21,Clay,R32,3,Yannick Hanfmann,Gael Monfils,6-4 6-3,103,9,642,2860
+Hamburg,A,2020-09-21,Clay,R32,3,Karen Khachanov,Jan Lennard Struff,7-6(5) 4-6 7-5,16,32,2200,1450
+Hamburg,A,2020-09-21,Clay,R32,3,Dusan Lajovic,Adrian Mannarino,6-4 6-1,24,38,1740,1271
+Hamburg,A,2020-09-21,Clay,R32,3,Pablo Cuevas,Taylor Fritz,6-4 6-2,64,29,857,1625
+Hamburg,A,2020-09-21,Clay,R32,3,Stefanos Tsitsipas,Daniel Evans,6-3 6-1,6,34,5175,1384
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Novak Djokovic,Mikael Ymer,6-0 6-2 6-3,1,80,11260,763
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Ricardas Berankis,Hugo Dellien,6-1 6-4 6-4,66,104,854,638
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Daniel Elahi Galan,Cameron Norrie,4-6 6-3 5-7 6-1 6-1,153,72,379,807
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Tennys Sandgren,Hubert Hurkacz,7-5 2-6 4-6 7-6(1) 11-9,47,31,1068,1468
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Cristian Garin,Philipp Kohlschreiber,6-4 4-6 6-1 6-4,19,86,2090,729
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Marc Polmans,Ugo Humbert,6-2 6-2 3-6 6-3,122,38,485,1286
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Jiri Vesely,Liam Broady,6-2 5-7 6-3 6-2,68,207,840,260
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Karen Khachanov,Kamil Majchrzak,7-6(3) 6-3 6-3,16,100,2200,650
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Roberto Bautista Agut,Richard Gasquet,7-6(5) 6-2 6-1,10,50,2665,1030
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Attila Balazs,Yasutaka Uchiyama,6-2 6-3 7-5,87,95,722,685
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Guido Pella,Salvatore Caruso,7-6(6) 6-7(4) 7-5 6-4,37,85,1310,742
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Pablo Carreno Busta,John Millman,6-3 6-2 7-5,18,43,2130,1166
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Jan Lennard Struff,Frances Tiafoe,3-6 7-6(5) 6-3 6-7(2) 6-3,32,67,1450,845
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Daniel Altmaier,Feliciano Lopez,7-6(1) 6-4 6-4,186,57,302,953
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Lloyd Harris,Alexei Popyrin,6-4 6-4 7-6(7),90,108,701,576
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Matteo Berrettini,Vasek Pospisil,6-3 6-1 6-3,8,76,3030,777
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Marton Fucsovics,Daniil Medvedev,6-4 7-6(3) 2-6 6-1,63,5,877,5890
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Albert Ramos,Adrian Mannarino,6-4 6-3 6-0,44,39,1130,1271
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Marcos Giron,Quentin Halys,7-5 3-6 6-7(5) 7-5 8-6,96,202,684,274
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Thiago Monteiro,Nikoloz Basilashvili,7-5 6-4 6-2,84,33,749,1395
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Dusan Lajovic,Gianluca Mager,6-4 7-6(4) 4-6 6-1,24,89,1785,713
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Kevin Anderson,Laslo Djere,6-2 6-3 6-4,118,73,510,797
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Alejandro Davidovich Fokina,Harold Mayot,7-6(5) 6-3 7-5,70,412,829,88
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Andrey Rublev,Sam Querrey,6-7(5) 6-7(4) 7-5 6-4 6-3,12,48,2614,1055
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Denis Shapovalov,Gilles Simon,6-2 7-5 5-7 6-3,11,54,2660,1005
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Roberto Carballes Baena,Steve Johnson,6-1 6-1 6-0,101,64,649,870
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Andrej Martin,Joao Sousa,7-5 6-1 6-2,102,77,649,776
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Grigor Dimitrov,Gregoire Barrere,6-3 6-2 6-2,20,103,2055,647
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Nikola Milojevic,Filip Krajinovic,6-4 3-6 6-3 6-1,144,29,392,1628
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Aljaz Bedene,Arthur Rinderknech,6-2 6-7(7) 6-4 6-4,56,162,965,354
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Pablo Cuevas,Henri Laaksonen,6-1 2-6 6-4 6-2,60,135,907,435
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Stefanos Tsitsipas,Jaume Munar,4-6 2-6 6-1 6-4 6-4,6,109,5385,563
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Alexander Bublik,Gael Monfils,6-4 7-5 3-6 6-3,49,9,1045,2860
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Lorenzo Sonego,Emilio Gomez,6-7(6) 6-3 6-1 6-7(4) 6-3,46,156,1075,365
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Radu Albot,Jordan Thompson,6-2 6-4 6-1,79,55,772,984
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Taylor Fritz,Tomas Machac,7-5 7-6(2) 1-6 2-6 6-3,30,253,1625,205
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Norbert Gombos,Borna Coric,6-4 3-6 6-3 6-4,106,27,587,1670
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Jurij Rodionov,Jeremy Chardy,3-6 4-6 7-6(6) 6-4 10-8,170,65,338,860
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Lorenzo Giustino,Corentin Moutet,0-6 7-6(7) 7-6(3) 2-6 18-16,157,71,363,818
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Diego Schwartzman,Miomir Kecmanovic,6-0 6-1 6-3,14,41,2505,1258
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Stan Wawrinka,Andy Murray,6-1 6-3 6-2,17,111,2185,547
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Dominik Koepfer,Antoine Hoang,6-2 3-6 6-1 6-1,61,126,886,462
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Hugo Gaston,Maxime Janvier,7-6(5) 6-4 6-3,239,204,215,270
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Yoshihito Nishioka,Felix Auger Aliassime,7-5 6-3 6-3,52,22,1017,1976
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Casper Ruud,Yuichi Sugita,6-1 6-3 6-1,25,94,1739,686
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Tommy Paul,James Duckworth,6-2 6-3 6-2,58,91,949,699
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Jack Sock,Reilly Opelka,6-4 6-4 6-3,310,36,140,1312
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Dominic Thiem,Marin Cilic,6-4 6-3 6-3,3,40,9125,1270
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Alexander Zverev,Dennis Novak,7-5 6-2 6-4,7,92,4650,698
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Pierre Hugues Herbert,Michael Mmoh,6-3 6-2 6-3,78,178,775,326
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Juan Ignacio Londero,Federico Delbonis,6-4 7-6(1) 2-6 1-6 14-12,69,81,832,758
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Marco Cecchinato,Alex De Minaur,7-6(9) 6-4 6-0,110,28,551,1665
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Benoit Paire,Soon Woo Kwon,7-5 6-4 6-4,26,82,1738,752
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Federico Coria,Jason Jung,7-5 7-6(6) 7-6(3),99,125,671,464
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Benjamin Bonzi,Emil Ruusuvuori,6-2 6-4 4-6 6-4,227,93,239,686
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Jannik Sinner,David Goffin,7-5 6-0 6-3,75,13,788,2555
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Mikhail Kukushkin,Fabio Fognini,7-5 3-6 7-6(1) 6-0,88,15,716,2400
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Pedro Martinez,Aleksandar Vukic,7-5 6-4 6-0,105,193,610,287
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Sebastian Korda,Andreas Seppi,6-2 4-6 6-3 6-3,213,98,252,679
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,John Isner,Elliot Benchetrit,6-4 6-1 6-3,23,217,1805,249
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Kei Nishikori,Daniel Evans,1-6 6-1 7-6(3) 1-6 6-4,35,34,1345,1384
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Stefano Travaglia,Pablo Andujar,6-3 6-4 6-4,74,51,794,1024
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Mackenzie Mcdonald,Steven Diez,4-6 6-3 6-3 6-4,236,181,217,322
+Roland Garros,Grand Slam,2020-09-28,Clay,R128,5,Rafael Nadal,Egor Gerasimov,6-4 6-4 6-2,2,83,9850,750
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Novak Djokovic,Ricardas Berankis,6-1 6-2 6-2,1,66,11260,854
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Daniel Elahi Galan,Tennys Sandgren,6-2 6-2 6-3,153,47,379,1068
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Cristian Garin,Marc Polmans,6-7(5) 6-2 7-6(3) 6-4,19,122,2090,485
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Karen Khachanov,Jiri Vesely,6-1 6-7(4) 7-6(7) 7-6(2),16,68,2200,840
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Roberto Bautista Agut,Attila Balazs,6-3 6-1 6-2,10,87,2665,722
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Pablo Carreno Busta,Guido Pella,6-3 6-2 6-1,18,37,2130,1310
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Daniel Altmaier,Jan Lennard Struff,6-3 7-6(4) 6-3,186,32,302,1450
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Matteo Berrettini,Lloyd Harris,6-4 4-6 6-2 6-3,8,90,3030,701
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Marton Fucsovics,Albert Ramos,7-6(2) 6-3 7-5,63,44,877,1130
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Thiago Monteiro,Marcos Giron,7-6(5) 6-4 6-1,84,96,749,684
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Kevin Anderson,Dusan Lajovic,6-2 6-4 4-6 3-6 6-3,118,24,510,1785
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Andrey Rublev,Alejandro Davidovich Fokina,7-5 6-1 3-6 6-1,12,70,2614,829
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Roberto Carballes Baena,Denis Shapovalov,7-5 6-7(5) 6-3 3-6 8-6,101,11,649,2660
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Grigor Dimitrov,Andrej Martin,6-4 7-6(5) 6-1,20,102,2055,649
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Aljaz Bedene,Nikola Milojevic,7-5 2-6 6-1 7-6(4),56,144,965,392
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Stefanos Tsitsipas,Pablo Cuevas,6-1 6-4 6-2,6,60,5385,907
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Lorenzo Sonego,Alexander Bublik,7-6(8) 6-1 7-5,46,49,1075,1045
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Taylor Fritz,Radu Albot,6-3 6-2 6-4,30,79,1625,772
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Norbert Gombos,Jurij Rodionov,6-2 2-6 7-6(4) 6-4,106,170,587,338
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Diego Schwartzman,Lorenzo Giustino,6-1 7-5 6-0,14,157,2505,363
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Stan Wawrinka,Dominik Koepfer,6-3 6-2 3-6 6-1,17,61,2185,886
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Hugo Gaston,Yoshihito Nishioka,6-4 7-6(4) 3-6 6-2,239,52,215,1017
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Casper Ruud,Tommy Paul,6-1 1-6 6-3 1-6 6-3,25,58,1739,949
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Dominic Thiem,Jack Sock,6-1 6-3 7-6(6),3,310,9125,140
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Alexander Zverev,Pierre Hugues Herbert,2-6 6-4 7-6(5) 4-6 6-4,7,78,4650,775
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Marco Cecchinato,Juan Ignacio Londero,6-3 6-2 5-7 6-2,110,69,551,832
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Federico Coria,Benoit Paire,7-6(3) 4-6 6-3 6-1,99,26,671,1738
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Jannik Sinner,Benjamin Bonzi,6-2 6-4 6-4,75,227,788,239
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Pedro Martinez,Mikhail Kukushkin,6-3 6-1 6-0,105,88,610,716
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Sebastian Korda,John Isner,6-4 6-4 2-6 6-4,213,23,252,1805
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Stefano Travaglia,Kei Nishikori,6-4 2-6 7-6(7) 4-6 6-2,74,35,794,1345
+Roland Garros,Grand Slam,2020-09-28,Clay,R64,5,Rafael Nadal,Mackenzie Mcdonald,6-1 6-0 6-3,2,236,9850,217
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,5,Novak Djokovic,Daniel Elahi Galan,6-0 6-3 6-2,1,153,11260,379
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,5,Karen Khachanov,Cristian Garin,6-2 3-6 6-4 6-2,16,19,2200,2090
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,5,Pablo Carreno Busta,Roberto Bautista Agut,6-4 6-3 5-7 6-4,18,10,2130,2665
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,5,Daniel Altmaier,Matteo Berrettini,6-2 7-6(5) 6-4,186,8,302,3030
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,5,Marton Fucsovics,Thiago Monteiro,7-5 6-1 6-3,63,84,877,749
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,5,Andrey Rublev,Kevin Anderson,6-3 6-2 6-3,12,118,2614,510
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,5,Grigor Dimitrov,Roberto Carballes Baena,6-1 6-3 RET,20,101,2055,649
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,5,Stefanos Tsitsipas,Aljaz Bedene,6-1 6-2 3-1 RET,6,56,5385,965
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,5,Lorenzo Sonego,Taylor Fritz,7-6(5) 6-3 7-6(17),46,30,1075,1625
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,5,Diego Schwartzman,Norbert Gombos,7-6(3) 6-3 6-3,14,106,2505,587
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,5,Hugo Gaston,Stan Wawrinka,2-6 6-3 6-3 4-6 6-0,239,17,215,2185
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,5,Dominic Thiem,Casper Ruud,6-4 6-3 6-1,3,25,9125,1739
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,5,Alexander Zverev,Marco Cecchinato,6-1 7-5 6-3,7,110,4650,551
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,5,Jannik Sinner,Federico Coria,6-3 7-5 7-5,75,99,788,671
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,5,Sebastian Korda,Pedro Martinez,6-4 6-3 6-1,213,105,252,610
+Roland Garros,Grand Slam,2020-09-28,Clay,R32,5,Rafael Nadal,Stefano Travaglia,6-1 6-4 6-0,2,74,9850,794
+Roland Garros,Grand Slam,2020-09-28,Clay,R16,5,Novak Djokovic,Karen Khachanov,6-4 6-3 6-3,1,16,11260,2200
+Roland Garros,Grand Slam,2020-09-28,Clay,R16,5,Pablo Carreno Busta,Daniel Altmaier,6-2 7-5 6-2,18,186,2130,302
+Roland Garros,Grand Slam,2020-09-28,Clay,R16,5,Andrey Rublev,Marton Fucsovics,6-7(4) 7-5 6-4 7-6(3),12,63,2614,877
+Roland Garros,Grand Slam,2020-09-28,Clay,R16,5,Stefanos Tsitsipas,Grigor Dimitrov,6-3 7-6(9) 6-2,6,20,5385,2055
+Roland Garros,Grand Slam,2020-09-28,Clay,R16,5,Diego Schwartzman,Lorenzo Sonego,6-1 6-3 6-4,14,46,2505,1075
+Roland Garros,Grand Slam,2020-09-28,Clay,R16,5,Dominic Thiem,Hugo Gaston,6-4 6-4 5-7 3-6 6-3,3,239,9125,215
+Roland Garros,Grand Slam,2020-09-28,Clay,R16,5,Jannik Sinner,Alexander Zverev,6-3 6-3 4-6 6-3,75,7,788,4650
+Roland Garros,Grand Slam,2020-09-28,Clay,R16,5,Rafael Nadal,Sebastian Korda,6-1 6-1 6-2,2,213,9850,252
+Roland Garros,Grand Slam,2020-09-28,Clay,QF,5,Novak Djokovic,Pablo Carreno Busta,4-6 6-2 6-3 6-4,1,18,11260,2130
+Roland Garros,Grand Slam,2020-09-28,Clay,QF,5,Stefanos Tsitsipas,Andrey Rublev,7-5 6-2 6-3,6,12,5385,2614
+Roland Garros,Grand Slam,2020-09-28,Clay,QF,5,Diego Schwartzman,Dominic Thiem,7-6(1) 5-7 6-7(6) 7-6(5) 6-2,14,3,2505,9125
+Roland Garros,Grand Slam,2020-09-28,Clay,QF,5,Rafael Nadal,Jannik Sinner,7-6(4) 6-4 6-1,2,75,9850,788
+Roland Garros,Grand Slam,2020-09-28,Clay,SF,5,Novak Djokovic,Stefanos Tsitsipas,6-3 6-2 5-7 4-6 6-1,1,6,11260,5385
+Roland Garros,Grand Slam,2020-09-28,Clay,SF,5,Rafael Nadal,Diego Schwartzman,6-3 6-3 7-6(0),2,14,9850,2505
+Roland Garros,Grand Slam,2020-09-28,Clay,F,5,Rafael Nadal,Novak Djokovic,6-0 6-2 7-5,2,1,9850,11260
+Cologne 1,A,2020-10-12,Hard,F,3,Alexander Zverev,Felix Auger Aliassime,6-3 6-3,7,22,4650,2021
+Cologne 1,A,2020-10-12,Hard,SF,3,Alexander Zverev,Alejandro Davidovich Fokina,7-5 7-6(3),7,71,4650,848
+Cologne 1,A,2020-10-12,Hard,SF,3,Felix Auger Aliassime,Roberto Bautista Agut,6-3 1-6 6-3,22,13,2021,2665
+Cologne 1,A,2020-10-12,Hard,QF,3,Alexander Zverev,Lloyd Harris,6-4 3-6 6-0,7,92,4650,701
+Cologne 1,A,2020-10-12,Hard,QF,3,Alejandro Davidovich Fokina,Dennis Novak,6-3 2-6 6-3,71,94,848,700
+Cologne 1,A,2020-10-12,Hard,QF,3,Felix Auger Aliassime,Radu Albot,6-3 6-0,22,82,2021,772
+Cologne 1,A,2020-10-12,Hard,QF,3,Roberto Bautista Agut,Hubert Hurkacz,7-6(4) 5-7 6-0,13,31,2665,1468
+Cologne 1,A,2020-10-12,Hard,R16,3,Alexander Zverev,Fernando Verdasco,6-4 6-1,7,61,4650,945
+Cologne 1,A,2020-10-12,Hard,R16,3,Lloyd Harris,Steve Johnson,7-6(5) 7-6(2),92,68,701,870
+Cologne 1,A,2020-10-12,Hard,R16,3,Dennis Novak,Benoit Paire,6-3 6-4,94,26,700,1738
+Cologne 1,A,2020-10-12,Hard,R16,3,Alejandro Davidovich Fokina,Marin Cilic,3-6 7-6(3) 6-2,71,40,848,1270
+Cologne 1,A,2020-10-12,Hard,R16,3,Radu Albot,Oscar Otte,6-4 5-7 7-5,82,142,772,423
+Cologne 1,A,2020-10-12,Hard,R16,3,Felix Auger Aliassime,Henri Laaksonen,6-4 6-1,22,139,2021,435
+Cologne 1,A,2020-10-12,Hard,R16,3,Hubert Hurkacz,Mischa Zverev,6-4 6-3,31,268,1468,188
+Cologne 1,A,2020-10-12,Hard,R16,3,Roberto Bautista Agut,Gilles Simon,6-4 7-6(5),13,57,2665,1005
+Cologne 1,A,2020-10-12,Hard,R32,3,Fernando Verdasco,Andy Murray,6-4 6-4,61,115,945,547
+Cologne 1,A,2020-10-12,Hard,R32,3,Lloyd Harris,Kyle Edmund,7-5 7-6(1),92,47,701,1085
+Cologne 1,A,2020-10-12,Hard,R32,3,Steve Johnson,Filip Krajinovic,3-6 6-4 6-4,68,30,870,1628
+Cologne 1,A,2020-10-12,Hard,R32,3,Dennis Novak,Jordan Thompson,6-3 6-3,94,59,700,984
+Cologne 1,A,2020-10-12,Hard,R32,3,Alejandro Davidovich Fokina,Emil Ruusuvuori,7-5 6-4,71,98,848,689
+Cologne 1,A,2020-10-12,Hard,R32,3,Marin Cilic,Marcos Giron,6-2 4-6 6-3,40,90,1270,721
+Cologne 1,A,2020-10-12,Hard,R32,3,Oscar Otte,Jan Lennard Struff,6-4 6-3,142,32,423,1450
+Cologne 1,A,2020-10-12,Hard,R32,3,Radu Albot,Pierre Hugues Herbert,6-2 4-6 6-4,82,81,772,775
+Cologne 1,A,2020-10-12,Hard,R32,3,Henri Laaksonen,Daniel Altmaier,3-6 6-3 7-6(5),139,122,435,501
+Cologne 1,A,2020-10-12,Hard,R32,3,Hubert Hurkacz,Marc Polmans,6-2 7-5,31,116,1468,539
+Cologne 1,A,2020-10-12,Hard,R32,3,Mischa Zverev,John Millman,6-1 6-4,268,44,188,1166
+Cologne 1,A,2020-10-12,Hard,R32,3,Gilles Simon,Marton Fucsovics,6-0 6-3,57,50,1005,1047
+Sardinia,A,2020-10-12,Clay,F,3,Laslo Djere,Marco Cecchinato,7-6(3) 7-5,74,103,812,671
+Sardinia,A,2020-10-12,Clay,SF,3,Marco Cecchinato,Danilo Petrovic,6-1 6-0,103,166,671,362
+Sardinia,A,2020-10-12,Clay,SF,3,Laslo Djere,Lorenzo Musetti,2-6 6-2 4-1 RET,74,143,812,422
+Sardinia,A,2020-10-12,Clay,QF,3,Danilo Petrovic,Federico Delbonis,7-6(3) 6-1,166,78,362,791
+Sardinia,A,2020-10-12,Clay,QF,3,Marco Cecchinato,Albert Ramos,4-6 6-1 6-1,103,45,671,1165
+Sardinia,A,2020-10-12,Clay,QF,3,Lorenzo Musetti,Yannick Hanfmann,6-2 6-4,143,101,422,682
+Sardinia,A,2020-10-12,Clay,QF,3,Laslo Djere,Jiri Vesely,6-4 6-4,74,67,812,875
+Sardinia,A,2020-10-12,Clay,R16,3,Danilo Petrovic,Roberto Carballes Baena,6-1 6-4,166,96,362,694
+Sardinia,A,2020-10-12,Clay,R16,3,Federico Delbonis,Pablo Andujar,5-7 7-6(5) 6-4,78,54,791,1024
+Sardinia,A,2020-10-12,Clay,R16,3,Albert Ramos,Corentin Moutet,6-0 6-3,45,73,1165,818
+Sardinia,A,2020-10-12,Clay,R16,3,Marco Cecchinato,Tommy Paul,7-6(1) 6-4,103,58,671,994
+Sardinia,A,2020-10-12,Clay,R16,3,Lorenzo Musetti,Andrea Pellegrino,6-2 6-1,143,292,422,157
+Sardinia,A,2020-10-12,Clay,R16,3,Yannick Hanfmann,Casper Ruud,6-2 6-1,101,25,682,1739
+Sardinia,A,2020-10-12,Clay,R16,3,Jiri Vesely,Lorenzo Sonego,6-4 3-6 6-1,67,42,875,1245
+Sardinia,A,2020-10-12,Clay,R16,3,Laslo Djere,Dusan Lajovic,6-4 7-5,74,24,812,1785
+Sardinia,A,2020-10-12,Clay,R32,3,Roberto Carballes Baena,Federico Coria,7-5 6-4,96,86,694,753
+Sardinia,A,2020-10-12,Clay,R32,3,Federico Delbonis,Andreas Seppi,7-5 7-6(6),78,102,791,679
+Sardinia,A,2020-10-12,Clay,R32,3,Pablo Andujar,Jozef Kovalik,7-5 7-5,54,125,1024,487
+Sardinia,A,2020-10-12,Clay,R32,3,Corentin Moutet,Frances Tiafoe,7-6(0) 6-4,73,64,818,900
+Sardinia,A,2020-10-12,Clay,R32,3,Marco Cecchinato,Gianluca Mager,5-7 7-6(7) 6-2,103,91,671,717
+Sardinia,A,2020-10-12,Clay,R32,3,Tommy Paul,Andrej Martin,5-7 6-3 7-5,58,100,994,686
+Sardinia,A,2020-10-12,Clay,R32,3,Lorenzo Musetti,Pablo Cuevas,7-6(4) 7-5,143,63,422,907
+Sardinia,A,2020-10-12,Clay,R32,3,Andrea Pellegrino,Stefano Travaglia,4-6 7-6(7) 3-0 RET,292,70,157,849
+Sardinia,A,2020-10-12,Clay,R32,3,Yannick Hanfmann,Salvatore Caruso,6-0 6-4,101,77,682,802
+Sardinia,A,2020-10-12,Clay,R32,3,Lorenzo Sonego,Giulio Zeppieri,6-2 7-6(4),42,317,1245,135
+Sardinia,A,2020-10-12,Clay,R32,3,Jiri Vesely,Kamil Majchrzak,6-1 7-5,67,105,875,652
+Sardinia,A,2020-10-12,Clay,R32,3,Laslo Djere,Sumit Nagal,6-3 6-1,74,129,812,465
+St Petersburg,A,2020-10-12,Hard,F,3,Andrey Rublev,Borna Coric,7-6(5) 6-4,10,27,2974,1670
+St Petersburg,A,2020-10-12,Hard,SF,3,Borna Coric,Milos Raonic,1-6 6-1 6-4,27,21,1670,2040
+St Petersburg,A,2020-10-12,Hard,SF,3,Andrey Rublev,Denis Shapovalov,4-6 6-3 6-4,10,12,2974,2695
+St Petersburg,A,2020-10-12,Hard,QF,3,Borna Coric,Reilly Opelka,7-6(3) 6-3,27,36,1670,1312
+St Petersburg,A,2020-10-12,Hard,QF,3,Milos Raonic,Karen Khachanov,6-1 7-6(1),21,17,2040,2200
+St Petersburg,A,2020-10-12,Hard,QF,3,Andrey Rublev,Cameron Norrie,6-2 6-1,10,75,2974,807
+St Petersburg,A,2020-10-12,Hard,QF,3,Denis Shapovalov,Stan Wawrinka,6-4 7-5,12,18,2695,2185
+St Petersburg,A,2020-10-12,Hard,R16,3,Reilly Opelka,Daniil Medvedev,2-6 7-5 6-4,36,6,1312,5890
+St Petersburg,A,2020-10-12,Hard,R16,3,Borna Coric,Roman Safiullin,6-3 7-5,27,199,1670,298
+St Petersburg,A,2020-10-12,Hard,R16,3,Karen Khachanov,Aslan Karatsev,4-6 7-5 6-3,17,117,2200,534
+St Petersburg,A,2020-10-12,Hard,R16,3,Milos Raonic,Alexander Bublik,6-3 6-2,21,52,2040,1045
+St Petersburg,A,2020-10-12,Hard,R16,3,Cameron Norrie,Miomir Kecmanovic,7-5 6-7(5) 6-3,75,41,807,1258
+St Petersburg,A,2020-10-12,Hard,R16,3,Andrey Rublev,Ugo Humbert,4-6 6-4 7-5,10,38,2974,1286
+St Petersburg,A,2020-10-12,Hard,R16,3,Stan Wawrinka,Evgeny Donskoy,6-1 3-6 6-3,18,121,2185,505
+St Petersburg,A,2020-10-12,Hard,R16,3,Denis Shapovalov,Ilya Ivashka,6-1 6-4,12,141,2695,425
+St Petersburg,A,2020-10-12,Hard,R32,3,Daniil Medvedev,Richard Gasquet,3-6 6-3 6-0,6,53,5890,1030
+St Petersburg,A,2020-10-12,Hard,R32,3,Reilly Opelka,Nino Serdarusic,3-6 7-6(5) 6-2,36,308,1312,142
+St Petersburg,A,2020-10-12,Hard,R32,3,Roman Safiullin,Emilio Gomez,6-4 6-2,199,151,298,392
+St Petersburg,A,2020-10-12,Hard,R32,3,Borna Coric,Feliciano Lopez,6-3 7-6(2),27,60,1670,953
+St Petersburg,A,2020-10-12,Hard,R32,3,Karen Khachanov,James Duckworth,6-4 6-4,17,93,2200,701
+St Petersburg,A,2020-10-12,Hard,R32,3,Aslan Karatsev,Tennys Sandgren,7-5 3-6 7-5,117,48,534,1078
+St Petersburg,A,2020-10-12,Hard,R32,3,Alexander Bublik,Mackenzie Mcdonald,2-6 7-6(2) 6-4,52,221,1045,252
+St Petersburg,A,2020-10-12,Hard,R32,3,Milos Raonic,J J Wolf,7-6(5) 6-1,21,123,2040,492
+St Petersburg,A,2020-10-12,Hard,R32,3,Cameron Norrie,Taylor Fritz,6-4 4-6 6-3,75,28,807,1670
+St Petersburg,A,2020-10-12,Hard,R32,3,Miomir Kecmanovic,Mikhail Kukushkin,6-3 7-6(7),41,88,1258,751
+St Petersburg,A,2020-10-12,Hard,R32,3,Ugo Humbert,Pavel Kotov,4-6 6-2 6-3,38,286,1286,166
+St Petersburg,A,2020-10-12,Hard,R32,3,Andrey Rublev,Vasek Pospisil,6-2 6-4,10,79,2974,787
+St Petersburg,A,2020-10-12,Hard,R32,3,Stan Wawrinka,Daniel Evans,3-6 7-6(3) 7-5,18,34,2185,1384
+St Petersburg,A,2020-10-12,Hard,R32,3,Evgeny Donskoy,Egor Gerasimov,6-4 7-6(4),121,85,505,755
+St Petersburg,A,2020-10-12,Hard,R32,3,Ilya Ivashka,Adrian Mannarino,6-3 7-6(6),141,39,425,1271
+St Petersburg,A,2020-10-12,Hard,R32,3,Denis Shapovalov,Viktor Troicki,6-2 6-3,12,197,2695,298
+Cologne 2,A,2020-10-19,Hard,F,3,Alexander Zverev,Diego Schwartzman,6-2 6-1,7,9,4855,3180
+Cologne 2,A,2020-10-19,Hard,SF,3,Alexander Zverev,Jannik Sinner,7-6(3) 6-3,7,46,4855,1136
+Cologne 2,A,2020-10-19,Hard,SF,3,Diego Schwartzman,Felix Auger Aliassime,6-4 5-7 6-4,9,22,3180,2126
+Cologne 2,A,2020-10-19,Hard,QF,3,Alexander Zverev,Adrian Mannarino,6-4 6-7(5) 6-4,7,41,4855,1271
+Cologne 2,A,2020-10-19,Hard,QF,3,Jannik Sinner,Gilles Simon,6-3 0-6 6-4,46,58,1136,1005
+Cologne 2,A,2020-10-19,Hard,QF,3,Felix Auger Aliassime,Yoshihito Nishioka,6-3 6-4,22,56,2126,1017
+Cologne 2,A,2020-10-19,Hard,QF,3,Diego Schwartzman,Alejandro Davidovich Fokina,2-6 7-6(3) 6-1,9,64,3180,928
+Cologne 2,A,2020-10-19,Hard,R16,3,Alexander Zverev,John Millman,6-0 3-6 6-3,7,44,4855,1166
+Cologne 2,A,2020-10-19,Hard,R16,3,Adrian Mannarino,Miomir Kecmanovic,6-3 6-3,41,39,1271,1283
+Cologne 2,A,2020-10-19,Hard,R16,3,Gilles Simon,Denis Shapovalov,6-1 4-6 6-2,58,12,1005,2830
+Cologne 2,A,2020-10-19,Hard,R16,3,Jannik Sinner,Pierre Hugues Herbert,6-3 6-1,46,82,1136,775
+Cologne 2,A,2020-10-19,Hard,R16,3,Yoshihito Nishioka,Jan Lennard Struff,2-6 6-3 7-6(3),56,32,1017,1450
+Cologne 2,A,2020-10-19,Hard,R16,3,Felix Auger Aliassime,Egor Gerasimov,4-6 7-6(2) 7-6(4),22,87,2126,755
+Cologne 2,A,2020-10-19,Hard,R16,3,Alejandro Davidovich Fokina,Steve Johnson,7-6(3) 6-3,64,71,928,870
+Cologne 2,A,2020-10-19,Hard,R16,3,Diego Schwartzman,Oscar Otte,6-3 6-2,9,141,3180,448
+Cologne 2,A,2020-10-19,Hard,R32,3,John Millman,Fernando Verdasco,6-4 6-2,44,61,1166,965
+Cologne 2,A,2020-10-19,Hard,R32,3,Miomir Kecmanovic,Sumit Nagal,4-6 7-6(4) 6-1,39,130,1283,474
+Cologne 2,A,2020-10-19,Hard,R32,3,Adrian Mannarino,Alexei Popyrin,6-2 6-2,41,109,1271,613
+Cologne 2,A,2020-10-19,Hard,R32,3,Gilles Simon,Jordan Thompson,6-3 7-5,58,60,1005,984
+Cologne 2,A,2020-10-19,Hard,R32,3,Pierre Hugues Herbert,Tennys Sandgren,6-3 3-6 6-3,82,48,775,1078
+Cologne 2,A,2020-10-19,Hard,R32,3,Jannik Sinner,James Duckworth,6-1 6-2,46,97,1136,701
+Cologne 2,A,2020-10-19,Hard,R32,3,Jan Lennard Struff,Marco Cecchinato,6-3 6-1,32,77,1450,811
+Cologne 2,A,2020-10-19,Hard,R32,3,Yoshihito Nishioka,Kyle Edmund,6-4 6-0,56,47,1017,1085
+Cologne 2,A,2020-10-19,Hard,R32,3,Egor Gerasimov,Daniel Altmaier,6-1 6-0,87,124,755,501
+Cologne 2,A,2020-10-19,Hard,R32,3,Steve Johnson,Marin Cilic,7-6(3) 6-4,71,40,870,1280
+Cologne 2,A,2020-10-19,Hard,R32,3,Alejandro Davidovich Fokina,Damir Dzumhur,6-2 6-3,64,114,928,562
+Cologne 2,A,2020-10-19,Hard,R32,3,Oscar Otte,Dennis Novak,6-3 6-2,141,91,448,735
+Nur-Sultan,A,2020-10-26,Hard,F,3,John Millman,Adrian Mannarino,7-5 6-1,45,39,1166,1296
+Nur-Sultan,A,2020-10-26,Hard,SF,3,Adrian Mannarino,Emil Ruusuvuori,7-5 6-2,39,98,1296,698
+Nur-Sultan,A,2020-10-26,Hard,SF,3,John Millman,Frances Tiafoe,3-6 6-4 6-4,45,64,1166,950
+Nur-Sultan,A,2020-10-26,Hard,QF,3,Emil Ruusuvuori,Mikhail Kukushkin,6-3 6-1,98,91,698,751
+Nur-Sultan,A,2020-10-26,Hard,QF,3,Adrian Mannarino,Mackenzie Mcdonald,6-1 6-4,39,209,1296,275
+Nur-Sultan,A,2020-10-26,Hard,QF,3,John Millman,Tommy Paul,6-7(5) 6-4 7-6(5),45,59,1166,1002
+Nur-Sultan,A,2020-10-26,Hard,QF,3,Frances Tiafoe,Egor Gerasimov,7-6(5) 5-7 7-5,64,83,950,781
+Nur-Sultan,A,2020-10-26,Hard,R16,3,Mikhail Kukushkin,Benoit Paire,6-7(4) 7-6(2) 6-1,91,28,751,1738
+Nur-Sultan,A,2020-10-26,Hard,R16,3,Emil Ruusuvuori,Jordan Thompson,6-2 3-6 6-4,98,60,698,984
+Nur-Sultan,A,2020-10-26,Hard,R16,3,Adrian Mannarino,Yuichi Sugita,6-1 6-1,39,101,1296,689
+Nur-Sultan,A,2020-10-26,Hard,R16,3,Mackenzie Mcdonald,Andreas Seppi,3-6 6-3 6-3,209,103,275,679
+Nur-Sultan,A,2020-10-26,Hard,R16,3,Tommy Paul,Radu Albot,6-4 6-0,59,85,1002,772
+Nur-Sultan,A,2020-10-26,Hard,R16,3,John Millman,Fernando Verdasco,6-3 6-4,45,61,1166,965
+Nur-Sultan,A,2020-10-26,Hard,R16,3,Egor Gerasimov,Jiri Vesely,4-6 6-3 6-4,83,66,781,908
+Nur-Sultan,A,2020-10-26,Hard,R16,3,Frances Tiafoe,Miomir Kecmanovic,7-5 6-3,64,40,950,1283
+Nur-Sultan,A,2020-10-26,Hard,R32,3,Mikhail Kukushkin,Federico Delbonis,6-7(5) 6-3 6-2,91,76,751,816
+Nur-Sultan,A,2020-10-26,Hard,R32,3,Emil Ruusuvuori,Timofey Skatov,6-2 6-0,98,438,698,82
+Nur-Sultan,A,2020-10-26,Hard,R32,3,Jordan Thompson,Cameron Norrie,5-7 7-6(6) 6-2,60,70,984,877
+Nur-Sultan,A,2020-10-26,Hard,R32,3,Yuichi Sugita,Damir Dzumhur,6-1 5-7 6-4,101,115,689,562
+Nur-Sultan,A,2020-10-26,Hard,R32,3,Andreas Seppi,Aslan Karatsev,6-3 1-6 6-3,103,113,679,577
+Nur-Sultan,A,2020-10-26,Hard,R32,3,Mackenzie Mcdonald,Alexander Bublik,6-3 6-2,209,49,275,1070
+Nur-Sultan,A,2020-10-26,Hard,R32,3,Tommy Paul,Stefano Travaglia,7-6(2) 6-3,59,73,1002,849
+Nur-Sultan,A,2020-10-26,Hard,R32,3,Radu Albot,Dmitry Popko,4-6 6-4 6-4,85,172,772,361
+Nur-Sultan,A,2020-10-26,Hard,R32,3,Fernando Verdasco,James Duckworth,6-4 7-6(5),61,97,965,701
+Nur-Sultan,A,2020-10-26,Hard,R32,3,Jiri Vesely,Tennys Sandgren,6-4 7-6(7),66,48,908,1078
+Nur-Sultan,A,2020-10-26,Hard,R32,3,Egor Gerasimov,Lloyd Harris,6-3 3-6 7-6(3),83,80,781,793
+Nur-Sultan,A,2020-10-26,Hard,R32,3,Frances Tiafoe,Corentin Moutet,6-3 6-2,64,74,950,838
+Vienna,A,2020-10-26,Hard,F,3,Andrey Rublev,Lorenzo Sonego,6-4 6-4,8,42,3429,1253
+Vienna,A,2020-10-26,Hard,SF,3,Lorenzo Sonego,Daniel Evans,6-3 6-4,42,33,1253,1454
+Vienna,A,2020-10-26,Hard,SF,3,Andrey Rublev,Kevin Anderson,6-4 4-1 RET,8,111,3429,600
+Vienna,A,2020-10-26,Hard,QF,3,Lorenzo Sonego,Novak Djokovic,6-2 6-1,42,1,1253,11740
+Vienna,A,2020-10-26,Hard,QF,3,Daniel Evans,Grigor Dimitrov,7-6(3) 4-6 6-3,33,20,1454,2215
+Vienna,A,2020-10-26,Hard,QF,3,Kevin Anderson,Daniil Medvedev,6-4 7-6(5),111,6,600,5890
+Vienna,A,2020-10-26,Hard,QF,3,Andrey Rublev,Dominic Thiem,7-6(5) 6-2,8,3,3429,9125
+Vienna,A,2020-10-26,Hard,R16,3,Novak Djokovic,Borna Coric,7-6(11) 6-3,1,24,11740,1820
+Vienna,A,2020-10-26,Hard,R16,3,Lorenzo Sonego,Hubert Hurkacz,7-6(6) 7-6(2),42,31,1253,1493
+Vienna,A,2020-10-26,Hard,R16,3,Grigor Dimitrov,Stefanos Tsitsipas,6-7(5) 6-4 6-3,20,5,2215,5925
+Vienna,A,2020-10-26,Hard,R16,3,Daniel Evans,Jurij Rodionov,7-5 6-3,33,153,1454,408
+Vienna,A,2020-10-26,Hard,R16,3,Kevin Anderson,Pablo Carreno Busta,7-5 6-1,111,15,600,2400
+Vienna,A,2020-10-26,Hard,R16,3,Daniil Medvedev,Vasek Pospisil,4-6 6-3 6-2,6,81,5890,787
+Vienna,A,2020-10-26,Hard,R16,3,Andrey Rublev,Jannik Sinner,2-1 RET,8,43,3429,1214
+Vienna,A,2020-10-26,Hard,R16,3,Dominic Thiem,Cristian Garin,6-3 6-2,3,22,9125,2135
+Vienna,A,2020-10-26,Hard,R32,3,Novak Djokovic,Filip Krajinovic,7-6(6) 6-3,1,30,11740,1628
+Vienna,A,2020-10-26,Hard,R32,3,Borna Coric,Taylor Fritz,6-4 6-4,24,29,1820,1670
+Vienna,A,2020-10-26,Hard,R32,3,Hubert Hurkacz,Attila Balazs,6-3 7-5,31,88,1493,759
+Vienna,A,2020-10-26,Hard,R32,3,Lorenzo Sonego,Dusan Lajovic,6-4 6-3,42,26,1253,1785
+Vienna,A,2020-10-26,Hard,R32,3,Stefanos Tsitsipas,Jan Lennard Struff,6-7(3) 6-3 6-4,5,34,5925,1450
+Vienna,A,2020-10-26,Hard,R32,3,Grigor Dimitrov,Karen Khachanov,7-6(6) 6-3,20,18,2215,2245
+Vienna,A,2020-10-26,Hard,R32,3,Daniel Evans,Aljaz Bedene,6-3 4-5 RET,33,53,1454,1045
+Vienna,A,2020-10-26,Hard,R32,3,Jurij Rodionov,Denis Shapovalov,6-4 7-5,153,12,408,2830
+Vienna,A,2020-10-26,Hard,R32,3,Pablo Carreno Busta,Gael Monfils,6-1 2-0 RET,15,11,2400,2860
+Vienna,A,2020-10-26,Hard,R32,3,Kevin Anderson,Dennis Novak,6-7(2) 6-4 7-6(6),111,92,600,737
+Vienna,A,2020-10-26,Hard,R32,3,Vasek Pospisil,Felix Auger Aliassime,7-5 7-5,81,21,787,2171
+Vienna,A,2020-10-26,Hard,R32,3,Daniil Medvedev,Jason Jung,6-3 6-1,6,127,5890,490
+Vienna,A,2020-10-26,Hard,R32,3,Andrey Rublev,Norbert Gombos,6-3 6-2,8,104,3429,670
+Vienna,A,2020-10-26,Hard,R32,3,Jannik Sinner,Casper Ruud,7-6(2) 6-3,43,27,1214,1739
+Vienna,A,2020-10-26,Hard,R32,3,Cristian Garin,Stan Wawrinka,6-4 6-7(9) 6-3,22,19,2135,2230
+Vienna,A,2020-10-26,Hard,R32,3,Dominic Thiem,Vitaliy Sachko,6-4 7-5,3,529,9125,58
+Paris Masters,Masters 1000,2020-11-02,Hard,F,3,Daniil Medvedev,Alexander Zverev,5-7 6-4 6-1,5,7,5980,5015
+Paris Masters,Masters 1000,2020-11-02,Hard,SF,3,Alexander Zverev,Rafael Nadal,6-4 7-5,7,2,5015,9850
+Paris Masters,Masters 1000,2020-11-02,Hard,SF,3,Daniil Medvedev,Milos Raonic,6-4 7-6(4),5,17,5980,2265
+Paris Masters,Masters 1000,2020-11-02,Hard,QF,3,Rafael Nadal,Pablo Carreno Busta,4-6 7-5 6-1,2,15,9850,2400
+Paris Masters,Masters 1000,2020-11-02,Hard,QF,3,Alexander Zverev,Stan Wawrinka,6-3 7-6(1),7,20,5015,2230
+Paris Masters,Masters 1000,2020-11-02,Hard,QF,3,Daniil Medvedev,Diego Schwartzman,6-3 6-1,5,9,5980,3285
+Paris Masters,Masters 1000,2020-11-02,Hard,QF,3,Milos Raonic,Ugo Humbert,6-3 3-6 7-6(7),17,34,2265,1466
+Paris Masters,Masters 1000,2020-11-02,Hard,R16,3,Rafael Nadal,Jordan Thompson,6-1 7-6(3),2,61,9850,994
+Paris Masters,Masters 1000,2020-11-02,Hard,R16,3,Pablo Carreno Busta,Norbert Gombos,7-5 6-2,15,105,2400,682
+Paris Masters,Masters 1000,2020-11-02,Hard,R16,3,Alexander Zverev,Adrian Mannarino,7-6(11) 6-7(7) 6-4,7,36,5015,1426
+Paris Masters,Masters 1000,2020-11-02,Hard,R16,3,Stan Wawrinka,Andrey Rublev,1-6 6-4 6-3,20,8,2230,3839
+Paris Masters,Masters 1000,2020-11-02,Hard,R16,3,Diego Schwartzman,Alejandro Davidovich Fokina,6-1 6-1,9,63,3285,963
+Paris Masters,Masters 1000,2020-11-02,Hard,R16,3,Daniil Medvedev,Alex De Minaur,5-7 6-2 6-2,5,25,5980,1815
+Paris Masters,Masters 1000,2020-11-02,Hard,R16,3,Milos Raonic,Marcos Giron,7-6(1) 6-2,17,91,2265,769
+Paris Masters,Masters 1000,2020-11-02,Hard,R16,3,Ugo Humbert,Marin Cilic,6-3 6-7(4) 6-3,34,43,1466,1280
+Paris Masters,Masters 1000,2020-11-02,Hard,R32,3,Rafael Nadal,Feliciano Lopez,4-6 7-6(5) 6-4,2,64,9850,953
+Paris Masters,Masters 1000,2020-11-02,Hard,R32,3,Jordan Thompson,Borna Coric,2-6 6-4 6-2,61,24,994,1820
+Paris Masters,Masters 1000,2020-11-02,Hard,R32,3,Pablo Carreno Busta,Jan Lennard Struff,7-6(3) 6-2,15,35,2400,1450
+Paris Masters,Masters 1000,2020-11-02,Hard,R32,3,Norbert Gombos,David Goffin,6-4 7-6(6),105,14,682,2555
+Paris Masters,Masters 1000,2020-11-02,Hard,R32,3,Alexander Zverev,Miomir Kecmanovic,6-2 6-2,7,42,5015,1283
+Paris Masters,Masters 1000,2020-11-02,Hard,R32,3,Adrian Mannarino,Yoshihito Nishioka,6-3 6-7(5) 6-3,36,51,1426,1052
+Paris Masters,Masters 1000,2020-11-02,Hard,R32,3,Stan Wawrinka,Tommy Paul,4-6 7-6(3) 6-2,20,55,2230,1035
+Paris Masters,Masters 1000,2020-11-02,Hard,R32,3,Andrey Rublev,Radu Albot,6-1 6-2,8,90,3839,772
+Paris Masters,Masters 1000,2020-11-02,Hard,R32,3,Diego Schwartzman,Richard Gasquet,7-5 6-3,9,56,3285,1030
+Paris Masters,Masters 1000,2020-11-02,Hard,R32,3,Alejandro Davidovich Fokina,Benjamin Bonzi,6-4 6-4,63,180,963,346
+Paris Masters,Masters 1000,2020-11-02,Hard,R32,3,Alex De Minaur,Lorenzo Sonego,6-3 7-5,25,32,1815,1543
+Paris Masters,Masters 1000,2020-11-02,Hard,R32,3,Daniil Medvedev,Kevin Anderson,6-6 RET,5,86,5980,780
+Paris Masters,Masters 1000,2020-11-02,Hard,R32,3,Marcos Giron,Matteo Berrettini,7-6(3) 6-7(0) 7-5,91,10,769,3075
+Paris Masters,Masters 1000,2020-11-02,Hard,R32,3,Milos Raonic,Pierre Hugues Herbert,6-4 6-4,17,85,2265,787
+Paris Masters,Masters 1000,2020-11-02,Hard,R32,3,Marin Cilic,Corentin Moutet,W/O,43,75,1280,838
+Paris Masters,Masters 1000,2020-11-02,Hard,R32,3,Ugo Humbert,Stefanos Tsitsipas,7-6(4) 6-7(6) 7-6(3),34,6,1466,5925
+Paris Masters,Masters 1000,2020-11-02,Hard,R64,3,Feliciano Lopez,Filip Krajinovic,7-6(11) 6-1,64,30,953,1628
+Paris Masters,Masters 1000,2020-11-02,Hard,R64,3,Jordan Thompson,Federico Delbonis,6-2 6-3,61,78,994,816
+Paris Masters,Masters 1000,2020-11-02,Hard,R64,3,Borna Coric,Marton Fucsovics,7-6(5) 6-1,24,52,1820,1047
+Paris Masters,Masters 1000,2020-11-02,Hard,R64,3,Pablo Carreno Busta,Hugo Gaston,6-3 6-2,15,161,2400,390
+Paris Masters,Masters 1000,2020-11-02,Hard,R64,3,Jan Lennard Struff,Nikoloz Basilashvili,6-4 6-2,35,39,1450,1395
+Paris Masters,Masters 1000,2020-11-02,Hard,R64,3,Norbert Gombos,Marco Cecchinato,6-2 7-6(2),105,79,682,811
+Paris Masters,Masters 1000,2020-11-02,Hard,R64,3,Miomir Kecmanovic,John Millman,6-4 6-2,42,38,1283,1396
+Paris Masters,Masters 1000,2020-11-02,Hard,R64,3,Yoshihito Nishioka,Pablo Andujar,5-7 6-4 6-2,51,57,1052,1024
+Paris Masters,Masters 1000,2020-11-02,Hard,R64,3,Adrian Mannarino,Dusan Lajovic,7-6(5) 6-3,36,26,1426,1785
+Paris Masters,Masters 1000,2020-11-02,Hard,R64,3,Stan Wawrinka,Daniel Evans,6-3 7-6(3),20,31,2230,1589
+Paris Masters,Masters 1000,2020-11-02,Hard,R64,3,Tommy Paul,Gilles Simon,3-6 6-3 6-3,55,59,1035,1005
+Paris Masters,Masters 1000,2020-11-02,Hard,R64,3,Radu Albot,Hubert Hurkacz,7-5 6-7(5) 6-4,90,33,772,1518
+Paris Masters,Masters 1000,2020-11-02,Hard,R64,3,Richard Gasquet,Taylor Fritz,6-0 3-6 6-3,56,29,1030,1670
+Paris Masters,Masters 1000,2020-11-02,Hard,R64,3,Benjamin Bonzi,Federico Coria,6-2 6-1,180,93,346,757
+Paris Masters,Masters 1000,2020-11-02,Hard,R64,3,Alejandro Davidovich Fokina,Karen Khachanov,6-3 2-6 6-2,63,19,963,2245
+Paris Masters,Masters 1000,2020-11-02,Hard,R64,3,Alex De Minaur,Stefano Travaglia,6-4 6-4,25,74,1815,849
+Paris Masters,Masters 1000,2020-11-02,Hard,R64,3,Lorenzo Sonego,Alexander Bublik,6-1 6-4,32,49,1543,1070
+Paris Masters,Masters 1000,2020-11-02,Hard,R64,3,Kevin Anderson,Laslo Djere,5-2 RET,86,54,780,1042
+Paris Masters,Masters 1000,2020-11-02,Hard,R64,3,Marcos Giron,Albert Ramos,6-3 4-6 6-1,91,46,769,1165
+Paris Masters,Masters 1000,2020-11-02,Hard,R64,3,Pierre Hugues Herbert,Tennys Sandgren,2-6 6-4 7-6(4),85,48,787,1078
+Paris Masters,Masters 1000,2020-11-02,Hard,R64,3,Milos Raonic,Aljaz Bedene,6-3 6-2,17,53,2265,1045
+Paris Masters,Masters 1000,2020-11-02,Hard,R64,3,Marin Cilic,Felix Auger Aliassime,6-0 3-6 6-3,43,21,1280,2171
+Paris Masters,Masters 1000,2020-11-02,Hard,R64,3,Corentin Moutet,Salvatore Caruso,3-6 7-6(2) 6-3,75,81,838,802
+Paris Masters,Masters 1000,2020-11-02,Hard,R64,3,Ugo Humbert,Casper Ruud,4-6 6-2 7-6(1),34,27,1466,1739
+Sofia,A,2020-11-09,Hard,F,3,Jannik Sinner,Vasek Pospisil,6-4 3-6 7-6(3),44,74,1214,863
+Sofia,A,2020-11-09,Hard,SF,3,Jannik Sinner,Adrian Mannarino,6-3 7-5,44,35,1214,1471
+Sofia,A,2020-11-09,Hard,SF,3,Vasek Pospisil,Richard Gasquet,6-7(6) 6-2 6-0,74,49,863,1075
+Sofia,A,2020-11-09,Hard,QF,3,Adrian Mannarino,Radu Albot,6-2 1-6 6-3,35,93,1471,772
+Sofia,A,2020-11-09,Hard,QF,3,Jannik Sinner,Alex De Minaur,6-7(3) 6-4 6-1,44,25,1214,1815
+Sofia,A,2020-11-09,Hard,QF,3,Vasek Pospisil,John Millman,6-3 6-2,74,38,863,1396
+Sofia,A,2020-11-09,Hard,QF,3,Richard Gasquet,Salvatore Caruso,7-6(4) 7-5,49,82,1075,813
+Sofia,A,2020-11-09,Hard,R16,3,Radu Albot,Denis Shapovalov,6-2 6-4,93,12,772,2830
+Sofia,A,2020-11-09,Hard,R16,3,Adrian Mannarino,Egor Gerasimov,6-4 7-6(6),35,81,1471,820
+Sofia,A,2020-11-09,Hard,R16,3,Alex De Minaur,Aslan Karatsev,6-4 7-6(5),25,114,1815,586
+Sofia,A,2020-11-09,Hard,R16,3,Jannik Sinner,Marc Andrea Huesler,6-3 6-4,44,149,1214,421
+Sofia,A,2020-11-09,Hard,R16,3,John Millman,Gilles Simon,7-5 6-7(3) 6-2,38,62,1396,1005
+Sofia,A,2020-11-09,Hard,R16,3,Vasek Pospisil,Jan Lennard Struff,6-3 6-4,74,36,863,1450
+Sofia,A,2020-11-09,Hard,R16,3,Richard Gasquet,Jonas Forejtek,6-4 6-2,49,399,1075,95
+Sofia,A,2020-11-09,Hard,R16,3,Salvatore Caruso,Felix Auger Aliassime,6-4 6-4,82,21,813,2216
+Sofia,A,2020-11-09,Hard,R32,3,Radu Albot,Yuichi Sugita,6-4 6-1,93,100,772,713
+Sofia,A,2020-11-09,Hard,R32,3,Egor Gerasimov,Viktor Troicki,6-3 3-6 6-3,81,196,820,314
+Sofia,A,2020-11-09,Hard,R32,3,Adrian Mannarino,Martin Klizan,3-6 6-1 7-5,35,150,1471,419
+Sofia,A,2020-11-09,Hard,R32,3,Aslan Karatsev,Taro Daniel,7-6(2) 6-1,114,115,586,581
+Sofia,A,2020-11-09,Hard,R32,3,Jannik Sinner,Marton Fucsovics,6-2 6-4,44,55,1214,1062
+Sofia,A,2020-11-09,Hard,R32,3,Marc Andrea Huesler,Nikoloz Basilashvili,6-1 4-6 7-6(6),149,39,421,1395
+Sofia,A,2020-11-09,Hard,R32,3,John Millman,Adrian Andreev,6-3 6-1,38,666,1396,32
+Sofia,A,2020-11-09,Hard,R32,3,Gilles Simon,Andrej Martin,6-2 6-2,62,105,1005,686
+Sofia,A,2020-11-09,Hard,R32,3,Vasek Pospisil,Illya Marchenko,6-2 5-7 7-6(5),74,216,863,263
+Sofia,A,2020-11-09,Hard,R32,3,Jonas Forejtek,Marin Cilic,6-3 6-2,399,41,95,1325
+Sofia,A,2020-11-09,Hard,R32,3,Richard Gasquet,Roberto Carballes Baena,6-3 6-4,49,103,1075,694
+Sofia,A,2020-11-09,Hard,R32,3,Salvatore Caruso,Dimitar Kuzmanov,4-6 6-4 6-4,82,291,813,166
+Tour Finals,F,2020-11-16,Hard,F,3,Daniil Medvedev,Dominic Thiem,4-6 7-6(2) 6-4,4,3,6970,9125
+Tour Finals,F,2020-11-16,Hard,SF,3,Daniil Medvedev,Rafael Nadal,3-6 7-6(4) 6-3,4,2,6970,9850
+Tour Finals,F,2020-11-16,Hard,SF,3,Dominic Thiem,Novak Djokovic,7-5 6-7(10) 7-6(5),3,1,9125,11830
+Tour Finals,F,2020-11-16,Hard,RR,3,Daniil Medvedev,Novak Djokovic,6-3 6-3,4,1,6970,11830
+Tour Finals,F,2020-11-16,Hard,RR,3,Novak Djokovic,Alexander Zverev,6-3 7-6(4),1,7,11830,5525
+Tour Finals,F,2020-11-16,Hard,RR,3,Novak Djokovic,Diego Schwartzman,6-3 6-2,1,9,11830,3455
+Tour Finals,F,2020-11-16,Hard,RR,3,Daniil Medvedev,Alexander Zverev,6-3 6-4,4,7,6970,5525
+Tour Finals,F,2020-11-16,Hard,RR,3,Daniil Medvedev,Diego Schwartzman,6-3 6-3,4,9,6970,3455
+Tour Finals,F,2020-11-16,Hard,RR,3,Alexander Zverev,Diego Schwartzman,6-3 4-6 6-3,7,9,5525,3455
+Tour Finals,F,2020-11-16,Hard,RR,3,Dominic Thiem,Rafael Nadal,7-6(7) 7-6(4),3,2,9125,9850
+Tour Finals,F,2020-11-16,Hard,RR,3,Rafael Nadal,Stefanos Tsitsipas,6-4 4-6 6-2,2,6,9850,5925
+Tour Finals,F,2020-11-16,Hard,RR,3,Rafael Nadal,Andrey Rublev,6-3 6-4,2,8,9850,3919
+Tour Finals,F,2020-11-16,Hard,RR,3,Dominic Thiem,Stefanos Tsitsipas,7-6(5) 4-6 6-3,3,6,9125,5925
+Tour Finals,F,2020-11-16,Hard,RR,3,Andrey Rublev,Dominic Thiem,6-2 7-5,8,3,3919,9125
+Tour Finals,F,2020-11-16,Hard,RR,3,Stefanos Tsitsipas,Andrey Rublev,6-1 4-6 7-6(6),6,8,5925,3919
+Davis Cup QLS R1: ARG vs COL,D,2020-03-06,Clay,RR,3,Daniel Elahi Galan,Leonardo Mayer,6-1 6-4,148,118,379,464
+Davis Cup QLS R1: ARG vs COL,D,2020-03-06,Clay,RR,3,Juan Ignacio Londero,Santiago Giraldo,6-7(6) 6-3 6-2,62,292,832,140
+Davis Cup QLS R1: ARG vs COL,D,2020-03-06,Clay,RR,3,Daniel Elahi Galan,Juan Ignacio Londero,6-3 6-4,148,62,379,832
+Davis Cup QLS R1: AUS vs BRA,D,2020-03-06,Hard,RR,3,Jordan Thompson,Thiago Monteiro,6-4 6-4,63,82,823,699
+Davis Cup QLS R1: AUS vs BRA,D,2020-03-06,Hard,RR,3,John Millman,Thiago Seyboth Wild,4-6 7-6(0) 6-2,43,113,1071,507
+Davis Cup QLS R1: AUS vs BRA,D,2020-03-06,Hard,RR,3,John Millman,Thiago Monteiro,6-7(6) 7-6(3) 7-6(3),43,82,1071,699
+Davis Cup QLS R1: AUT vs URU,D,2020-03-06,Hard,RR,3,Dennis Novak,Martin Cuevas,6-2 6-4,85,487,686,61
+Davis Cup QLS R1: AUT vs URU,D,2020-03-06,Hard,RR,3,Pablo Cuevas,Jurij Rodionov,6-7(7) 6-3 7-6(5),60,168,857,307
+Davis Cup QLS R1: AUT vs URU,D,2020-03-06,Hard,RR,3,Dennis Novak,Pablo Cuevas,2-6 6-3 6-4,85,60,686,857
+Davis Cup QLS R1: BEL vs HUN,D,2020-03-06,Clay,RR,3,Ruben Bemelmans,Attila Balazs,5-7 7-6(4) 6-4,222,76,215,715
+Davis Cup QLS R1: BEL vs HUN,D,2020-03-06,Clay,RR,3,Marton Fucsovics,Kimmer Coppejans,6-2 5-7 6-4,84,154,692,343
+Davis Cup QLS R1: BEL vs HUN,D,2020-03-06,Clay,RR,3,Attila Balazs,Kimmer Coppejans,6-3 6-0,76,154,715,343
+Davis Cup QLS R1: BEL vs HUN,D,2020-03-06,Clay,RR,3,Marton Fucsovics,Ruben Bemelmans,6-7(7) 6-4 6-2,84,222,692,215
+Davis Cup QLS R1: CRO vs IND,D,2020-03-06,Hard,RR,3,Borna Gojo,Prajnesh Gunneswaran,3-6 6-4 6-2,277,132,162,405
+Davis Cup QLS R1: CRO vs IND,D,2020-03-06,Hard,RR,3,Marin Cilic,Ramkumar Ramanathan,7-6(8) 7-6(8),37,182,1225,278
+Davis Cup QLS R1: CRO vs IND,D,2020-03-06,Hard,RR,3,Marin Cilic,Sumit Nagal,6-0 6-1,37,127,1225,423
+Davis Cup QLS R1: CZE vs SVK,D,2020-03-06,Clay,RR,3,Jiri Vesely,Jozef Kovalik,6-3 7-5,64,121,785,447
+Davis Cup QLS R1: CZE vs SVK,D,2020-03-06,Clay,RR,3,Lukas Rosol,Andrej Martin,6-4 6-4,179,95,285,629
+Davis Cup QLS R1: CZE vs SVK,D,2020-03-06,Clay,RR,3,Jiri Vesely,Andrej Martin,4-6 7-5 7-5,64,95,785,629
+Davis Cup QLS R1: GER vs BLR,D,2020-03-06,Hard,RR,3,Jan Lennard Struff,Ilya Ivashka,6-4 6-4,34,138,1315,396
+Davis Cup QLS R1: GER vs BLR,D,2020-03-06,Hard,RR,3,Egor Gerasimov,Philipp Kohlschreiber,4-6 7-5 7-6(3),68,73,744,729
+Davis Cup QLS R1: GER vs BLR,D,2020-03-06,Hard,RR,3,Jan Lennard Struff,Egor Gerasimov,6-3 6-2,34,68,1315,744
+Davis Cup QLS R1: GER vs BLR,D,2020-03-06,Hard,RR,3,Dominik Koepfer,Daniil Ostapenkov,6-0 6-2,92,,643,
+Davis Cup QLS R1: JPN vs ECU,D,2020-03-06,Hard,RR,3,Emilio Gomez,Go Soeda,7-5 7-6(3),151,117,365,480
+Davis Cup QLS R1: JPN vs ECU,D,2020-03-06,Hard,RR,3,Roberto Quiroz,Yasutaka Uchiyama,7-6(4) 2-6 7-6(8),276,90,163,669
+Davis Cup QLS R1: KAZ vs NED,D,2020-03-06,Hard,RR,3,Robin Haase,Mikhail Kukushkin,6-4 6-7(2) 6-3,169,91,305,661
+Davis Cup QLS R1: KAZ vs NED,D,2020-03-06,Hard,RR,3,Alexander Bublik,Tallon Griekspoor,7-6(4) 7-6(4),51,196,965,256
+Davis Cup QLS R1: KAZ vs NED,D,2020-03-06,Hard,RR,3,Alexander Bublik,Robin Haase,7-6(4) 6-1,51,169,965,305
+Davis Cup QLS R1: SWE vs CHI,D,2020-03-06,Hard,RR,3,Mikael Ymer,Tomas Barrios Vera,6-2 6-3,67,282,759,154
+Davis Cup QLS R1: SWE vs CHI,D,2020-03-06,Hard,RR,3,Alejandro Tabilo,Elias Ymer,6-4 6-3,173,202,290,247
+Davis Cup QLS R1: SWE vs CHI,D,2020-03-06,Hard,RR,3,Mikael Ymer,Alejandro Tabilo,3-6 7-5 6-3,67,173,759,290
+Davis Cup QLS R1: USA vs UZB,D,2020-03-06,Hard,RR,3,Reilly Opelka,Denis Istomin,6-2 7-5,38,156,1177,339
+Davis Cup QLS R1: USA vs UZB,D,2020-03-06,Hard,RR,3,Taylor Fritz,Sanjar Fayziev,6-1 6-2,24,498,1510,59
+Davis Cup QLS R1: USA vs UZB,D,2020-03-06,Hard,RR,3,Tommy Paul,Denis Istomin,6-3 6-0,57,156,894,339
+Davis Cup WG1 PO: BIH vs RSA,D,2020-03-06,Hard,RR,3,Damir Dzumhur,Ruan Roelofse,7-6(3) 7-5,107,611,524,36
+Davis Cup WG1 PO: BIH vs RSA,D,2020-03-06,Hard,RR,3,Lloyd Harris,Mirza Basic,7-5 6-2,98,303,616,134
+Davis Cup WG1 PO: BIH vs RSA,D,2020-03-06,Hard,RR,3,Damir Dzumhur,Lloyd Harris,6-1 2-1 RET,107,98,524,616
+Davis Cup WG1 PO: BOL vs DOM,D,2020-03-06,Clay,RR,3,Hugo Dellien,Jose Hernandez,6-3 6-4,94,289,638,142
+Davis Cup WG1 PO: BOL vs DOM,D,2020-03-06,Clay,RR,3,Roberto Cid,Federico Zeballos,6-3 6-4,215,543,229,50
+Davis Cup WG1 PO: BOL vs DOM,D,2020-03-06,Clay,RR,3,Hugo Dellien,Roberto Cid,7-5 6-4,94,215,638,229
+Davis Cup WG1 PO: LBN vs THA,D,2020-03-06,Clay,RR,3,Benjamin Hassan,Jirat Navasirisomboon,6-1 6-2,348,1541,109,2
+Davis Cup WG1 PO: LBN vs THA,D,2020-03-06,Clay,RR,3,Wishaya Trongcharoenchaikul,Hasan Ibrahim,7-6(8) 3-6 7-6(5),623,1507,35,2
+Davis Cup WG1 PO: LBN vs THA,D,2020-03-06,Clay,RR,3,Benjamin Hassan,Wishaya Trongcharoenchaikul,6-2 6-0,348,623,109,35
+Davis Cup WG1 PO: LTU vs POR,D,2020-03-06,Hard,RR,3,Frederico Ferreira Silva,Laurynas Grigelis,6-7(6) 6-3 6-0,190,497,268,59
+Davis Cup WG1 PO: LTU vs POR,D,2020-03-06,Hard,RR,3,Joao Sousa,Julius Tverijonas,6-1 6-3,65,791,776,19
+Davis Cup WG1 PO: LTU vs POR,D,2020-03-06,Hard,RR,3,Pedro Sousa,Laurynas Grigelis,7-6(5) 5-7 [3-10],110,497,522,59
+Davis Cup WG1 PO: MEX vs FIN,D,2020-03-06,Clay,RR,3,Patrik Niklas Salminen,Manuel Sanchez,6-4 6-4,418,821,81,17
+Davis Cup WG1 PO: MEX vs FIN,D,2020-03-06,Clay,RR,3,Gerardo Lopez Villasenor,Otto Virtanen,6-3 6-7(5) 7-5,522,719,54,24
+Davis Cup WG1 PO: MEX vs FIN,D,2020-03-06,Clay,RR,3,Gerardo Lopez Villasenor,Harri Heliovaara,6-0 7-6(2),522,605,54,37
+Davis Cup WG1 PO: MEX vs FIN,D,2020-03-06,Clay,RR,3,Otto Virtanen,Manuel Sanchez,6-2 7-6(6),719,821,24,17
+Davis Cup WG1 PO: NOR vs BAR,D,2020-03-06,Hard,RR,3,Viktor Durasovic,Darian King,6-4 6-2,337,263,115,176
+Davis Cup WG1 PO: NOR vs BAR,D,2020-03-06,Hard,RR,3,Casper Ruud,Haydn Lewis,6-2 6-2,36,,1279,
+Davis Cup WG1 PO: NOR vs BAR,D,2020-03-06,Hard,RR,3,Lukas Hellum Lilleengen,Kaipo Marshall,6-2 6-1,1564,,2,
+Davis Cup WG1 PO: PAK vs SLO,D,2020-03-06,Grass,RR,3,Aisam Ul Haq Qureshi,Nik Razborsek,4-6 7-5 7-6(1),,700,,26
+Davis Cup WG1 PO: PAK vs SLO,D,2020-03-06,Grass,RR,3,Aqeel Khan,Blaz Kavcic,0-6 7-6(6) 6-4,,285,,148
+Davis Cup WG1 PO: PER vs SUI,D,2020-03-06,Clay,RR,3,Juan Pablo Varillas,Sandro Ehrat,7-6(4) 7-6(3),135,382,403,93
+Davis Cup WG1 PO: PER vs SUI,D,2020-03-06,Clay,RR,3,Henri Laaksonen,Nicolas Alvarez,6-4 6-4,137,330,400,119
+Davis Cup WG1 PO: PER vs SUI,D,2020-03-06,Clay,RR,3,Juan Pablo Varillas,Henri Laaksonen,6-3 3-6 7-6(3),135,137,403,400
+Davis Cup WG1 PO: TUR vs ISR,D,2020-03-06,Clay,RR,3,Daniel Cukierman,Cem Ilkel,7-6(4) 6-2,832,195,16,257
+Davis Cup WG1 PO: TUR vs ISR,D,2020-03-06,Clay,RR,3,Altug Celikbilek,Ben Patael,7-5 1-6 6-4,329,562,119,45
+Davis Cup WG1 PO: TUR vs ISR,D,2020-03-06,Clay,RR,3,Edan Leshem,Cem Ilkel,6-2 7-6(4),355,195,107,257
+Davis Cup WG1 PO: UKR vs TPE,D,2020-03-06,Hard,RR,3,Chun Hsin Tseng,Sergiy Stakhovsky,3-6 6-1 6-2,279,167,159,307
+Davis Cup WG1 PO: UKR vs TPE,D,2020-03-06,Hard,RR,3,Tung Lin Wu,Illya Marchenko,6-4 6-4,232,207,209,240
+Davis Cup WG1 PO: UKR vs TPE,D,2020-03-06,Hard,RR,3,Sergiy Stakhovsky,Tung Lin Wu,7-6(3) 4-6 6-3,167,232,307,209
+Davis Cup WG1 PO: UKR vs TPE,D,2020-03-06,Hard,RR,3,Illya Marchenko,Chun Hsin Tseng,6-3 6-2,207,279,240,159
+Davis Cup WG1 PO: VEN vs NZL,D,2020-03-06,Hard,RR,3,Finn Tearney,Jordi Munoz Abreu,6-4 6-4,1018,1234,9,4
+Davis Cup WG1 PO: VEN vs NZL,D,2020-03-06,Hard,RR,3,Luis David Martinez,Ajeet Rai,5-7 6-4 6-2,,915,,13
+Davis Cup WG1 PO: VEN vs NZL,D,2020-03-06,Hard,RR,3,Jose Rubin Statham,Brandon Perez,6-2 6-7(3) 4-1 RET,,1671,,1
+Davis Cup WG2 PO: CRC vs BUL,D,2020-03-06,Hard,RR,3,Dimitar Kuzmanov,Julian Saborio,6-4 6-2,318,,126,
+Davis Cup WG2 PO: CRC vs BUL,D,2020-03-06,Hard,RR,3,Alexandar Lazarov,Jesse Flores,7-5 4-6 6-3,537,1146,51,6
+Davis Cup WG2 PO: CRC vs BUL,D,2020-03-06,Hard,RR,3,Dimitar Kuzmanov,Jesse Flores,6-4 6-3,318,1146,126,6
+Davis Cup WG2 PO: CRC vs BUL,D,2020-03-06,Hard,RR,3,Alexander Donski,Rodrigo Crespo Piedra,6-2 6-4,566,,44,
+Davis Cup WG2 PO: DEN vs PUR,D,2020-03-06,Hard,RR,3,Mikael Torpegaard,Quinton Vega,7-6(5) 6-0,170,,304,
+Davis Cup WG2 PO: DEN vs PUR,D,2020-03-06,Hard,RR,3,Holger Rune,Ignacio Garcia,4-6 6-3 6-0,861,,15,
+Davis Cup WG2 PO: DEN vs PUR,D,2020-03-06,Hard,RR,3,Frederik Nielsen,Ignacio Garcia,7-6(5) 6-2,,,,
+Davis Cup WG2 PO: DEN vs PUR,D,2020-03-06,Hard,RR,3,Holger Rune,Quinton Vega,6-1 7-6(4),861,,15,
+Davis Cup WG2 PO: ESA vs JAM,D,2020-03-06,Hard,RR,3,Blaise Bicknell,Alberto Emmanuel Alvarado Larin,6-3 6-2,1316,,3,
+Davis Cup WG2 PO: ESA vs JAM,D,2020-03-06,Hard,RR,3,Marcelo Arevalo,Rowland Phillips,6-3 6-7(4) 6-2,410,1566,82,2
+Davis Cup WG2 PO: ESA vs JAM,D,2020-03-06,Hard,RR,3,Marcelo Arevalo,Blaise Bicknell,6-4 7-6(5),410,1316,82,3
+Davis Cup WG2 PO: GEO vs EST,D,2020-03-06,Hard,RR,3,Nikoloz Basilashvili,Vladimir Ivanov,6-4 6-1,27,732,1395,24
+Davis Cup WG2 PO: GEO vs EST,D,2020-03-06,Hard,RR,3,Kristjan Tamm,Aleksandre Metreveli,6-4 4-6 6-3,729,564,24,44
+Davis Cup WG2 PO: GEO vs EST,D,2020-03-06,Hard,RR,3,Kristjan Tamm,Zura Tkemaladze,6-3 2-6 7-5,729,,24,
+Davis Cup WG2 PO: GEO vs EST,D,2020-03-06,Hard,RR,3,Daniil Glinka,Nikoloz Davlianidze,6-0 5-7 [3-10],961,,11,
+Davis Cup WG2 PO: GUA vs TUN,D,2020-03-06,Hard,RR,3,Wilfredo Gonzalez,Aziz Dougaz,6-3 3-6 7-5,1089,356,7,107
+Davis Cup WG2 PO: GUA vs TUN,D,2020-03-06,Hard,RR,3,Malek Jaziri,Franz Luna Lavidalie,6-2 6-3,259,,181,
+Davis Cup WG2 PO: GUA vs TUN,D,2020-03-06,Hard,RR,3,Malek Jaziri,Wilfredo Gonzalez,6-2 6-4,259,1089,181,7
+Davis Cup WG2 PO: INA vs KEN,D,2020-03-06,Hard,RR,3,Christopher Rungkat,Sheil Kotecha,6-1 6-2,,1385,,3
+Davis Cup WG2 PO: INA vs KEN,D,2020-03-06,Hard,RR,3,David Agung Susanto,Ismael Changawa Ruwa Mzai,6-2 6-4,1346,,3,
+Davis Cup WG2 PO: INA vs KEN,D,2020-03-06,Hard,RR,3,Gunawan Trismuwantara,Kevin Cheruiyot,6-4 6-2,,1752,,1
+Davis Cup WG2 PO: LAT vs EGY,D,2020-03-06,Hard,RR,3,Mohamed Safwat,Karlis Ozolins,7-6(9) 7-5,131,,407,
+Davis Cup WG2 PO: LAT vs EGY,D,2020-03-06,Hard,RR,3,Ernests Gulbis,Karim Mohamed Maamoun,6-4 6-3,161,390,321,90
+Davis Cup WG2 PO: LAT vs EGY,D,2020-03-06,Hard,RR,3,Ernests Gulbis,Mohamed Safwat,6-2 6-4,161,131,321,407
+Davis Cup WG2 PO: LAT vs EGY,D,2020-03-06,Hard,RR,3,Robert Strombachs,Amr Elsayed Abdou Ahmed Mohamed,6-3 7-6(3),668,,29,
+Davis Cup WG2 PO: MAR vs VIE,D,2020-03-06,Clay,RR,3,Lamine Ouahab,Nam Hoang Ly,6-3 6-2,664,714,29,25
+Davis Cup WG2 PO: MAR vs VIE,D,2020-03-06,Clay,RR,3,Adam Moundir,Phuong Van Nguyen,6-1 6-4,458,,69,
+Davis Cup WG2 PO: MAR vs VIE,D,2020-03-06,Clay,RR,3,Aissa Benchakroun,Linh Giang Trinh,2-6 6-3 [10-4],1671,,1,
+Davis Cup WG2 PO: PAR vs SRI,D,2020-03-06,Clay,RR,3,Adolfo Daniel Vallejo,Sharmal Dissanayake,6-4 6-4,,,,
+Davis Cup WG2 PO: PAR vs SRI,D,2020-03-06,Clay,RR,3,Martin Antonio Vergara Del Puerto,Yasitha De Silva,7-5 6-3,,,,
+Davis Cup WG2 PO: PAR vs SRI,D,2020-03-06,Clay,RR,3,Adolfo Daniel Vallejo,Thehan Sanjaya Wijemanne,6-1 6-1,,,,
+Davis Cup WG2 PO: PHI vs GRE,D,2020-03-06,Clay,RR,3,Stefanos Tsitsipas,Alberto Lim,6-2 6-1,6,,4745,
+Davis Cup WG2 PO: PHI vs GRE,D,2020-03-06,Clay,RR,3,Petros Tsitsipas,Jeson Patrombon,6-2 6-1,1169,1421,6,2
+Davis Cup WG2 PO: PHI vs GRE,D,2020-03-06,Clay,RR,3,Stefanos Tsitsipas,Jeson Patrombon,6-2 6-1,6,1421,4745,2
+Davis Cup WG2 PO: PHI vs GRE,D,2020-03-06,Clay,RR,3,Petros Tsitsipas,Eric Jr. Olivarez,6-4 7-5,1169,,6,
+Davis Cup WG2 PO: POL vs HKG,D,2020-03-06,Hard,RR,3,Kacper Zuk,Ching Lam,6-2 6-1,302,,136,
+Davis Cup WG2 PO: POL vs HKG,D,2020-03-06,Hard,RR,3,Jerzy Janowicz,Pak Long Yeung,6-7(5) 7-5 6-4,461,960,68,11
+Davis Cup WG2 PO: POL vs HKG,D,2020-03-06,Hard,RR,3,Maks Kasnikowski,Wai Yu Kai,1-6 6-2 10-3,,,,
+Davis Cup WG2 PO: SYR vs ZIM,D,2020-03-06,Hard,RR,3,Hazem Naw,Mehluli Don Ayanda Sibanda,6-3 6-3,,813,,18
+Davis Cup WG2 PO: SYR vs ZIM,D,2020-03-06,Hard,RR,3,Benjamin Lock,Amer Naow,6-3 6-3,430,,79,
+Davis Cup WG2 PO: SYR vs ZIM,D,2020-03-06,Hard,RR,3,Benjamin Lock,Hazem Naw,6-4 6-4,430,,79,
+Antwerp,A,2020-10-19,Hard,F,3,Ugo Humbert,Alex De Minaur,6-1 7-6(4),38,29,1306,1665
+Antwerp,A,2020-10-19,Hard,SF,3,Alex De Minaur,Grigor Dimitrov,7-6(4) 6-7(3) 6-4,29,20,1665,2145
+Antwerp,A,2020-10-19,Hard,SF,3,Ugo Humbert,Daniel Evans,4-6 7-6(7) 6-4,38,35,1306,1384
+Antwerp,A,2020-10-19,Hard,QF,3,Alex De Minaur,Marcos Giron,6-3 6-0,29,94,1665,721
+Antwerp,A,2020-10-19,Hard,QF,3,Grigor Dimitrov,Milos Raonic,W/O,20,19,2145,2220
+Antwerp,A,2020-10-19,Hard,QF,3,Daniel Evans,Karen Khachanov,3-6 7-6(7) 6-4,35,17,1384,2245
+Antwerp,A,2020-10-19,Hard,QF,3,Ugo Humbert,Lloyd Harris,6-3 7-6(2),38,90,1306,748
+Antwerp,A,2020-10-19,Hard,R16,3,Marcos Giron,David Goffin,6-3 7-5,94,14,721,2555
+Antwerp,A,2020-10-19,Hard,R16,3,Alex De Minaur,Feliciano Lopez,6-4 6-2,29,62,1665,953
+Antwerp,A,2020-10-19,Hard,R16,3,Grigor Dimitrov,Pablo Andujar,4-6 6-3 6-4,20,55,2145,1024
+Antwerp,A,2020-10-19,Hard,R16,3,Milos Raonic,Cameron Norrie,7-5 7-6(4),19,70,2220,877
+Antwerp,A,2020-10-19,Hard,R16,3,Daniel Evans,Frances Tiafoe,7-6(3) 6-2,35,63,1384,950
+Antwerp,A,2020-10-19,Hard,R16,3,Karen Khachanov,Zizou Bergs,5-7 6-4 6-4,17,528,2245,58
+Antwerp,A,2020-10-19,Hard,R16,3,Lloyd Harris,Taylor Fritz,7-5 7-6(3),90,28,748,1670
+Antwerp,A,2020-10-19,Hard,R16,3,Ugo Humbert,Pablo Carreno Busta,5-7 6-3 6-4,38,15,1306,2400
+Antwerp,A,2020-10-19,Hard,R32,3,Marcos Giron,Luca Nardi,4-6 6-4 6-1,94,917,721,13
+Antwerp,A,2020-10-19,Hard,R32,3,Feliciano Lopez,Tommy Paul,6-3 6-2,62,59,953,1002
+Antwerp,A,2020-10-19,Hard,R32,3,Alex De Minaur,Richard Gasquet,3-6 7-6(5) 6-3,29,54,1665,1030
+Antwerp,A,2020-10-19,Hard,R32,3,Pablo Andujar,Federico Coria,6-2 6-3,55,86,1024,757
+Antwerp,A,2020-10-19,Hard,R32,3,Cameron Norrie,Emil Ruusuvuori,6-3 7-6(4),70,100,877,694
+Antwerp,A,2020-10-19,Hard,R32,3,Milos Raonic,Aljaz Bedene,6-3 7-6(4),19,52,2220,1045
+Antwerp,A,2020-10-19,Hard,R32,3,Frances Tiafoe,Dusan Lajovic,6-3 7-6(6),63,25,950,1785
+Antwerp,A,2020-10-19,Hard,R32,3,Daniel Evans,Salvatore Caruso,6-2 3-6 6-3,35,79,1384,802
+Antwerp,A,2020-10-19,Hard,R32,3,Zizou Bergs,Albert Ramos,7-5 7-5,528,45,58,1165
+Antwerp,A,2020-10-19,Hard,R32,3,Taylor Fritz,Reilly Opelka,7-6(5) 6-1,28,33,1670,1402
+Antwerp,A,2020-10-19,Hard,R32,3,Lloyd Harris,Corentin Moutet,7-5 6-2,90,74,748,838
+Antwerp,A,2020-10-19,Hard,R32,3,Ugo Humbert,Kimmer Coppejans,6-4 6-3,38,172,1306,353
