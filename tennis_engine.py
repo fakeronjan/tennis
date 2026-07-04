@@ -64,7 +64,9 @@ TIER_WEIGHTS = {
     "P":  1.5,   # WTA older Premier (1000-ish)
     "PM": 1.5,   # WTA Premier Mandatory
     "T1": 1.5,   # WTA T1 (1000-tier)
-    "A":  1.0,   # ATP 500/250 (we don't separate further - Sackmann doesn't always)
+    "A":  1.0,   # ATP 500/250, legacy Sackmann code (pre-2025, unsplittable)
+    "500": 1.2,  # modern ATP/WTA 500 (2025+ feed splits them) - cross-tour parity
+    "250": 1.0,  # modern ATP/WTA 250 (2025+ feed splits them) - cross-tour parity
     "I":  0.8,   # WTA International (250-tier)
     "T2": 1.0,   # WTA T2
     "T3": 0.8,   # WTA T3
@@ -84,24 +86,30 @@ SURFACES = {"Hard", "Clay", "Grass", "Carpet"}
 
 # TennisCourtLog carries a mix of Sackmann's single-letter tier codes (kept for
 # 1968-2024) and the verbose codes its live tennis-data.co.uk feed emits for
-# 2025+. Normalize the verbose ones onto the letter codes TIER_WEIGHTS is keyed
-# by. Mapping follows the 2021 WTA restructure so weights stay continuous across
-# the seam: Premier Mandatory/Premier 5 -> WTA1000, Premier -> WTA500,
-# International -> WTA250 (all already weighted 1.5/1.5/0.8 historically).
+# 2025+. Normalize the verbose ones onto TIER_WEIGHTS keys.
+#
+# The 2025+ feed is the first that splits the 250/500/1000 levels, so we give
+# those modern tiers cross-tour-symmetric weights (1000=1.5, 500=1.2, 250=1.0)
+# rather than folding them onto the asymmetric legacy WTA codes. Pre-2025
+# history is left exactly as Sackmann coded it (ATP 250/500 are an unsplittable
+# 'A'=1.0; WTA Premier 'P'=1.5, International 'I'=0.8), so no historical ratings
+# shift. A small weight seam at the 2024/25 boundary is the accepted cost of
+# parity going forward.
+#
 # Letter codes already in TIER_WEIGHTS (A, D, F, W, I, P, PM, T1..T5) pass
 # through unchanged. Codes absent from TIER_WEIGHTS after mapping (O Olympics,
 # CC country-cup, E exhibition, J juniors) are filtered out downstream - the
 # same exclusion the old Sackmann pipeline applied.
 LEVEL_NORMALIZE = {
     "Grand Slam":   "G",
-    "Masters 1000": "M",
-    "Masters Cup":  "F",   # 2000-08 Tennis Masters Cup = year-end final
-    "ATP250":       "A",
-    "ATP500":       "A",
-    "WTA1000":      "PM",
-    "WTA500":       "P",
-    "WTA250":       "I",
+    "Masters 1000": "M",     # ATP 1000
+    "WTA1000":      "M",     # WTA 1000 -> parity with ATP 1000 (both 1.5)
+    "Masters Cup":  "F",     # 2000-08 Tennis Masters Cup = year-end final
     "WTA Finals":   "F",
+    "ATP500":       "500",
+    "WTA500":       "500",
+    "ATP250":       "250",
+    "WTA250":       "250",
 }
 
 
