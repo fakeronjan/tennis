@@ -1389,7 +1389,7 @@ Bad Homburg,WTA250,2026/6/25,Grass,QF,3,Elena Gabriela Ruse,Emma Navarro,6-4 6-2
 Bad Homburg,WTA250,2026/6/25,Grass,QF,3,Karolina Muchova,Clara Tauson,1-6 6-2 6-4,11,25,3438,1756
 Bad Homburg,WTA250,2026/6/26,Grass,SF,3,Naomi Osaka,Xinyu Wang,6-3 6-3,15,52,2571,1096
 Bad Homburg,WTA250,2026/6/26,Grass,SF,3,Karolina Muchova,Elena Gabriela Ruse,6-4 6-4,11,105,3438,731
-Bad Homburg,WTA250,2026/6/27,Grass,F,3,Karolina Muchova,Naomi Osaka,6-1 1-0 RET,11,15,3438,2571
+Bad Homburg,WTA250,2026/6/27,Grass,F,3,Naomi Osaka,Karolina Muchova,1-6 0-1 RET,15,11,2571,3438
 Eastbourne,WTA250,2026/6/22,Grass,R32,3,Anhelina Kalinina,Daria Snigur,7-6 7-5,70,78,978,928
 Eastbourne,WTA250,2026/6/22,Grass,R32,3,Tereza Valentova,Hannah Klugman,7-5 5-7 7-5,61,412,1041,148
 Eastbourne,WTA250,2026/6/22,Grass,R32,3,Petra Marcinko,Antonia Ruzic,7-6 4-6 7-6,51,60,1101,1041
@@ -1421,3 +1421,130 @@ Eastbourne,WTA250,2026/6/25,Grass,QF,3,Petra Marcinko,Caty Mcnally,6-3 4-6 6-4,5
 Eastbourne,WTA250,2026/6/26,Grass,SF,3,Tatjana Maria,Jelena Ostapenko,6-1 1-2 RET,112,35,695,1404
 Eastbourne,WTA250,2026/6/26,Grass,SF,3,Madison Keys,Petra Marcinko,6-1 RET,27,51,1685,1101
 Eastbourne,WTA250,2026/6/27,Grass,F,3,Madison Keys,Tatjana Maria,7-5 6-4,27,112,1685,695
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Iva Jovic,Jaqueline Cristian,7-6 6-0,16,37,2436,1324
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Belinda Bencic,Mika Stojsavljevic,6-2 6-1,11,276,3385,258
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Sara Sorribes Tormo,Victoria Jimenez Kasintseva,6-2 6-3,253,110,285,698
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Jessica Pegula,Darja Vidmanova,7-5 6-3,4,92,5881,831
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Mananchaya Sawangkaew,Maja Chwalinska,2-6 7-5 6-2,164,21,462,1996
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Xinyu Wang,Elisabetta Cocciaretto,6-3 2-6 6-2,39,46,1276,1192
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Zeynep Sonmez,Ann Li,7-5 1-6 6-4,51,29,1134,1625
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Jelena Ostapenko,Harriet Dart,6-3 3-6 6-4,31,152,1472,512
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Tatjana Maria,Yulia Putintseva,6-4 6-4,96,84,809,855
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Shuai Zhang,Bianca Andreescu,7-6 7-6,64,180,1015,426
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Alycia Parks,Alicia Dudeney,6-3 6-3,81,245,905,293
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Antonia Ruzic,Darja Semenistaja,6-3 3-6 6-3,61,104,1041,755
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Claire Liu,Hanne Vandewinkel,4-6 6-3 6-4,146,103,526,784
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Naomi Osaka,Elsa Jacquemot,6-1 7-5,14,80,2846,908
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Lanlana Tararudee,Lilli Tagger,7-6 5-7 6-4,99,82,799,866
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Nikola Bartunkova,Peyton Stearns,6-4 3-6 7-5,48,63,1140,1017
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Janice Tjen,Leylah Fernandez,6-1 7-6,42,24,1247,1844
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Daria Kasatkina,Mingge Xu,6-2 3-6 6-2,65,326,1009,204
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Barbora Krejcikova,Hannah Klugman,6-1 6-4,38,416,1320,148
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Aryna Sabalenka,Teodora Kostovic,6-2 6-3,1,184,9090,415
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Anna Kalinskaya,Magdalena Frech,7-6 6-4,20,44,2240,1208
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Mccartney Kessler,Oleksandra Oliynykova,6-0 6-0,57,53,1065,1114
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Dayana Yastremska,Aoi Ito,7-6 4-6 7-5,67,228,995,328
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Solana Sierra,Anna Bondar,6-3 5-7 7-5,56,74,1067,936
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Mirra Andreeva,Magda Linette,7-5 6-4,5,59,5653,1051
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Katerina Siniakova,Qinwen Zheng,6-4 6-4,36,138,1338,556
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Karolina Muchova,Anastasia Zakharova,6-3 6-2,9,85,3878,849
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Ekaterina Alexandrova,Panna Udvardy,6-4 6-2,19,69,2411,970
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Coco Gauff,Tamara Korpatsch,6-2 6-1,7,78,4879,919
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Anastasia Gasanova,Emiliana Arango,6-3 6-1,225,97,332,808
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Diane Parry,Francesca Jones,6-4 6-4,49,106,1139,718
+Wimbledon,Grand Slam,2026/6/29,Grass,R128,3,Jessica Bouzas Maneiro,Anastasia Potapova,6-2 6-3,52,28,1124,1657
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Katie Swan,Irina Camelia Begu,6-4 6-4,196,173,379,437
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Marie Bouzkova,Talia Gibson,6-1 3-6 6-2,23,58,1849,1056
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Kamilla Rakhimova,Anhelina Kalinina,4-6 6-4 7-5,70,66,966,1008
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Maria Sakkari,Clara Tauson,6-3 6-3,43,25,1240,1804
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Tyra Caterina Grant,Katie Boulter,6-4 6-2,172,60,438,1047
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Sofia Kenin,Petra Marcinko,7-6 6-4,105,47,734,1184
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Karolina Pliskova,Tereza Valentova,6-3 6-4,73,54,936,1094
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Madison Keys,Kayla Day,6-7 6-4 6-3,22,137,1854,563
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Amanda Anisimova,Lina Gjorcheska,6-3 6-2,6,222,5523,333
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Jasmine Paolini,Robin Montgomery,0-6 6-4 7-5,17,195,2423,384
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Viktorija Golubic,Iryna Shymanovich,6-2 2-6 6-1,62,215,1028,344
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Iga Swiatek,Taylor Townsend,6-1 2-6 6-3,3,79,6409,911
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Kimberly Birrell,Alina Korneeva,6-3 0-6 6-2,72,98,939,806
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Maria Timofeeva,Beatriz Haddad Maia,6-3 6-2,95,134,810,567
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Leolia Jeanjean,Veronika Erjavec,6-4 4-6 7-6,132,89,577,841
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Elena Rybakina,Lois Boisson,6-4 1-6 6-3,2,154,8143,495
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Anna Blinkova,Yuliia Starodubtseva,6-7 6-4 6-1,114,55,675,1077
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Emma Navarro,Paula Badosa,4-6 6-3 7-5,26,141,1784,546
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Caty Mcnally,Elena Gabriela Ruse,7-5 6-3,50,71,1136,941
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Oksana Selekhmeteva,Sinja Kraus,6-1 7-5,91,93,835,818
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Elise Mertens,Laura Siegemund,6-2 6-4,27,40,1758,1272
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Daria Snigur,Elina Svitolina,7-5 6-2,77,8,928,4471
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Mariam Bolkvadze,Ajla Tomljanovic,6-2 2-6 6-4,545,94,96,815
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Alexandra Eala,Renata Zarazua,6-1 6-2,32,75,1436,935
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Sorana Cirstea,Sara Bejlek,6-1 7-6,18,45,2415,1208
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Ashlyn Krueger,Donna Vekic,3-6 7-6 6-4,102,34,787,1386
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Diana Shnaider,Eva Lys,7-5 6-1,15,76,2458,931
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Liudmila Samsonova,Polina Kudermetova,6-3 6-3,41,113,1270,678
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Linda Noskova,Ella Seidel,6-4 6-3,12,100,3359,797
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Marta Kostyuk,Nadia Podoroska,6-1 6-2,13,574,3156,89
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Maya Joint,Venus Williams,6-3 6-7 6-3,87,471,847,124
+Wimbledon,Grand Slam,2026/6/30,Grass,R128,3,Camila Osorio,Simona Waltert,6-2 6-1,68,90,988,836
+Wimbledon,Grand Slam,2026/7/1,Grass,R64,3,Naomi Osaka,Anastasia Gasanova,6-3 6-2,14,225,2846,332
+Wimbledon,Grand Slam,2026/7/1,Grass,R64,3,Mananchaya Sawangkaew,Alycia Parks,7-5 6-0,164,81,462,905
+Wimbledon,Grand Slam,2026/7/1,Grass,R64,3,Daria Kasatkina,Janice Tjen,6-7 6-1 6-4,65,42,1009,1247
+Wimbledon,Grand Slam,2026/7/1,Grass,R64,3,Jelena Ostapenko,Antonia Ruzic,6-2 6-0,31,61,1472,1041
+Wimbledon,Grand Slam,2026/7/1,Grass,R64,3,Claire Liu,Zeynep Sonmez,7-5 6-3,146,51,526,1134
+Wimbledon,Grand Slam,2026/7/1,Grass,R64,3,Aryna Sabalenka,Mccartney Kessler,6-1 7-6,1,57,9090,1065
+Wimbledon,Grand Slam,2026/7/1,Grass,R64,3,Jessica Bouzas Maneiro,Dayana Yastremska,6-3 6-7 6-2,52,67,1124,995
+Wimbledon,Grand Slam,2026/7/1,Grass,R64,3,Karolina Muchova,Shuai Zhang,6-3 6-2,9,64,3878,1015
+Wimbledon,Grand Slam,2026/7/1,Grass,R64,3,Anna Kalinskaya,Diane Parry,6-4 3-6 7-6,20,49,2240,1139
+Wimbledon,Grand Slam,2026/7/1,Grass,R64,3,Coco Gauff,Solana Sierra,6-3 3-6 7-6,7,56,4879,1067
+Wimbledon,Grand Slam,2026/7/1,Grass,R64,3,Nikola Bartunkova,Katerina Siniakova,6-2 6-4,48,36,1140,1338
+Wimbledon,Grand Slam,2026/7/1,Grass,R64,3,Barbora Krejcikova,Mirra Andreeva,4-6 7-5 6-4,38,5,1320,5653
+Wimbledon,Grand Slam,2026/7/1,Grass,R64,3,Jessica Pegula,Sara Sorribes Tormo,7-6 6-1,4,253,5881,285
+Wimbledon,Grand Slam,2026/7/1,Grass,R64,3,Iva Jovic,Tatjana Maria,6-1 6-2,16,96,2436,809
+Wimbledon,Grand Slam,2026/7/1,Grass,R64,3,Belinda Bencic,Xinyu Wang,7-5 6-0,11,39,3385,1276
+Wimbledon,Grand Slam,2026/7/1,Grass,R64,3,Ekaterina Alexandrova,Lanlana Tararudee,7-5 7-5,19,99,2411,799
+Wimbledon,Grand Slam,2026/7/2,Grass,R64,3,Marie Bouzkova,Tyra Caterina Grant,7-5 6-3,23,172,1849,438
+Wimbledon,Grand Slam,2026/7/2,Grass,R64,3,Liudmila Samsonova,Diana Shnaider,6-4 4-6 6-2,41,15,1270,2458
+Wimbledon,Grand Slam,2026/7/2,Grass,R64,3,Daria Snigur,Leolia Jeanjean,6-4 6-3,77,132,928,577
+Wimbledon,Grand Slam,2026/7/2,Grass,R64,3,Emma Navarro,Oksana Selekhmeteva,3-6 6-4 6-1,26,91,1784,835
+Wimbledon,Grand Slam,2026/7/2,Grass,R64,3,Ashlyn Krueger,Mariam Bolkvadze,6-1 6-0,102,545,787,96
+Wimbledon,Grand Slam,2026/7/2,Grass,R64,3,Madison Keys,Katie Swan,6-1 6-4,22,196,1854,379
+Wimbledon,Grand Slam,2026/7/2,Grass,R64,3,Alexandra Eala,Maya Joint,3-6 6-2 6-0,32,87,1436,847
+Wimbledon,Grand Slam,2026/7/2,Grass,R64,3,Iga Swiatek,Karolina Pliskova,6-1 6-3,3,73,6409,936
+Wimbledon,Grand Slam,2026/7/2,Grass,R64,3,Marta Kostyuk,Anna Blinkova,6-7 6-3 6-3,13,114,3156,675
+Wimbledon,Grand Slam,2026/7/2,Grass,R64,3,Amanda Anisimova,Sofia Kenin,6-2 4-6 7-6,6,105,5523,734
+Wimbledon,Grand Slam,2026/7/2,Grass,R64,3,Maria Sakkari,Kamilla Rakhimova,6-3 0-6 7-6,43,70,1240,966
+Wimbledon,Grand Slam,2026/7/2,Grass,R64,3,Elise Mertens,Maria Timofeeva,2-6 6-3 6-0,27,95,1758,810
+Wimbledon,Grand Slam,2026/7/2,Grass,R64,3,Sorana Cirstea,Kimberly Birrell,6-3 6-4,18,72,2415,939
+Wimbledon,Grand Slam,2026/7/2,Grass,R64,3,Jasmine Paolini,Viktorija Golubic,7-6 6-4,17,62,2423,1028
+Wimbledon,Grand Slam,2026/7/2,Grass,R64,3,Elena Rybakina,Caty Mcnally,6-1 6-2,2,50,8143,1136
+Wimbledon,Grand Slam,2026/7/2,Grass,R64,3,Linda Noskova,Camila Osorio,6-3 4-6 6-2,12,68,3359,988
+Wimbledon,Grand Slam,2026/7/3,Grass,R32,3,Belinda Bencic,Anna Kalinskaya,6-4 4-6 7-6,11,20,3385,2240
+Wimbledon,Grand Slam,2026/7/3,Grass,R32,3,Naomi Osaka,Daria Kasatkina,6-1 6-3,14,65,2846,1009
+Wimbledon,Grand Slam,2026/7/3,Grass,R32,3,Iva Jovic,Ekaterina Alexandrova,6-3 3-6 6-4,16,19,2436,2411
+Wimbledon,Grand Slam,2026/7/3,Grass,R32,3,Jessica Pegula,Jessica Bouzas Maneiro,6-1 6-3,4,52,5881,1124
+Wimbledon,Grand Slam,2026/7/3,Grass,R32,3,Barbora Krejcikova,Nikola Bartunkova,6-3 7-5,38,48,1320,1140
+Wimbledon,Grand Slam,2026/7/3,Grass,R32,3,Aryna Sabalenka,Jelena Ostapenko,6-4 6-4,1,31,9090,1472
+Wimbledon,Grand Slam,2026/7/3,Grass,R32,3,Coco Gauff,Claire Liu,6-3 6-7 6-2,7,146,4879,526
+Wimbledon,Grand Slam,2026/7/3,Grass,R32,3,Karolina Muchova,Mananchaya Sawangkaew,6-2 7-6,9,164,3878,462
+Wimbledon,Grand Slam,2026/7/4,Grass,R32,3,Marta Kostyuk,Emma Navarro,6-2 4-6 6-1,13,26,3156,1784
+Wimbledon,Grand Slam,2026/7/4,Grass,R32,3,Marie Bouzkova,Liudmila Samsonova,4-6 7-6 6-4,23,41,1849,1270
+Wimbledon,Grand Slam,2026/7/4,Grass,R32,3,Ashlyn Krueger,Daria Snigur,6-3 6-2,102,77,787,928
+Wimbledon,Grand Slam,2026/7/4,Grass,R32,3,Elise Mertens,Elena Rybakina,7-6 6-1,27,2,1758,8143
+Wimbledon,Grand Slam,2026/7/4,Grass,R32,3,Alexandra Eala,Iga Swiatek,7-6 6-2,32,3,1436,6409
+Wimbledon,Grand Slam,2026/7/4,Grass,R32,3,Jasmine Paolini,Maria Sakkari,6-1 6-2,17,43,2423,1240
+Wimbledon,Grand Slam,2026/7/4,Grass,R32,3,Linda Noskova,Sorana Cirstea,2-6 6-3 7-6,12,18,3359,2415
+Wimbledon,Grand Slam,2026/7/4,Grass,R32,3,Madison Keys,Amanda Anisimova,3-6 6-2 6-3,22,6,1854,5523
+Wimbledon,Grand Slam,2026/7/5,Grass,R16,3,Jessica Pegula,Iva Jovic,4-6 6-3 6-1,4,16,5881,2436
+Wimbledon,Grand Slam,2026/7/5,Grass,R16,3,Karolina Muchova,Barbora Krejcikova,7-5 5-7 6-3,9,38,3878,1320
+Wimbledon,Grand Slam,2026/7/5,Grass,R16,3,Naomi Osaka,Aryna Sabalenka,6-2 7-6,14,1,2846,9090
+Wimbledon,Grand Slam,2026/7/5,Grass,R16,3,Coco Gauff,Belinda Bencic,4-6 6-3 6-4,7,11,4879,3385
+Wimbledon,Grand Slam,2026/7/6,Grass,R16,3,Marta Kostyuk,Ashlyn Krueger,6-4 6-4,13,102,3156,787
+Wimbledon,Grand Slam,2026/7/6,Grass,R16,3,Elise Mertens,Marie Bouzkova,6-4 6-4,27,23,1758,1849
+Wimbledon,Grand Slam,2026/7/6,Grass,R16,3,Jasmine Paolini,Alexandra Eala,6-4 4-6 6-3,17,32,2423,1436
+Wimbledon,Grand Slam,2026/7/6,Grass,R16,3,Linda Noskova,Madison Keys,6-4 7-6,12,22,3359,1854
+Wimbledon,Grand Slam,2026/7/7,Grass,QF,3,Coco Gauff,Jessica Pegula,4-6 6-3 6-3,7,4,4879,5881
+Wimbledon,Grand Slam,2026/7/7,Grass,QF,3,Karolina Muchova,Naomi Osaka,7-6 6-4,9,14,3878,2846
+Wimbledon,Grand Slam,2026/7/8,Grass,QF,3,Linda Noskova,Elise Mertens,6-3 7-5,12,27,3359,1758
+Wimbledon,Grand Slam,2026/7/8,Grass,QF,3,Marta Kostyuk,Jasmine Paolini,6-3 6-2,13,17,3156,2423
+Wimbledon,Grand Slam,2026/7/9,Grass,SF,3,Karolina Muchova,Coco Gauff,6-2 1-6 7-6,9,7,3878,4879
+Wimbledon,Grand Slam,2026/7/9,Grass,SF,3,Linda Noskova,Marta Kostyuk,6-4 6-4,12,13,3359,3156
+Wimbledon,Grand Slam,2026/7/11,Grass,F,3,Linda Noskova,Karolina Muchova,6-2 5-7 6-3,12,9,3359,3878
