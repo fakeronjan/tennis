@@ -77,7 +77,7 @@ jobs:
         run: |
           git config user.name  "TENNIS Bot"
           git config user.email "tennis-bot@users.noreply.github.com"
-          git add tennis_ratings.csv.gz player_timelines.json slams.json docs/data/ docs/index.html
+          git add tennis_ratings.csv.gz player_timelines.json slams.json docs/data/ docs/index.html data/matches/
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
@@ -85,9 +85,17 @@ jobs:
             # Race-safe push: if another commit landed during this run, rebase
             # the data update on top and retry. Avoids losing a day's data
             # update when a code push lands mid-cron-run.
+            pushed=false
             for i in 1 2 3; do
-              git pull --rebase origin main && git push && break
+              if git pull --rebase origin main && git push; then
+                pushed=true
+                break
+              fi
               echo "Push attempt $i failed; retrying in 5s..."
               sleep 5
             done
+            if [ "$pushed" != true ]; then
+              echo "::error::Failed to push updated ratings after 3 attempts."
+              exit 1
+            fi
           fi
