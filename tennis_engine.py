@@ -41,6 +41,11 @@ ALL_MATCHES_CSV = Path(__file__).parent / "all_matches.csv"
 #   2025-      = tennis-data.co.uk live feed (independent, both tours, weekly)
 # Sackmann's own tennis_atp/tennis_wta repos were deleted from GitHub in 2026,
 # so we source from this mirror. Licensed CC BY-NC-SA 4.0 (see site credit).
+#
+# NOTE: as of 2026-07, the mirror stores its CSVs via Git LFS. raw.githubusercontent.com
+# only serves the LFS *pointer* text (a ~130-byte stub, still HTTP 200) - not the
+# actual file - so we fetch through media.githubusercontent.com/media/... instead,
+# which resolves LFS pointers to real content for public repos with no auth needed.
 SOURCE_REPO = "LuckyLoser91/TennisCourtLog"
 SOURCE_TOURS = {"atp": "tennis_atp", "wta": "tennis_wta"}  # tour -> repo subdir
 
@@ -126,14 +131,29 @@ def _http_get(url: str, timeout: int = 30) -> bytes:
         return resp.read()
 
 
+def _is_lfs_pointer(data: bytes) -> bool:
+    """Git LFS pointer stubs are tiny text files starting with this header -
+    GitHub serves them (HTTP 200) from raw.githubusercontent.com instead of the
+    real file for any LFS-tracked path. Guards against silently caching a stub."""
+    return data[:60].startswith(b"version https://git-lfs.github.com/spec/v1")
+
+
 def _resolve_branch(repo: str, probe_file: str) -> "str | None":
     """Return whichever default branch the repo currently serves ('master' or
     'main'), or None if neither is reachable. GitHub doesn't redirect raw URLs
-    when a repo renames its default branch, so we probe instead of assuming."""
+    when a repo renames its default branch, so we probe instead of assuming.
+
+    Probes through media.githubusercontent.com (the LFS content endpoint we
+    actually fetch data from), not raw.githubusercontent.com - a stale/deleted
+    branch ref can still 200 an LFS pointer stub on the raw CDN while 404ing on
+    the media backend, which would otherwise make us "resolve" to a branch that
+    can't actually serve file content."""
     for br in ("master", "main"):
-        url = f"https://raw.githubusercontent.com/{repo}/{br}/{probe_file}"
+        url = f"https://media.githubusercontent.com/media/{repo}/{br}/{probe_file}"
         try:
-            _http_get(url, timeout=20)   # GET (HEAD is sometimes refused); small probe file
+            data = _http_get(url, timeout=20)   # GET (HEAD is sometimes refused); small probe file
+            if _is_lfs_pointer(data):
+                continue
             return br
         except Exception:
             continue
@@ -166,12 +186,14 @@ def download_matches(min_year: int = MIN_YEAR, refresh_latest: int = 2) -> None:
             print(f"  ! {SOURCE_REPO}/{subdir}: unreachable on main AND master - skipping")
             continue
         print(f"  {SOURCE_REPO}/{subdir}: using '{branch}' branch")
-        base = f"https://raw.githubusercontent.com/{SOURCE_REPO}/{branch}/{subdir}"
+        base = f"https://media.githubusercontent.com/media/{SOURCE_REPO}/{branch}/{subdir}"
 
         # players.csv (name -> ioc/id lookup) - always refresh, it's small
         try:
             print(f"  fetching {tour.upper()} players...", end=" ", flush=True)
             data = _http_get(f"{base}/{tour}_players.csv")
+            if _is_lfs_pointer(data):
+                raise RuntimeError("got an LFS pointer stub instead of file content")
             (DATA_DIR / f"{tour}_players.csv").write_bytes(data)
             written += 1
             print(f"{len(data):,} bytes")
@@ -186,6 +208,8 @@ def download_matches(min_year: int = MIN_YEAR, refresh_latest: int = 2) -> None:
             try:
                 print(f"  fetching {tour.upper()} {year}...", end=" ", flush=True)
                 data = _http_get(f"{base}/{fname}")
+                if _is_lfs_pointer(data):
+                    raise RuntimeError("got an LFS pointer stub instead of file content")
                 path.write_bytes(data)
                 written += 1
                 print(f"{len(data):,} bytes")
