@@ -39,6 +39,13 @@ def rebundle():
     HTML.write_text(html)
     print(f"  embedded {len(timelines)} player timelines into {HTML.relative_to(ROOT)}")
 
+    # Also publish under docs/data/ so it's fetchable via GitHub Pages cross-origin
+    # like every other JSON file in the fleet, instead of only living baked into
+    # the HTML (fakeronjan-com's native port fetches this, not the embedded copy).
+    data_out = ROOT / "docs" / "data" / "slams.json"
+    json.dump(bundle, open(data_out, "w"), ensure_ascii=False)
+    print(f"  published {data_out.relative_to(ROOT)}")
+
 
 def main():
     run("scrape.py")                  # champions list -> slams_m.csv, slams_w.csv, slams.json
