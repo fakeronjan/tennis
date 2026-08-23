@@ -55,22 +55,19 @@ jobs:
       - name: Refresh player_timelines.json
         run: python3 build_player_timelines.py
 
-      - name: Re-embed BUNDLE into docs/index.html
+      - name: Re-bundle timelines into slams.json
         # Picks up any new slam-winner timelines emitted by the previous step.
+        # docs/index.html is just a redirect stub now (fleet frontend
+        # consolidation) - fakeronjan-com fetches docs/data/slams.json
+        # directly, so that's the only copy that needs the merged bundle.
         run: |
           python3 -c "
-          import json, re
-          from pathlib import Path
+          import json
           bundle = json.load(open('slams.json'))
           timelines = json.load(open('player_timelines.json'))
           bundle['timelines'] = timelines
           json.dump(bundle, open('slams.json','w'), ensure_ascii=False)
-          html_path = Path('docs/index.html')
-          html = html_path.read_text()
-          new_line = 'const BUNDLE = ' + json.dumps(bundle, ensure_ascii=False) + ';'
-          html2, n = re.subn(r'const BUNDLE = \{.*?\};\n', new_line + '\n', html, count=1, flags=re.DOTALL)
-          assert n == 1, 'BUNDLE line not found'
-          html_path.write_text(html2)
+          json.dump(bundle, open('docs/data/slams.json','w'), ensure_ascii=False)
           "
 
       - name: Commit and push updated data

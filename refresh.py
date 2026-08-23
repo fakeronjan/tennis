@@ -1,6 +1,7 @@
 """Refresh the TENNIS site after a Grand Slam concludes.
 
-Runs both scrapers and re-embeds the bundled data into docs/index.html.
+Runs both scrapers and re-bundles the timelines data into slams.json
+(root + docs/data, the copy fakeronjan-com's native port fetches).
 After this finishes successfully, commit and push.
 
 Usage:
@@ -8,13 +9,11 @@ Usage:
 """
 
 import json
-import re
 import subprocess
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).parent
-HTML = ROOT / "docs" / "index.html"
 
 
 def run(script):
@@ -25,23 +24,16 @@ def run(script):
 
 
 def rebundle():
-    print("\n=== bundling into docs/index.html ===")
-    bundle = json.load(open(ROOT / "slams.json"))
+    print("\n=== bundling timelines into slams.json ===")
+    bundle_path = ROOT / "slams.json"
+    bundle = json.load(open(bundle_path))
     timelines = json.load(open(ROOT / "player_timelines.json"))
     bundle["timelines"] = timelines
-    json.dump(bundle, open(ROOT / "slams.json", "w"), ensure_ascii=False)
+    json.dump(bundle, open(bundle_path, "w"), ensure_ascii=False)
+    print(f"  merged {len(timelines)} player timelines into {bundle_path.relative_to(ROOT)}")
 
-    html = HTML.read_text()
-    new_line = "const BUNDLE = " + json.dumps(bundle, ensure_ascii=False) + ";"
-    html, n = re.subn(r"const BUNDLE = \{.*?\};\n", new_line + "\n", html, count=1, flags=re.DOTALL)
-    if n != 1:
-        sys.exit("ABORT: could not locate BUNDLE line in docs/index.html")
-    HTML.write_text(html)
-    print(f"  embedded {len(timelines)} player timelines into {HTML.relative_to(ROOT)}")
-
-    # Also publish under docs/data/ so it's fetchable via GitHub Pages cross-origin
-    # like every other JSON file in the fleet, instead of only living baked into
-    # the HTML (fakeronjan-com's native port fetches this, not the embedded copy).
+    # Also publish under docs/data/ so it's fetchable via GitHub Pages
+    # (fakeronjan-com's native port fetches this copy directly).
     data_out = ROOT / "docs" / "data" / "slams.json"
     json.dump(bundle, open(data_out, "w"), ensure_ascii=False)
     print(f"  published {data_out.relative_to(ROOT)}")
