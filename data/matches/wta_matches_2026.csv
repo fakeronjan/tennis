@@ -1609,7 +1609,7 @@ Iasi,WTA250,2026/7/17,Clay,QF,3,Paula Badosa,Panna Udvardy,6-4 7-6,115,71,670,95
 Iasi,WTA250,2026/7/17,Clay,QF,3,Tamara Zidansek,Petra Marcinko,6-3 7-5,148,45,525,1145
 Iasi,WTA250,2026/7/18,Clay,SF,3,Mayar Sherif,Oleksandra Oliynykova,6-3 6-1,97,52,787,1049
 Iasi,WTA250,2026/7/18,Clay,SF,3,Paula Badosa,Tamara Zidansek,3-6 7-5 7-6,115,148,670,525
-Iasi,WTA250,2029/7/20,Clay,F,3,Mayar Sherif,Paula Badosa,6-4 4-0 RET,97,115,787,670
+Iasi,WTA250,2026/7/20,Clay,F,3,Mayar Sherif,Paula Badosa,6-4 4-0 RET,97,115,787,670
 Hamburg,WTA250,2026/7/20,Clay,R32,3,Anhelina Kalinina,Kaitlin Quevedo,7-5 6-4,56,101,1019,771
 Hamburg,WTA250,2026/7/20,Clay,R32,3,Julia Stusek,Nadia Podoroska,4-6 6-3 6-4,435,537,138,100
 Hamburg,WTA250,2026/7/20,Clay,R32,3,Anna Bondar,Moyuka Uchijima,7-5 6-4,97,110,803,713
@@ -1825,3 +1825,98 @@ Toronto,WTA1000,2026/8/12,Hard,QF,3,Elena Rybakina,Naomi Osaka,4-6 7-6 6-4,2,13,
 Toronto,WTA1000,2026/8/13,Hard,SF,3,Iga Swiatek,Elina Svitolina,6-3 1-6 6-3,8,10,4539,4351
 Toronto,WTA1000,2026/8/13,Hard,SF,3,Elena Rybakina,Coco Gauff,5-7 6-2 6-2,2,4,8056,5649
 Toronto,WTA1000,2026/8/13,Hard,F,3,Iga Swiatek,Elena Rybakina,6-2 6-3,8,2,4539,8056
+Cincinnati,WTA1000,2026/8/13,Hard,R128,3,Zeynep Sonmez,Daria Kasatkina,2-6 7-6 6-3,50,68,1082,1003
+Cincinnati,WTA1000,2026/8/13,Hard,R128,3,Anhelina Kalinina,Darja Vidmanova,4-6 6-4 6-2,51,88,1081,842
+Cincinnati,WTA1000,2026/8/13,Hard,R128,3,Kamilla Rakhimova,Kimberly Birrell,6-2 6-2,83,69,894,999
+Cincinnati,WTA1000,2026/8/13,Hard,R128,3,Taylor Townsend,Camila Osorio,3-6 6-3 6-3,94,55,813,1048
+Cincinnati,WTA1000,2026/8/13,Hard,R128,3,Simona Waltert,Petra Marcinko,5-7 6-4 6-2,87,72,846,974
+Cincinnati,WTA1000,2026/8/13,Hard,R128,3,Lois Boisson,Ashlyn Krueger,6-3 6-2,281,56,258,1047
+Cincinnati,WTA1000,2026/8/13,Hard,R128,3,Magdalena Frech,Antonia Ruzic,6-2 7-5,41,61,1185,1032
+Cincinnati,WTA1000,2026/8/13,Hard,R128,3,Elena Gabriela Ruse,Magda Linette,6-0 6-3,74,62,966,1026
+Cincinnati,WTA1000,2026/8/13,Hard,R128,3,Diane Parry,Caroline Dolehide,6-4 7-6,66,246,1006,302
+Cincinnati,WTA1000,2026/8/13,Hard,R128,3,Tatjana Maria,Dayana Yastremska,6-1 6-2,80,107,923,747
+Cincinnati,WTA1000,2026/8/13,Hard,R128,3,Cristina Bucsa,Panna Udvardy,6-2 1-6 7-5,38,77,1224,961
+Cincinnati,WTA1000,2026/8/14,Hard,R128,3,Katie Boulter,Katie Volynets,7-5 0-6 6-4,71,89,987,838
+Cincinnati,WTA1000,2026/8/14,Hard,R128,3,Caty Mcnally,Mccartney Kessler,6-3 6-4,70,58,990,1040
+Cincinnati,WTA1000,2026/8/14,Hard,R128,3,Lucrezia Stefanini,Elisabetta Cocciaretto,5-3 RET,142,60,557,1035
+Cincinnati,WTA1000,2026/8/14,Hard,R128,3,Sara Bejlek,Karolina Pliskova,6-0 6-2,35,57,1289,1041
+Cincinnati,WTA1000,2026/8/14,Hard,R128,3,Jessica Bouzas Maneiro,Anna Bondar,6-3 7-6,90,76,834,961
+Cincinnati,WTA1000,2026/8/14,Hard,R128,3,Daria Snigur,Yuliia Starodubtseva,6-4 6-3,45,78,1163,953
+Cincinnati,WTA1000,2026/8/14,Hard,R128,3,Nikola Bartunkova,Alina Charaeva,4-6 6-4 6-3,39,113,1203,694
+Cincinnati,WTA1000,2026/8/14,Hard,R128,3,Anna Blinkova,Mananchaya Sawangkaew,1-6 6-2 6-3,111,105,734,750
+Cincinnati,WTA1000,2026/8/14,Hard,R128,3,Tamara Korpatsch,Maya Joint,0-6 6-3 6-4,47,67,1128,1006
+Cincinnati,WTA1000,2026/8/14,Hard,R128,3,Peyton Stearns,Harriet Dart,6-1 7-6,53,143,1061,557
+Cincinnati,WTA1000,2026/8/14,Hard,R128,3,Emiliana Arango,Venus Williams,6-2 6-2,95,615,813,75
+Cincinnati,WTA1000,2026/8/14,Hard,R128,3,Talia Gibson,Lilli Tagger,4-6 6-1 7-5,65,48,1010,1123
+Cincinnati,WTA1000,2026/8/14,Hard,R128,3,Viktorija Golubic,Alycia Parks,6-2 6-2,52,63,1072,1014
+Cincinnati,WTA1000,2026/8/14,Hard,R128,3,Oleksandra Oliynykova,Elvina Kalieva,6-4 6-1,46,120,1154,640
+Cincinnati,WTA1000,2026/8/14,Hard,R128,3,Xiyu Wang,Maria Timofeeva,6-0 3-0 RET,108,96,743,806
+Cincinnati,WTA1000,2026/8/14,Hard,R128,3,Xinyu Wang,Hanne Vandewinkel,6-4 6-3,36,82,1248,904
+Cincinnati,WTA1000,2026/8/14,Hard,R128,3,Liudmila Samsonova,Yulia Putintseva,7-6 5-7 7-5,43,81,1178,904
+Cincinnati,WTA1000,2026/8/14,Hard,R128,3,Tereza Valentova,Mary Stoiana,6-2 7-6,64,130,1012,602
+Cincinnati,WTA1000,2026/8/15,Hard,R128,3,Sloane Stephens,Sinja Kraus,7-5 6-3,240,85,310,855
+Cincinnati,WTA1000,2026/8/15,Hard,R128,3,Sofia Kenin,Eva Lys,1-6 6-3 6-3,115,92,684,816
+Cincinnati,WTA1000,2026/8/15,Hard,R128,3,Shuai Zhang,Kayla Day,2-6 6-2 6-2,54,121,1060,630
+Cincinnati,WTA1000,2026/8/15,Hard,R64,3,Maja Chwalinska,Cristina Bucsa,6-2 6-2,23,38,1984,1224
+Cincinnati,WTA1000,2026/8/15,Hard,R64,3,Amanda Anisimova,Zeynep Sonmez,6-2 6-3,10,50,4353,1082
+Cincinnati,WTA1000,2026/8/15,Hard,R64,3,Alexandra Eala,Elena Gabriela Ruse,6-1 3-0 RET,20,74,2216,966
+Cincinnati,WTA1000,2026/8/15,Hard,R64,3,Anna Kalinskaya,Caty Mcnally,6-3 6-4,21,70,2083,990
+Cincinnati,WTA1000,2026/8/15,Hard,R64,3,Diana Shnaider,Tatjana Maria,6-2 7-5,14,80,2798,923
+Cincinnati,WTA1000,2026/8/15,Hard,R64,3,Magdalena Frech,Jelena Ostapenko,6-1 6-3,41,30,1185,1537
+Cincinnati,WTA1000,2026/8/15,Hard,R64,3,Linda Noskova,Katie Boulter,6-3 6-3,8,71,5016,987
+Cincinnati,WTA1000,2026/8/15,Hard,R64,3,Sorana Cirstea,Nikola Bartunkova,7-6 6-3,19,39,2502,1203
+Cincinnati,WTA1000,2026/8/15,Hard,R64,3,Jessica Pegula,Simona Waltert,6-3 6-2,3,87,6680,846
+Cincinnati,WTA1000,2026/8/15,Hard,R64,3,Maria Sakkari,Kamilla Rakhimova,6-2 5-7 6-1,32,83,1385,894
+Cincinnati,WTA1000,2026/8/15,Hard,R64,3,Emma Navarro,Anhelina Kalinina,3-6 6-4 6-2,28,51,1669,1081
+Cincinnati,WTA1000,2026/8/16,Hard,R64,3,Diane Parry,Elise Mertens,2-6 6-2 6-2,66,22,1006,2003
+Cincinnati,WTA1000,2026/8/16,Hard,R64,3,Clara Tauson,Peyton Stearns,7-6 1-6 7-5,42,53,1184,1061
+Cincinnati,WTA1000,2026/8/16,Hard,R64,3,Lois Boisson,Belinda Bencic,6-3 RET,281,12,258,2995
+Cincinnati,WTA1000,2026/8/16,Hard,R64,3,Sara Bejlek,Barbora Krejcikova,7-6 6-4,35,26,1289,1776
+Cincinnati,WTA1000,2026/8/16,Hard,R64,3,Mirra Andreeva,Oleksandra Oliynykova,6-1 6-0,6,46,5323,1154
+Cincinnati,WTA1000,2026/8/16,Hard,R64,3,Elena Rybakina,Taylor Townsend,6-3 6-4,2,94,8316,813
+Cincinnati,WTA1000,2026/8/16,Hard,R64,3,Janice Tjen,Viktorija Golubic,7-6 5-7 7-5,37,52,1238,1072
+Cincinnati,WTA1000,2026/8/16,Hard,R64,3,Xinyu Wang,Donna Vekic,3-6 6-1 6-4,36,34,1248,1336
+Cincinnati,WTA1000,2026/8/16,Hard,R64,3,Madison Keys,Daria Snigur,4-6 6-3 6-3,24,45,1814,1163
+Cincinnati,WTA1000,2026/8/16,Hard,R64,3,Iga Swiatek,Emiliana Arango,6-3 6-0,5,95,5419,813
+Cincinnati,WTA1000,2026/8/16,Hard,R64,3,Marie Bouzkova,Lucrezia Stefanini,6-2 6-4,27,142,1774,557
+Cincinnati,WTA1000,2026/8/16,Hard,R64,3,Ann Li,Shuai Zhang,7-5 6-3,29,54,1596,1060
+Cincinnati,WTA1000,2026/8/16,Hard,R64,3,Aryna Sabalenka,Talia Gibson,6-2 7-6,1,65,8670,1010
+Cincinnati,WTA1000,2026/8/16,Hard,R64,3,Marta Kostyuk,Sofia Kenin,4-6 6-3 7-5,11,115,3830,684
+Cincinnati,WTA1000,2026/8/16,Hard,R64,3,Katerina Siniakova,Jessica Bouzas Maneiro,6-7 6-1 6-1,44,90,1170,834
+Cincinnati,WTA1000,2026/8/16,Hard,R64,3,Ekaterina Alexandrova,Anna Blinkova,6-7 6-4 7-5,18,111,2506,734
+Cincinnati,WTA1000,2026/8/16,Hard,R64,3,Xiyu Wang,Leylah Fernandez,3-6 6-2 6-2,108,31,743,1454
+Cincinnati,WTA1000,2026/8/16,Hard,R64,3,Iva Jovic,Tamara Korpatsch,6-4 6-3,16,47,2691,1128
+Cincinnati,WTA1000,2026/8/16,Hard,R64,3,Sloane Stephens,Anastasia Potapova,6-2 6-4,240,25,310,1781
+Cincinnati,WTA1000,2026/8/17,Hard,R64,3,Coco Gauff,Liudmila Samsonova,2-6 6-4 6-1,4,43,5919,1178
+Cincinnati,WTA1000,2026/8/17,Hard,R64,3,Elina Svitolina,Tereza Valentova,3-6 7-6 6-0,9,64,4634,1012
+Cincinnati,WTA1000,2026/8/17,Hard,R32,3,Diane Parry,Lois Boisson,4-6 6-4 6-3,66,281,1006,258
+Cincinnati,WTA1000,2026/8/17,Hard,R32,3,Iga Swiatek,Maria Sakkari,4-6 6-1 6-1,5,32,5419,1385
+Cincinnati,WTA1000,2026/8/17,Hard,R32,3,Elena Rybakina,Magdalena Frech,6-4 7-6,2,41,8316,1185
+Cincinnati,WTA1000,2026/8/17,Hard,R32,3,Sorana Cirstea,Anna Kalinskaya,6-7 6-1 5-0 RET,19,21,2502,2083
+Cincinnati,WTA1000,2026/8/17,Hard,R32,3,Diana Shnaider,Maja Chwalinska,6-2 7-6,14,23,2798,1984
+Cincinnati,WTA1000,2026/8/17,Hard,R32,3,Linda Noskova,Clara Tauson,7-6 6-2,8,42,5016,1184
+Cincinnati,WTA1000,2026/8/18,Hard,R32,3,Jessica Pegula,Emma Navarro,7-5 6-2,3,28,6680,1669
+Cincinnati,WTA1000,2026/8/18,Hard,R32,3,Amanda Anisimova,Alexandra Eala,4-6 6-4 6-2,10,20,4353,2216
+Cincinnati,WTA1000,2026/8/18,Hard,R32,3,Madison Keys,Katerina Siniakova,6-1 6-3,24,44,1814,1170
+Cincinnati,WTA1000,2026/8/18,Hard,R32,3,Mirra Andreeva,Janice Tjen,6-1 7-6,6,37,5323,1238
+Cincinnati,WTA1000,2026/8/18,Hard,R32,3,Xiyu Wang,Elina Svitolina,W/O,108,9,743,4634
+Cincinnati,WTA1000,2026/8/18,Hard,R32,3,Coco Gauff,Ann Li,6-1 7-6,4,29,5919,1596
+Cincinnati,WTA1000,2026/8/18,Hard,R32,3,Marta Kostyuk,Sloane Stephens,7-5 7-5,11,240,3830,310
+Cincinnati,WTA1000,2026/8/18,Hard,R32,3,Sara Bejlek,Ekaterina Alexandrova,4-6 6-1 6-2,35,18,1289,2506
+Cincinnati,WTA1000,2026/8/19,Hard,R32,3,Aryna Sabalenka,Xinyu Wang,6-1 6-3,1,36,8670,1248
+Cincinnati,WTA1000,2026/8/19,Hard,R32,3,Marie Bouzkova,Iva Jovic,7-6 7-6,27,16,1774,2691
+Cincinnati,WTA1000,2026/8/19,Hard,R16,3,Iga Swiatek,Diane Parry,6-3 6-3,5,66,5419,1006
+Cincinnati,WTA1000,2026/8/19,Hard,R16,3,Jessica Pegula,Sorana Cirstea,6-2 4-6 7-5,3,19,6680,2502
+Cincinnati,WTA1000,2026/8/19,Hard,R16,3,Marta Kostyuk,Mirra Andreeva,4-6 6-0 6-2,11,6,3830,5323
+Cincinnati,WTA1000,2026/8/19,Hard,R16,3,Amanda Anisimova,Linda Noskova,6-1 6-4,10,8,4353,5016
+Cincinnati,WTA1000,2026/8/19,Hard,R16,3,Elena Rybakina,Diana Shnaider,6-4 6-4,2,14,8316,2798
+Cincinnati,WTA1000,2026/8/19,Hard,R16,3,Coco Gauff,Marie Bouzkova,6-3 6-2,4,27,5919,1774
+Cincinnati,WTA1000,2026/8/20,Hard,R16,3,Madison Keys,Xiyu Wang,7-6 6-4,24,108,1814,743
+Cincinnati,WTA1000,2026/8/20,Hard,R16,3,Sara Bejlek,Aryna Sabalenka,7-6 6-4,35,1,1289,8670
+Cincinnati,WTA1000,2026/8/20,Hard,QF,3,Jessica Pegula,Amanda Anisimova,6-4 2-6 7-6,3,10,6680,4353
+Cincinnati,WTA1000,2026/8/21,Hard,QF,3,Iga Swiatek,Elena Rybakina,4-1 RET,5,2,5419,8316
+Cincinnati,WTA1000,2026/8/21,Hard,QF,3,Sara Bejlek,Madison Keys,3-6 6-4 7-6,35,24,1289,1814
+Cincinnati,WTA1000,2026/8/22,Hard,QF,3,Coco Gauff,Marta Kostyuk,6-2 6-2,4,11,5919,3830
+Cincinnati,WTA1000,2026/8/22,Hard,SF,3,Jessica Pegula,Iga Swiatek,7-5 4-6 6-4,3,5,6680,5419
+Cincinnati,WTA1000,2026/8/23,Hard,SF,3,Coco Gauff,Sara Bejlek,6-4 6-1,4,35,5919,1289
+Cincinnati,WTA1000,2026/8/24,Hard,F,3,Coco Gauff,Jessica Pegula,6-2 6-4,4,3,5919,6680
