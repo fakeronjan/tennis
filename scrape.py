@@ -30,14 +30,36 @@ def fetch(url):
 
 
 def extract_winner(td):
-    """Return (name, country_wiki_slug) for a champion-cell, or (None, None) for not-held."""
+    """Return (name, country_code) for a champion-cell, or (None, None) for not-held.
+    country_code is either a 3-letter IOC code (from the flagicon's Lua-template
+    data-mw, e.g. "GBR") or a wiki page-title slug (e.g. "Australia") if that
+    metadata isn't present - resolved against IOC_TO_ISO2 / COUNTRY_ISO respectively
+    at aggregation time in bundle_to_json()."""
     if "table-na" in (td.get("class") or []):
         return None, None
-    # Country from flagicon link (e.g. /wiki/Australia)
     country = None
-    flag = td.select_one(".flagicon a")
-    if flag and flag.get("href", "").startswith("/wiki/"):
-        country = flag["href"][len("/wiki/"):]
+    flagspan = td.select_one(".flagicon")
+    # Modern Wikipedia renders the flag via a {{#invoke:flag|icon|XXX}} Lua
+    # template - the IOC code is embedded in data-mw as a positional param
+    # (not the anchor href, which used to carry a /wiki/<Country> slug but is
+    # now an absolute https://en.wikipedia.org/wiki/<Country> URL that a plain
+    # /wiki/-prefix check misses). Try this first; it's exact and markup-stable.
+    if flagspan and flagspan.get("data-mw"):
+        try:
+            mw = json.loads(flagspan["data-mw"])
+            params = mw["parts"][0]["template"]["params"]
+            for key in sorted(params.keys(), key=lambda k: int(k) if k.isdigit() else 99):
+                val = (params[key].get("wt") or "").strip()
+                if re.fullmatch(r"[A-Za-z]{2,3}", val) and val.lower() != "icon":
+                    country = val.upper()
+                    break
+        except Exception:
+            pass
+    if country is None:
+        flag = td.select_one(".flagicon a")
+        href = flag.get("href", "") if flag else ""
+        if "/wiki/" in href:
+            country = href.split("/wiki/", 1)[1]
     # Now strip markup to extract the player name
     td = BeautifulSoup(str(td), "html.parser")  # clone
     for tag in td.select("sup, .reference, .flagicon"):
@@ -159,9 +181,22 @@ def main():
 # ----------------------------------------------------------------------------
 # Bundle step: convert the two raw CSVs into slams.json, applying our
 # conventions (RG -> FO, 2020 reorder for COVID schedule, per-player country
-# aggregation). scrape_players.py reads slams.json as authoritative truth.
+# aggregation). slams.json (+ docs/data/slams.json) is what the site fetches.
 # ----------------------------------------------------------------------------
 
+# IOC 3-letter code -> ISO2, for the data-mw flag-template path (primary).
+IOC_TO_ISO2 = {
+    "USA": "US", "ESP": "ES", "SUI": "CH", "SRB": "RS", "GER": "DE", "FRG": "DE",
+    "GDR": "DE", "SWE": "SE", "AUS": "AU", "GBR": "GB", "RUS": "RU", "ITA": "IT",
+    "ARG": "AR", "BRA": "BR", "ROU": "RO", "AUT": "AT", "CRO": "HR", "RSA": "ZA",
+    "FRA": "FR", "ECU": "EC", "NED": "NL", "CZE": "CZ", "TCH": "CZ", "BEL": "BE",
+    "JPN": "JP", "POL": "PL", "CHN": "CN", "BLR": "BY", "KAZ": "KZ", "LAT": "LV",
+    "DEN": "DK", "CAN": "CA", "YUG": "RS", "URS": "RU", "MEX": "MX", "BUL": "BG",
+    "NOR": "NO", "GRE": "GR", "SVK": "SK", "TUN": "TN", "POR": "PT", "SLO": "SI",
+    "UK": "GB",
+}
+
+# Wiki page-title slug -> ISO2, for the href-based fallback path only.
 COUNTRY_ISO = {
     "United_States": "US", "Spain": "ES", "Sweden": "SE", "Serbia": "RS",
     "Switzerland": "CH", "Australia": "AU", "Czechoslovakia": "CZ",
@@ -178,7 +213,7 @@ COUNTRY_ISO = {
 }
 
 # Players who appear flagless on Wikipedia (neutral-athlete status etc.)
-MANUAL_COUNTRY = {"Aryna Sabalenka": "BY"}
+MANUAL_COUNTRY = {"Aryna Sabalenka": "BY", "Mirra Andreeva": "RU"}
 
 
 def bundle_to_json():
@@ -227,7 +262,7 @@ def bundle_to_json():
                 players[tour][name] = MANUAL_COUNTRY[name]
             elif name in by_p:
                 slug = by_p[name].most_common(1)[0][0]
-                iso = COUNTRY_ISO.get(slug)
+                iso = IOC_TO_ISO2.get(slug) or COUNTRY_ISO.get(slug)
                 if not iso:
                     unknown.add(slug)
                 players[tour][name] = iso or "??"
